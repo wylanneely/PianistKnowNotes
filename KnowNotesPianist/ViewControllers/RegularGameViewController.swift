@@ -12,10 +12,9 @@ class RegularGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
-    //MARK: - Outlets & Actions
+    //MARK: - Outlets
 
     @IBOutlet weak var HomeButton: UIButton!
     @IBOutlet weak var AButton: UIButton!
@@ -24,6 +23,27 @@ class RegularGameViewController: UIViewController {
     @IBOutlet weak var EButton: UIButton!
     @IBOutlet weak var GButton: UIButton!
     @IBOutlet weak var PlayButton: UIButton!
+    
+    //MARK: - Actions
+    
+    @IBAction func PlayButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func AButtonTapped(_ sender: Any) {
+    }
+    @IBAction func CButtonTapped(_ sender: Any) {
+    }
+    @IBAction func DButtonTapped(_ sender: Any) {
+    }
+    @IBAction func EButtonTapped(_ sender: Any) {
+    }
+    @IBAction func GButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func HomeButtonTapped(_ sender: Any) {
+    }
+    
+    
     
     /*
     // MARK: - Navigation

@@ -16,7 +16,7 @@ class PianistGameViewController: UIViewController {
     }
     
 
-    //MARK: - Outlets & Actions
+    //MARK: - Outlets
     
     @IBOutlet weak var HomeButton: UIButton!
     @IBOutlet weak var AButton: UIButton!
@@ -28,6 +28,28 @@ class PianistGameViewController: UIViewController {
     @IBOutlet weak var GButton: UIButton!
     @IBOutlet weak var PlayButton: UIButton!
     
+    //MARK: - Actions
+    
+    @IBAction func PlayButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func AButtonTapped(_ sender: Any) {
+    }
+    @IBAction func BButtonTapped(_ sender: Any) {
+    }
+    @IBAction func CButtonTapped(_ sender: Any) {
+    }
+    @IBAction func DButtonTapped(_ sender: Any) {
+    }
+    @IBAction func EButtonTapped(_ sender: Any) {
+    }
+    @IBAction func FButtonTapped(_ sender: Any) {
+    }
+    @IBAction func GButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func HomeButtonTapped(_ sender: Any) {
+    }
     
     /*
     // MARK: - Navigation
