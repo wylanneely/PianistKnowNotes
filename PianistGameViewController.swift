@@ -11,11 +11,50 @@ class PianistGameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUpButtons()
     }
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    func setUpButtons(){
+        AButton.layer.shadowColor = UIColor(named: "GreenShadowColor")?.cgColor
+        AButton.layer.shadowOffset = CGSize(width: 1.3, height: 3.0)
+        AButton.layer.shadowRadius = 8
+        AButton.layer.shadowOpacity = 0.6
+        BButton.layer.shadowColor = UIColor.black.cgColor
+        BButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
+        BButton.layer.shadowRadius = 8
+        BButton.layer.shadowOpacity = 0.6
+        CButton.layer.shadowColor = UIColor.black.cgColor
+        CButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
+        CButton.layer.shadowRadius = 8
+        CButton.layer.shadowOpacity = 0.6
+        DButton.layer.shadowColor = UIColor.black.cgColor
+        DButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
+        DButton.layer.shadowRadius = 8
+        DButton.layer.shadowOpacity = 0.6
+        EButton.layer.shadowColor = UIColor.black.cgColor
+        EButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
+        EButton.layer.shadowRadius = 8
+        EButton.layer.shadowOpacity = 0.6
+        FButton.layer.shadowColor = UIColor(named: "GreenShadowColor")?.cgColor
+        FButton.layer.shadowOffset = CGSize(width: 1.3, height: 3.0)
+        FButton.layer.shadowRadius = 8
+        FButton.layer.shadowOpacity = 0.6
+        GButton.layer.shadowColor = UIColor.black.cgColor
+        GButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
+        GButton.layer.shadowRadius = 8
+        GButton.layer.shadowOpacity = 0.6
+        PlayButton.layer.shadowColor = UIColor.black.cgColor
+        PlayButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
+        PlayButton.layer.shadowRadius = 8
+        PlayButton.layer.shadowOpacity = 0.6
+        HomeButton.layer.shadowColor = UIColor.black.cgColor
+        HomeButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
+        HomeButton.layer.shadowRadius = 8
+        HomeButton.layer.shadowOpacity = 0.6
     }
     
 
@@ -34,21 +73,29 @@ class PianistGameViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func PlayButtonTapped(_ sender: Any) {
+        PlayButton.pulsate()
     }
     
     @IBAction func AButtonTapped(_ sender: Any) {
+        AButton.pulsate()
     }
     @IBAction func BButtonTapped(_ sender: Any) {
+        BButton.pulsate()
     }
     @IBAction func CButtonTapped(_ sender: Any) {
+        CButton.pulsate()
     }
     @IBAction func DButtonTapped(_ sender: Any) {
+        DButton.pulsate()
     }
     @IBAction func EButtonTapped(_ sender: Any) {
+        EButton.pulsate()
     }
     @IBAction func FButtonTapped(_ sender: Any) {
+        FButton.pulsate()
     }
     @IBAction func GButtonTapped(_ sender: Any) {
+        GButton.pulsate()
     }
     
     @IBAction func HomeButtonTapped(_ sender: Any) {
