@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Virtuoso Game View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="VirtuosoGameViewController" customModule="KnowNotesPianist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VirtuosoGameBackground" translatesAutoresizingMaskIntoConstraints="NO" id="fad-em-Y1j">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZK-PU-DmE">
+                                <rect key="frame" x="261" y="342" width="104" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="BButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIr-Qj-Q1T">
+                                <rect key="frame" x="144" y="354" width="104" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="ASharpButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIv-Rq-cbr">
+                                <rect key="frame" x="35" y="444" width="104" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="CButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOo-Hx-e6z">
+                                <rect key="frame" x="260" y="444" width="105" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="DButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Hf-Xu-oDg">
+                                <rect key="frame" x="144" y="446" width="104" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="CSharpButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uji-jI-hbK">
+                                <rect key="frame" x="144" y="539" width="104" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="EButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lv-VU-Gcb">
+                                <rect key="frame" x="35" y="641" width="104" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="FSharpButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjz-Yn-FIr">
+                                <rect key="frame" x="260" y="641" width="104" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="GSharpButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oU5-de-TYK">
+                                <rect key="frame" x="144" y="641" width="105" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="GButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHZ-ew-0wt">
+                                <rect key="frame" x="82" y="744" width="231" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="PlayButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kt7-JC-5do">
+                                <rect key="frame" x="35" y="341" width="105" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="AButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSE-z1-zQD">
+                                <rect key="frame" x="35" y="539" width="104" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="DSharpButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Leb-3x-Fzx">
+                                <rect key="frame" x="260" y="539" width="104" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="FButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8E-Zo-jof">
+                                <rect key="frame" x="16" y="22" width="70" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="HomeButton"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Virtuoso" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUY-hf-hpz">
+                                <rect key="frame" x="265" y="39" width="96" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fad-em-Y1j" secondAttribute="bottom" id="Hbm-we-Phm"/>
+                            <constraint firstItem="fad-em-Y1j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Hcf-No-etB"/>
+                            <constraint firstItem="fad-em-Y1j" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cUr-zo-bTc"/>
+                            <constraint firstItem="fad-em-Y1j" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ckB-Sx-bDR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="AButton" destination="kt7-JC-5do" id="uPB-DS-KAO"/>
+                        <outlet property="ASButton" destination="hIr-Qj-Q1T" id="aq0-W6-RpH"/>
+                        <outlet property="BButton" destination="EZK-PU-DmE" id="Cjp-Ux-JdC"/>
+                        <outlet property="CButton" destination="wIv-Rq-cbr" id="oeh-Vh-N59"/>
+                        <outlet property="CSButton" destination="2Hf-Xu-oDg" id="CJr-EN-h8f"/>
+                        <outlet property="DButton" destination="GOo-Hx-e6z" id="ift-nn-Bbm"/>
+                        <outlet property="DSButton" destination="TSE-z1-zQD" id="dRj-Ue-a7z"/>
+                        <outlet property="EButton" destination="uji-jI-hbK" id="aww-pT-GvV"/>
+                        <outlet property="FButton" destination="Leb-3x-Fzx" id="xXr-5P-E6Q"/>
+                        <outlet property="FSButton" destination="3lv-VU-Gcb" id="e6z-Iu-Gwj"/>
+                        <outlet property="GButton" destination="oU5-de-TYK" id="Iqw-5Q-OdC"/>
+                        <outlet property="GSButton" destination="Cjz-Yn-FIr" id="KZl-SI-oa8"/>
+                        <outlet property="HomeButton" destination="D8E-Zo-jof" id="bGF-Eh-yJe"/>
+                        <outlet property="PlayButton" destination="jHZ-ew-0wt" id="nva-y9-BYl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-8.3969465648854964" y="-27.464788732394368"/>
+        </scene>
+        <!--Pianist Game View Controller-->
+        <scene sceneID="mKC-zt-OZo">
+            <objects>
+                <viewController id="5IX-dh-HyF" customClass="PianistGameViewController" customModule="KnowNotesPianist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L68-nV-NZ5">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundGameView" translatesAutoresizingMaskIntoConstraints="NO" id="wR3-bM-Ge2">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ldg-ei-lr2">
+                                <rect key="frame" x="16" y="23" width="70" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="HomeButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOw-Se-Gcr">
+                                <rect key="frame" x="261" y="585" width="104" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="FButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FX7-Zq-1bT">
+                                <rect key="frame" x="140" y="526" width="105" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="DButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvP-rr-8YY">
+                                <rect key="frame" x="141" y="413" width="104" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="CButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNF-u3-8rq">
+                                <rect key="frame" x="28" y="585" width="104" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="BButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEV-Yp-6HH">
+                                <rect key="frame" x="28" y="467" width="105" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="AButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="680-rg-s7t">
+                                <rect key="frame" x="261" y="467" width="104" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="EButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJC-Ra-44H">
+                                <rect key="frame" x="81" y="744" width="231" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="PlayButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAk-eX-Vcb">
+                                <rect key="frame" x="144" y="641" width="105" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="GButton"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pianist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kw0-FX-7eG">
+                                <rect key="frame" x="281" y="40" width="77" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Eos-iZ-fKp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="wR3-bM-Ge2" secondAttribute="bottom" id="Bvi-Qw-bXL"/>
+                            <constraint firstItem="wR3-bM-Ge2" firstAttribute="trailing" secondItem="Eos-iZ-fKp" secondAttribute="trailing" id="H50-IS-Jyi"/>
+                            <constraint firstItem="wR3-bM-Ge2" firstAttribute="top" secondItem="L68-nV-NZ5" secondAttribute="top" id="OMO-ja-aoB"/>
+                            <constraint firstItem="wR3-bM-Ge2" firstAttribute="leading" secondItem="Eos-iZ-fKp" secondAttribute="leading" id="aqN-rm-men"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="AButton" destination="rEV-Yp-6HH" id="WNk-MQ-NCx"/>
+                        <outlet property="BButton" destination="jNF-u3-8rq" id="okv-jw-0eU"/>
+                        <outlet property="CButton" destination="QvP-rr-8YY" id="LJ5-VY-jA0"/>
+                        <outlet property="DButton" destination="FX7-Zq-1bT" id="osU-NP-JMQ"/>
+                        <outlet property="EButton" destination="680-rg-s7t" id="mIP-Tu-O6A"/>
+                        <outlet property="FButton" destination="LOw-Se-Gcr" id="qji-ox-Xwl"/>
+                        <outlet property="GButton" destination="JAk-eX-Vcb" id="z7n-Xh-k8K"/>
+                        <outlet property="HomeButton" destination="Ldg-ei-lr2" id="Wzz-S3-prF"/>
+                        <outlet property="PlayButton" destination="aJC-Ra-44H" id="aRg-Qn-RS5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p4c-0y-CwW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="736.64122137404581" y="-27.464788732394368"/>
+        </scene>
+        <!--Regular Game View Controller-->
+        <scene sceneID="FXO-qD-Hpr">
+            <objects>
+                <viewController id="ijP-be-UXx" customClass="RegularGameViewController" customModule="KnowNotesPianist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M6n-Us-3zM">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundGameView" translatesAutoresizingMaskIntoConstraints="NO" id="7K2-qS-VaA">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25v-yZ-fbm">
+                                <rect key="frame" x="16" y="29" width="70" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="HomeButton"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Regular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fK-qh-TM2">
+                                <rect key="frame" x="274" y="46" width="87" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pr6-pi-dpM">
+                                <rect key="frame" x="265" y="598" width="105" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="GButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3E2-nd-yeq">
+                                <rect key="frame" x="32" y="598" width="104" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="CButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3x1-m6-hEC">
+                                <rect key="frame" x="265" y="438" width="105" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="DButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ua9-Ru-SBQ">
+                                <rect key="frame" x="31" y="438" width="105" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="AButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPm-n0-bMr">
+                                <rect key="frame" x="81" y="744" width="231" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="PlayButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zf8-1y-gql">
+                                <rect key="frame" x="144" y="518" width="104" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="EButton"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NJ3-Z3-dnC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7K2-qS-VaA" firstAttribute="trailing" secondItem="NJ3-Z3-dnC" secondAttribute="trailing" id="Ler-BY-J86"/>
+                            <constraint firstItem="7K2-qS-VaA" firstAttribute="top" secondItem="M6n-Us-3zM" secondAttribute="top" id="WkQ-Ik-RCB"/>
+                            <constraint firstItem="7K2-qS-VaA" firstAttribute="leading" secondItem="NJ3-Z3-dnC" secondAttribute="leading" id="ttG-5J-vSs"/>
+                            <constraint firstAttribute="bottom" secondItem="7K2-qS-VaA" secondAttribute="bottom" id="ynI-im-SaA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="AButton" destination="ua9-Ru-SBQ" id="vF2-3m-B3d"/>
+                        <outlet property="CButton" destination="3E2-nd-yeq" id="u3g-rX-vZX"/>
+                        <outlet property="DButton" destination="3x1-m6-hEC" id="NP6-bx-Swk"/>
+                        <outlet property="EButton" destination="zf8-1y-gql" id="Eyk-2H-n0U"/>
+                        <outlet property="GButton" destination="Pr6-pi-dpM" id="LOX-xa-lGX"/>
+                        <outlet property="HomeButton" destination="25v-yZ-fbm" id="DXY-ni-a8Y"/>
+                        <outlet property="PlayButton" destination="JPm-n0-bMr" id="lr6-xY-XnJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oLC-d6-DWi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1475.5725190839694" y="-27.464788732394368"/>
+        </scene>
+        <!--Novice Game View Controller-->
+        <scene sceneID="ps7-Gn-Zir">
+            <objects>
+                <viewController id="1Ic-O4-xgA" customClass="NoviceGameViewController" customModule="KnowNotesPianist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QIe-hQ-HeB">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundGameView" translatesAutoresizingMaskIntoConstraints="NO" id="ZaD-Ff-Prn">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ay2-i2-PeS">
+                                <rect key="frame" x="16" y="27" width="70" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="HomeButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAm-2W-T2Q">
+                                <rect key="frame" x="144" y="563" width="105" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="GButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vnc-04-S5e">
+                                <rect key="frame" x="263" y="436" width="104" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="CButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kda-d1-IpX">
+                                <rect key="frame" x="32" y="436" width="105" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="AButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyw-no-amH">
+                                <rect key="frame" x="81" y="744" width="231" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="PlayButton"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Novice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtf-HL-SEA">
+                                <rect key="frame" x="290" y="44" width="77" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ejx-Mu-ab4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ZaD-Ff-Prn" secondAttribute="bottom" id="0ys-pJ-Np4"/>
+                            <constraint firstItem="ZaD-Ff-Prn" firstAttribute="trailing" secondItem="Ejx-Mu-ab4" secondAttribute="trailing" id="Cpj-45-62d"/>
+                            <constraint firstItem="ZaD-Ff-Prn" firstAttribute="leading" secondItem="Ejx-Mu-ab4" secondAttribute="leading" id="DOU-jG-TFj"/>
+                            <constraint firstItem="ZaD-Ff-Prn" firstAttribute="top" secondItem="QIe-hQ-HeB" secondAttribute="top" id="LAx-bp-tDM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="AButton" destination="kda-d1-IpX" id="qnO-c1-HmR"/>
+                        <outlet property="CButton" destination="Vnc-04-S5e" id="BKj-df-FSG"/>
+                        <outlet property="GButton" destination="MAm-2W-T2Q" id="BRO-1M-NiB"/>
+                        <outlet property="HomeButton" destination="ay2-i2-PeS" id="7Cf-5P-Sbt"/>
+                        <outlet property="PlayButton" destination="wyw-no-amH" id="3Mj-8P-khj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nVh-ho-2iH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2235.8778625954196" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="AButton" width="80.5" height="80"/>
+        <image name="ASharpButton" width="80" height="80"/>
+        <image name="BButton" width="80" height="80"/>
+        <image name="BackgroundGameView" width="375" height="812"/>
+        <image name="CButton" width="80" height="80"/>
+        <image name="CSharpButton" width="80" height="80"/>
+        <image name="DButton" width="80.5" height="80"/>
+        <image name="DSharpButton" width="80" height="80"/>
+        <image name="EButton" width="80" height="80"/>
+        <image name="FButton" width="80" height="80"/>
+        <image name="FSharpButton" width="80" height="80"/>
+        <image name="GButton" width="80.5" height="80"/>
+        <image name="GSharpButton" width="80" height="80"/>
+        <image name="HomeButton" width="46" height="48"/>
+        <image name="PlayButton" width="207" height="60"/>
+        <image name="VirtuosoGameBackground" width="375" height="812"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
