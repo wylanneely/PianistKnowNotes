@@ -14,6 +14,12 @@ class NoviceGameViewController: UIViewController {
 
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
+
     //MARK: - Outlets
     
     @IBOutlet weak var HomeButton: UIButton!
@@ -25,16 +31,26 @@ class NoviceGameViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func PlayButtonTapped(_ sender: Any) {
+        PlayButton.pulsate()
+        mediumImpact.impactOccurred()
     }
     
     @IBAction func AButtonTapped(_ sender: Any) {
+        AButton.pulsate()
+        mediumImpact.impactOccurred()
     }
     @IBAction func CButtonTapped(_ sender: Any) {
+        CButton.pulsate()
+        mediumImpact.impactOccurred()
     }
     @IBAction func GButtonTapped(_ sender: Any) {
+        GButton.pulsate()
+        mediumImpact.impactOccurred()
     }
     
     @IBAction func HomeButtonTapped(_ sender: Any) {
+        HomeButton.pulsate()
+        mediumImpact.impactOccurred()
     }
     
     /*
