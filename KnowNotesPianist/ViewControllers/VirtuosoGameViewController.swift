@@ -14,8 +14,12 @@ class VirtuosoGameViewController: UIViewController {
 
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
-    
+    let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
+
     //MARK: - Outlets
     
     @IBOutlet weak var HomeButton: UIButton!
@@ -36,35 +40,62 @@ class VirtuosoGameViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func PlayButtonTapped(_ sender: Any) {
+        PlayButton.pulsate()
+        mediumImpact.impactOccurred()
     }
-    
   
     @IBAction func AButtonTapped(_ sender: Any) {
+        AButton.pulsate()
+        mediumImpact.impactOccurred()
     }
     @IBAction func ASButtonTapped(_ sender: Any) {
+        ASButton.pulsate()
+        mediumImpact.impactOccurred()
     }
     @IBAction func BButtonTapped(_ sender: Any) {
+        BButton.pulsate()
+        mediumImpact.impactOccurred()
     }
     @IBAction func CButtonTapped(_ sender: Any) {
+        CButton.pulsate()
+        mediumImpact.impactOccurred()
     }
     @IBAction func CSButtonTapped(_ sender: Any) {
+        CSButton.pulsate()
+        mediumImpact.impactOccurred()
     }
     @IBAction func DButtonTapped(_ sender: Any) {
+        DButton.pulsate()
+        mediumImpact.impactOccurred()
     }
     @IBAction func DSButtonTapped(_ sender: Any) {
+        DSButton.pulsate()
+        mediumImpact.impactOccurred()
     }
     @IBAction func EButtonTapped(_ sender: Any) {
+        EButton.pulsate()
+        mediumImpact.impactOccurred()
     }
     @IBAction func FButtonTapped(_ sender: Any) {
+        FButton.pulsate()
+        mediumImpact.impactOccurred()
     }
     @IBAction func FSButtonTapped(_ sender: Any) {
+        FSButton.pulsate()
+        mediumImpact.impactOccurred()
     }
     @IBAction func GButtonTapped(_ sender: Any) {
+        GButton.pulsate()
+        mediumImpact.impactOccurred()
     }
     @IBAction func GSButtonTapped(_ sender: Any) {
+        GSButton.pulsate()
+        mediumImpact.impactOccurred()
     }
     
     @IBAction func HomeButtonTapped(_ sender: Any) {
+        HomeButton.pulsate()
+        mediumImpact.impactOccurred()
     }
     
     
