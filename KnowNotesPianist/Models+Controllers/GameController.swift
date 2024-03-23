@@ -109,16 +109,16 @@ struct GameController {
         self.currentGame = newGame
     }
     
-    mutating func restartGame(){
+mutating func restartGame(){
         let newGame = Game(gameType: self.gameType)
         self.currentGame = newGame
     }
     
-    func generateNextNoteID()-> Int {
+   mutating func generateNextNoteID()-> Int {
        return self.currentGame.generateNextNoteID()
     }
     
-    func updateGameWith(noteAnswerID:Int)->(isCorrect:Bool, isGameOver:Bool){
+   mutating func updateGameWith(noteAnswerID:Int)->(isCorrect:Bool, isGameOver:Bool){
         
         if noteAnswerID == currentGame.currentNoteID {
             self.currentGame.score = (self.currentGame.score + 1)
