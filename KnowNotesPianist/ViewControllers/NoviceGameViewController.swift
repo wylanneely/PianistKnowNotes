@@ -9,7 +9,7 @@ import UIKit
 
 class NoviceGameViewController: UIViewController {
     
-    var gameController = GameController(gameType: .Regular)
+    var gameController = GameController(gameType: .Novice)
     
     var currentNoteID: Int?
     
@@ -18,7 +18,7 @@ class NoviceGameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupButtons()
     }
     
     override var prefersStatusBarHidden: Bool {

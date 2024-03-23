@@ -9,7 +9,7 @@ import UIKit
 
 class PianistGameViewController: UIViewController {
     
-    var gameController = GameController(gameType: .Regular)
+    var gameController = GameController(gameType: .Pianist)
     
     var currentNoteID: Int?
     
@@ -17,7 +17,7 @@ class PianistGameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupButtons()
+        setUpButtons()
         updateGameStats()
     }
     
