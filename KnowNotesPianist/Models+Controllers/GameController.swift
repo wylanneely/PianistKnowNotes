@@ -87,7 +87,11 @@ class Game {
             return Int.random(in: 0...noteNumberID)
         }
     }
-
+    
+    func restart(){
+        self.score = 0
+        self.lifes = 5
+    }
     
     private func randomNoteFrom(noteNumber: Int)->Int{
         let randomInt = Int.random(in: 0..<noteNumber)
@@ -109,9 +113,8 @@ struct GameController {
         self.currentGame = newGame
     }
     
-mutating func restartGame(){
-        let newGame = Game(gameType: self.gameType)
-        self.currentGame = newGame
+    mutating func restartGame(){
+    self.currentGame.restart()
     }
     
    mutating func generateNextNoteID()-> Int {
