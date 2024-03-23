@@ -35,20 +35,59 @@ class Game {
         }
     }
     
-    func generateNote()->Int{
-        if currentNoteID == currentNoteID {
-            lastNoteID = currentNoteID
+//    func generateNote()->Int{
+//        if currentNoteID == currentNoteID {
+//            lastNoteID = currentNoteID
+//        }
+//        if lastNoteID == nil {
+//           let noteID = randomNoteFrom(noteNumber: noteNumber)
+//            currentNoteID = noteID
+//            return noteID
+//        }
+//        //add feature to make sure last note is not pulled 2x in a row
+//        let noteID = randomNoteFrom(noteNumber: noteNumber)
+//         currentNoteID = noteID
+//         return noteID
+//    }
+    
+    //updatesScore,lifes and returns if answer is correct and if game is over
+    func updateGameWith(noteAnswerID:Int)->(isCorrect:Bool, isGameOver:Bool){
+        if noteAnswerID == currentNoteID {
+            self.score = (score + 1)
+            return (isCorrect:true, isGameOver:false)
+        } else {
+            self.lifes = (lifes - 1)
+            if lifes == 0 {
+                return (isCorrect:false, isGameOver:true)
+            } else {
+                return (isCorrect:false, isGameOver:false)
+            }
         }
-        if lastNoteID == nil {
-           let noteID = randomNoteFrom(noteNumber: noteNumber)
-            currentNoteID = noteID
-            return noteID
-        }
-        //add feature to make sure last note is not pulled 2x in a row
-        let noteID = randomNoteFrom(noteNumber: noteNumber)
-         currentNoteID = noteID
-         return noteID
+        
     }
+    
+    func generateNextNoteID()->Int{
+        self.lastNoteID = self.currentNoteID
+        let nextNoteID = randomNoteID(upTo: noteNumber, excludingValue: lastNoteID)
+        self.currentNoteID = nextNoteID
+        return nextNoteID
+    }
+    
+   private func randomNoteID(upTo noteNumber: Int, excludingValue excludedNoteID: Int?) -> Int {
+        let noteNumberID = (noteNumber - 1)
+        
+        if let excludedNoteID = excludedNoteID {
+            var randomValue: Int
+            repeat {
+                randomValue = Int.random(in: 0...noteNumberID)
+            } while randomValue == excludedNoteID
+            
+            return randomValue
+        } else {
+            return Int.random(in: 0...noteNumberID)
+        }
+    }
+
     
     private func randomNoteFrom(noteNumber: Int)->Int{
         let randomInt = Int.random(in: 0..<noteNumber)
@@ -75,7 +114,29 @@ struct GameController {
         self.currentGame = newGame
     }
     
+    func generateNextNoteID()-> Int {
+       return self.currentGame.generateNextNoteID()
+    }
     
+    func updateGameWith(noteAnswerID:Int)->(isCorrect:Bool, isGameOver:Bool){
+        
+        if noteAnswerID == currentGame.currentNoteID {
+            self.currentGame.score = (self.currentGame.score + 1)
+            return (isCorrect:true, isGameOver:false)
+        } else {
+            self.currentGame.lifes = (currentGame.lifes - 1)
+            if currentGame.lifes == 0 {
+                return (isCorrect:false, isGameOver:true)
+            } else {
+                return (isCorrect:false, isGameOver:false)
+            }
+        }
+        
+    }
+    
+    func returnGameStats()->(score:Int, lifes:Int) {
+        return (score:currentGame.score,lifes:currentGame.lifes)
+    }
     
     
 }
