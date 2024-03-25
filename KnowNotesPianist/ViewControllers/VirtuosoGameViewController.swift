@@ -9,6 +9,12 @@ import UIKit
 
 class VirtuosoGameViewController: UIViewController {
 
+    var gameController = GameController(gameType: .Novice)
+    
+    var currentNoteID: Int?
+    
+    var isNewNote: Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,7 +25,9 @@ class VirtuosoGameViewController: UIViewController {
     }
     
     let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
-
+    let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
+    let guessedImpact = UIImpactFeedbackGenerator(style: .soft)
+    
     //MARK: - Outlets
     
     @IBOutlet weak var HomeButton: UIButton!
@@ -42,11 +50,52 @@ class VirtuosoGameViewController: UIViewController {
     @IBAction func PlayButtonTapped(_ sender: Any) {
         PlayButton.pulsate()
         mediumImpact.impactOccurred()
+        PlayButton.pulsate()
+        mediumImpact.impactOccurred()
+        if isNewNote {
+            self.currentNoteID = gameController.generateNextNoteID()
+            print("play sound \(String(describing: currentNoteID))")
+            self.isNewNote = false
+        } else {
+            print("play sound \(String(describing: currentNoteID))")
+        }
     }
   
+    var guessedNotesIDs = [Int]()
+
+    
     @IBAction func AButtonTapped(_ sender: Any) {
-        AButton.pulsate()
-        mediumImpact.impactOccurred()
+        if isNewNote {
+            AButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
+        } else {
+            if guessedNotesIDs.contains(0) {
+                AButton.pulsateGuessed()
+                guessedImpact.impactOccurred()
+            } else {
+                let result = gameController.updateGameWith(noteAnswerID: 0)
+                if result.isCorrect {
+                    AButton.pulsate()
+                    mediumImpact.impactOccurred()
+                    self.updateGameStats()
+                    self.isNewNote = true
+                    self.guessedNotesIDs = []
+                } else {
+                    if result.isGameOver {
+                        heavyImpact.impactOccurred()
+                        AButton.pulsateWrong()
+                        self.endGame()
+                    } else {
+                        heavyImpact.impactOccurred()
+                        AButton.pulsateWrong()
+                        self.guessedNotesIDs.append(0)
+                        self.updateGameStats()
+                    }
+                }
+            }
+        }
+
     }
     @IBAction func ASButtonTapped(_ sender: Any) {
         ASButton.pulsate()
@@ -94,11 +143,30 @@ class VirtuosoGameViewController: UIViewController {
     }
     
     @IBAction func HomeButtonTapped(_ sender: Any) {
+        restartGame()
         HomeButton.pulsate()
         mediumImpact.impactOccurred()
+        updateGameStats()
     }
     
+    //MARK: - CRUD Functions
     
+    func updateGameStats(){
+        let result = gameController.returnGameStats()
+        //self.LifeLabel.text = "Life: \(result.lifes)"
+      //  self.ScoreLabel.text = "Score: \(result.score)"
+    }
+    
+    func endGame(){
+        let result = gameController.returnGameStats()
+       // self.LifeLabel.text = "Game Over"
+       // self.ScoreLabel.text = "Final Score: \(result.score)"
+    }
+    
+    func restartGame(){
+        gameController.restartGame()
+        updateGameStats()
+    }
     
     /*
     // MARK: - Navigation
