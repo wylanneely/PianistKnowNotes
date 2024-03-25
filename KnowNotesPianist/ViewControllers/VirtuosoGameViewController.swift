@@ -14,19 +14,63 @@ class VirtuosoGameViewController: UIViewController {
     var currentNoteID: Int?
     
     var isNewNote: Bool = true
+    var guessedNotesIDs = [Int]()
+
+    let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
+    let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
+    let guessedImpact = UIImpactFeedbackGenerator(style: .soft)
+    
+    //MARK: - Overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUpButtons()
     }
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
-    let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
-    let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
-    let guessedImpact = UIImpactFeedbackGenerator(style: .soft)
+    //MARK: - SetUP
+    
+    func setUpButtons(){
+        AButton.layer.shadowColor = UIColor(named: "GreenShadowColor")?.cgColor
+        AButton.layer.shadowOffset = CGSize(width: 1.3, height: 3.0)
+        AButton.layer.shadowRadius = 8
+        AButton.layer.shadowOpacity = 0.6
+        BButton.layer.shadowColor = UIColor.black.cgColor
+        BButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
+        BButton.layer.shadowRadius = 8
+        BButton.layer.shadowOpacity = 0.6
+        CButton.layer.shadowColor = UIColor.black.cgColor
+        CButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
+        CButton.layer.shadowRadius = 8
+        CButton.layer.shadowOpacity = 0.6
+        DButton.layer.shadowColor = UIColor.black.cgColor
+        DButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
+        DButton.layer.shadowRadius = 8
+        DButton.layer.shadowOpacity = 0.6
+        EButton.layer.shadowColor = UIColor.black.cgColor
+        EButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
+        EButton.layer.shadowRadius = 8
+        EButton.layer.shadowOpacity = 0.6
+        FButton.layer.shadowColor = UIColor(named: "GreenShadowColor")?.cgColor
+        FButton.layer.shadowOffset = CGSize(width: 1.3, height: 3.0)
+        FButton.layer.shadowRadius = 8
+        FButton.layer.shadowOpacity = 0.6
+        GButton.layer.shadowColor = UIColor.black.cgColor
+        GButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
+        GButton.layer.shadowRadius = 8
+        GButton.layer.shadowOpacity = 0.6
+        PlayButton.layer.shadowColor = UIColor.black.cgColor
+        PlayButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
+        PlayButton.layer.shadowRadius = 8
+        PlayButton.layer.shadowOpacity = 0.6
+        HomeButton.layer.shadowColor = UIColor.black.cgColor
+        HomeButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
+        HomeButton.layer.shadowRadius = 8
+        HomeButton.layer.shadowOpacity = 0.6
+    }
     
     //MARK: - Outlets
     
@@ -60,9 +104,6 @@ class VirtuosoGameViewController: UIViewController {
             print("play sound \(String(describing: currentNoteID))")
         }
     }
-  
-    var guessedNotesIDs = [Int]()
-
     
     @IBAction func AButtonTapped(_ sender: Any) {
         if isNewNote {
@@ -98,48 +139,357 @@ class VirtuosoGameViewController: UIViewController {
 
     }
     @IBAction func ASButtonTapped(_ sender: Any) {
-        ASButton.pulsate()
-        mediumImpact.impactOccurred()
+        if isNewNote {
+            ASButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
+        } else {
+            if guessedNotesIDs.contains(1) {
+                ASButton.pulsateGuessed()
+                guessedImpact.impactOccurred()
+            } else {
+                let result = gameController.updateGameWith(noteAnswerID: 1)
+                if result.isCorrect {
+                    ASButton.pulsate()
+                    mediumImpact.impactOccurred()
+                    self.updateGameStats()
+                    self.isNewNote = true
+                    self.guessedNotesIDs = []
+                } else {
+                    if result.isGameOver {
+                        heavyImpact.impactOccurred()
+                        ASButton.pulsateWrong()
+                        self.endGame()
+                    } else {
+                        heavyImpact.impactOccurred()
+                        ASButton.pulsateWrong()
+                        self.guessedNotesIDs.append(1)
+                        self.updateGameStats()
+                    }
+                }
+            }
+        }
     }
     @IBAction func BButtonTapped(_ sender: Any) {
-        BButton.pulsate()
-        mediumImpact.impactOccurred()
+        if isNewNote {
+            BButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
+        } else {
+            if guessedNotesIDs.contains(2) {
+                BButton.pulsateGuessed()
+                guessedImpact.impactOccurred()
+            } else {
+                let result = gameController.updateGameWith(noteAnswerID: 2)
+                if result.isCorrect {
+                    BButton.pulsate()
+                    mediumImpact.impactOccurred()
+                    self.updateGameStats()
+                    self.isNewNote = true
+                    self.guessedNotesIDs = []
+                } else {
+                    if result.isGameOver {
+                        heavyImpact.impactOccurred()
+                        BButton.pulsateWrong()
+                        self.endGame()
+                    } else {
+                        heavyImpact.impactOccurred()
+                        BButton.pulsateWrong()
+                        self.guessedNotesIDs.append(2)
+                        self.updateGameStats()
+                    }
+                }
+            }
+        }
+
     }
     @IBAction func CButtonTapped(_ sender: Any) {
-        CButton.pulsate()
-        mediumImpact.impactOccurred()
+        if isNewNote {
+            CButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
+        } else {
+            if guessedNotesIDs.contains(3) {
+                CButton.pulsateGuessed()
+                guessedImpact.impactOccurred()
+            } else {
+                let result = gameController.updateGameWith(noteAnswerID: 3)
+                if result.isCorrect {
+                    CButton.pulsate()
+                    mediumImpact.impactOccurred()
+                    self.updateGameStats()
+                    self.isNewNote = true
+                    self.guessedNotesIDs = []
+                } else {
+                    if result.isGameOver {
+                        heavyImpact.impactOccurred()
+                        CButton.pulsateWrong()
+                        self.endGame()
+                    } else {
+                        heavyImpact.impactOccurred()
+                        CButton.pulsateWrong()
+                        self.guessedNotesIDs.append(3)
+                        self.updateGameStats()
+                    }
+                }
+            }
+        }
     }
     @IBAction func CSButtonTapped(_ sender: Any) {
-        CSButton.pulsate()
-        mediumImpact.impactOccurred()
+        if isNewNote {
+            CSButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
+        } else {
+            if guessedNotesIDs.contains(4) {
+                CSButton.pulsateGuessed()
+                guessedImpact.impactOccurred()
+            } else {
+                let result = gameController.updateGameWith(noteAnswerID: 4)
+                if result.isCorrect {
+                    CSButton.pulsate()
+                    mediumImpact.impactOccurred()
+                    self.updateGameStats()
+                    self.isNewNote = true
+                    self.guessedNotesIDs = []
+                } else {
+                    if result.isGameOver {
+                        heavyImpact.impactOccurred()
+                        CSButton.pulsateWrong()
+                        self.endGame()
+                    } else {
+                        heavyImpact.impactOccurred()
+                        CSButton.pulsateWrong()
+                        self.guessedNotesIDs.append(4)
+                        self.updateGameStats()
+                    }
+                }
+            }
+        }
     }
     @IBAction func DButtonTapped(_ sender: Any) {
-        DButton.pulsate()
-        mediumImpact.impactOccurred()
+        if isNewNote {
+            DButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
+        } else {
+            if guessedNotesIDs.contains(5) {
+                DButton.pulsateGuessed()
+                guessedImpact.impactOccurred()
+            } else {
+                let result = gameController.updateGameWith(noteAnswerID: 5)
+                if result.isCorrect {
+                    DButton.pulsate()
+                    mediumImpact.impactOccurred()
+                    self.updateGameStats()
+                    self.isNewNote = true
+                    self.guessedNotesIDs = []
+                } else {
+                    if result.isGameOver {
+                        heavyImpact.impactOccurred()
+                        DButton.pulsateWrong()
+                        self.endGame()
+                    } else {
+                        heavyImpact.impactOccurred()
+                        DButton.pulsateWrong()
+                        self.guessedNotesIDs.append(5)
+                        self.updateGameStats()
+                    }
+                }
+            }
+        }
     }
     @IBAction func DSButtonTapped(_ sender: Any) {
-        DSButton.pulsate()
-        mediumImpact.impactOccurred()
+        if isNewNote {
+            DSButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
+        } else {
+            if guessedNotesIDs.contains(6) {
+                DSButton.pulsateGuessed()
+                guessedImpact.impactOccurred()
+            } else {
+                let result = gameController.updateGameWith(noteAnswerID: 6)
+                if result.isCorrect {
+                    DSButton.pulsate()
+                    mediumImpact.impactOccurred()
+                    self.updateGameStats()
+                    self.isNewNote = true
+                    self.guessedNotesIDs = []
+                } else {
+                    if result.isGameOver {
+                        heavyImpact.impactOccurred()
+                        DSButton.pulsateWrong()
+                        self.endGame()
+                    } else {
+                        heavyImpact.impactOccurred()
+                        DSButton.pulsateWrong()
+                        self.guessedNotesIDs.append(6)
+                        self.updateGameStats()
+                    }
+                }
+            }
+        }
     }
     @IBAction func EButtonTapped(_ sender: Any) {
-        EButton.pulsate()
-        mediumImpact.impactOccurred()
+        if isNewNote {
+            EButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
+        } else {
+            if guessedNotesIDs.contains(7) {
+                EButton.pulsateGuessed()
+                guessedImpact.impactOccurred()
+            } else {
+                let result = gameController.updateGameWith(noteAnswerID: 7)
+                if result.isCorrect {
+                    EButton.pulsate()
+                    mediumImpact.impactOccurred()
+                    self.updateGameStats()
+                    self.isNewNote = true
+                    self.guessedNotesIDs = []
+                } else {
+                    if result.isGameOver {
+                        heavyImpact.impactOccurred()
+                        EButton.pulsateWrong()
+                        self.endGame()
+                    } else {
+                        heavyImpact.impactOccurred()
+                        EButton.pulsateWrong()
+                        self.guessedNotesIDs.append(7)
+                        self.updateGameStats()
+                    }
+                }
+            }
+        }
     }
     @IBAction func FButtonTapped(_ sender: Any) {
-        FButton.pulsate()
-        mediumImpact.impactOccurred()
+        if isNewNote {
+            FButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
+        } else {
+            if guessedNotesIDs.contains(8) {
+                FButton.pulsateGuessed()
+                guessedImpact.impactOccurred()
+            } else {
+                let result = gameController.updateGameWith(noteAnswerID: 8)
+                if result.isCorrect {
+                    FButton.pulsate()
+                    mediumImpact.impactOccurred()
+                    self.updateGameStats()
+                    self.isNewNote = true
+                    self.guessedNotesIDs = []
+                } else {
+                    if result.isGameOver {
+                        heavyImpact.impactOccurred()
+                        FButton.pulsateWrong()
+                        self.endGame()
+                    } else {
+                        heavyImpact.impactOccurred()
+                        FButton.pulsateWrong()
+                        self.guessedNotesIDs.append(8)
+                        self.updateGameStats()
+                    }
+                }
+            }
+        }
     }
     @IBAction func FSButtonTapped(_ sender: Any) {
-        FSButton.pulsate()
-        mediumImpact.impactOccurred()
+        if isNewNote {
+            FSButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
+        } else {
+            if guessedNotesIDs.contains(9) {
+                FSButton.pulsateGuessed()
+                guessedImpact.impactOccurred()
+            } else {
+                let result = gameController.updateGameWith(noteAnswerID: 9)
+                if result.isCorrect {
+                    FSButton.pulsate()
+                    mediumImpact.impactOccurred()
+                    self.updateGameStats()
+                    self.isNewNote = true
+                    self.guessedNotesIDs = []
+                } else {
+                    if result.isGameOver {
+                        heavyImpact.impactOccurred()
+                        FSButton.pulsateWrong()
+                        self.endGame()
+                    } else {
+                        heavyImpact.impactOccurred()
+                        FSButton.pulsateWrong()
+                        self.guessedNotesIDs.append(9)
+                        self.updateGameStats()
+                    }
+                }
+            }
+        }
     }
     @IBAction func GButtonTapped(_ sender: Any) {
-        GButton.pulsate()
-        mediumImpact.impactOccurred()
+        if isNewNote {
+            GButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
+        } else {
+            if guessedNotesIDs.contains(10) {
+                GButton.pulsateGuessed()
+                guessedImpact.impactOccurred()
+            } else {
+                let result = gameController.updateGameWith(noteAnswerID: 10)
+                if result.isCorrect {
+                    GButton.pulsate()
+                    mediumImpact.impactOccurred()
+                    self.updateGameStats()
+                    self.isNewNote = true
+                    self.guessedNotesIDs = []
+                } else {
+                    if result.isGameOver {
+                        heavyImpact.impactOccurred()
+                        GButton.pulsateWrong()
+                        self.endGame()
+                    } else {
+                        heavyImpact.impactOccurred()
+                        GButton.pulsateWrong()
+                        self.guessedNotesIDs.append(10)
+                        self.updateGameStats()
+                    }
+                }
+            }
+        }
     }
     @IBAction func GSButtonTapped(_ sender: Any) {
-        GSButton.pulsate()
-        mediumImpact.impactOccurred()
+        if isNewNote {
+            GSButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
+        } else {
+            if guessedNotesIDs.contains(11) {
+                GSButton.pulsateGuessed()
+                guessedImpact.impactOccurred()
+            } else {
+                let result = gameController.updateGameWith(noteAnswerID: 11)
+                if result.isCorrect {
+                    GSButton.pulsate()
+                    mediumImpact.impactOccurred()
+                    self.updateGameStats()
+                    self.isNewNote = true
+                    self.guessedNotesIDs = []
+                } else {
+                    if result.isGameOver {
+                        heavyImpact.impactOccurred()
+                        GSButton.pulsateWrong()
+                        self.endGame()
+                    } else {
+                        heavyImpact.impactOccurred()
+                        GSButton.pulsateWrong()
+                        self.guessedNotesIDs.append(11)
+                        self.updateGameStats()
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func HomeButtonTapped(_ sender: Any) {
