@@ -25,6 +25,7 @@ class VirtuosoGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpButtons()
+        updateGameStats()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -37,7 +38,11 @@ class VirtuosoGameViewController: UIViewController {
         AButton.layer.shadowColor = UIColor(named: "GreenShadowColor")?.cgColor
         AButton.layer.shadowOffset = CGSize(width: 1.3, height: 3.0)
         AButton.layer.shadowRadius = 8
-        AButton.layer.shadowOpacity = 0.6
+        AButton.layer.shadowOpacity = 0.6 
+        ASButton.layer.shadowColor = UIColor(named: "GreenShadowColor")?.cgColor
+        ASButton.layer.shadowOffset = CGSize(width: 1.3, height: 3.0)
+        ASButton.layer.shadowRadius = 8
+        ASButton.layer.shadowOpacity = 0.6
         BButton.layer.shadowColor = UIColor.black.cgColor
         BButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         BButton.layer.shadowRadius = 8
@@ -46,22 +51,38 @@ class VirtuosoGameViewController: UIViewController {
         CButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         CButton.layer.shadowRadius = 8
         CButton.layer.shadowOpacity = 0.6
+        CSButton.layer.shadowColor = UIColor.black.cgColor
+        CSButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
+        CSButton.layer.shadowRadius = 8
+        CSButton.layer.shadowOpacity = 0.6
         DButton.layer.shadowColor = UIColor.black.cgColor
         DButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         DButton.layer.shadowRadius = 8
         DButton.layer.shadowOpacity = 0.6
+        DSButton.layer.shadowColor = UIColor.black.cgColor
+        DSButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
+        DSButton.layer.shadowRadius = 8
+        DSButton.layer.shadowOpacity = 0.6
         EButton.layer.shadowColor = UIColor.black.cgColor
         EButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         EButton.layer.shadowRadius = 8
         EButton.layer.shadowOpacity = 0.6
-        FButton.layer.shadowColor = UIColor(named: "GreenShadowColor")?.cgColor
+        FButton.layer.shadowColor = UIColor.black.cgColor
         FButton.layer.shadowOffset = CGSize(width: 1.3, height: 3.0)
         FButton.layer.shadowRadius = 8
         FButton.layer.shadowOpacity = 0.6
+        FSButton.layer.shadowColor = UIColor.black.cgColor
+        FSButton.layer.shadowOffset = CGSize(width: 1.3, height: 3.0)
+        FSButton.layer.shadowRadius = 8
+        FSButton.layer.shadowOpacity = 0.6
         GButton.layer.shadowColor = UIColor.black.cgColor
         GButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         GButton.layer.shadowRadius = 8
         GButton.layer.shadowOpacity = 0.6
+        GSButton.layer.shadowColor = UIColor.black.cgColor
+        GSButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
+        GSButton.layer.shadowRadius = 8
+        GSButton.layer.shadowOpacity = 0.6
         PlayButton.layer.shadowColor = UIColor.black.cgColor
         PlayButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         PlayButton.layer.shadowRadius = 8
