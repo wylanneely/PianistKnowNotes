@@ -184,6 +184,9 @@ class NoviceGameViewController: UIViewController {
         updateGameStats()
     }
     
+    //MARK: - CRUD Functions
+
+    
     func updateGameStats(){
         let result = gameController.returnGameStats()
         //self.LifeLabel.text = "Life: \(result.lifes)"

@@ -14,7 +14,13 @@ class PianistGameViewController: UIViewController {
     var currentNoteID: Int?
     
     var isNewNote: Bool = true
+    var guessedNotesIDs = [Int]()
+    
+    let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
+    let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
+    let guessedImpact = UIImpactFeedbackGenerator(style: .soft)
 
+    //MARK: - Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpButtons()
@@ -25,10 +31,8 @@ class PianistGameViewController: UIViewController {
         return true
     }
     
-    let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
-    let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
-    let guessedImpact = UIImpactFeedbackGenerator(style: .soft)
-
+    //MARK: - SetUP
+    
     func setUpButtons(){
         AButton.layer.shadowColor = UIColor(named: "GreenShadowColor")?.cgColor
         AButton.layer.shadowOffset = CGSize(width: 1.3, height: 3.0)
@@ -94,7 +98,6 @@ class PianistGameViewController: UIViewController {
             print("play sound \(String(describing: currentNoteID))")
         }
     }
-    var guessedNotesIDs = [Int]()
 
     @IBAction func AButtonTapped(_ sender: Any) {
         if isNewNote {
@@ -329,6 +332,8 @@ class PianistGameViewController: UIViewController {
         mediumImpact.impactOccurred()
         updateGameStats()
     }
+    
+    //MARK: - CRUD Functions
     
     func updateGameStats(){
         let result = gameController.returnGameStats()

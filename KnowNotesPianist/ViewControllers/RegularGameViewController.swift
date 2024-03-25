@@ -14,18 +14,24 @@ class RegularGameViewController: UIViewController {
     var currentNoteID: Int?
     
     var isNewNote: Bool = true
+    var guessedNotesIDs = [Int]()
+    
+    let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
+    let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
+    let guessedImpact = UIImpactFeedbackGenerator(style: .soft)
 
+    //MARK: - Override
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButtons()
+        updateGameStats()
     }
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
-    let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
-    let haveImpact = UIImpactFeedbackGenerator(style: .heavy)
     
     //MARK: - SetUp
     
@@ -86,128 +92,176 @@ class RegularGameViewController: UIViewController {
         }
         
     }
-    
-    var guessedNotesIDs = [Int]()
-    
+        
     @IBAction func AButtonTapped(_ sender: Any) {
-        if guessedNotesIDs.contains(0) {
-            //add pulsate that indicates already guessed
-            //add haptic feedback that allows user to know already guessed
+        if isNewNote {
+            AButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         } else {
-            AButton.pulsate()
-            mediumImpact.impactOccurred()
-            let result = gameController.updateGameWith(noteAnswerID: 0)
-            if result.isCorrect {
-                self.updateGameStats()
-                self.isNewNote = true
-                self.guessedNotesIDs = []
+            if guessedNotesIDs.contains(0) {
+                AButton.pulsateGuessed()
+                guessedImpact.impactOccurred()
             } else {
-                if result.isGameOver {
-                    self.endGame()
-                } else {
-                    self.guessedNotesIDs.append(0)
+                let result = gameController.updateGameWith(noteAnswerID: 0)
+                if result.isCorrect {
+                    AButton.pulsate()
+                    mediumImpact.impactOccurred()
                     self.updateGameStats()
+                    self.isNewNote = true
+                    self.guessedNotesIDs = []
+                } else {
+                    if result.isGameOver {
+                        heavyImpact.impactOccurred()
+                        AButton.pulsateWrong()
+                        self.endGame()
+                    } else {
+                        heavyImpact.impactOccurred()
+                        AButton.pulsateWrong()
+                        self.guessedNotesIDs.append(0)
+                        self.updateGameStats()
+                    }
                 }
             }
         }
     }
     @IBAction func CButtonTapped(_ sender: Any) {
-        if guessedNotesIDs.contains(1) {
-            //add pulsate that indicates already guessed
-            //add haptic feedback that allows user to know already guessed
+        if isNewNote {
+            CButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         } else {
-            CButton.pulsate()
-            mediumImpact.impactOccurred()
-            let result = gameController.updateGameWith(noteAnswerID: 1)
-            if result.isCorrect {
-                self.updateGameStats()
-                self.isNewNote = true
-                self.guessedNotesIDs = []
+            if guessedNotesIDs.contains(1) {
+                CButton.pulsateGuessed()
+                guessedImpact.impactOccurred()
             } else {
-                if result.isGameOver {
-                    self.endGame()
-                } else {
-                    self.guessedNotesIDs.append(1)
+                let result = gameController.updateGameWith(noteAnswerID: 1)
+                if result.isCorrect {
+                    CButton.pulsate()
+                    mediumImpact.impactOccurred()
                     self.updateGameStats()
+                    self.isNewNote = true
+                    self.guessedNotesIDs = []
+                } else {
+                    if result.isGameOver {
+                        heavyImpact.impactOccurred()
+                        CButton.pulsateWrong()
+                        self.endGame()
+                    } else {
+                        heavyImpact.impactOccurred()
+                        CButton.pulsateWrong()
+                        self.guessedNotesIDs.append(1)
+                        self.updateGameStats()
+                    }
                 }
             }
         }
-
     }
     @IBAction func DButtonTapped(_ sender: Any) {
-        if guessedNotesIDs.contains(2) {
-            //add pulsate that indicates already guessed
-            //add haptic feedback that allows user to know already guessed
+        if isNewNote {
+            DButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         } else {
-            DButton.pulsate()
-            mediumImpact.impactOccurred()
-            let result = gameController.updateGameWith(noteAnswerID: 2)
-            if result.isCorrect {
-                self.updateGameStats()
-                self.isNewNote = true
-                self.guessedNotesIDs = []
+            if guessedNotesIDs.contains(2) {
+                DButton.pulsateGuessed()
+                guessedImpact.impactOccurred()
             } else {
-                if result.isGameOver {
-                    self.endGame()
-                } else {
-                    self.guessedNotesIDs.append(2)
+                let result = gameController.updateGameWith(noteAnswerID: 2)
+                if result.isCorrect {
+                    DButton.pulsate()
+                    mediumImpact.impactOccurred()
                     self.updateGameStats()
+                    self.isNewNote = true
+                    self.guessedNotesIDs = []
+                } else {
+                    if result.isGameOver {
+                        heavyImpact.impactOccurred()
+                        DButton.pulsateWrong()
+                        self.endGame()
+                    } else {
+                        heavyImpact.impactOccurred()
+                        DButton.pulsateWrong()
+                        self.guessedNotesIDs.append(2)
+                        self.updateGameStats()
+                    }
                 }
             }
         }
-
     }
     @IBAction func EButtonTapped(_ sender: Any) {
-        if guessedNotesIDs.contains(3) {
-            //add pulsate that indicates already guessed
-            //add haptic feedback that allows user to know already guessed
+        if isNewNote {
+            EButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         } else {
-            EButton.pulsate()
-            mediumImpact.impactOccurred()
-            let result = gameController.updateGameWith(noteAnswerID: 3)
-            if result.isCorrect {
-                self.updateGameStats()
-                self.isNewNote = true
-                self.guessedNotesIDs = []
+            if guessedNotesIDs.contains(3) {
+                EButton.pulsateGuessed()
+                guessedImpact.impactOccurred()
             } else {
-                if result.isGameOver {
-                    self.endGame()
-                } else {
-                    self.guessedNotesIDs.append(3)
+                let result = gameController.updateGameWith(noteAnswerID: 3)
+                if result.isCorrect {
+                    EButton.pulsate()
+                    mediumImpact.impactOccurred()
                     self.updateGameStats()
+                    self.isNewNote = true
+                    self.guessedNotesIDs = []
+                } else {
+                    if result.isGameOver {
+                        heavyImpact.impactOccurred()
+                        EButton.pulsateWrong()
+                        self.endGame()
+                    } else {
+                        heavyImpact.impactOccurred()
+                        EButton.pulsateWrong()
+                        self.guessedNotesIDs.append(3)
+                        self.updateGameStats()
+                    }
                 }
             }
         }
-
     }
     @IBAction func GButtonTapped(_ sender: Any) {
-        if guessedNotesIDs.contains(4) {
-            //add pulsate that indicates already guessed
-            //add haptic feedback that allows user to know already guessed
+        if isNewNote {
+            GButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         } else {
-            GButton.pulsate()
-            mediumImpact.impactOccurred()
-            let result = gameController.updateGameWith(noteAnswerID: 4)
-            if result.isCorrect {
-                self.updateGameStats()
-                self.isNewNote = true
-                self.guessedNotesIDs = []
+            if guessedNotesIDs.contains(4) {
+                GButton.pulsateGuessed()
+                guessedImpact.impactOccurred()
             } else {
-                if result.isGameOver {
-                    self.endGame()
-                } else {
-                    self.guessedNotesIDs.append(4)
+                let result = gameController.updateGameWith(noteAnswerID: 4)
+                if result.isCorrect {
+                    GButton.pulsate()
+                    mediumImpact.impactOccurred()
                     self.updateGameStats()
+                    self.isNewNote = true
+                    self.guessedNotesIDs = []
+                } else {
+                    if result.isGameOver {
+                        heavyImpact.impactOccurred()
+                        GButton.pulsateWrong()
+                        self.endGame()
+                    } else {
+                        heavyImpact.impactOccurred()
+                        GButton.pulsateWrong()
+                        self.guessedNotesIDs.append(4)
+                        self.updateGameStats()
+                    }
                 }
             }
         }
-
     }
     
     @IBAction func HomeButtonTapped(_ sender: Any) {
+        restartGame()
         HomeButton.pulsate()
         mediumImpact.impactOccurred()
+        updateGameStats()
     }
+    
+    //MARK: - CRUD Functions
     
     func updateGameStats(){
         let result = gameController.returnGameStats()
@@ -219,6 +273,11 @@ class RegularGameViewController: UIViewController {
         let result = gameController.returnGameStats()
         self.LifeLabel.text = "Game Over"
         self.ScoreLabel.text = "Final Score: \(result.score)"
+    }
+    
+    func restartGame(){
+        gameController.restartGame()
+        updateGameStats()
     }
     
     /*
