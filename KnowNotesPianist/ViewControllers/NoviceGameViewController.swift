@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class NoviceGameViewController: UIViewController {
     
@@ -14,8 +15,15 @@ class NoviceGameViewController: UIViewController {
     var currentNoteID: Int?
     
     var isNewNote: Bool = true
+    var guessedNotesIDs = [Int]()
 
+    let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
+    let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
+    let guessedImpact = UIImpactFeedbackGenerator(style: .soft)
 
+    
+    //MARK: - Overrides
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButtons()
@@ -25,9 +33,6 @@ class NoviceGameViewController: UIViewController {
         return true
     }
     
-    let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
-    let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
-    let guessedImpact = UIImpactFeedbackGenerator(style: .soft)
     
     //MARK: SetUp
     func setupButtons(){
@@ -52,6 +57,18 @@ class NoviceGameViewController: UIViewController {
         HomeButton.layer.shadowRadius = 8
         HomeButton.layer.shadowOpacity = 0.6
     }
+    
+    //MARK: - Audio
+    var soundController: SoundController = SoundController(soundPack: FreePianoPack, gameType: .Novice)
+   // var soundPack: SoundPack = FreePianoPack
+    var player: AVAudioPlayer!
+    
+    func playSound(noteAnswerID:Int){
+        if let soundURL = soundController.returnSoundPathFrom(noteID: noteAnswerID) {
+           player = try! AVAudioPlayer(contentsOf: soundURL)
+            player!.play()
+        }
+    }
 
     //MARK: - Outlets
     
@@ -64,21 +81,27 @@ class NoviceGameViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func PlayButtonTapped(_ sender: Any) {
-        PlayButton.pulsate()
-        mediumImpact.impactOccurred()
-        PlayButton.pulsate()
-        mediumImpact.impactOccurred()
         if isNewNote {
             self.currentNoteID = gameController.generateNextNoteID()
-            print("play sound \(String(describing: currentNoteID))")
+            if let cNoteID = currentNoteID {
+                DispatchQueue.main.async{
+                    self.playSound(noteAnswerID: cNoteID)
+                    self.PlayButton.pulsate()
+                    self.mediumImpact.impactOccurred()
+                }
+            }
             self.isNewNote = false
         } else {
-            print("play sound \(String(describing: currentNoteID))")
+            if let cNoteID = currentNoteID {
+                DispatchQueue.main.async{
+                    self.playSound(noteAnswerID: cNoteID)
+                    self.PlayButton.pulsate()
+                    self.mediumImpact.impactOccurred()
+                }
+            }
         }
     }
     
-    var guessedNotesIDs = [Int]()
-
     
     @IBAction func AButtonTapped(_ sender: Any) {
         if isNewNote {
@@ -91,6 +114,7 @@ class NoviceGameViewController: UIViewController {
                 guessedImpact.impactOccurred()
             } else {
                 let result = gameController.updateGameWith(noteAnswerID: 0)
+                self.playSound(noteAnswerID: 0)
                 if result.isCorrect {
                     AButton.pulsate()
                     mediumImpact.impactOccurred()
@@ -123,6 +147,7 @@ class NoviceGameViewController: UIViewController {
                 guessedImpact.impactOccurred()
             } else {
                 let result = gameController.updateGameWith(noteAnswerID: 1)
+                self.playSound(noteAnswerID: 1)
                 if result.isCorrect {
                     CButton.pulsate()
                     mediumImpact.impactOccurred()
@@ -155,6 +180,7 @@ class NoviceGameViewController: UIViewController {
                 guessedImpact.impactOccurred()
             } else {
                 let result = gameController.updateGameWith(noteAnswerID: 2)
+                self.playSound(noteAnswerID: 2)
                 if result.isCorrect {
                     GButton.pulsate()
                     mediumImpact.impactOccurred()
