@@ -48,16 +48,16 @@ struct Note {
     
 }
 //MARK: - FreePiano
-let FPiano_A = Note(note: "FPiano_A", noteID: 0, soundFileName: "FPiano_ANote")
-let FPiano_AS = Note(note: "FPiano_AS", noteID: 1, soundFileName: "FPiano_ASNote")
-let FPiano_B = Note(note: "FPiano_B", noteID: 2, soundFileName: "FPiano_BNote")
-let FPiano_C = Note(note: "FPiano_C", noteID: 3, soundFileName: "FPiano_CNote")
-let FPiano_CS = Note(note: "FPiano_CS", noteID: 4, soundFileName: "FPiano_CSNote")
-let FPiano_D = Note(note: "FPiano_D", noteID: 5, soundFileName: "FPiano_DNote")
-let FPiano_DS = Note(note: "FPiano_DS", noteID: 6, soundFileName: "FPiano_DSNote")
-let FPiano_E = Note(note: "FPiano_E", noteID: 7, soundFileName: "FPiano_ENote")
-let FPiano_F = Note(note: "FPiano_F", noteID: 8, soundFileName: "FPiano_FNote")
-let FPiano_FS = Note(note: "FPiano_FS", noteID: 9, soundFileName: "FPiano_FSNote")
-let FPiano_G = Note(note: "FPiano_G", noteID: 10, soundFileName: "FPiano_GNote")
-let FPiano_GS = Note(note: "FPiano_GS", noteID: 11, soundFileName: "FPiano_GSNote")
+let FPiano_A = Note(note: "FPiano_A", noteID: 0, soundFileName: "FPiano-ANote")
+let FPiano_AS = Note(note: "FPiano_AS", noteID: 1, soundFileName: "FPiano-ASNote")
+let FPiano_B = Note(note: "FPiano_B", noteID: 2, soundFileName: "FPiano-BNote")
+let FPiano_C = Note(note: "FPiano_C", noteID: 3, soundFileName: "FPiano-CNote")
+let FPiano_CS = Note(note: "FPiano_CS", noteID: 4, soundFileName: "FPiano-CSNote")
+let FPiano_D = Note(note: "FPiano_D", noteID: 5, soundFileName: "FPiano-DNote")
+let FPiano_DS = Note(note: "FPiano_DS", noteID: 6, soundFileName: "FPiano-DSNote")
+let FPiano_E = Note(note: "FPiano_E", noteID: 7, soundFileName: "FPiano-ENote")
+let FPiano_F = Note(note: "FPiano_F", noteID: 8, soundFileName: "FPiano-FNote")
+let FPiano_FS = Note(note: "FPiano_FS", noteID: 9, soundFileName: "FPiano-FSNote")
+let FPiano_G = Note(note: "FPiano_G", noteID: 10, soundFileName: "FPiano-GNote")
+let FPiano_GS = Note(note: "FPiano_GS", noteID: 11, soundFileName: "FPiano-GSNote")
 
