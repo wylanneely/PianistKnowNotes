@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class RegularGameViewController: UIViewController {
     
@@ -30,6 +31,18 @@ class RegularGameViewController: UIViewController {
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    //MARK: - Audio
+    var soundController: SoundController = SoundController(soundPack: FreePianoPack, gameType: .Regular)
+   // var soundPack: SoundPack = FreePianoPack
+    var player: AVAudioPlayer!
+    
+    func playSound(noteAnswerID:Int){
+        if let soundURL = soundController.returnSoundPathFrom(noteID: noteAnswerID) {
+           player = try! AVAudioPlayer(contentsOf: soundURL)
+            player!.play()
+        }
     }
     
     
@@ -81,16 +94,28 @@ class RegularGameViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func PlayButtonTapped(_ sender: Any) {
-        PlayButton.pulsate()
-        mediumImpact.impactOccurred()
         if isNewNote {
             self.currentNoteID = gameController.generateNextNoteID()
             print("play sound \(String(describing: currentNoteID))")
+
+            if let cNoteID = currentNoteID {
+                DispatchQueue.main.async{
+                    self.playSound(noteAnswerID: cNoteID)
+                    self.PlayButton.pulsate()
+                    self.mediumImpact.impactOccurred()
+                }
+            }
             self.isNewNote = false
         } else {
             print("play sound \(String(describing: currentNoteID))")
+            if let cNoteID = currentNoteID {
+                DispatchQueue.main.async{
+                    self.playSound(noteAnswerID: cNoteID)
+                    self.PlayButton.pulsate()
+                    self.mediumImpact.impactOccurred()
+                }
+            }
         }
-        
     }
         
     @IBAction func AButtonTapped(_ sender: Any) {
@@ -104,6 +129,7 @@ class RegularGameViewController: UIViewController {
                 guessedImpact.impactOccurred()
             } else {
                 let result = gameController.updateGameWith(noteAnswerID: 0)
+                self.playSound(noteAnswerID: 0)
                 if result.isCorrect {
                     AButton.pulsate()
                     mediumImpact.impactOccurred()
@@ -136,6 +162,7 @@ class RegularGameViewController: UIViewController {
                 guessedImpact.impactOccurred()
             } else {
                 let result = gameController.updateGameWith(noteAnswerID: 1)
+                self.playSound(noteAnswerID: 1)
                 if result.isCorrect {
                     CButton.pulsate()
                     mediumImpact.impactOccurred()
@@ -168,6 +195,7 @@ class RegularGameViewController: UIViewController {
                 guessedImpact.impactOccurred()
             } else {
                 let result = gameController.updateGameWith(noteAnswerID: 2)
+                self.playSound(noteAnswerID: 2)
                 if result.isCorrect {
                     DButton.pulsate()
                     mediumImpact.impactOccurred()
@@ -200,6 +228,7 @@ class RegularGameViewController: UIViewController {
                 guessedImpact.impactOccurred()
             } else {
                 let result = gameController.updateGameWith(noteAnswerID: 3)
+                self.playSound(noteAnswerID: 3)
                 if result.isCorrect {
                     EButton.pulsate()
                     mediumImpact.impactOccurred()
@@ -232,6 +261,7 @@ class RegularGameViewController: UIViewController {
                 guessedImpact.impactOccurred()
             } else {
                 let result = gameController.updateGameWith(noteAnswerID: 4)
+                self.playSound(noteAnswerID: 4)
                 if result.isCorrect {
                     GButton.pulsate()
                     mediumImpact.impactOccurred()
@@ -277,6 +307,7 @@ class RegularGameViewController: UIViewController {
     
     func restartGame(){
         gameController.restartGame()
+        self.guessedNotesIDs = []
         updateGameStats()
     }
     
