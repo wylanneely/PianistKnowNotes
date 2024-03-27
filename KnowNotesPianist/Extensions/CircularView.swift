@@ -69,9 +69,9 @@ class CircularProgressBar: UIView {
             } else {
                 currentTime += 0.05
                 let percent = currentTime/2 * 100
-                self.label.text = "\(Int(progress * percent))"
-                self.setForegroundLayerColorForSafePercent()
-                self.configLabel()
+                //self.label.text = "\(Int(progress * percent))"
+                //self.setForegroundLayerColorForSafePercent()
+                //self.configLabel()
             }
         }
         timer.fire()
@@ -82,7 +82,7 @@ class CircularProgressBar: UIView {
     
     
     //MARK: Private
-    private var label = UILabel()
+     var label = UILabel()
     private let foregroundLayer = CAShapeLayer()
     private let backgroundLayer = CAShapeLayer()
     private var radius: CGFloat {
@@ -116,11 +116,16 @@ class CircularProgressBar: UIView {
         
         let path = UIBezierPath(arcCenter: pathCenter, radius: self.radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
         
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.frame = self.view.bounds
+//        gradientLayer.colors = [UIColor.yellow.cgColor, UIColor.white.cgColor]
+//        self.foregroundLayer.layer.insertSublayer(gradientLayer, at: 0)
+        
         foregroundLayer.lineCap = CAShapeLayerLineCap.round
         foregroundLayer.path = path.cgPath
         foregroundLayer.lineWidth = lineWidth
         foregroundLayer.fillColor = UIColor.clear.cgColor
-        foregroundLayer.strokeColor = UIColor.red.cgColor
+        foregroundLayer.strokeColor = UIColor.systemPurple.cgColor
         foregroundLayer.strokeEnd = 0
         
         self.layer.addSublayer(foregroundLayer)
@@ -130,7 +135,7 @@ class CircularProgressBar: UIView {
     private func makeLabel(withText text: String) -> UILabel {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         label.text = text
-        label.font = UIFont.systemFont(ofSize: labelSize)
+        label.font = UIFont.init(name: "Poppins-Bold.ttf", size: 40)
         label.sizeToFit()
         label.center = pathCenter
         return label
@@ -145,13 +150,13 @@ class CircularProgressBar: UIView {
         if Int(label.text!)! >= self.safePercent {
             self.foregroundLayer.strokeColor = UIColor.green.cgColor
         } else {
-            self.foregroundLayer.strokeColor = UIColor.red.cgColor
+            self.foregroundLayer.strokeColor = UIColor.systemPurple.cgColor
         }
     }
     
     private func setupView() {
         makeBar()
-        self.addSubview(label)
+        //self.addSubview(label)
     }
     
     
