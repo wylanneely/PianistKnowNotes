@@ -27,6 +27,7 @@ class RegularGameViewController: UIViewController {
         super.viewDidLoad()
         setupButtons()
         updateGameStats()
+        setUpProgressBar()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -90,6 +91,26 @@ class RegularGameViewController: UIViewController {
     @IBOutlet weak var EButton: UIButton!
     @IBOutlet weak var GButton: UIButton!
     @IBOutlet weak var PlayButton: UIButton!
+    @IBOutlet weak var CircularProgressView: CircularProgressBar!
+    
+    //MARK: - Circular Progress Bar
+    
+    func setUpProgressBar(){
+           CircularProgressView.labelSize = 60
+        CircularProgressView.safePercent = 100
+        CircularProgressView.lineWidth = 20
+        CircularProgressView.safePercent = 100
+        CircularProgressView.layer.cornerRadius = CircularProgressView.frame.size.width/2
+        CircularProgressView.clipsToBounds = true
+       }
+    func updateProgressBar(){
+           let progress = currentRound/totalGroupRounds
+           CircularProgressView.setProgress(to: progress , withAnimation: false)
+           self.currentRound = currentRound + 1.0
+       }
+    
+        let totalGroupRounds: Double = 12.00
+        var currentRound: Double = 1.00
     
     //MARK: - Actions
     
@@ -133,6 +154,7 @@ class RegularGameViewController: UIViewController {
                 if result.isCorrect {
                     AButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -166,6 +188,7 @@ class RegularGameViewController: UIViewController {
                 if result.isCorrect {
                     CButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -199,6 +222,7 @@ class RegularGameViewController: UIViewController {
                 if result.isCorrect {
                     DButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -232,6 +256,7 @@ class RegularGameViewController: UIViewController {
                 if result.isCorrect {
                     EButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -265,6 +290,7 @@ class RegularGameViewController: UIViewController {
                 if result.isCorrect {
                     GButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
