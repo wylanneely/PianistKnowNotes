@@ -27,6 +27,7 @@ class NoviceGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButtons()
+        setUpProgressBar()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -77,27 +78,52 @@ class NoviceGameViewController: UIViewController {
     @IBOutlet weak var CButton: UIButton!
     @IBOutlet weak var GButton: UIButton!
     @IBOutlet weak var PlayButton: UIButton!
+    @IBOutlet weak var CircularProgressView: CircularProgressBar!
+    
+    //MARK: - Circular Progress Bar
+    
+    func setUpProgressBar(){
+           CircularProgressView.labelSize = 60
+        CircularProgressView.safePercent = 100
+        CircularProgressView.lineWidth = 20
+        CircularProgressView.safePercent = 100
+        CircularProgressView.layer.cornerRadius = CircularProgressView.frame.size.width/2
+        CircularProgressView.clipsToBounds = true
+       }
+    func updateProgressBar(){
+           let progress = currentRound/totalGroupRounds
+           CircularProgressView.setProgress(to: progress , withAnimation: false)
+           self.currentRound = currentRound + 1.0
+       }
+    
+        let totalGroupRounds: Double = 12.00
+        var currentRound: Double = 1.00
+    
     
     //MARK: - Actions
     
     @IBAction func PlayButtonTapped(_ sender: Any) {
         if isNewNote {
             self.currentNoteID = gameController.generateNextNoteID()
+            print("play sound \(String(describing: currentNoteID))")
+
             if let cNoteID = currentNoteID {
                 DispatchQueue.main.async{
                     self.playSound(noteAnswerID: cNoteID)
+                }
                     self.PlayButton.pulsate()
                     self.mediumImpact.impactOccurred()
-                }
             }
             self.isNewNote = false
         } else {
+            print("play sound \(String(describing: currentNoteID))")
+
             if let cNoteID = currentNoteID {
                 DispatchQueue.main.async{
                     self.playSound(noteAnswerID: cNoteID)
+                }
                     self.PlayButton.pulsate()
                     self.mediumImpact.impactOccurred()
-                }
             }
         }
     }
@@ -215,6 +241,7 @@ class NoviceGameViewController: UIViewController {
     
     func updateGameStats(){
         let result = gameController.returnGameStats()
+        updateProgressBar()
         //self.LifeLabel.text = "Life: \(result.lifes)"
       //  self.ScoreLabel.text = "Score: \(result.score)"
     }
@@ -228,6 +255,7 @@ class NoviceGameViewController: UIViewController {
     func restartGame(){
         gameController.restartGame()
         updateGameStats()
+        self.guessedNotesIDs = []
     }
     /*
     // MARK: - Navigation
