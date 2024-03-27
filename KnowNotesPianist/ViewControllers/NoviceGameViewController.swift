@@ -144,6 +144,7 @@ class NoviceGameViewController: UIViewController {
                 if result.isCorrect {
                     AButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -177,6 +178,7 @@ class NoviceGameViewController: UIViewController {
                 if result.isCorrect {
                     CButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -210,6 +212,7 @@ class NoviceGameViewController: UIViewController {
                 if result.isCorrect {
                     GButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -241,7 +244,6 @@ class NoviceGameViewController: UIViewController {
     
     func updateGameStats(){
         let result = gameController.returnGameStats()
-        updateProgressBar()
         //self.LifeLabel.text = "Life: \(result.lifes)"
       //  self.ScoreLabel.text = "Score: \(result.score)"
     }
