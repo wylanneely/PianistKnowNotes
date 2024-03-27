@@ -31,6 +31,7 @@ class PianistGameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
     //MARK: - Audio
     var soundController: SoundController = SoundController(soundPack: FreePianoPack, gameType: .Pianist)
    // var soundPack: SoundPack = FreePianoPack
@@ -46,7 +47,7 @@ class PianistGameViewController: UIViewController {
     //MARK: - SetUP
     
     func setUpButtons(){
-        AButton.layer.shadowColor = UIColor(named: "GreenShadowColor")?.cgColor
+        AButton.layer.shadowColor = UIColor.black.cgColor
         AButton.layer.shadowOffset = CGSize(width: 1.3, height: 3.0)
         AButton.layer.shadowRadius = 8
         AButton.layer.shadowOpacity = 0.6
@@ -66,7 +67,7 @@ class PianistGameViewController: UIViewController {
         EButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         EButton.layer.shadowRadius = 8
         EButton.layer.shadowOpacity = 0.6
-        FButton.layer.shadowColor = UIColor(named: "GreenShadowColor")?.cgColor
+        FButton.layer.shadowColor = UIColor.black.cgColor
         FButton.layer.shadowOffset = CGSize(width: 1.3, height: 3.0)
         FButton.layer.shadowRadius = 8
         FButton.layer.shadowOpacity = 0.6
