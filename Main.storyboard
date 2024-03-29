@@ -494,44 +494,33 @@
                                 <color key="shadowColor" systemColor="secondaryLabelColor"/>
                                 <size key="shadowOffset" width="1" height="2"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="r8D-Es-v8t">
-                                <rect key="frame" x="174.33333333333334" y="144" width="44.333333333333343" height="48.666666666666657"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lifes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aH0-pE-awj">
-                                        <rect key="frame" x="0.0" y="0.0" width="44.333333333333336" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmC-FB-buk">
-                                        <rect key="frame" x="0.0" y="28.333333333333343" width="44.333333333333336" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ain-Qd-RPf" customClass="CircularProgressBar" customModule="KnowNotesPianist" customModuleProvider="target">
-                                <rect key="frame" x="61.666666666666657" y="79" width="270" height="270"/>
+                                <rect key="frame" x="61.666666666666657" y="71" width="270" height="270"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ain-Qd-RPf" secondAttribute="height" multiplier="1:1" id="mNz-yV-01f"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lifes5" translatesAutoresizingMaskIntoConstraints="NO" id="ChB-IQ-Gvw">
+                                <rect key="frame" x="111.66666666666669" y="111" width="170" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ChB-IQ-Gvw" secondAttribute="height" multiplier="1:1" id="2at-yZ-ap4"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NJ3-Z3-dnC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="25v-yZ-fbm" firstAttribute="top" secondItem="M6n-Us-3zM" secondAttribute="top" constant="20" id="1pg-7j-uvh"/>
-                            <constraint firstItem="r8D-Es-v8t" firstAttribute="top" secondItem="NJ3-Z3-dnC" secondAttribute="top" constant="85" id="27l-4c-Y79"/>
                             <constraint firstItem="NJ3-Z3-dnC" firstAttribute="trailing" secondItem="7fK-qh-TM2" secondAttribute="trailing" constant="24" id="3EY-YO-MAe"/>
                             <constraint firstItem="Ain-Qd-RPf" firstAttribute="height" secondItem="7K2-qS-VaA" secondAttribute="height" multiplier="0.316901" id="4gp-No-Q9U"/>
                             <constraint firstItem="7fK-qh-TM2" firstAttribute="centerY" secondItem="25v-yZ-fbm" secondAttribute="centerY" id="BbB-uY-RVZ"/>
                             <constraint firstItem="25v-yZ-fbm" firstAttribute="width" secondItem="7K2-qS-VaA" secondAttribute="height" multiplier="35:426" id="DTT-bJ-Inm"/>
                             <constraint firstItem="JPm-n0-bMr" firstAttribute="top" secondItem="N50-q2-VOP" secondAttribute="bottom" constant="7" id="Fju-uZ-gCc"/>
                             <constraint firstItem="7K2-qS-VaA" firstAttribute="trailing" secondItem="NJ3-Z3-dnC" secondAttribute="trailing" id="Ler-BY-J86"/>
-                            <constraint firstItem="r8D-Es-v8t" firstAttribute="centerX" secondItem="M6n-Us-3zM" secondAttribute="centerX" id="Ref-0d-a4e"/>
+                            <constraint firstItem="ChB-IQ-Gvw" firstAttribute="centerY" secondItem="Ain-Qd-RPf" secondAttribute="centerY" constant="-10" id="QjD-cV-9YL"/>
                             <constraint firstItem="7K2-qS-VaA" firstAttribute="top" secondItem="M6n-Us-3zM" secondAttribute="top" id="WkQ-Ik-RCB"/>
+                            <constraint firstItem="ChB-IQ-Gvw" firstAttribute="centerX" secondItem="7K2-qS-VaA" secondAttribute="centerX" id="XXR-od-OWJ"/>
                             <constraint firstItem="JPm-n0-bMr" firstAttribute="centerX" secondItem="M6n-Us-3zM" secondAttribute="centerX" id="Xef-6Z-Pwg"/>
                             <constraint firstItem="JPm-n0-bMr" firstAttribute="bottom" secondItem="NJ3-Z3-dnC" secondAttribute="bottom" id="cdO-FF-3Vy"/>
                             <constraint firstItem="25v-yZ-fbm" firstAttribute="leading" secondItem="NJ3-Z3-dnC" secondAttribute="leading" constant="16" id="ceJ-4a-A6C"/>
@@ -540,8 +529,9 @@
                             <constraint firstItem="N50-q2-VOP" firstAttribute="leading" secondItem="NJ3-Z3-dnC" secondAttribute="leading" id="ggJ-D0-Q2L"/>
                             <constraint firstItem="JPm-n0-bMr" firstAttribute="width" secondItem="7K2-qS-VaA" secondAttribute="width" multiplier="0.587786" id="mDw-Mq-STB"/>
                             <constraint firstItem="Ain-Qd-RPf" firstAttribute="centerX" secondItem="M6n-Us-3zM" secondAttribute="centerX" id="oRM-ve-hxt"/>
-                            <constraint firstItem="Ain-Qd-RPf" firstAttribute="top" secondItem="NJ3-Z3-dnC" secondAttribute="top" constant="20" id="t1k-aN-djw"/>
+                            <constraint firstItem="Ain-Qd-RPf" firstAttribute="top" secondItem="NJ3-Z3-dnC" secondAttribute="top" constant="12" id="t1k-aN-djw"/>
                             <constraint firstItem="7K2-qS-VaA" firstAttribute="leading" secondItem="NJ3-Z3-dnC" secondAttribute="leading" id="ttG-5J-vSs"/>
+                            <constraint firstItem="ChB-IQ-Gvw" firstAttribute="height" secondItem="7K2-qS-VaA" secondAttribute="height" multiplier="0.199531" id="wha-s1-aG1"/>
                             <constraint firstAttribute="bottom" secondItem="7K2-qS-VaA" secondAttribute="bottom" id="ynI-im-SaA"/>
                         </constraints>
                     </view>
@@ -553,9 +543,8 @@
                         <outlet property="EButton" destination="zf8-1y-gql" id="Eyk-2H-n0U"/>
                         <outlet property="GButton" destination="Pr6-pi-dpM" id="LOX-xa-lGX"/>
                         <outlet property="HomeButton" destination="25v-yZ-fbm" id="DXY-ni-a8Y"/>
-                        <outlet property="LifeLabel" destination="aH0-pE-awj" id="mEk-yL-K1Y"/>
                         <outlet property="PlayButton" destination="JPm-n0-bMr" id="lr6-xY-XnJ"/>
-                        <outlet property="ScoreLabel" destination="EmC-FB-buk" id="Vtv-zf-Z6K"/>
+                        <outlet property="lifeImage" destination="ChB-IQ-Gvw" id="tjO-sP-lmK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oLC-d6-DWi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -643,18 +632,25 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRj-1r-JmB" customClass="CircularProgressBar" customModule="KnowNotesPianist" customModuleProvider="target">
-                                <rect key="frame" x="61.666666666666657" y="79" width="270" height="270"/>
+                                <rect key="frame" x="61.666666666666657" y="71" width="270" height="270"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cRj-1r-JmB" secondAttribute="height" multiplier="1:1" id="vEC-5o-vEg"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lifes5" translatesAutoresizingMaskIntoConstraints="NO" id="exg-xq-Qic">
+                                <rect key="frame" x="111" y="110.66666666666669" width="171" height="171"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="exg-xq-Qic" secondAttribute="height" multiplier="1:1" id="2AV-cC-jHo"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ejx-Mu-ab4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ZaD-Ff-Prn" secondAttribute="bottom" id="0ys-pJ-Np4"/>
                             <constraint firstItem="wyw-no-amH" firstAttribute="bottom" secondItem="Ejx-Mu-ab4" secondAttribute="bottom" id="9P1-XZ-N7i"/>
+                            <constraint firstItem="exg-xq-Qic" firstAttribute="centerY" secondItem="cRj-1r-JmB" secondAttribute="centerY" constant="-10" id="B5n-PT-DcM"/>
                             <constraint firstItem="ZaD-Ff-Prn" firstAttribute="trailing" secondItem="Ejx-Mu-ab4" secondAttribute="trailing" id="Cpj-45-62d"/>
                             <constraint firstItem="ZaD-Ff-Prn" firstAttribute="leading" secondItem="Ejx-Mu-ab4" secondAttribute="leading" id="DOU-jG-TFj"/>
                             <constraint firstItem="mtf-HL-SEA" firstAttribute="centerY" secondItem="ay2-i2-PeS" secondAttribute="centerY" id="GBK-sU-e7x"/>
@@ -665,13 +661,15 @@
                             <constraint firstItem="cRj-1r-JmB" firstAttribute="centerX" secondItem="QIe-hQ-HeB" secondAttribute="centerX" id="N30-Hy-7eN"/>
                             <constraint firstItem="Ejx-Mu-ab4" firstAttribute="trailing" secondItem="mtf-HL-SEA" secondAttribute="trailing" constant="26" id="OLU-C5-dG2"/>
                             <constraint firstItem="mcb-gL-Dah" firstAttribute="trailing" secondItem="Ejx-Mu-ab4" secondAttribute="trailing" id="OSm-YO-hnX"/>
+                            <constraint firstItem="exg-xq-Qic" firstAttribute="width" secondItem="ZaD-Ff-Prn" secondAttribute="height" multiplier="57:284" id="RJn-zG-Vvg"/>
                             <constraint firstItem="wyw-no-amH" firstAttribute="top" secondItem="mcb-gL-Dah" secondAttribute="bottom" constant="10" id="cXq-cN-WBZ"/>
-                            <constraint firstItem="cRj-1r-JmB" firstAttribute="top" secondItem="Ejx-Mu-ab4" secondAttribute="top" constant="20" id="fN8-P5-K2b"/>
+                            <constraint firstItem="cRj-1r-JmB" firstAttribute="top" secondItem="Ejx-Mu-ab4" secondAttribute="top" constant="12" id="fN8-P5-K2b"/>
                             <constraint firstItem="mcb-gL-Dah" firstAttribute="height" secondItem="ZaD-Ff-Prn" secondAttribute="height" multiplier="0.384977" id="iOQ-xw-NRp"/>
                             <constraint firstItem="ay2-i2-PeS" firstAttribute="width" secondItem="ZaD-Ff-Prn" secondAttribute="height" multiplier="35:426" id="ixl-wU-493"/>
                             <constraint firstItem="mcb-gL-Dah" firstAttribute="leading" secondItem="Ejx-Mu-ab4" secondAttribute="leading" id="mNQ-pU-O7n"/>
                             <constraint firstItem="mcb-gL-Dah" firstAttribute="width" secondItem="ZaD-Ff-Prn" secondAttribute="height" multiplier="131:284" id="tpJ-DD-Lis"/>
                             <constraint firstItem="ay2-i2-PeS" firstAttribute="leading" secondItem="Ejx-Mu-ab4" secondAttribute="leading" constant="16" id="w8e-Gb-bmv"/>
+                            <constraint firstItem="exg-xq-Qic" firstAttribute="centerX" secondItem="ZaD-Ff-Prn" secondAttribute="centerX" id="wyG-mb-cHU"/>
                         </constraints>
                     </view>
                     <connections>
@@ -681,6 +679,7 @@
                         <outlet property="GButton" destination="MAm-2W-T2Q" id="BRO-1M-NiB"/>
                         <outlet property="HomeButton" destination="ay2-i2-PeS" id="7Cf-5P-Sbt"/>
                         <outlet property="PlayButton" destination="wyw-no-amH" id="3Mj-8P-khj"/>
+                        <outlet property="lifeImage" destination="exg-xq-Qic" id="ech-Vt-rYr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nVh-ho-2iH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -710,6 +709,7 @@
         <image name="GButtonBig" width="100" height="100"/>
         <image name="GSharpButton" width="80" height="80"/>
         <image name="HomeButton" width="46" height="48"/>
+        <image name="Lifes5" width="70" height="71.333335876464844"/>
         <image name="PlayButton" width="207" height="60"/>
         <image name="VirtuosoGameBackground" width="375" height="812"/>
         <systemColor name="secondaryLabelColor">
