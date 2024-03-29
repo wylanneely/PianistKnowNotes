@@ -11,6 +11,7 @@ import AVFoundation
 class RegularGameViewController: UIViewController {
     
     var gameController = GameController(gameType: .Regular)
+    var lifeImageController = LifeImages()
     
     var currentNoteID: Int?
     
@@ -82,8 +83,6 @@ class RegularGameViewController: UIViewController {
     
     //MARK: - Outlets
 
-    @IBOutlet weak var ScoreLabel: UILabel!
-    @IBOutlet weak var LifeLabel: UILabel!
     @IBOutlet weak var HomeButton: UIButton!
     @IBOutlet weak var AButton: UIButton!
     @IBOutlet weak var CButton: UIButton!
@@ -91,6 +90,7 @@ class RegularGameViewController: UIViewController {
     @IBOutlet weak var EButton: UIButton!
     @IBOutlet weak var GButton: UIButton!
     @IBOutlet weak var PlayButton: UIButton!
+    @IBOutlet weak var lifeImage: UIImageView!
     @IBOutlet weak var CircularProgressView: CircularProgressBar!
     
     //MARK: - Circular Progress Bar
@@ -321,14 +321,17 @@ class RegularGameViewController: UIViewController {
     
     func updateGameStats(){
         let result = gameController.returnGameStats()
-        self.LifeLabel.text = "Life: \(result.lifes)"
-        self.ScoreLabel.text = "Score: \(result.score)"
+        updateLifeImage(lifes: result.lifes)
+    }
+    
+    func updateLifeImage(lifes: Int){
+        let image = lifeImageController.returnLifeImage(for: lifes)
+        lifeImage.image = image
     }
     
     func endGame(){
         let result = gameController.returnGameStats()
-        self.LifeLabel.text = "Game Over"
-        self.ScoreLabel.text = "Final Score: \(result.score)"
+      
     }
     
     func restartGame(){

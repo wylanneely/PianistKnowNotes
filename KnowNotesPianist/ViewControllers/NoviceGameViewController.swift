@@ -144,6 +144,7 @@ class NoviceGameViewController: UIViewController {
                 let result = gameController.updateGameWith(noteAnswerID: 0)
                 self.playSound(noteAnswerID: 0)
                 if result.isCorrect {
+                    updateProgressBar()
                     AButton.pulsate()
                     mediumImpact.impactOccurred()
                     self.updateGameStats()
@@ -177,6 +178,7 @@ class NoviceGameViewController: UIViewController {
                 let result = gameController.updateGameWith(noteAnswerID: 1)
                 self.playSound(noteAnswerID: 1)
                 if result.isCorrect {
+                    self.updateProgressBar()
                     CButton.pulsate()
                     mediumImpact.impactOccurred()
                     self.updateGameStats()
@@ -212,6 +214,7 @@ class NoviceGameViewController: UIViewController {
                 if result.isCorrect {
                     GButton.pulsate()
                     mediumImpact.impactOccurred()
+                    self.updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -242,7 +245,6 @@ class NoviceGameViewController: UIViewController {
 
     
     func updateGameStats(){
-        updateProgressBar()
         let result = gameController.returnGameStats()
         updateLifeImage(lifes: result.lifes)
         //self.LifeLabel.text = "Life: \(result.lifes)"
