@@ -11,6 +11,7 @@ import AVFoundation
 class NoviceGameViewController: UIViewController {
     
     var gameController = GameController(gameType: .Novice)
+    var lifeImageController = LifeImages()
     
     var currentNoteID: Int?
     
@@ -79,6 +80,7 @@ class NoviceGameViewController: UIViewController {
     @IBOutlet weak var GButton: UIButton!
     @IBOutlet weak var PlayButton: UIButton!
     @IBOutlet weak var CircularProgressView: CircularProgressBar!
+    @IBOutlet weak var lifeImage: UIImageView!
     
     //MARK: - Circular Progress Bar
     
@@ -144,7 +146,6 @@ class NoviceGameViewController: UIViewController {
                 if result.isCorrect {
                     AButton.pulsate()
                     mediumImpact.impactOccurred()
-                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -178,7 +179,6 @@ class NoviceGameViewController: UIViewController {
                 if result.isCorrect {
                     CButton.pulsate()
                     mediumImpact.impactOccurred()
-                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -212,7 +212,6 @@ class NoviceGameViewController: UIViewController {
                 if result.isCorrect {
                     GButton.pulsate()
                     mediumImpact.impactOccurred()
-                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -243,9 +242,17 @@ class NoviceGameViewController: UIViewController {
 
     
     func updateGameStats(){
+        updateProgressBar()
         let result = gameController.returnGameStats()
+        updateLifeImage(lifes: result.lifes)
         //self.LifeLabel.text = "Life: \(result.lifes)"
       //  self.ScoreLabel.text = "Score: \(result.score)"
+    }
+    
+    
+    func updateLifeImage(lifes: Int){
+        let image = lifeImageController.returnLifeImage(for: lifes)
+        lifeImage.image = image
     }
     
     func endGame(){
