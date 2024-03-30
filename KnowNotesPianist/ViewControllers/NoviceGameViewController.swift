@@ -29,6 +29,7 @@ class NoviceGameViewController: UIViewController {
         super.viewDidLoad()
         setupButtons()
         setUpProgressBar()
+        setUpGradientColorLabel()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -60,6 +61,10 @@ class NoviceGameViewController: UIViewController {
         HomeButton.layer.shadowOpacity = 0.6
     }
     
+    func setUpGradientColorLabel(){
+        ScoreLabel.gradientColors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
+    }
+    
     //MARK: - Audio
     var soundController: SoundController = SoundController(soundPack: FreePianoPack, gameType: .Novice)
    // var soundPack: SoundPack = FreePianoPack
@@ -81,6 +86,7 @@ class NoviceGameViewController: UIViewController {
     @IBOutlet weak var PlayButton: UIButton!
     @IBOutlet weak var CircularProgressView: CircularProgressBar!
     @IBOutlet weak var lifeImage: UIImageView!
+    @IBOutlet weak var ScoreLabel: GradientLabel!
     
     //MARK: - Circular Progress Bar
     
