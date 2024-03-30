@@ -29,6 +29,7 @@ class RegularGameViewController: UIViewController {
         setupButtons()
         updateGameStats()
         setUpProgressBar()
+        setUpGradientColorLabel()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -81,6 +82,10 @@ class RegularGameViewController: UIViewController {
         HomeButton.layer.shadowOpacity = 0.6
     }
     
+    func setUpGradientColorLabel(){
+        ScoreLabel.gradientColors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
+    }
+    
     //MARK: - Outlets
 
     @IBOutlet weak var HomeButton: UIButton!
@@ -92,6 +97,7 @@ class RegularGameViewController: UIViewController {
     @IBOutlet weak var PlayButton: UIButton!
     @IBOutlet weak var lifeImage: UIImageView!
     @IBOutlet weak var CircularProgressView: CircularProgressBar!
+    @IBOutlet weak var ScoreLabel: GradientLabel!
     
     //MARK: - Circular Progress Bar
     
@@ -322,6 +328,7 @@ class RegularGameViewController: UIViewController {
     func updateGameStats(){
         let result = gameController.returnGameStats()
         updateLifeImage(lifes: result.lifes)
+        ScoreLabel.text = "\(result.score)"
     }
     
     func updateLifeImage(lifes: Int){

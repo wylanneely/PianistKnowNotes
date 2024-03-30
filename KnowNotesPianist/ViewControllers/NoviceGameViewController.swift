@@ -253,6 +253,7 @@ class NoviceGameViewController: UIViewController {
     func updateGameStats(){
         let result = gameController.returnGameStats()
         updateLifeImage(lifes: result.lifes)
+        ScoreLabel.text = "\(result.score)"
         //self.LifeLabel.text = "Life: \(result.lifes)"
       //  self.ScoreLabel.text = "Score: \(result.score)"
     }
