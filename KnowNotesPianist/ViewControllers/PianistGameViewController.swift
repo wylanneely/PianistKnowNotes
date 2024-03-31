@@ -11,6 +11,7 @@ import AVFoundation
 class PianistGameViewController: UIViewController {
     
     var gameController = GameController(gameType: .Pianist)
+    var lifeImageController = LifeImages()
     
     var currentNoteID: Int?
     
@@ -26,6 +27,8 @@ class PianistGameViewController: UIViewController {
         super.viewDidLoad()
         setUpButtons()
         updateGameStats()
+        setUpProgressBar()
+        setUpGradientColorLabel()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -85,12 +88,13 @@ class PianistGameViewController: UIViewController {
         HomeButton.layer.shadowOpacity = 0.6
     }
     
+    func setUpGradientColorLabel(){
+        ScoreLabel.gradientColors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
+    }
 
     //MARK: - Outlets
     
     @IBOutlet weak var HomeButton: UIButton!
-    @IBOutlet weak var ScoreLabel: UILabel!
-    @IBOutlet weak var LifeLabel: UILabel!
     @IBOutlet weak var AButton: UIButton!
     @IBOutlet weak var BButton: UIButton!
     @IBOutlet weak var CButton: UIButton!
@@ -99,6 +103,29 @@ class PianistGameViewController: UIViewController {
     @IBOutlet weak var FButton: UIButton!
     @IBOutlet weak var GButton: UIButton!
     @IBOutlet weak var PlayButton: UIButton!
+    @IBOutlet weak var CircularProgressView: CircularProgressBar!
+    @IBOutlet weak var ScoreLabel: GradientLabel!
+    @IBOutlet weak var lifeImage: UIImageView!
+    
+    //MARK: - Circular Progress Bar
+    
+    func setUpProgressBar(){
+           CircularProgressView.labelSize = 60
+        CircularProgressView.safePercent = 100
+        CircularProgressView.lineWidth = 20
+        CircularProgressView.safePercent = 100
+        CircularProgressView.layer.cornerRadius = CircularProgressView.frame.size.width/2
+        CircularProgressView.clipsToBounds = true
+       }
+    func updateProgressBar(){
+           let progress = currentRound/totalGroupRounds
+           CircularProgressView.setProgress(to: progress , withAnimation: false)
+           self.currentRound = currentRound + 1.0
+       }
+    
+        let totalGroupRounds: Double = 12.00
+        var currentRound: Double = 1.00
+    
     
     //MARK: - Actions
     
@@ -141,6 +168,7 @@ class PianistGameViewController: UIViewController {
                 if result.isCorrect {
                     AButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -175,6 +203,7 @@ class PianistGameViewController: UIViewController {
                 if result.isCorrect {
                     BButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -209,6 +238,7 @@ class PianistGameViewController: UIViewController {
                 if result.isCorrect {
                     CButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -242,6 +272,7 @@ class PianistGameViewController: UIViewController {
                 if result.isCorrect {
                     DButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -275,6 +306,7 @@ class PianistGameViewController: UIViewController {
                 if result.isCorrect {
                     EButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -308,6 +340,7 @@ class PianistGameViewController: UIViewController {
                 if result.isCorrect {
                     FButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -341,6 +374,7 @@ class PianistGameViewController: UIViewController {
                 if result.isCorrect {
                     GButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -371,14 +405,18 @@ class PianistGameViewController: UIViewController {
     
     func updateGameStats(){
         let result = gameController.returnGameStats()
-        self.LifeLabel.text = "Life: \(result.lifes)"
-        self.ScoreLabel.text = "Score: \(result.score)"
+        updateLifeImage(lifes: result.lifes)
+        ScoreLabel.text = "\(result.score)"
+    }
+    
+    func updateLifeImage(lifes: Int){
+        let image = lifeImageController.returnLifeImage(for: lifes)
+        lifeImage.image = image
     }
     
     func endGame(){
         let result = gameController.returnGameStats()
-        self.LifeLabel.text = "Game Over"
-       self.ScoreLabel.text = "Final Score: \(result.score)"
+       
     }
     
     func restartGame(){
