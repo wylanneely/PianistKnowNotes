@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-ExtraBold.ttf">
+            <string>Poppins-ExtraBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Virtuoso Game View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -316,7 +321,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="dbK-b1-iGj">
                                 <rect key="frame" x="259" y="417.66666666666674" width="124" height="259"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="680-rg-s7t">
+                                    <button opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="680-rg-s7t">
                                         <rect key="frame" x="0.0" y="0.0" width="124" height="114"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="EButtonBig"/>
@@ -507,6 +512,12 @@
                                     <constraint firstAttribute="width" secondItem="ChB-IQ-Gvw" secondAttribute="height" multiplier="1:1" id="2at-yZ-ap4"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="577-x4-a00" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
+                                <rect key="frame" x="185" y="181.66666666666666" width="23" height="49"/>
+                                <fontDescription key="fontDescription" name="Poppins-ExtraBold" family="Poppins" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NJ3-Z3-dnC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -517,6 +528,7 @@
                             <constraint firstItem="7fK-qh-TM2" firstAttribute="centerY" secondItem="25v-yZ-fbm" secondAttribute="centerY" id="BbB-uY-RVZ"/>
                             <constraint firstItem="25v-yZ-fbm" firstAttribute="width" secondItem="7K2-qS-VaA" secondAttribute="height" multiplier="35:426" id="DTT-bJ-Inm"/>
                             <constraint firstItem="JPm-n0-bMr" firstAttribute="top" secondItem="N50-q2-VOP" secondAttribute="bottom" constant="7" id="Fju-uZ-gCc"/>
+                            <constraint firstItem="577-x4-a00" firstAttribute="centerY" secondItem="ChB-IQ-Gvw" secondAttribute="centerY" constant="10" id="Gaa-TM-fIN"/>
                             <constraint firstItem="7K2-qS-VaA" firstAttribute="trailing" secondItem="NJ3-Z3-dnC" secondAttribute="trailing" id="Ler-BY-J86"/>
                             <constraint firstItem="ChB-IQ-Gvw" firstAttribute="centerY" secondItem="Ain-Qd-RPf" secondAttribute="centerY" constant="-10" id="QjD-cV-9YL"/>
                             <constraint firstItem="7K2-qS-VaA" firstAttribute="top" secondItem="M6n-Us-3zM" secondAttribute="top" id="WkQ-Ik-RCB"/>
@@ -526,6 +538,7 @@
                             <constraint firstItem="25v-yZ-fbm" firstAttribute="leading" secondItem="NJ3-Z3-dnC" secondAttribute="leading" constant="16" id="ceJ-4a-A6C"/>
                             <constraint firstItem="N50-q2-VOP" firstAttribute="trailing" secondItem="NJ3-Z3-dnC" secondAttribute="trailing" id="dIZ-uk-5Mg"/>
                             <constraint firstItem="N50-q2-VOP" firstAttribute="height" secondItem="7K2-qS-VaA" secondAttribute="height" multiplier="0.422535" id="efb-P8-GKm"/>
+                            <constraint firstItem="577-x4-a00" firstAttribute="centerX" secondItem="ChB-IQ-Gvw" secondAttribute="centerX" id="g4M-HE-YQR"/>
                             <constraint firstItem="N50-q2-VOP" firstAttribute="leading" secondItem="NJ3-Z3-dnC" secondAttribute="leading" id="ggJ-D0-Q2L"/>
                             <constraint firstItem="JPm-n0-bMr" firstAttribute="width" secondItem="7K2-qS-VaA" secondAttribute="width" multiplier="0.587786" id="mDw-Mq-STB"/>
                             <constraint firstItem="Ain-Qd-RPf" firstAttribute="centerX" secondItem="M6n-Us-3zM" secondAttribute="centerX" id="oRM-ve-hxt"/>
@@ -544,6 +557,7 @@
                         <outlet property="GButton" destination="Pr6-pi-dpM" id="LOX-xa-lGX"/>
                         <outlet property="HomeButton" destination="25v-yZ-fbm" id="DXY-ni-a8Y"/>
                         <outlet property="PlayButton" destination="JPm-n0-bMr" id="lr6-xY-XnJ"/>
+                        <outlet property="ScoreLabel" destination="577-x4-a00" id="N4l-TX-klz"/>
                         <outlet property="lifeImage" destination="ChB-IQ-Gvw" id="tjO-sP-lmK"/>
                     </connections>
                 </viewController>
@@ -644,6 +658,12 @@
                                     <constraint firstAttribute="width" secondItem="exg-xq-Qic" secondAttribute="height" multiplier="1:1" id="2AV-cC-jHo"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DP7-UP-WQW" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
+                                <rect key="frame" x="185" y="181.66666666666666" width="23" height="49"/>
+                                <fontDescription key="fontDescription" name="Poppins-ExtraBold" family="Poppins" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ejx-Mu-ab4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -659,10 +679,12 @@
                             <constraint firstItem="wyw-no-amH" firstAttribute="centerX" secondItem="QIe-hQ-HeB" secondAttribute="centerX" id="MYa-7Y-zmU"/>
                             <constraint firstItem="ay2-i2-PeS" firstAttribute="top" secondItem="QIe-hQ-HeB" secondAttribute="top" constant="20" id="Mcs-Pr-CGQ"/>
                             <constraint firstItem="cRj-1r-JmB" firstAttribute="centerX" secondItem="QIe-hQ-HeB" secondAttribute="centerX" id="N30-Hy-7eN"/>
+                            <constraint firstItem="DP7-UP-WQW" firstAttribute="centerY" secondItem="exg-xq-Qic" secondAttribute="centerY" constant="10" id="Nhs-7r-Yhh"/>
                             <constraint firstItem="Ejx-Mu-ab4" firstAttribute="trailing" secondItem="mtf-HL-SEA" secondAttribute="trailing" constant="26" id="OLU-C5-dG2"/>
                             <constraint firstItem="mcb-gL-Dah" firstAttribute="trailing" secondItem="Ejx-Mu-ab4" secondAttribute="trailing" id="OSm-YO-hnX"/>
                             <constraint firstItem="exg-xq-Qic" firstAttribute="width" secondItem="ZaD-Ff-Prn" secondAttribute="height" multiplier="57:284" id="RJn-zG-Vvg"/>
                             <constraint firstItem="wyw-no-amH" firstAttribute="top" secondItem="mcb-gL-Dah" secondAttribute="bottom" constant="10" id="cXq-cN-WBZ"/>
+                            <constraint firstItem="DP7-UP-WQW" firstAttribute="centerX" secondItem="exg-xq-Qic" secondAttribute="centerX" id="dCf-AJ-H15"/>
                             <constraint firstItem="cRj-1r-JmB" firstAttribute="top" secondItem="Ejx-Mu-ab4" secondAttribute="top" constant="12" id="fN8-P5-K2b"/>
                             <constraint firstItem="mcb-gL-Dah" firstAttribute="height" secondItem="ZaD-Ff-Prn" secondAttribute="height" multiplier="0.384977" id="iOQ-xw-NRp"/>
                             <constraint firstItem="ay2-i2-PeS" firstAttribute="width" secondItem="ZaD-Ff-Prn" secondAttribute="height" multiplier="35:426" id="ixl-wU-493"/>
@@ -679,6 +701,7 @@
                         <outlet property="GButton" destination="MAm-2W-T2Q" id="BRO-1M-NiB"/>
                         <outlet property="HomeButton" destination="ay2-i2-PeS" id="7Cf-5P-Sbt"/>
                         <outlet property="PlayButton" destination="wyw-no-amH" id="3Mj-8P-khj"/>
+                        <outlet property="ScoreLabel" destination="DP7-UP-WQW" id="tET-mW-4Ql"/>
                         <outlet property="lifeImage" destination="exg-xq-Qic" id="ech-Vt-rYr"/>
                     </connections>
                 </viewController>
