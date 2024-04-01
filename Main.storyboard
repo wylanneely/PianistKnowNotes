@@ -55,7 +55,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="zUa-k7-0GD">
-                                <rect key="frame" x="144.33333333333334" y="353" width="104.66666666666666" height="379"/>
+                                <rect key="frame" x="144.33333333333334" y="355" width="104.66666666666666" height="379"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIr-Qj-Q1T">
                                         <rect key="frame" x="0.0" y="0.0" width="104.66666666666667" height="94"/>
@@ -200,7 +200,7 @@
                             <constraint firstAttribute="bottom" secondItem="fad-em-Y1j" secondAttribute="bottom" id="Hbm-we-Phm"/>
                             <constraint firstItem="fad-em-Y1j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Hcf-No-etB"/>
                             <constraint firstItem="YXT-Nm-iaB" firstAttribute="centerY" secondItem="xAx-qf-CzP" secondAttribute="centerY" constant="10" id="KJd-nv-5su"/>
-                            <constraint firstItem="jHZ-ew-0wt" firstAttribute="top" secondItem="zUa-k7-0GD" secondAttribute="bottom" constant="12" id="Mx4-4a-rhD"/>
+                            <constraint firstItem="jHZ-ew-0wt" firstAttribute="top" secondItem="zUa-k7-0GD" secondAttribute="bottom" constant="10" id="Mx4-4a-rhD"/>
                             <constraint firstItem="YXT-Nm-iaB" firstAttribute="centerX" secondItem="fad-em-Y1j" secondAttribute="centerX" id="Qnd-gM-sK6"/>
                             <constraint firstItem="jHZ-ew-0wt" firstAttribute="top" secondItem="8eU-pP-waM" secondAttribute="bottom" constant="12" id="Rbl-mO-5PS"/>
                             <constraint firstItem="zUa-k7-0GD" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.444836" id="Rcx-Ni-1o5"/>
