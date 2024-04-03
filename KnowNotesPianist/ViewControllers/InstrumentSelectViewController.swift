@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
    
     
     //MARK: - Overrides
@@ -41,6 +41,10 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+               return CGSize(width: 300, height: 300)
+           }
+    
     //MARK: - Actions
     
     /*
@@ -54,3 +58,9 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     */
 
 }
+//
+//extension InstrumentSelectViewController: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//            return CGSize(width: screenWidth, height: screenWidth)
+//        }
+//}
