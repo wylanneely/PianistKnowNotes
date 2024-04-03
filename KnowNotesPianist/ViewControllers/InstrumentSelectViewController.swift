@@ -42,7 +42,11 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-               return CGSize(width: 300, height: 300)
+        let vcWidth = self.view.frame.width
+        let vcHeight = self.view.frame.height
+        let collectionHeight = (vcHeight * 0.35)
+        let collectionWidth = (vcWidth * 0.71)
+        return CGSize(width: collectionWidth , height: collectionHeight)
            }
     
     //MARK: - Actions
