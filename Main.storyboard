@@ -13,9 +13,6 @@
         <array key="Poppins-ExtraBold.ttf">
             <string>Poppins-ExtraBold</string>
         </array>
-        <array key="Poppins-Medium.ttf">
-            <string>Poppins-Medium</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Virtuoso Game View Controller-->
@@ -287,97 +284,147 @@
                                 <rect key="frame" x="16" y="407.33333333333326" width="361" height="410.66666666666674"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrument Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JB9-Af-Pfp" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
-                                        <rect key="frame" x="55.000000000000014" y="8" width="251.33333333333337" height="42"/>
-                                        <fontDescription key="fontDescription" name="Poppins-ExtraBold" family="Poppins" pointSize="35"/>
+                                        <rect key="frame" x="0.0" y="8" width="361" height="43"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" systemColor="labelColor"/>
                                         <size key="shadowOffset" width="1" height="1"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DividerLine" translatesAutoresizingMaskIntoConstraints="NO" id="X4n-eM-R64">
-                                        <rect key="frame" x="8" y="81.666666666666742" width="345" height="6"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Novice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AaY-5m-z2V" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="90" width="93" height="41"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="28"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" systemColor="labelColor"/>
-                                        <size key="shadowOffset" width="1" height="1"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DividerLine" translatesAutoresizingMaskIntoConstraints="NO" id="ldo-pM-9N7">
-                                        <rect key="frame" x="15" y="148" width="330" height="6"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Regular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCl-Ns-3El" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="161" width="103" height="41"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="28"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" systemColor="labelColor"/>
-                                        <size key="shadowOffset" width="1" height="1"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DividerLine" translatesAutoresizingMaskIntoConstraints="NO" id="GNb-Ct-57P">
-                                        <rect key="frame" x="15" y="214" width="330" height="6"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pianist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXs-Gp-JyN" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="227.66666666666674" width="146" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="28"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" systemColor="labelColor"/>
-                                        <size key="shadowOffset" width="1" height="1"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DividerLine" translatesAutoresizingMaskIntoConstraints="NO" id="vpk-Di-Si6">
-                                        <rect key="frame" x="8" y="340" width="345" height="6"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Virtuoso" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHd-KT-jGW" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="285" width="103" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="26"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" systemColor="labelColor"/>
-                                        <size key="shadowOffset" width="1" height="1"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DividerLine" translatesAutoresizingMaskIntoConstraints="NO" id="OxG-Ib-3Ra">
-                                        <rect key="frame" x="15" y="275" width="330" height="6"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="eTL-ea-OQl">
+                                        <rect key="frame" x="8" y="61" width="345" height="237"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DividerLine" translatesAutoresizingMaskIntoConstraints="NO" id="X4n-eM-R64">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="1"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Novice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AaY-5m-z2V" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="15.000000000000002" width="78" height="29.666666666666671"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" systemColor="labelColor"/>
+                                                <size key="shadowOffset" width="1" height="1"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DividerLine" translatesAutoresizingMaskIntoConstraints="NO" id="ldo-pM-9N7">
+                                                <rect key="frame" x="0.0" y="58.666666666666686" width="335" height="1"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCl-Ns-3El" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="73.666666666666686" width="91" height="31"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" systemColor="labelColor"/>
+                                                <size key="shadowOffset" width="1" height="1"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DividerLine" translatesAutoresizingMaskIntoConstraints="NO" id="GNb-Ct-57P">
+                                                <rect key="frame" x="0.0" y="118.66666666666669" width="335" height="1"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pianist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXs-Gp-JyN" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="133.66666666666669" width="77.333333333333329" height="29.666666666666657"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" systemColor="labelColor"/>
+                                                <size key="shadowOffset" width="1" height="1"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DividerLine" translatesAutoresizingMaskIntoConstraints="NO" id="OxG-Ib-3Ra">
+                                                <rect key="frame" x="0.0" y="177.33333333333331" width="335" height="1"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Virtuoso" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHd-KT-jGW" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="192.33333333333331" width="96.666666666666671" height="29.666666666666657"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" systemColor="labelColor"/>
+                                                <size key="shadowOffset" width="1" height="1"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DividerLine" translatesAutoresizingMaskIntoConstraints="NO" id="vpk-Di-Si6">
+                                                <rect key="frame" x="0.0" y="236.00000000000006" width="345" height="1"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="X4n-eM-R64" secondAttribute="trailing" id="7RV-LB-0wA"/>
+                                            <constraint firstAttribute="trailing" secondItem="GNb-Ct-57P" secondAttribute="trailing" constant="10" id="AKG-c2-6g2"/>
+                                            <constraint firstItem="vpk-Di-Si6" firstAttribute="leading" secondItem="eTL-ea-OQl" secondAttribute="leading" id="BL8-4v-2Kq"/>
+                                            <constraint firstItem="AaY-5m-z2V" firstAttribute="leading" secondItem="eTL-ea-OQl" secondAttribute="leading" id="HgE-pB-Zzc"/>
+                                            <constraint firstItem="X4n-eM-R64" firstAttribute="leading" secondItem="eTL-ea-OQl" secondAttribute="leading" id="Hu0-B5-4VO"/>
+                                            <constraint firstItem="pXs-Gp-JyN" firstAttribute="leading" secondItem="eTL-ea-OQl" secondAttribute="leading" id="K4V-7B-pEt"/>
+                                            <constraint firstItem="GHd-KT-jGW" firstAttribute="leading" secondItem="eTL-ea-OQl" secondAttribute="leading" id="WTp-48-wT9"/>
+                                            <constraint firstItem="rCl-Ns-3El" firstAttribute="leading" secondItem="eTL-ea-OQl" secondAttribute="leading" id="Wx7-zQ-Oda"/>
+                                            <constraint firstAttribute="trailing" secondItem="vpk-Di-Si6" secondAttribute="trailing" id="bLN-1L-VMM"/>
+                                            <constraint firstAttribute="trailing" secondItem="ldo-pM-9N7" secondAttribute="trailing" constant="10" id="fuD-Pd-db4"/>
+                                            <constraint firstAttribute="trailing" secondItem="OxG-Ib-3Ra" secondAttribute="trailing" constant="10" id="yIr-Nx-hpD"/>
+                                        </constraints>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcC-Qe-bv7">
-                                        <rect key="frame" x="74.666666666666686" y="348.66666666666669" width="212" height="58"/>
+                                        <rect key="frame" x="74.666666666666686" y="298.00000000000006" width="212" height="108.66666666666669"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="StartButton"/>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UnlockedSharps" translatesAutoresizingMaskIntoConstraints="NO" id="Z0J-ls-bzu">
-                                        <rect key="frame" x="126" y="281" width="192" height="65"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UnlockedDE" translatesAutoresizingMaskIntoConstraints="NO" id="fnS-p9-JZl">
+                                        <rect key="frame" x="122.33333333333334" y="120.00000000000006" width="70" height="60"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UnlockedBF" translatesAutoresizingMaskIntoConstraints="NO" id="A5a-yF-ETR">
-                                        <rect key="frame" x="126" y="221" width="78" height="52"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UnlockedBF" translatesAutoresizingMaskIntoConstraints="NO" id="A5a-yF-ETR">
+                                        <rect key="frame" x="121.66666666666666" y="178.33333333333331" width="70" height="62"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UnlockedACG" translatesAutoresizingMaskIntoConstraints="NO" id="B5d-BW-20P">
-                                        <rect key="frame" x="126" y="89" width="119" height="52"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UnlockedACG" translatesAutoresizingMaskIntoConstraints="NO" id="B5d-BW-20P">
+                                        <rect key="frame" x="121" y="60.666666666666686" width="111" height="60"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UnlockedDE" translatesAutoresizingMaskIntoConstraints="NO" id="fnS-p9-JZl">
-                                        <rect key="frame" x="126" y="155" width="78" height="52"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDV-Tw-dF6">
+                                        <rect key="frame" x="297" y="69.666666666666686" width="52" height="42"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="UnlockedButtonImage"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Os9-bE-wOF">
+                                        <rect key="frame" x="297" y="129.00000000000006" width="52" height="42"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="UnlockedButtonImage"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVO-yM-InO">
+                                        <rect key="frame" x="297" y="188.33333333333331" width="52" height="42"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="UnlockedButtonImage"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPB-8n-JVH">
+                                        <rect key="frame" x="297" y="247.00000000000006" width="52" height="42"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="UnlockedButtonImage"/>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UnlockedSharps" translatesAutoresizingMaskIntoConstraints="NO" id="Z0J-ls-bzu">
+                                        <rect key="frame" x="121.33333333333334" y="238.00000000000006" width="161.00000000000003" height="60"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" name="OpaquePurple"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="zcC-Qe-bv7" secondAttribute="bottom" constant="4" id="73Q-EQ-avf"/>
+                                    <constraint firstItem="B5d-BW-20P" firstAttribute="width" secondItem="nNO-Gb-euN" secondAttribute="width" multiplier="0.307479" id="7K7-Hi-DNb"/>
+                                    <constraint firstItem="zcC-Qe-bv7" firstAttribute="top" secondItem="eTL-ea-OQl" secondAttribute="bottom" id="B3n-tQ-tfN"/>
+                                    <constraint firstItem="Z0J-ls-bzu" firstAttribute="width" secondItem="nNO-Gb-euN" secondAttribute="width" multiplier="0.445983" id="CIs-Ha-VeS"/>
+                                    <constraint firstItem="B5d-BW-20P" firstAttribute="centerY" secondItem="AaY-5m-z2V" secondAttribute="centerY" id="DJE-uX-uae"/>
+                                    <constraint firstItem="fnS-p9-JZl" firstAttribute="leading" secondItem="rCl-Ns-3El" secondAttribute="trailing" constant="23.333333333333329" id="ERc-eQ-QUI"/>
+                                    <constraint firstItem="A5a-yF-ETR" firstAttribute="leading" secondItem="pXs-Gp-JyN" secondAttribute="trailing" constant="36.333333333333329" id="EzX-1K-qDO"/>
+                                    <constraint firstItem="eTL-ea-OQl" firstAttribute="top" secondItem="JB9-Af-Pfp" secondAttribute="bottom" constant="10" id="FAK-qj-ku2"/>
+                                    <constraint firstItem="JB9-Af-Pfp" firstAttribute="leading" secondItem="nNO-Gb-euN" secondAttribute="leading" id="H2Z-vg-GhP"/>
                                     <constraint firstItem="JB9-Af-Pfp" firstAttribute="top" secondItem="nNO-Gb-euN" secondAttribute="top" constant="8" id="Htb-dK-pqN"/>
+                                    <constraint firstItem="nVO-yM-InO" firstAttribute="centerY" secondItem="A5a-yF-ETR" secondAttribute="centerY" id="J8P-pg-zq5"/>
+                                    <constraint firstAttribute="trailing" secondItem="Os9-bE-wOF" secondAttribute="trailing" constant="12" id="Nba-MY-LaQ"/>
+                                    <constraint firstItem="B5d-BW-20P" firstAttribute="leading" secondItem="AaY-5m-z2V" secondAttribute="trailing" constant="35" id="OTs-cu-996"/>
+                                    <constraint firstAttribute="trailing" secondItem="nVO-yM-InO" secondAttribute="trailing" constant="12" id="UCb-Hb-UIG"/>
+                                    <constraint firstItem="Z0J-ls-bzu" firstAttribute="centerY" secondItem="GHd-KT-jGW" secondAttribute="centerY" id="V69-TB-ylU"/>
+                                    <constraint firstItem="A5a-yF-ETR" firstAttribute="width" secondItem="nNO-Gb-euN" secondAttribute="width" multiplier="0.193906" id="VQF-hR-HbS"/>
+                                    <constraint firstItem="Z0J-ls-bzu" firstAttribute="leading" secondItem="GHd-KT-jGW" secondAttribute="trailing" constant="16.666666666666671" id="Wkr-HU-r4q"/>
+                                    <constraint firstItem="eDV-Tw-dF6" firstAttribute="centerY" secondItem="B5d-BW-20P" secondAttribute="centerY" id="cIm-ln-jje"/>
+                                    <constraint firstItem="fnS-p9-JZl" firstAttribute="centerY" secondItem="rCl-Ns-3El" secondAttribute="centerY" id="d0J-Zd-Fyf"/>
+                                    <constraint firstItem="A5a-yF-ETR" firstAttribute="centerY" secondItem="pXs-Gp-JyN" secondAttribute="centerY" id="fF6-Fl-s7k"/>
                                     <constraint firstItem="zcC-Qe-bv7" firstAttribute="centerX" secondItem="nNO-Gb-euN" secondAttribute="centerX" id="jb8-Bf-sQF"/>
+                                    <constraint firstItem="SPB-8n-JVH" firstAttribute="centerY" secondItem="Z0J-ls-bzu" secondAttribute="centerY" id="lU2-4D-zap"/>
+                                    <constraint firstItem="fnS-p9-JZl" firstAttribute="width" secondItem="nNO-Gb-euN" secondAttribute="width" multiplier="0.193906" id="mFA-ol-fCr"/>
+                                    <constraint firstItem="eTL-ea-OQl" firstAttribute="leading" secondItem="nNO-Gb-euN" secondAttribute="leading" constant="8" id="my4-Uz-Cnl"/>
                                     <constraint firstItem="JB9-Af-Pfp" firstAttribute="centerX" secondItem="nNO-Gb-euN" secondAttribute="centerX" id="q2w-HW-EKJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="SPB-8n-JVH" secondAttribute="trailing" constant="12" id="qlK-9b-VfI"/>
+                                    <constraint firstItem="Os9-bE-wOF" firstAttribute="centerY" secondItem="fnS-p9-JZl" secondAttribute="centerY" id="sIM-Zo-Cjs"/>
+                                    <constraint firstAttribute="trailing" secondItem="eTL-ea-OQl" secondAttribute="trailing" constant="8" id="tf0-Xv-PwC"/>
+                                    <constraint firstAttribute="trailing" secondItem="eDV-Tw-dF6" secondAttribute="trailing" constant="12" id="y93-WZ-76g"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -935,8 +982,9 @@
         <image name="MainBackgroundImage" width="585" height="1266"/>
         <image name="PlayButton" width="207" height="60"/>
         <image name="StartButton" width="188" height="44"/>
-        <image name="UnlockedACG" width="228" height="60"/>
+        <image name="UnlockedACG" width="232" height="60"/>
         <image name="UnlockedBF" width="146" height="62"/>
+        <image name="UnlockedButtonImage" width="28" height="28"/>
         <image name="UnlockedDE" width="146" height="60"/>
         <image name="UnlockedSharps" width="372" height="60"/>
         <image name="VirtuosoGameBackground" width="375" height="812"/>
