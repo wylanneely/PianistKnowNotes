@@ -14,7 +14,7 @@ class InstrumentSelectCell: UICollectionViewCell {
     //MARK: - Outlets
     
     @IBOutlet weak var instrumentImage: UIImageView!
-    @IBOutlet weak var instrumentLabel: GradientLabel!
+    @IBOutlet weak var instrumentLabel: UILabel!
     
     
     //MARK: - Setup
@@ -33,7 +33,8 @@ class InstrumentSelectCell: UICollectionViewCell {
     }
     
     func setUpGradientColorLabel(){
-        instrumentLabel.gradientColors = [UIColor.black.cgColor, UIColor.systemPurple.cgColor]
+        let labelColor = UIColor(named:"LabelColor")!
+        instrumentLabel.textColor = labelColor
     }
     
     
