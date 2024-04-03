@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5IX-dh-HyF">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gyu-fa-F0D">
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Poppins-ExtraBold.ttf">
             <string>Poppins-ExtraBold</string>
+        </array>
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
         </array>
     </customFonts>
     <scenes>
@@ -174,7 +178,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXT-Nm-iaB" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
-                                <rect key="frame" x="183" y="181.66666666666666" width="27.333333333333343" height="57"/>
+                                <rect key="frame" x="185" y="186.33333333333334" width="23.333333333333343" height="47.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Poppins-ExtraBold" family="Poppins" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -257,20 +261,155 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="uv1-og-8QN">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="I5w-38-cJh">
+                                <rect key="frame" x="0.0" y="99" width="393" height="298.33333333333331"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lhc-ny-vnU">
+                                    <size key="itemSize" width="289" height="289"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="InstrumentSelectCell" id="PEh-FR-U4s">
+                                        <rect key="frame" x="0.0" y="4.666666666666667" width="289" height="289"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="L35-jz-ioi">
+                                            <rect key="frame" x="0.0" y="0.0" width="289" height="289"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" name="SeparatorColor"/>
+                                        <size key="customSize" width="289" height="289"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNO-Gb-euN" userLabel="InstrumentProgessView">
+                                <rect key="frame" x="16" y="407.33333333333326" width="361" height="410.66666666666674"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrument Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JB9-Af-Pfp" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
+                                        <rect key="frame" x="55.000000000000014" y="8" width="251.33333333333337" height="42"/>
+                                        <fontDescription key="fontDescription" name="Poppins-ExtraBold" family="Poppins" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" systemColor="labelColor"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DividerLine" translatesAutoresizingMaskIntoConstraints="NO" id="X4n-eM-R64">
+                                        <rect key="frame" x="8" y="81.666666666666742" width="345" height="6"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Novice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AaY-5m-z2V" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="90" width="93" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" systemColor="labelColor"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DividerLine" translatesAutoresizingMaskIntoConstraints="NO" id="ldo-pM-9N7">
+                                        <rect key="frame" x="15" y="148" width="330" height="6"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Regular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCl-Ns-3El" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="161" width="103" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" systemColor="labelColor"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DividerLine" translatesAutoresizingMaskIntoConstraints="NO" id="GNb-Ct-57P">
+                                        <rect key="frame" x="15" y="214" width="330" height="6"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pianist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXs-Gp-JyN" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="227.66666666666674" width="146" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" systemColor="labelColor"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DividerLine" translatesAutoresizingMaskIntoConstraints="NO" id="vpk-Di-Si6">
+                                        <rect key="frame" x="8" y="340" width="345" height="6"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Virtuoso" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHd-KT-jGW" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="285" width="103" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" systemColor="labelColor"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DividerLine" translatesAutoresizingMaskIntoConstraints="NO" id="OxG-Ib-3Ra">
+                                        <rect key="frame" x="15" y="275" width="330" height="6"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcC-Qe-bv7">
+                                        <rect key="frame" x="74.666666666666686" y="348.66666666666669" width="212" height="58"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="StartButton"/>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UnlockedSharps" translatesAutoresizingMaskIntoConstraints="NO" id="Z0J-ls-bzu">
+                                        <rect key="frame" x="126" y="281" width="192" height="65"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UnlockedBF" translatesAutoresizingMaskIntoConstraints="NO" id="A5a-yF-ETR">
+                                        <rect key="frame" x="126" y="221" width="78" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UnlockedACG" translatesAutoresizingMaskIntoConstraints="NO" id="B5d-BW-20P">
+                                        <rect key="frame" x="126" y="89" width="119" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UnlockedDE" translatesAutoresizingMaskIntoConstraints="NO" id="fnS-p9-JZl">
+                                        <rect key="frame" x="126" y="155" width="78" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="OpaquePurple"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="zcC-Qe-bv7" secondAttribute="bottom" constant="4" id="73Q-EQ-avf"/>
+                                    <constraint firstItem="JB9-Af-Pfp" firstAttribute="top" secondItem="nNO-Gb-euN" secondAttribute="top" constant="8" id="Htb-dK-pqN"/>
+                                    <constraint firstItem="zcC-Qe-bv7" firstAttribute="centerX" secondItem="nNO-Gb-euN" secondAttribute="centerX" id="jb8-Bf-sQF"/>
+                                    <constraint firstItem="JB9-Af-Pfp" firstAttribute="centerX" secondItem="nNO-Gb-euN" secondAttribute="centerX" id="q2w-HW-EKJ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qSX-wA-KzX"/>
                         <color key="backgroundColor" name="MainBackground"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="uv1-og-8QN" secondAttribute="bottom" id="0nC-rP-ZcU"/>
+                            <constraint firstItem="nNO-Gb-euN" firstAttribute="leading" secondItem="qSX-wA-KzX" secondAttribute="leading" constant="16" id="4hv-yL-vim"/>
+                            <constraint firstItem="nNO-Gb-euN" firstAttribute="top" secondItem="I5w-38-cJh" secondAttribute="bottom" constant="10" id="5zr-K8-Qqh"/>
                             <constraint firstItem="uv1-og-8QN" firstAttribute="top" secondItem="qpi-Fr-jCr" secondAttribute="top" id="D7c-tJ-UWX"/>
+                            <constraint firstItem="I5w-38-cJh" firstAttribute="leading" secondItem="qSX-wA-KzX" secondAttribute="leading" id="GJF-yB-wzb"/>
+                            <constraint firstItem="I5w-38-cJh" firstAttribute="trailing" secondItem="qSX-wA-KzX" secondAttribute="trailing" id="HrS-Jc-JGl"/>
+                            <constraint firstItem="I5w-38-cJh" firstAttribute="height" secondItem="qpi-Fr-jCr" secondAttribute="height" multiplier="0.35" id="cXp-gc-aLO"/>
+                            <constraint firstItem="qSX-wA-KzX" firstAttribute="trailing" secondItem="nNO-Gb-euN" secondAttribute="trailing" constant="16" id="eg3-bD-q0o"/>
                             <constraint firstItem="uv1-og-8QN" firstAttribute="trailing" secondItem="qSX-wA-KzX" secondAttribute="trailing" id="hiR-rC-X66"/>
                             <constraint firstItem="uv1-og-8QN" firstAttribute="leading" secondItem="qSX-wA-KzX" secondAttribute="leading" id="q2z-i2-Z4j"/>
+                            <constraint firstItem="nNO-Gb-euN" firstAttribute="bottom" secondItem="qSX-wA-KzX" secondAttribute="bottom" id="tgs-Lj-HGm"/>
+                            <constraint firstItem="I5w-38-cJh" firstAttribute="top" secondItem="qSX-wA-KzX" secondAttribute="top" constant="40" id="ysD-Rv-ziY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="I5w-38-cJh" id="kdj-BO-5eL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4JV-5T-SFE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="737" y="-756"/>
+            <point key="canvasLocation" x="361.06870229007632" y="-917.6056338028169"/>
         </scene>
         <!--Pianist Game View Controller-->
         <scene sceneID="mKC-zt-OZo">
@@ -395,7 +534,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1PD-wc-FT2" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
-                                <rect key="frame" x="183" y="183" width="27.333333333333343" height="57"/>
+                                <rect key="frame" x="185" y="187.66666666666666" width="23.333333333333343" height="47.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Poppins-ExtraBold" family="Poppins" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -558,7 +697,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="577-x4-a00" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
-                                <rect key="frame" x="183.33333333333334" y="177.66666666666666" width="26.333333333333343" height="57"/>
+                                <rect key="frame" x="185" y="182.33333333333334" width="23.333333333333343" height="47.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Poppins-ExtraBold" family="Poppins" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -716,7 +855,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DP7-UP-WQW" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
-                                <rect key="frame" x="183.33333333333334" y="177.66666666666666" width="26.333333333333343" height="57"/>
+                                <rect key="frame" x="185" y="182.33333333333334" width="23.333333333333343" height="47.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Poppins-ExtraBold" family="Poppins" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -782,6 +921,7 @@
         <image name="DButton" width="80.5" height="80"/>
         <image name="DButtonBig" width="100" height="100"/>
         <image name="DSharpButton" width="80" height="80"/>
+        <image name="DividerLine" width="315" height="1"/>
         <image name="EButton" width="80" height="80"/>
         <image name="EButtonBig" width="100" height="100"/>
         <image name="FButton" width="80" height="80"/>
@@ -794,18 +934,29 @@
         <image name="Lifes5" width="70" height="71.333335876464844"/>
         <image name="MainBackgroundImage" width="585" height="1266"/>
         <image name="PlayButton" width="207" height="60"/>
+        <image name="StartButton" width="188" height="44"/>
+        <image name="UnlockedACG" width="228" height="60"/>
+        <image name="UnlockedBF" width="146" height="62"/>
+        <image name="UnlockedDE" width="146" height="60"/>
+        <image name="UnlockedSharps" width="372" height="60"/>
         <image name="VirtuosoGameBackground" width="375" height="812"/>
         <namedColor name="MainBackground">
-            <color red="0.99999994039535522" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="OpaquePurple">
+            <color red="0.57999998331069946" green="0.2460000067949295" blue="0.77899998426437378" alpha="0.72200000286102295" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SeparatorColor">
+            <color red="0.085000000894069672" green="0.068000003695487976" blue="0.10599999874830246" alpha="0.69800001382827759" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="placeholderTextColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
