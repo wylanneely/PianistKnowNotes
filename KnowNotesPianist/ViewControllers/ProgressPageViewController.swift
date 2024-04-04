@@ -8,6 +8,8 @@
 import UIKit
 
 class ProgressPageViewController: UIViewController {
+    
+    var startDelegate: StartGameDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,7 +17,23 @@ class ProgressPageViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    
+    //MARK: - Outlets
+    
+    @IBOutlet weak var instrumentTypeLabel: UILabel!
+    
+    @IBOutlet weak var noviceLabel: UILabel!
+    @IBOutlet weak var regularLabel: UILabel!
+    @IBOutlet weak var pianistLabel: UILabel!
+    @IBOutlet weak var virtuosoLabel: UILabel!
+    @IBOutlet weak var startButton: UIButton!
+    
+    @IBAction func startButtonTapped(_ sender: Any) {
+        startButton.pulsate()
+        startDelegate?.startGame()
+    }
+    
+    //MARK: - Actions
     /*
     // MARK: - Navigation
 
@@ -26,4 +44,8 @@ class ProgressPageViewController: UIViewController {
     }
     */
 
+}
+
+protocol StartGameDelegate {
+    func startGame()
 }
