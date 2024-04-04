@@ -15,8 +15,12 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCollectionView()
-        // Do any additional setup after loading the view.
     }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     
     //MARK: - Setup
     func setUpCollectionView(){
@@ -25,7 +29,22 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         self.collectionView.register(UINib(nibName: "InstrumentSelectCell", bundle: nil), forCellWithReuseIdentifier: "InstrumentSelectCell")
     }
     
+    //MARK: - Outlets
+    
+    @IBAction func testButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+             guard let destinationController = storyboard.instantiateViewController(withIdentifier: "ProgressPageViewController") as? ProgressPageViewController
+             else { return }
+          
+             if let presentationController = destinationController.presentationController as? UISheetPresentationController {
+                 presentationController.detents = [.medium(),.large()]
+             }
+             self.present(destinationController, animated: true)
+             
+    }
+    
     //MARK: - CollectionView
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -47,7 +66,7 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         let collectionHeight = (vcHeight * 0.35)
         let collectionWidth = (vcWidth * 0.71)
         return CGSize(width: collectionWidth , height: collectionHeight)
-           }
+    }
     
     //MARK: - Actions
     
@@ -62,9 +81,3 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     */
 
 }
-//
-//extension InstrumentSelectViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//            return CGSize(width: screenWidth, height: screenWidth)
-//        }
-//}
