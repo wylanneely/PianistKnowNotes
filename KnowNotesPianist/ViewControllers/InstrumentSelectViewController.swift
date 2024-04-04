@@ -7,7 +7,10 @@
 
 import UIKit
 
-class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, StartGameDelegate {
+    
+    
+    
    
     
     //MARK: - Overrides
@@ -29,6 +32,14 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         self.collectionView.register(UINib(nibName: "InstrumentSelectCell", bundle: nil), forCellWithReuseIdentifier: "InstrumentSelectCell")
     }
     
+    //MARK: - Start Game Delegate
+    
+    func startGame() {
+        
+    }
+    
+    
+    
     //MARK: - Outlets
     
     @IBAction func testButtonTapped(_ sender: Any) {
@@ -37,8 +48,9 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
              else { return }
           
              if let presentationController = destinationController.presentationController as? UISheetPresentationController {
-                 presentationController.detents = [.medium(),.large()]
+                 presentationController.detents = [.large()]
              }
+        destinationController.startDelegate = self
              self.present(destinationController, animated: true)
              
     }
