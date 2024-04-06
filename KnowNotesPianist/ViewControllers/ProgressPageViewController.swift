@@ -27,6 +27,23 @@ class ProgressPageViewController: UIViewController {
     @IBOutlet weak var pianistLabel: UILabel!
     @IBOutlet weak var virtuosoLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var noviceButton: UIButton!
+    @IBOutlet weak var regularButton: UIButton!
+    @IBOutlet weak var pianistButton: UIButton!
+    @IBOutlet weak var virtuosoButton: UIButton!
+    
+  
+    
+    //MARK: - Actions
+    
+    @IBAction func noviceButtonTapped(_ sender: Any) {
+    }
+    @IBAction func regularButtonTapped(_ sender: Any) {
+    }
+    @IBAction func pianistButtonTapped(_ sender: Any) {
+    }
+    @IBAction func virtuosoButtonTapped(_ sender: Any) {
+    }
     
     @IBAction func startButtonTapped(_ sender: Any) {
         startButton.pulsate()
