@@ -17,11 +17,14 @@ class ProgressPageViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    //MARK: SetUp
+    func setUnlockedLockedLevelDifficulties(){
+        
+    }
     
     //MARK: - Outlets
     
     @IBOutlet weak var instrumentTypeLabel: UILabel!
-    
     @IBOutlet weak var noviceLabel: UILabel!
     @IBOutlet weak var regularLabel: UILabel!
     @IBOutlet weak var pianistLabel: UILabel!
@@ -37,12 +40,19 @@ class ProgressPageViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func noviceButtonTapped(_ sender: Any) {
+        startDelegate?.difficultyType(type: .Novice)
     }
+    
     @IBAction func regularButtonTapped(_ sender: Any) {
+        startDelegate?.difficultyType(type: .Regular)
     }
+    
     @IBAction func pianistButtonTapped(_ sender: Any) {
+        startDelegate?.difficultyType(type: .Pianist)
     }
+    
     @IBAction func virtuosoButtonTapped(_ sender: Any) {
+        startDelegate?.difficultyType(type: .Virtuoso)
     }
     
     @IBAction func startButtonTapped(_ sender: Any) {
@@ -65,4 +75,5 @@ class ProgressPageViewController: UIViewController {
 
 protocol StartGameDelegate {
     func startGame()
+    func difficultyType(type:GameType)
 }
