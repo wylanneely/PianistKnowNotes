@@ -30,6 +30,7 @@ class NoviceGameViewController: UIViewController {
         setupButtons()
         setUpProgressBar()
         setUpGradientColorLabel()
+        self.presentationController?.delegate = self
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -295,4 +296,12 @@ class NoviceGameViewController: UIViewController {
     }
     
 
+}
+
+extension NoviceGameViewController: UIAdaptivePresentationControllerDelegate {
+    
+    func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
+        //put logic gate here 
+        return false
+    }
 }
