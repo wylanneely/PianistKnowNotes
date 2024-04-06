@@ -26,7 +26,7 @@ class PianistGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpButtons()
-        updateGameStats()
+        //updateGameStats()
         setUpProgressBar()
         setUpGradientColorLabel()
     }
@@ -121,9 +121,10 @@ class PianistGameViewController: UIViewController {
            let progress = currentRound/totalGroupRounds
            CircularProgressView.setProgress(to: progress , withAnimation: false)
            self.currentRound = currentRound + 1.0
+        checkContinueGame()
        }
     
-        let totalGroupRounds: Double = 12.00
+        let totalGroupRounds: Double = 28.00
         var currentRound: Double = 1.00
     
     
@@ -426,14 +427,22 @@ class PianistGameViewController: UIViewController {
 
     }
     
-    /*
+    
     // MARK: - Navigation
+     func checkContinueGame(){
+         //29
+         if currentRound == 29 {
+             self.performSegue(withIdentifier: "toContinueVirtuoso", sender: self)
+         }
+     }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         guard let dVC = segue.destination as? VirtuosoGameViewController else { return }
+         //change gametype then send to next VC
+         let currentGame = gameController.currentGame
+         currentGame.gameType = .Virtuoso
+         dVC.gameController.setGame(game: currentGame)
+     }
 
 }
