@@ -42,7 +42,17 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     
     func startGame() {
         //add switch based on game level start point
-        self.performSegue(withIdentifier: "toStartNovice", sender: self)
+        switch self.startGameType {
+        case .Novice:
+            self.performSegue(withIdentifier: "toStartNovice", sender: self)
+        case .Regular:
+            self.performSegue(withIdentifier: "toStartRegular", sender: self)
+        case .Pianist:
+            self.performSegue(withIdentifier: "toStartPianist", sender: self)
+        case .Virtuoso:
+            self.performSegue(withIdentifier: "toStartVirtuoso", sender: self)
+      }
+        
     }
     
     
