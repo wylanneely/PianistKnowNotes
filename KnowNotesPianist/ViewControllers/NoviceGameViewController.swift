@@ -102,6 +102,7 @@ class NoviceGameViewController: UIViewController {
            let progress = currentRound/totalGroupRounds
            CircularProgressView.setProgress(to: progress , withAnimation: false)
            self.currentRound = currentRound + 1.0
+        checkContinueGame()
        }
     
         let totalGroupRounds: Double = 12.00
@@ -275,14 +276,23 @@ class NoviceGameViewController: UIViewController {
         updateGameStats()
         self.guessedNotesIDs = []
     }
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func checkContinueGame(){
+        //13
+        if currentRound == 13 {
+            self.performSegue(withIdentifier: "toContinueRegular", sender: self)
+        }
     }
-    */
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let dVC = segue.destination as? RegularGameViewController else { return }
+        //change gametype then send to next VC
+        let currentGame = gameController.currentGame
+        currentGame.gameType = .Regular
+        dVC.gameController.setGame(game: currentGame)
+    }
+    
 
 }
