@@ -12,7 +12,8 @@ class RegularGameViewController: UIViewController {
     
     var gameController = GameController(gameType: .Regular)
     var lifeImageController = LifeImages()
-    
+    var achievementsController = AchievementesController()
+
     var currentNoteID: Int?
     
     var isNewNote: Bool = true
@@ -354,6 +355,8 @@ class RegularGameViewController: UIViewController {
     func checkContinueGame(){
         //21
         if currentRound == 21 {
+            //unlock Pianist GameType using AchievementsController
+            achievementsController.unlockFreePianoPianist()
             self.performSegue(withIdentifier: "toContinuePianist", sender: self)
         }
     }
@@ -367,4 +370,12 @@ class RegularGameViewController: UIViewController {
     }
     
 
+}
+
+extension RegularGameViewController: UIAdaptivePresentationControllerDelegate {
+    
+    func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
+        //put logic gate here
+        return false
+    }
 }
