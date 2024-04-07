@@ -9,16 +9,71 @@ import UIKit
 
 class ProgressPageViewController: UIViewController {
     
+    // add instrumentType eventually
     var startDelegate: StartGameDelegate?
+    var achievementsController = AchievementesController()
+    
+    var isRegularUnlocked: Bool = false
+    var isPianistUnlocked: Bool = false
+    var isVirtuosoUnlocked: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUnlockedLockedLevelDifficulties()
         // Do any additional setup after loading the view.
     }
     
     //MARK: SetUp
     func setUnlockedLockedLevelDifficulties(){
+        //eventually ad a switch case for instrument type
+        if achievementsController.isFreePianoRegularUnlocked() == true {
+            self.isRegularUnlocked = true
+        } else {
+            self.isRegularUnlocked = false
+        }
+        
+        if achievementsController.isFreePianoPianistUnlocked() == true {
+            self.isPianistUnlocked = true
+        } else {
+            self.isPianistUnlocked = false
+        }
+        
+        if achievementsController.isFreePianoVirtuosoUnlocked() == true {
+            self.isVirtuosoUnlocked = true
+        } else {
+            self.isVirtuosoUnlocked = false
+        }
+        
+        setButtonStates()
+    }
+    
+    func setButtonStates(){
+        let unlockedImage = UIImage(named: "UnlockedButtonImage")
+        let lockedImage = UIImage(named: "LockedButtonImage")
+        
+        if isRegularUnlocked {
+            regularButton.isEnabled = true
+            regularButton.setImage(unlockedImage, for: .normal)
+        } else {
+            regularButton.isEnabled = false
+            regularButton.setImage(lockedImage, for: .disabled)
+        }
+        
+        if isPianistUnlocked {
+            pianistButton.isEnabled = true
+            pianistButton.setImage(unlockedImage, for: .normal)
+        } else {
+            pianistButton.isEnabled = false
+            pianistButton.setImage(lockedImage, for: .disabled)
+        }
+        
+        if isVirtuosoUnlocked {
+            virtuosoButton.isEnabled = true
+            virtuosoButton.setImage(unlockedImage, for: .normal)
+        } else {
+            virtuosoButton.isEnabled = false
+            virtuosoButton.setImage(lockedImage, for: .disabled)
+        }
         
     }
     
