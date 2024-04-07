@@ -6,31 +6,52 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PianistGameViewController: UIViewController {
     
-    var gameController = GameController(gameType: .Regular)
-    
+    var gameController = GameController(gameType: .Pianist)
+    var lifeImageController = LifeImages()
+    var achievementsController = AchievementesController()
+
     var currentNoteID: Int?
     
     var isNewNote: Bool = true
+    var guessedNotesIDs = [Int]()
+    
+    let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
+    let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
+    let guessedImpact = UIImpactFeedbackGenerator(style: .soft)
 
+    //MARK: - Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupButtons()
-        updateGameStats()
+        setUpButtons()
+        //updateGameStats()
+        setUpProgressBar()
+        setUpGradientColorLabel()
     }
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
-    let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
-    let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
-    let guessedImpact = UIImpactFeedbackGenerator(style: .soft)
-
+    //MARK: - Audio
+    var soundController: SoundController = SoundController(soundPack: FreePianoPack, gameType: .Pianist)
+   // var soundPack: SoundPack = FreePianoPack
+    var player: AVAudioPlayer!
+    
+    func playSound(noteAnswerID:Int){
+        if let soundURL = soundController.returnSoundPathFrom(noteID: noteAnswerID) {
+           player = try! AVAudioPlayer(contentsOf: soundURL)
+            player!.play()
+        }
+    }
+    
+    //MARK: - SetUP
+    
     func setUpButtons(){
-        AButton.layer.shadowColor = UIColor(named: "GreenShadowColor")?.cgColor
+        AButton.layer.shadowColor = UIColor.black.cgColor
         AButton.layer.shadowOffset = CGSize(width: 1.3, height: 3.0)
         AButton.layer.shadowRadius = 8
         AButton.layer.shadowOpacity = 0.6
@@ -50,7 +71,7 @@ class PianistGameViewController: UIViewController {
         EButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         EButton.layer.shadowRadius = 8
         EButton.layer.shadowOpacity = 0.6
-        FButton.layer.shadowColor = UIColor(named: "GreenShadowColor")?.cgColor
+        FButton.layer.shadowColor = UIColor.black.cgColor
         FButton.layer.shadowOffset = CGSize(width: 1.3, height: 3.0)
         FButton.layer.shadowRadius = 8
         FButton.layer.shadowOpacity = 0.6
@@ -68,6 +89,9 @@ class PianistGameViewController: UIViewController {
         HomeButton.layer.shadowOpacity = 0.6
     }
     
+    func setUpGradientColorLabel(){
+        ScoreLabel.gradientColors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
+    }
 
     //MARK: - Outlets
     
@@ -80,21 +104,56 @@ class PianistGameViewController: UIViewController {
     @IBOutlet weak var FButton: UIButton!
     @IBOutlet weak var GButton: UIButton!
     @IBOutlet weak var PlayButton: UIButton!
+    @IBOutlet weak var CircularProgressView: CircularProgressBar!
+    @IBOutlet weak var ScoreLabel: GradientLabel!
+    @IBOutlet weak var lifeImage: UIImageView!
+    
+    //MARK: - Circular Progress Bar
+    
+    func setUpProgressBar(){
+           CircularProgressView.labelSize = 60
+        CircularProgressView.safePercent = 100
+        CircularProgressView.lineWidth = 20
+        CircularProgressView.safePercent = 100
+        CircularProgressView.layer.cornerRadius = CircularProgressView.frame.size.width/2
+        CircularProgressView.clipsToBounds = true
+       }
+    func updateProgressBar(){
+           let progress = currentRound/totalGroupRounds
+           CircularProgressView.setProgress(to: progress , withAnimation: false)
+           self.currentRound = currentRound + 1.0
+        checkContinueGame()
+       }
+    
+        let totalGroupRounds: Double = 28.00
+        var currentRound: Double = 1.00
+    
     
     //MARK: - Actions
     
     @IBAction func PlayButtonTapped(_ sender: Any) {
-        PlayButton.pulsate()
-        mediumImpact.impactOccurred()
         if isNewNote {
             self.currentNoteID = gameController.generateNextNoteID()
             print("play sound \(String(describing: currentNoteID))")
+            if let cNoteID = currentNoteID {
+                DispatchQueue.main.async{
+                    self.playSound(noteAnswerID: cNoteID)
+                    self.PlayButton.pulsate()
+                    self.mediumImpact.impactOccurred()
+                }
+            }
             self.isNewNote = false
         } else {
             print("play sound \(String(describing: currentNoteID))")
+            if let cNoteID = currentNoteID {
+                DispatchQueue.main.async{
+                    self.playSound(noteAnswerID: cNoteID)
+                    self.PlayButton.pulsate()
+                    self.mediumImpact.impactOccurred()
+                }
+            }
         }
     }
-    var guessedNotesIDs = [Int]()
 
     @IBAction func AButtonTapped(_ sender: Any) {
         if isNewNote {
@@ -107,9 +166,11 @@ class PianistGameViewController: UIViewController {
                 guessedImpact.impactOccurred()
             } else {
                 let result = gameController.updateGameWith(noteAnswerID: 0)
+                self.playSound(noteAnswerID: 0)
                 if result.isCorrect {
                     AButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -140,9 +201,11 @@ class PianistGameViewController: UIViewController {
                 guessedImpact.impactOccurred()
             } else {
                 let result = gameController.updateGameWith(noteAnswerID: 1)
+                self.playSound(noteAnswerID: 1)
                 if result.isCorrect {
                     BButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -173,9 +236,11 @@ class PianistGameViewController: UIViewController {
                 guessedImpact.impactOccurred()
             } else {
                 let result = gameController.updateGameWith(noteAnswerID: 2)
+                self.playSound(noteAnswerID: 2)
                 if result.isCorrect {
                     CButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -205,9 +270,11 @@ class PianistGameViewController: UIViewController {
                 guessedImpact.impactOccurred()
             } else {
                 let result = gameController.updateGameWith(noteAnswerID: 3)
+                self.playSound(noteAnswerID: 3)
                 if result.isCorrect {
                     DButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -237,9 +304,11 @@ class PianistGameViewController: UIViewController {
                 guessedImpact.impactOccurred()
             } else {
                 let result = gameController.updateGameWith(noteAnswerID: 4)
+                self.playSound(noteAnswerID: 4)
                 if result.isCorrect {
                     EButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -269,9 +338,11 @@ class PianistGameViewController: UIViewController {
                 guessedImpact.impactOccurred()
             } else {
                 let result = gameController.updateGameWith(noteAnswerID: 5)
+                self.playSound(noteAnswerID: 5)
                 if result.isCorrect {
                     FButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -301,9 +372,11 @@ class PianistGameViewController: UIViewController {
                 guessedImpact.impactOccurred()
             } else {
                 let result = gameController.updateGameWith(noteAnswerID: 6)
+                self.playSound(noteAnswerID: 6)
                 if result.isCorrect {
                     GButton.pulsate()
                     mediumImpact.impactOccurred()
+                    updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
@@ -330,31 +403,57 @@ class PianistGameViewController: UIViewController {
         updateGameStats()
     }
     
+    //MARK: - CRUD Functions
+    
     func updateGameStats(){
         let result = gameController.returnGameStats()
-//        self.LifeLabel.text = "Life: \(result.lifes)"
-//        self.ScoreLabel.text = "Score: \(result.score)"
+        updateLifeImage(lifes: result.lifes)
+        ScoreLabel.text = "\(result.score)"
+    }
+    
+    func updateLifeImage(lifes: Int){
+        let image = lifeImageController.returnLifeImage(for: lifes)
+        lifeImage.image = image
     }
     
     func endGame(){
         let result = gameController.returnGameStats()
-//        self.LifeLabel.text = "Game Over"
-//        self.ScoreLabel.text = "Final Score: \(result.score)"
+       
     }
     
     func restartGame(){
         gameController.restartGame()
         updateGameStats()
+        self.guessedNotesIDs = []
+
     }
     
-    /*
+    
     // MARK: - Navigation
+     func checkContinueGame(){
+         //29
+         if currentRound == 29 {
+             achievementsController.unlockFreePianoVirtuoso()
+             self.performSegue(withIdentifier: "toContinueVirtuoso", sender: self)
+         }
+     }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         guard let dVC = segue.destination as? VirtuosoGameViewController else { return }
+         //change gametype then send to next VC
+         let currentGame = gameController.currentGame
+         currentGame.gameType = .Virtuoso
+         dVC.gameController.setGame(game: currentGame)
+     }
+
+}
+
+
+extension PianistGameViewController: UIAdaptivePresentationControllerDelegate {
+    
+    func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
+        //put logic gate here
+        return false
     }
-    */
-
 }
