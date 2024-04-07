@@ -320,6 +320,7 @@ class RegularGameViewController: UIViewController {
     }
     
     @IBAction func HomeButtonTapped(_ sender: Any) {
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
         restartGame()
         HomeButton.pulsate()
         mediumImpact.impactOccurred()
