@@ -57,7 +57,9 @@ class ProgressPageViewController: UIViewController {
     
     @IBAction func startButtonTapped(_ sender: Any) {
         startButton.pulsate()
-        startDelegate?.startGame()
+        self.dismiss(animated: true) {
+            self.startDelegate?.startGame()
+        }
     }
     
     //MARK: - Actions
