@@ -12,7 +12,8 @@ class PianistGameViewController: UIViewController {
     
     var gameController = GameController(gameType: .Pianist)
     var lifeImageController = LifeImages()
-    
+    var achievementsController = AchievementesController()
+
     var currentNoteID: Int?
     
     var isNewNote: Bool = true
@@ -26,9 +27,10 @@ class PianistGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpButtons()
-        //updateGameStats()
+        updateGameStats()
         setUpProgressBar()
         setUpGradientColorLabel()
+        self.presentationController?.delegate = self
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -432,6 +434,7 @@ class PianistGameViewController: UIViewController {
      func checkContinueGame(){
          //29
          if currentRound == 29 {
+             achievementsController.unlockFreePianoVirtuoso()
              self.performSegue(withIdentifier: "toContinueVirtuoso", sender: self)
          }
      }
@@ -445,4 +448,13 @@ class PianistGameViewController: UIViewController {
          dVC.gameController.setGame(game: currentGame)
      }
 
+}
+
+
+extension PianistGameViewController: UIAdaptivePresentationControllerDelegate {
+    
+    func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
+        //put logic gate here
+        return false
+    }
 }

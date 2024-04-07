@@ -31,6 +31,7 @@ class RegularGameViewController: UIViewController {
         updateGameStats()
         setUpProgressBar()
         setUpGradientColorLabel()
+        self.presentationController?.delegate = self
     }
     
     override var prefersStatusBarHidden: Bool {

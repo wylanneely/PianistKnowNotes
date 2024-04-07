@@ -30,6 +30,7 @@ class VirtuosoGameViewController: UIViewController {
         updateGameStats()
         setUpProgressBar()
         setUpGradientColorLabel()
+        self.presentationController?.delegate = self
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -629,4 +630,12 @@ class VirtuosoGameViewController: UIViewController {
     }
     */
 
+}
+
+extension VirtuosoGameViewController: UIAdaptivePresentationControllerDelegate {
+    
+    func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
+        //put logic gate here to check if game is over
+        return false
+    }
 }
