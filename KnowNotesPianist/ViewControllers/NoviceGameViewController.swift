@@ -12,7 +12,8 @@ class NoviceGameViewController: UIViewController {
     
     var gameController = GameController(gameType: .Novice)
     var lifeImageController = LifeImages()
-    
+    var achievementsController = AchievementesController()
+
     var currentNoteID: Int?
     
     var isNewNote: Bool = true
@@ -73,7 +74,7 @@ class NoviceGameViewController: UIViewController {
     
     func playSound(noteAnswerID:Int){
         if let soundURL = soundController.returnSoundPathFrom(noteID: noteAnswerID) {
-           player = try! AVAudioPlayer(contentsOf: soundURL)
+            player = try! AVAudioPlayer(contentsOf: soundURL)
             player!.play()
         }
     }
@@ -92,7 +93,7 @@ class NoviceGameViewController: UIViewController {
     //MARK: - Circular Progress Bar
     
     func setUpProgressBar(){
-           CircularProgressView.labelSize = 60
+        CircularProgressView.labelSize = 60
         CircularProgressView.safePercent = 100
         CircularProgressView.lineWidth = 20
         CircularProgressView.safePercent = 100
@@ -100,9 +101,9 @@ class NoviceGameViewController: UIViewController {
         CircularProgressView.clipsToBounds = true
        }
     func updateProgressBar(){
-           let progress = currentRound/totalGroupRounds
-           CircularProgressView.setProgress(to: progress , withAnimation: false)
-           self.currentRound = currentRound + 1.0
+        let progress = currentRound/totalGroupRounds
+        CircularProgressView.setProgress(to: progress , withAnimation: false)
+        self.currentRound = currentRound + 1.0
         checkContinueGame()
        }
     
@@ -256,8 +257,6 @@ class NoviceGameViewController: UIViewController {
         let result = gameController.returnGameStats()
         updateLifeImage(lifes: result.lifes)
         ScoreLabel.text = "\(result.score)"
-        //self.LifeLabel.text = "Life: \(result.lifes)"
-      //  self.ScoreLabel.text = "Score: \(result.score)"
     }
     
     
@@ -283,6 +282,8 @@ class NoviceGameViewController: UIViewController {
     func checkContinueGame(){
         //13
         if currentRound == 13 {
+            //unlock gameState using AchievementsController
+            achievementsController.unlockFreePianoRegular()
             self.performSegue(withIdentifier: "toContinueRegular", sender: self)
         }
     }
@@ -301,7 +302,7 @@ class NoviceGameViewController: UIViewController {
 extension NoviceGameViewController: UIAdaptivePresentationControllerDelegate {
     
     func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
-        //put logic gate here 
+        //put logic gate here
         return false
     }
 }
