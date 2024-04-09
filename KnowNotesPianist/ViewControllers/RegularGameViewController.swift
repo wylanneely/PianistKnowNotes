@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class RegularGameViewController: UIViewController {
+class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
     
     var gameController = GameController(gameType: .Regular)
     var lifeImageController = LifeImages()
@@ -104,19 +104,26 @@ class RegularGameViewController: UIViewController {
     //MARK: - Circular Progress Bar
     
     func setUpProgressBar(){
-           CircularProgressView.labelSize = 60
+        CircularProgressView.labelSize = 60
         CircularProgressView.safePercent = 100
         CircularProgressView.lineWidth = 20
         CircularProgressView.safePercent = 100
         CircularProgressView.layer.cornerRadius = CircularProgressView.frame.size.width/2
         CircularProgressView.clipsToBounds = true
-       }
+    }
+    
     func updateProgressBar(){
-           let progress = currentRound/totalGroupRounds
-           CircularProgressView.setProgress(to: progress , withAnimation: false)
-           self.currentRound = currentRound + 1.0
+        let progress = currentRound/totalGroupRounds
+        CircularProgressView.setProgress(to: progress , withAnimation: false)
+        self.currentRound = currentRound + 1.0
         checkContinueGame()
-       }
+    }
+    
+    func restartProgressBar(){
+        self.currentRound = 0
+        CircularProgressView.setProgress(to: currentRound, withAnimation: false)
+        checkContinueGame()
+    }
     
         let totalGroupRounds: Double = 20.00
         var currentRound: Double = 1.00
@@ -320,14 +327,19 @@ class RegularGameViewController: UIViewController {
     }
     
     @IBAction func HomeButtonTapped(_ sender: Any) {
-        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
-        restartGame()
         HomeButton.pulsate()
         mediumImpact.impactOccurred()
-        updateGameStats()
+        showFinishedGamePopup()
     }
     
     //MARK: - CRUD Functions
+    
+    func showFinishedGamePopup(){
+        let popUpView = FinishedGamePopUp()
+        popUpView.delegate = self
+        popUpView.game = gameController.currentGame
+        popUpView.appear(sender: self)
+    }
     
     func updateGameStats(){
         let result = gameController.returnGameStats()
@@ -341,16 +353,21 @@ class RegularGameViewController: UIViewController {
     }
     
     func endGame(){
-        let result = gameController.returnGameStats()
-      
+      showFinishedGamePopup()
     }
     
     func restartGame(){
+        restartProgressBar()
         gameController.restartGame()
         self.guessedNotesIDs = []
         updateGameStats()
     }
     
+    //MARK: - Delegates
+    
+    func finishedPopUpRestartedGame() {
+        restartGame()
+    }
     
     // MARK: - Navigation
      
