@@ -21,13 +21,20 @@ import UIKit
 //}
 
 extension UIView {
-    func asImage(rect: CGRect) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
-        defer { UIGraphicsEndImageContext() }
-        drawHierarchy(in: rect, afterScreenUpdates: true)
-        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return UIImage() }
-        return image
-    }
+//    func asImage(rect: CGRect) -> UIImage {
+//        UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
+//        defer { UIGraphicsEndImageContext() }
+//        drawHierarchy(in: rect, afterScreenUpdates: true)
+//        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { 
+//            return UIImage() }
+//        return image
+//    }
+    func asImage() -> UIImage {
+          let renderer = UIGraphicsImageRenderer(bounds: bounds)
+          return renderer.image { rendererContext in
+              layer.render(in: rendererContext.cgContext)
+          }
+      }
 }
 
 extension UIButton {
