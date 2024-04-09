@@ -12,6 +12,10 @@ class FinishedGamePopUp: UIViewController {
     var game: Game?
     var delegate: FinishedPopUpDelegate?
     
+    let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
+    let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
+    let lightImpact = UIImpactFeedbackGenerator(style: .soft)
+    
     //MARK: Overides
     
     override func viewDidLoad() {
@@ -75,18 +79,37 @@ class FinishedGamePopUp: UIViewController {
     
     //MARK: - Actions
     @IBAction func submitScoreTapped(_ sender: Any) {
+        submitScoreButton.pulsate()
+        mediumImpact.impactOccurred()
         AchievementesController().setFreePiano(highScore: game?.score ?? 0)
     }
     
     @IBAction func shareButtonTapped(_ sender: Any) {
-        
+        lightImpact.impactOccurred()
+        presentShareSheet()
+    }
+    
+    @objc private func presentShareSheet() {
+        let image = contentView.asImage()
+        //in future replace link with link to game
+        guard let url = URL(string: "https://apps.apple.com/us/app/sober-today/id6478566365") else {
+            print("error")
+            return
+        }
+        let shareSheetVC = UIActivityViewController(activityItems: [image],
+                                                    applicationActivities: nil)
+        present(shareSheetVC, animated: true)
     }
     
     @IBAction func exitButtonTapped(_ sender: Any) {
+        exitButton.pulsate()
+        heavyImpact.impactOccurred()
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func restartButtonTapped(_ sender: Any) {
+        restartButton.pulsate()
+        heavyImpact.impactOccurred()
         self.dismiss(animated: true) {
             self.delegate?.finishedPopUpRestartedGame()
         }
