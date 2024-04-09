@@ -282,9 +282,7 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
     }
     
     func endGame(){
-        let result = gameController.returnGameStats()
-       // self.LifeLabel.text = "Game Over"
-       // self.ScoreLabel.text = "Final Score: \(result.score)"
+        showFinishedGamePopup()
     }
     
     func restartGame(){
