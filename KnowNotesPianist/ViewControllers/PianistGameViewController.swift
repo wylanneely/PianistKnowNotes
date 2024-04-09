@@ -130,7 +130,6 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
     func restartProgressBar(){
         self.currentRound = 0
         CircularProgressView.setProgress(to: currentRound, withAnimation: false)
-        checkContinueGame()
     }
     
         let totalGroupRounds: Double = 28.00
@@ -431,7 +430,7 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
     }
     
     func endGame(){
-        let result = gameController.returnGameStats()
+        updateGameStats()
         showFinishedGamePopup()
     }
     
@@ -451,7 +450,7 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
     // MARK: - Navigation
      func checkContinueGame(){
          //29
-         if currentRound == 29 {
+         if currentRound == 2 {
              achievementsController.unlockFreePianoVirtuoso()
              self.performSegue(withIdentifier: "toContinueVirtuoso", sender: self)
          }

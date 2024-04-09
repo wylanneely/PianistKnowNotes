@@ -252,11 +252,8 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
     }
     
     @IBAction func HomeButtonTapped(_ sender: Any) {
-//        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
-//        restartGame()
-//        HomeButton.pulsate()
-//        mediumImpact.impactOccurred()
-//        updateGameStats()
+        HomeButton.pulsate()
+        mediumImpact.impactOccurred()
         showFinishedGamePopup()
     }
     
@@ -275,13 +272,13 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
         ScoreLabel.text = "\(result.score)"
     }
     
-    
     func updateLifeImage(lifes: Int){
         let image = lifeImageController.returnLifeImage(for: lifes)
         lifeImage.image = image
     }
     
     func endGame(){
+        updateGameStats()
         showFinishedGamePopup()
     }
     
@@ -298,12 +295,11 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
         restartGame()
     }
     
-    
     // MARK: - Navigation
     
     func checkContinueGame(){
         //13
-        if currentRound == 13 {
+        if currentRound == 3 {
             //unlock gameState using AchievementsController
             achievementsController.unlockFreePianoRegular()
             self.performSegue(withIdentifier: "toContinueRegular", sender: self)

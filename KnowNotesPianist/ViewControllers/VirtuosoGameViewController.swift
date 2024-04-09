@@ -623,6 +623,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     }
     
     func endGame(){
+        updateGameStats()
         showFinishedGamePopup()
     }
     

@@ -353,7 +353,8 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
     }
     
     func endGame(){
-      showFinishedGamePopup()
+        updateGameStats()
+        showFinishedGamePopup()
     }
     
     func restartGame(){
@@ -373,7 +374,7 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
      
     func checkContinueGame(){
         //21
-        if currentRound == 21 {
+        if currentRound == 2 {
             //unlock Pianist GameType using AchievementsController
             achievementsController.unlockFreePianoPianist()
             self.performSegue(withIdentifier: "toContinuePianist", sender: self)
