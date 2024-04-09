@@ -35,6 +35,9 @@
                             <buttonConfiguration key="configuration" style="plain" title="Submit">
                                 <fontDescription key="titleFontDescription" type="boldSystem" pointSize="28"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="submitScoreTapped:" destination="-1" eventType="touchUpInside" id="KU7-Bh-SUi"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="69" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZd-YD-aCR" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
                             <rect key="frame" x="107.66666666666669" y="29.666666666666693" width="94.333333333333314" height="83.666666666666686"/>

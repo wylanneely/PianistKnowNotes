@@ -74,6 +74,9 @@ class FinishedGamePopUp: UIViewController {
     @IBOutlet weak var gradientScoreLabel: GradientLabel!
     
     //MARK: - Actions
+    @IBAction func submitScoreTapped(_ sender: Any) {
+        AchievementesController().setFreePiano(highScore: game?.score ?? 0)
+    }
     
     @IBAction func shareButtonTapped(_ sender: Any) {
         
