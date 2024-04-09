@@ -8,6 +8,28 @@
 import Foundation
 import UIKit
 
+//extension UIColor {
+//    
+//    func PurpleGradient()-> UIColor {
+//        return UIColor(named:"GradientColor1")!
+//    }
+//    
+//    func CyanGradient()-> UIColor {
+//        return UIColor(named: "GradientColor2")!
+//    }
+//    
+//}
+
+extension UIView {
+    func asImage(rect: CGRect) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
+        defer { UIGraphicsEndImageContext() }
+        drawHierarchy(in: rect, afterScreenUpdates: true)
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return UIImage() }
+        return image
+    }
+}
+
 extension UIButton {
     func pulsate() {
         let pulse = CASpringAnimation(keyPath: "transform.scale")
