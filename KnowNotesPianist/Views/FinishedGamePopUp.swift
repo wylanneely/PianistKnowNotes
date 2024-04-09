@@ -11,6 +11,8 @@ class FinishedGamePopUp: UIViewController {
 
     var game: Game?
     var delegate: FinishedPopUpDelegate?
+    var shareImage: UIImage?
+
     
     let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
     let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
@@ -22,7 +24,9 @@ class FinishedGamePopUp: UIViewController {
         super.viewDidLoad()
         setGradientLabel()
         beginingStateConfig()
+        shareImage = contentView.asImage()
     }
+
     
     init() {
         super.init(nibName: "FinishedGamePopUp", bundle: nil)
@@ -88,11 +92,11 @@ class FinishedGamePopUp: UIViewController {
         lightImpact.impactOccurred()
         presentShareSheet()
     }
-    
+
     @objc private func presentShareSheet() {
-        let image = contentView.asImage()
         //in future replace link with link to game
-        guard let url = URL(string: "https://apps.apple.com/us/app/sober-today/id6478566365") else {
+        guard let image = self.shareImage,
+              let url = URL(string: "https://apps.apple.com/us/app/sober-today/id6478566365") else {
             print("error")
             return
         }
