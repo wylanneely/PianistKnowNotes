@@ -406,13 +406,14 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func HomeButtonTapped(_ sender: Any) {
         HomeButton.pulsate()
         mediumImpact.impactOccurred()
-        showFinishedGamePopup()
+        showFinishedGamePopup(isPaused: true)
     }
     
     //MARK: - CRUD Functions
     
-    func showFinishedGamePopup(){
+    func showFinishedGamePopup(isPaused:Bool){
         let popUpView = FinishedGamePopUp()
+        popUpView.isPaused = isPaused
         popUpView.delegate = self
         popUpView.game = gameController.currentGame
         popUpView.appear(sender: self)
@@ -431,7 +432,7 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
     
     func endGame(){
         updateGameStats()
-        showFinishedGamePopup()
+        showFinishedGamePopup(isPaused: false)
     }
     
     func restartGame(){
@@ -450,7 +451,7 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
     // MARK: - Navigation
      func checkContinueGame(){
          //29
-         if currentRound == 2 {
+         if currentRound == 29 {
              achievementsController.unlockFreePianoVirtuoso()
              self.performSegue(withIdentifier: "toContinueVirtuoso", sender: self)
          }

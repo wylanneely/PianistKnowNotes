@@ -146,6 +146,8 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
         
     }
     func updateProgressBar(){
+        //function to add a single life each 50 points correct
+        //once hit 100 points high score or 100 rounds on Virtuoso, unlock new sound
         let progress = currentRound/totalGroupRounds
         CircularProgressView.setProgress(to: progress , withAnimation: false)
         self.currentRound = currentRound + 1.0
@@ -156,7 +158,8 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
         CircularProgressView.setProgress(to: currentRound, withAnimation: false)
     }
     
-        let totalGroupRounds: Double = 12.00
+    
+        let totalGroupRounds: Double = 49.00
         var currentRound: Double = 1.00
     
     //MARK: - Actions
@@ -599,13 +602,14 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func HomeButtonTapped(_ sender: Any) {
         HomeButton.pulsate()
         mediumImpact.impactOccurred()
-        showFinishedGamePopup()
+        showFinishedGamePopup(isPaused: true)
     }
     
     //MARK: - CRUD Functions
     
-    func showFinishedGamePopup(){
+    func showFinishedGamePopup(isPaused:Bool){
         let popUpView = FinishedGamePopUp()
+        popUpView.isPaused = isPaused
         popUpView.delegate = self
         popUpView.game = gameController.currentGame
         popUpView.appear(sender: self)
@@ -624,7 +628,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     
     func endGame(){
         updateGameStats()
-        showFinishedGamePopup()
+        showFinishedGamePopup(isPaused: false)
     }
     
     func restartGame(){
