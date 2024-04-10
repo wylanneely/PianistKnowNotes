@@ -12,7 +12,6 @@ class FinishedGamePopUp: UIViewController {
     var game: Game?
     var delegate: FinishedPopUpDelegate?
     var shareImage: UIImage?
-
     
     let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
     let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
@@ -26,7 +25,6 @@ class FinishedGamePopUp: UIViewController {
         beginingStateConfig()
         shareImage = contentView.asImage()
     }
-
     
     init() {
         super.init(nibName: "FinishedGamePopUp", bundle: nil)
@@ -41,9 +39,15 @@ class FinishedGamePopUp: UIViewController {
     
     func setGradientLabel(){
         if self.traitCollection.userInterfaceStyle == .dark {
-            gradientScoreLabel.gradientColors = [UIColor.white.cgColor, UIColor.systemPurple.cgColor]
+            gradientScoreLabel.gradientColors = [
+                UIColor.white.cgColor,
+                UIColor.systemPurple.cgColor
+            ]
         } else {
-            gradientScoreLabel.gradientColors = [UIColor.black.cgColor, UIColor.systemPurple.cgColor]
+            gradientScoreLabel.gradientColors = [
+                UIColor.black.cgColor,
+                UIColor.systemPurple.cgColor
+            ]
         }
 
         if let game = game {
@@ -72,6 +76,18 @@ class FinishedGamePopUp: UIViewController {
         }
     }
     
+    //MARK: - Dismiss
+    
+    func hide() {
+        UIView.animate(withDuration: 1, delay: 0.0, options: .curveEaseOut) {
+            self.backgroundView.alpha = 0
+            self.contentView.alpha = 0
+        } completion: { _ in
+            self.dismiss(animated: false)
+            self.removeFromParent()
+        }
+    }
+    
     //MARK: - Outlets
 
     @IBOutlet weak var contentView: UIView!
@@ -80,6 +96,7 @@ class FinishedGamePopUp: UIViewController {
     @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var submitScoreButton: UIButton!
     @IBOutlet weak var gradientScoreLabel: GradientLabel!
+    @IBOutlet weak var dismissButton: UIButton!
     
     //MARK: - Actions
     @IBAction func submitScoreTapped(_ sender: Any) {
@@ -95,14 +112,18 @@ class FinishedGamePopUp: UIViewController {
 
     @objc private func presentShareSheet() {
         //in future replace link with link to game
-        guard let image = self.shareImage,
-              let url = URL(string: "https://apps.apple.com/us/app/sober-today/id6478566365") else {
+        guard let image = self.shareImage else {
+        // let url = URL(string: "https://apps.apple.com/us/app/sober-today/id6478566365") else {
             print("error")
             return
         }
         let shareSheetVC = UIActivityViewController(activityItems: [image],
                                                     applicationActivities: nil)
         present(shareSheetVC, animated: true)
+    }
+    
+    @IBAction func dismissButtonTapped(_ sender: Any) {
+        self.hide()
     }
     
     @IBAction func exitButtonTapped(_ sender: Any) {
