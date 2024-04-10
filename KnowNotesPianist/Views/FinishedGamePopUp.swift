@@ -12,6 +12,7 @@ class FinishedGamePopUp: UIViewController {
     var game: Game?
     var delegate: FinishedPopUpDelegate?
     var shareImage: UIImage?
+    var isPaused: Bool = true
     
     let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
     let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
@@ -24,6 +25,7 @@ class FinishedGamePopUp: UIViewController {
         setGradientLabel()
         beginingStateConfig()
         shareImage = contentView.asImage()
+        checkSetPausedState()
     }
     
     init() {
@@ -53,6 +55,14 @@ class FinishedGamePopUp: UIViewController {
         if let game = game {
             let score = game.score
             gradientScoreLabel.text = "\(score)"
+        }
+    }
+    
+    func checkSetPausedState(){
+        if isPaused {
+            dismissButton.isHidden = false
+        } else {
+            dismissButton.isHidden = true
         }
     }
     
