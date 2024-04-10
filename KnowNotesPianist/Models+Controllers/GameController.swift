@@ -9,7 +9,7 @@ import Foundation
 
 class Game {
     
-    let gameType: GameType
+    var gameType: GameType
     var lifes: Int = 5
     var score: Int = 0
     
@@ -67,26 +67,96 @@ class Game {
     }
     
     func generateNextNoteID()->Int{
-        self.lastNoteID = self.currentNoteID
-        let nextNoteID = randomNoteID(upTo: noteNumber, excludingValue: lastNoteID)
+        //self.lastNoteID = self.currentNoteID
+       // let nextNoteID = randomNoteID(upTo: noteNumber, excludingValue: lastNoteID)
+        let nextNoteID = randomNoteID(upTo: noteNumber)
         self.currentNoteID = nextNoteID
         return nextNoteID
     }
     
-   private func randomNoteID(upTo noteNumber: Int, excludingValue excludedNoteID: Int?) -> Int {
-        let noteNumberID = (noteNumber - 1)
+//   private func randomNoteID(upTo noteNumber: Int, excludingValue excludedNoteID: Int?) -> Int {
+//        let noteNumberID = (noteNumber - 1)
+//        
+//        if let excludedNoteID = excludedNoteID {
+//            var randomValue: Int
+//            repeat {
+//                randomValue = Int.random(in: 0...noteNumberID)
+//            } while randomValue == excludedNoteID
+//            
+//            return randomValue
+//        } else {
+//            return Int.random(in: 0...noteNumberID)
+//        }
+//    }
+    
+    private var noviceExcludedNotes = [Int]()
+    private var regularExcludedNotes = [Int]()
+    private var pianistExcludedNotes = [Int]()
+    private var virtuosoExcludedNotes = [Int]()
+    
+    
+    private func randomNoteID(upTo noteNumber: Int) -> Int {
+         let noteNumberID = (noteNumber - 1)
         
-        if let excludedNoteID = excludedNoteID {
+        switch gameType {
+        case .Novice:
             var randomValue: Int
-            repeat {
+            if noviceExcludedNotes.count < noteNumber {
+                repeat {
+                    randomValue = Int.random(in: 0...noteNumberID)
+                } while noviceExcludedNotes.contains(randomValue)
+                noviceExcludedNotes.append(randomValue)
+                return randomValue
+            } else {
                 randomValue = Int.random(in: 0...noteNumberID)
-            } while randomValue == excludedNoteID
+                noviceExcludedNotes = [randomValue]
+                return randomValue
+            }
             
-            return randomValue
-        } else {
-            return Int.random(in: 0...noteNumberID)
+        case .Regular:
+            var randomValue: Int
+            if regularExcludedNotes.count < noteNumber {
+                repeat {
+                    randomValue = Int.random(in: 0...noteNumberID)
+                } while regularExcludedNotes.contains(randomValue)
+                regularExcludedNotes.append(randomValue)
+                return randomValue
+            } else {
+                randomValue = Int.random(in: 0...noteNumberID)
+                regularExcludedNotes = [randomValue]
+                return randomValue
+            }
+            
+        case .Pianist:
+            var randomValue: Int
+            if pianistExcludedNotes.count < noteNumber {
+                repeat {
+                    randomValue = Int.random(in: 0...noteNumberID)
+                } while pianistExcludedNotes.contains(randomValue)
+                pianistExcludedNotes.append(randomValue)
+                return randomValue
+            } else {
+                randomValue = Int.random(in: 0...noteNumberID)
+                pianistExcludedNotes = [randomValue]
+                return randomValue
+            }
+            
+        case .Virtuoso:
+            var randomValue: Int
+            if virtuosoExcludedNotes.count < noteNumber {
+                repeat {
+                    randomValue = Int.random(in: 0...noteNumberID)
+                } while virtuosoExcludedNotes.contains(randomValue)
+                virtuosoExcludedNotes.append(randomValue)
+                return randomValue
+            } else {
+                randomValue = Int.random(in: 0...noteNumberID)
+                virtuosoExcludedNotes = [randomValue]
+                return randomValue
+            }
         }
-    }
+         
+     }
     
     func restart(){
         self.score = 0
@@ -113,7 +183,7 @@ struct GameController {
         self.currentGame = newGame
     }
     
-    mutating func restartGame(){
+mutating func restartGame(){
     self.currentGame.restart()
     }
     
@@ -137,6 +207,10 @@ struct GameController {
         
     }
     
+    mutating func setGame(game:Game){
+        self.currentGame = game
+    }
+    
     func returnGameStats()->(score:Int, lifes:Int) {
         return (score:currentGame.score,lifes:currentGame.lifes)
     }
@@ -151,17 +225,17 @@ enum GameType{
     case Virtuoso
 }
 
-enum NoteID: Int {
-    case A = 0
-    case B = 1
-    case C = 2
-    case D = 3
-    case E = 4
-    case F = 5
-    case G = 6
-    case AS = 7
-    case CS = 8
-    case DS = 9
-    case FS = 10
-    case GS = 11
-}
+//enum NoteID: Int {
+//    case A = 0
+//    case B = 1
+//    case C = 2
+//    case D = 3
+//    case E = 4
+//    case F = 5
+//    case G = 6
+//    case AS = 7
+//    case CS = 8
+//    case DS = 9
+//    case FS = 10
+//    case GS = 11
+//}
