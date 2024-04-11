@@ -20,6 +20,10 @@ class Game {
     
     init(gameType: GameType) {
         self.gameType = gameType
+        shuffledNovice.shuffle()
+        shuffledPianist.shuffle()
+        shuffledRegular.shuffle()
+        shuffledVirtuoso.shuffle()
     }
     
     var noteNumber: Int {
@@ -69,7 +73,9 @@ class Game {
     func generateNextNoteID()->Int{
         //self.lastNoteID = self.currentNoteID
        // let nextNoteID = randomNoteID(upTo: noteNumber, excludingValue: lastNoteID)
-        let nextNoteID = randomNoteID(upTo: noteNumber)
+//        let nextNoteID = randomNoteID(upTo: noteNumber)
+//        self.currentNoteID = nextNoteID
+        let nextNoteID = generateShuffledNote()
         self.currentNoteID = nextNoteID
         return nextNoteID
     }
@@ -94,6 +100,61 @@ class Game {
     private var pianistExcludedNotes = [Int]()
     private var virtuosoExcludedNotes = [Int]()
     
+    private var shuffledNovice = [0,1,2]
+    private var shuffledRegular = [0,1,2,3,4]
+    private var shuffledPianist = [0,1,2,3,4,5,6]
+    private var shuffledVirtuoso = [0,1,2,3,4,5,6,7,8,9,10,11]
+    private var shuffledIteration = 0
+     
+    private func generateShuffledNote() -> Int {
+        switch gameType {
+        case .Novice:
+            if shuffledIteration == 2 {
+                let note = shuffledNovice[shuffledIteration]
+                shuffledNovice.shuffle()
+                shuffledIteration = 0
+                return note
+            } else {
+                let note = shuffledNovice[shuffledIteration]
+                shuffledIteration = shuffledIteration + 1
+                return note
+            }
+        case .Regular:
+            if shuffledIteration == 4 {
+                let note = shuffledRegular[shuffledIteration]
+                shuffledRegular.shuffle()
+                shuffledIteration = 0
+                return note
+            } else {
+                let note = shuffledRegular[shuffledIteration]
+                shuffledIteration = shuffledIteration + 1
+                return note
+            }
+        case .Pianist:
+            if shuffledIteration == 6 {
+                let note = shuffledPianist[shuffledIteration]
+                shuffledPianist.shuffle()
+                shuffledIteration = 0
+                return note
+            } else {
+                let note = shuffledPianist[shuffledIteration]
+                shuffledIteration = shuffledIteration + 1
+                return note
+            }
+        case .Virtuoso:
+            if shuffledIteration == 11 {
+                let note = shuffledVirtuoso[shuffledIteration]
+                shuffledVirtuoso.shuffle()
+                shuffledIteration = 0
+                return note
+            } else {
+                let note = shuffledVirtuoso[shuffledIteration]
+                shuffledIteration = shuffledIteration + 1
+                return note
+            }
+        }
+        
+    }
     
     private func randomNoteID(upTo noteNumber: Int) -> Int {
          let noteNumberID = (noteNumber - 1)
@@ -161,6 +222,7 @@ class Game {
     func restart(){
         self.score = 0
         self.lifes = 5
+        self.shuffledIteration = 0
     }
     
     private func randomNoteFrom(noteNumber: Int)->Int{
