@@ -42,25 +42,25 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
     
     //MARK: SetUp
     func setupButtons(){
-        AButton.layer.shadowColor = UIColor.black.cgColor
+        AButton.layer.shadowColor = UIColor.greenShadow.cgColor
         AButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         AButton.layer.shadowRadius = 8
         AButton.layer.shadowOpacity = 0.6
-        CButton.layer.shadowColor = UIColor.black.cgColor
+        CButton.layer.shadowColor = UIColor.blueShadow.cgColor
         CButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         CButton.layer.shadowRadius = 8
         CButton.layer.shadowOpacity = 0.6
-        GButton.layer.shadowColor = UIColor.black.cgColor
+        GButton.layer.shadowColor = UIColor.pinkShadow.cgColor
         GButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         GButton.layer.shadowRadius = 8
         GButton.layer.shadowOpacity = 0.6
-        PlayButton.layer.shadowColor = UIColor.black.cgColor
-        PlayButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
-        PlayButton.layer.shadowRadius = 8
+        PlayButton.layer.shadowColor = UIColor.regularShadow.cgColor
+        PlayButton.layer.shadowOffset = CGSize(width: 1.0, height: 3.0)
+        PlayButton.layer.shadowRadius = 6
         PlayButton.layer.shadowOpacity = 0.6
-        HomeButton.layer.shadowColor = UIColor.black.cgColor
-        HomeButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
-        HomeButton.layer.shadowRadius = 8
+        HomeButton.layer.shadowColor = UIColor.regularShadow.cgColor
+        HomeButton.layer.shadowOffset = CGSize(width: 1.0, height: 3.0)
+        HomeButton.layer.shadowRadius = 6
         HomeButton.layer.shadowOpacity = 0.6
     }
     
