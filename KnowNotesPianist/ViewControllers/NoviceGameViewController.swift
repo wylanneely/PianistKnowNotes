@@ -16,14 +16,17 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
     var achievementsController = AchievementesController()
 
     var currentNoteID: Int?
-    
+    var isNewGame: Bool = true
     var isNewNote: Bool = true
     var guessedNotesIDs = [Int]()
 
     let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
     let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
     let guessedImpact = UIImpactFeedbackGenerator(style: .soft)
-
+    // variables to help transition last Image for button
+    let startButtonImage = UIImage(named: "StartGameButton")
+    let playButtonImage = UIImage(named: "PlayButton")
+    let repeatButtonImage = UIImage(named: "RepeatButton")
     
     //MARK: - Overrides
     
@@ -122,6 +125,11 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
     //MARK: - Actions
     
     @IBAction func PlayButtonTapped(_ sender: Any) {
+        if isNewGame {
+            self.isNewGame = false
+            self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.startButtonImage)
+            return
+        }
         if isNewNote {
             self.currentNoteID = gameController.generateNextNoteID()
             print("play sound \(String(describing: currentNoteID))")
@@ -129,9 +137,10 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
             if let cNoteID = currentNoteID {
                 DispatchQueue.main.async{
                     self.playSound(noteAnswerID: cNoteID)
-                }
                     self.PlayButton.pulsate()
                     self.mediumImpact.impactOccurred()
+                    self.PlayButton.changeImageAnimated(toImage: self.repeatButtonImage, fromImage: self.playButtonImage)
+                }
             }
             self.isNewNote = false
         } else {
@@ -149,6 +158,9 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
     
     
     @IBAction func AButtonTapped(_ sender: Any) {
+        if isNewGame {
+            self.playSound(noteAnswerID: 0)
+        }
         if isNewNote {
             AButton.pulsateGuessed()
             guessedImpact.impactOccurred()
@@ -167,6 +179,7 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
+                    self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
                     if result.isGameOver {
                         heavyImpact.impactOccurred()
@@ -183,6 +196,9 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
         }
     }
     @IBAction func CButtonTapped(_ sender: Any) {
+        if isNewGame {
+            self.playSound(noteAnswerID: 1)
+        }
         if isNewNote {
             CButton.pulsateGuessed()
             guessedImpact.impactOccurred()
@@ -194,13 +210,14 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
             } else {
                 let result = gameController.updateGameWith(noteAnswerID: 1)
                 self.playSound(noteAnswerID: 1)
+                CButton.pulsate()
+                mediumImpact.impactOccurred()
                 if result.isCorrect {
                     self.updateProgressBar()
-                    CButton.pulsate()
-                    mediumImpact.impactOccurred()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
+                    self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
                     if result.isGameOver {
                         heavyImpact.impactOccurred()
@@ -217,6 +234,9 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
         }
     }
     @IBAction func GButtonTapped(_ sender: Any) {
+        if isNewGame {
+            self.playSound(noteAnswerID: 2)
+        }
         if isNewNote {
             GButton.pulsateGuessed()
             guessedImpact.impactOccurred()
@@ -228,13 +248,14 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
             } else {
                 let result = gameController.updateGameWith(noteAnswerID: 2)
                 self.playSound(noteAnswerID: 2)
+                GButton.pulsate()
+                mediumImpact.impactOccurred()
                 if result.isCorrect {
-                    GButton.pulsate()
-                    mediumImpact.impactOccurred()
                     self.updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
+                    self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
                     if result.isGameOver {
                         heavyImpact.impactOccurred()
@@ -288,6 +309,10 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
         gameController.restartGame()
         updateGameStats()
         self.guessedNotesIDs = []
+        self.isNewGame = true
+        self.isNewNote = true
+        let currentImage = self.PlayButton.imageView?.image
+        self.PlayButton.changeImageAnimated(toImage: startButtonImage, fromImage: currentImage)
     }
     
     //MARK: - Delegates
