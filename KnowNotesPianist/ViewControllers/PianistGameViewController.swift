@@ -52,41 +52,41 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
     //MARK: - SetUP
     
     func setUpButtons(){
-        AButton.layer.shadowColor = UIColor.black.cgColor
+        AButton.layer.shadowColor = UIColor.greenShadow.cgColor
         AButton.layer.shadowOffset = CGSize(width: 1.3, height: 3.0)
         AButton.layer.shadowRadius = 8
         AButton.layer.shadowOpacity = 0.6
-        BButton.layer.shadowColor = UIColor.black.cgColor
+        BButton.layer.shadowColor = UIColor.redShadow.cgColor
         BButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         BButton.layer.shadowRadius = 8
         BButton.layer.shadowOpacity = 0.6
-        CButton.layer.shadowColor = UIColor.black.cgColor
+        CButton.layer.shadowColor = UIColor.blueShadow.cgColor
         CButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         CButton.layer.shadowRadius = 8
         CButton.layer.shadowOpacity = 0.6
-        DButton.layer.shadowColor = UIColor.black.cgColor
+        DButton.layer.shadowColor = UIColor.blueShadow.cgColor
         DButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         DButton.layer.shadowRadius = 8
         DButton.layer.shadowOpacity = 0.6
-        EButton.layer.shadowColor = UIColor.black.cgColor
+        EButton.layer.shadowColor = UIColor.redShadow.cgColor
         EButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         EButton.layer.shadowRadius = 8
         EButton.layer.shadowOpacity = 0.6
-        FButton.layer.shadowColor = UIColor.black.cgColor
+        FButton.layer.shadowColor = UIColor.greenShadow.cgColor
         FButton.layer.shadowOffset = CGSize(width: 1.3, height: 3.0)
         FButton.layer.shadowRadius = 8
         FButton.layer.shadowOpacity = 0.6
-        GButton.layer.shadowColor = UIColor.black.cgColor
+        GButton.layer.shadowColor = UIColor.pinkShadow.cgColor
         GButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         GButton.layer.shadowRadius = 8
         GButton.layer.shadowOpacity = 0.6
-        PlayButton.layer.shadowColor = UIColor.black.cgColor
-        PlayButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
-        PlayButton.layer.shadowRadius = 8
+        PlayButton.layer.shadowColor = UIColor.regularShadow.cgColor
+        PlayButton.layer.shadowOffset = CGSize(width: 1.0, height: 3.0)
+        PlayButton.layer.shadowRadius = 6
         PlayButton.layer.shadowOpacity = 0.6
-        HomeButton.layer.shadowColor = UIColor.black.cgColor
-        HomeButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
-        HomeButton.layer.shadowRadius = 8
+        HomeButton.layer.shadowColor = UIColor.regularShadow.cgColor
+        HomeButton.layer.shadowOffset = CGSize(width: 1.0, height: 3.0)
+        HomeButton.layer.shadowRadius = 6
         HomeButton.layer.shadowOpacity = 0.6
     }
     
