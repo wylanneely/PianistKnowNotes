@@ -15,7 +15,7 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
     var achievementsController = AchievementesController()
 
     var currentNoteID: Int?
-    
+    var isNewGame: Bool = true
     var isNewNote: Bool = true
     var guessedNotesIDs = [Int]()
     
@@ -23,6 +23,11 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
     let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
     let guessedImpact = UIImpactFeedbackGenerator(style: .soft)
 
+    // variables to help transition last Image for button
+    let startButtonImage = UIImage(named: "StartGameButton")
+    let playButtonImage = UIImage(named: "PlayButton")
+    let repeatButtonImage = UIImage(named: "RepeatButton")
+    
     //MARK: - Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,14 +144,21 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
     //MARK: - Actions
     
     @IBAction func PlayButtonTapped(_ sender: Any) {
+        if isNewGame {
+            self.isNewGame = false
+            self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.startButtonImage)
+            return
+        }
         if isNewNote {
             self.currentNoteID = gameController.generateNextNoteID()
             print("play sound \(String(describing: currentNoteID))")
+            
             if let cNoteID = currentNoteID {
                 DispatchQueue.main.async{
                     self.playSound(noteAnswerID: cNoteID)
                     self.PlayButton.pulsate()
                     self.mediumImpact.impactOccurred()
+                    self.PlayButton.changeImageAnimated(toImage: self.repeatButtonImage, fromImage: self.playButtonImage)
                 }
             }
             self.isNewNote = false
@@ -163,6 +175,11 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
     }
 
     @IBAction func AButtonTapped(_ sender: Any) {
+        if isNewGame {
+            self.playSound(noteAnswerID: 0)
+            return
+        }
+        
         if isNewNote {
             AButton.pulsateGuessed()
             guessedImpact.impactOccurred()
@@ -181,6 +198,7 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
+                    self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
                     if result.isGameOver {
                         heavyImpact.impactOccurred()
@@ -198,6 +216,10 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
     }
     
     @IBAction func BButtonTapped(_ sender: Any) {
+        if isNewGame {
+            self.playSound(noteAnswerID: 1)
+        }
+        
         if isNewNote {
             BButton.pulsateGuessed()
             guessedImpact.impactOccurred()
@@ -216,6 +238,7 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
+                    self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
                     if result.isGameOver {
                         heavyImpact.impactOccurred()
@@ -233,6 +256,10 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
 
     }
     @IBAction func CButtonTapped(_ sender: Any) {
+        if isNewGame {
+            self.playSound(noteAnswerID: 2)
+        }
+        
         if isNewNote {
             CButton.pulsateGuessed()
             guessedImpact.impactOccurred()
@@ -251,6 +278,7 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
+                    self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
                     if result.isGameOver {
                         heavyImpact.impactOccurred()
@@ -267,6 +295,10 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
         }
     }
     @IBAction func DButtonTapped(_ sender: Any) {
+        if isNewGame {
+            self.playSound(noteAnswerID: 3)
+        }
+        
         if isNewNote {
             DButton.pulsateGuessed()
             guessedImpact.impactOccurred()
@@ -285,6 +317,7 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
+                    self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
                     if result.isGameOver {
                         heavyImpact.impactOccurred()
@@ -301,6 +334,10 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
         }
     }
     @IBAction func EButtonTapped(_ sender: Any) {
+        if isNewGame {
+            self.playSound(noteAnswerID: 4)
+        }
+        
         if isNewNote {
             EButton.pulsateGuessed()
             guessedImpact.impactOccurred()
@@ -319,6 +356,7 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
+                    self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
                     if result.isGameOver {
                         heavyImpact.impactOccurred()
@@ -335,6 +373,10 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
         }
     }
     @IBAction func FButtonTapped(_ sender: Any) {
+        if isNewGame {
+            self.playSound(noteAnswerID: 5)
+        }
+        
         if isNewNote {
             FButton.pulsateGuessed()
             guessedImpact.impactOccurred()
@@ -353,6 +395,7 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
+                    self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
                     if result.isGameOver {
                         heavyImpact.impactOccurred()
@@ -369,6 +412,9 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
         }
     }
     @IBAction func GButtonTapped(_ sender: Any) {
+        if isNewGame {
+            self.playSound(noteAnswerID: 6)
+        }
         if isNewNote {
             GButton.pulsateGuessed()
             guessedImpact.impactOccurred()
@@ -387,6 +433,7 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
+                    self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
                     if result.isGameOver {
                         heavyImpact.impactOccurred()
@@ -440,6 +487,10 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
         gameController.restartGame()
         updateGameStats()
         self.guessedNotesIDs = []
+        self.isNewGame = true
+        self.isNewNote = true
+        let currentImage = self.PlayButton.imageView?.image
+        self.PlayButton.changeImageAnimated(toImage: startButtonImage, fromImage: currentImage)
     }
     
     //MARK: - Delegates
