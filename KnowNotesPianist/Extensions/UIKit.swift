@@ -21,14 +21,7 @@ import UIKit
 //}
 
 extension UIView {
-//    func asImage(rect: CGRect) -> UIImage {
-//        UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
-//        defer { UIGraphicsEndImageContext() }
-//        drawHierarchy(in: rect, afterScreenUpdates: true)
-//        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { 
-//            return UIImage() }
-//        return image
-//    }
+
     func asImage() -> UIImage {
           let renderer = UIGraphicsImageRenderer(bounds: bounds)
           return renderer.image { rendererContext in
@@ -73,6 +66,30 @@ extension UIButton {
         pulse.damping = 1.0
         layer.add(pulse, forKey: nil)
     }
+    
+
+    func changeImageAnimated(
+        toImage: UIImage?,
+        fromImage: UIImage?
+    ) {
+            guard let imageView = self.imageView, let currentImage = fromImage, let newImage = toImage else {
+                return
+            }
+            let crossFade: CABasicAnimation = CABasicAnimation(
+                keyPath: "contents"
+            )
+            crossFade.duration = 0.63
+            crossFade.fromValue = currentImage.cgImage
+            crossFade.toValue = newImage.cgImage
+            crossFade.isRemovedOnCompletion = false
+            crossFade.fillMode = CAMediaTimingFillMode.forwards
+            imageView.layer.add(
+                crossFade,
+                forKey: "animateContents"
+            )
+        
+    }
+       
     
 }
 
