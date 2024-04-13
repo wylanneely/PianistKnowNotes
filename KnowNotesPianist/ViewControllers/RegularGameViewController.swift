@@ -113,8 +113,12 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
         CircularProgressView.safePercent = 100
         CircularProgressView.lineWidth = 20
         CircularProgressView.safePercent = 100
-        CircularProgressView.layer.cornerRadius = CircularProgressView.frame.size.width/2
+      //  CircularProgressView.layer.cornerRadius = CircularProgressView.frame.size.width/2
         CircularProgressView.clipsToBounds = true
+        CircularProgressView.layer.shadowColor = UIColor.regularShadow.cgColor
+        CircularProgressView.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
+        CircularProgressView.layer.shadowRadius = 8
+        CircularProgressView.layer.shadowOpacity = 0.6
     }
     
     func updateProgressBar(){
