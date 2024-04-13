@@ -22,7 +22,7 @@ class CircularProgressBar: UIView {
     
     public var lineWidth:CGFloat = 50 {
         didSet{
-            foregroundLayer.lineWidth = lineWidth
+            foregroundLayer.lineWidth = lineWidth - (0.12 * lineWidth)
             backgroundLayer.lineWidth = lineWidth - (0.20 * lineWidth)
         }
     }
@@ -87,8 +87,8 @@ class CircularProgressBar: UIView {
     private let backgroundLayer = CAShapeLayer()
     private var radius: CGFloat {
         get{
-            if self.frame.width < self.frame.height { return (self.frame.width - lineWidth)/2 }
-            else { return (self.frame.height - lineWidth)/2 }
+            if self.frame.width < self.frame.height { return (self.frame.width - lineWidth)/2.3 }
+            else { return (self.frame.height - lineWidth)/2.3 }
         }
     }
     
@@ -99,6 +99,15 @@ class CircularProgressBar: UIView {
         drawForegroundLayer()
     }
     
+//    private func drawBackgroundLayer(){
+//        let path = UIBezierPath(arcCenter: pathCenter, radius: self.radius, startAngle: 0, endAngle: 2*CGFloat.pi, clockwise: true)
+//        self.backgroundLayer.path = path.cgPath
+//        self.backgroundLayer.strokeColor = UIColor.lightGray.cgColor
+//        self.backgroundLayer.lineWidth = lineWidth - (lineWidth * 20/100)
+//        self.backgroundLayer.fillColor = UIColor.clear.cgColor
+//        self.layer.addSublayer(backgroundLayer)
+//    }
+    
     private func drawBackgroundLayer(){
         let path = UIBezierPath(arcCenter: pathCenter, radius: self.radius, startAngle: 0, endAngle: 2*CGFloat.pi, clockwise: true)
         self.backgroundLayer.path = path.cgPath
@@ -106,7 +115,6 @@ class CircularProgressBar: UIView {
         self.backgroundLayer.lineWidth = lineWidth - (lineWidth * 20/100)
         self.backgroundLayer.fillColor = UIColor.clear.cgColor
         self.layer.addSublayer(backgroundLayer)
-        
     }
     
     private func drawForegroundLayer(){
