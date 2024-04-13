@@ -169,7 +169,11 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func AButtonTapped(_ sender: Any) {
         if isNewGame {
             self.playSound(noteAnswerID: 0)
+            AButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         }
+        
         if isNewNote {
             AButton.pulsateGuessed()
             guessedImpact.impactOccurred()
@@ -207,7 +211,11 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func CButtonTapped(_ sender: Any) {
         if isNewGame {
             self.playSound(noteAnswerID: 1)
+            CButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         }
+        
         if isNewNote {
             CButton.pulsateGuessed()
             guessedImpact.impactOccurred()
@@ -245,7 +253,11 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func DButtonTapped(_ sender: Any) {
         if isNewGame {
             self.playSound(noteAnswerID: 2)
+            DButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         }
+        
         if isNewNote {
             DButton.pulsateGuessed()
             guessedImpact.impactOccurred()
@@ -283,7 +295,11 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func EButtonTapped(_ sender: Any) {
         if isNewGame {
             self.playSound(noteAnswerID: 3)
+            EButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         }
+        
         if isNewNote {
             EButton.pulsateGuessed()
             guessedImpact.impactOccurred()
@@ -321,7 +337,11 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func GButtonTapped(_ sender: Any) {
         if isNewGame {
             self.playSound(noteAnswerID: 4)
+            GButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         }
+        
         if isNewNote {
             GButton.pulsateGuessed()
             guessedImpact.impactOccurred()
