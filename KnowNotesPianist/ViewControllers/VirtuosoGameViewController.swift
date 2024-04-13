@@ -202,6 +202,8 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func AButtonTapped(_ sender: Any) {
         if isNewGame {
             self.playSound(noteAnswerID: 0)
+            AButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
             return
         }
         
@@ -243,6 +245,9 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func ASButtonTapped(_ sender: Any) {
         if isNewGame {
             self.playSound(noteAnswerID: 1)
+            ASButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         }
         
         if isNewNote {
@@ -282,6 +287,9 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func BButtonTapped(_ sender: Any) {
         if isNewGame {
             self.playSound(noteAnswerID: 2)
+            BButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         }
         
         if isNewNote {
@@ -322,6 +330,9 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func CButtonTapped(_ sender: Any) {
         if isNewGame {
             self.playSound(noteAnswerID: 3)
+            CButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         }
         
         if isNewNote {
@@ -361,6 +372,9 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func CSButtonTapped(_ sender: Any) {
         if isNewGame {
             self.playSound(noteAnswerID: 4)
+            CSButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         }
         
         if isNewNote {
@@ -400,6 +414,9 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func DButtonTapped(_ sender: Any) {
         if isNewGame {
             self.playSound(noteAnswerID: 5)
+            DButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         }
         
         if isNewNote {
@@ -439,6 +456,9 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func DSButtonTapped(_ sender: Any) {
         if isNewGame {
             self.playSound(noteAnswerID: 6)
+            DSButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         }
         
         if isNewNote {
@@ -478,6 +498,9 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func EButtonTapped(_ sender: Any) {
         if isNewGame {
             self.playSound(noteAnswerID: 7)
+            EButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         }
         
         if isNewNote {
@@ -517,6 +540,9 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func FButtonTapped(_ sender: Any) {
         if isNewGame {
             self.playSound(noteAnswerID: 8)
+            FButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         }
         
         if isNewNote {
@@ -556,6 +582,9 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func FSButtonTapped(_ sender: Any) {
         if isNewGame {
             self.playSound(noteAnswerID: 9)
+            FSButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         }
         
         if isNewNote {
@@ -595,6 +624,9 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func GButtonTapped(_ sender: Any) {
         if isNewGame {
             self.playSound(noteAnswerID: 10)
+            GButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         }
         
         if isNewNote {
@@ -634,6 +666,9 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func GSButtonTapped(_ sender: Any) {
         if isNewGame {
             self.playSound(noteAnswerID: 11)
+            GSButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         }
         
         if isNewNote {
