@@ -160,6 +160,9 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func AButtonTapped(_ sender: Any) {
         if isNewGame {
             self.playSound(noteAnswerID: 0)
+            AButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         }
         if isNewNote {
             AButton.pulsateGuessed()
@@ -198,6 +201,9 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func CButtonTapped(_ sender: Any) {
         if isNewGame {
             self.playSound(noteAnswerID: 1)
+            CButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         }
         if isNewNote {
             CButton.pulsateGuessed()
@@ -236,6 +242,9 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBAction func GButtonTapped(_ sender: Any) {
         if isNewGame {
             self.playSound(noteAnswerID: 2)
+            GButton.pulsateGuessed()
+            guessedImpact.impactOccurred()
+            return
         }
         if isNewNote {
             GButton.pulsateGuessed()
