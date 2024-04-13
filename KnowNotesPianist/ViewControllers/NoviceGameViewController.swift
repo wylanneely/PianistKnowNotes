@@ -36,6 +36,7 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
         setUpProgressBar()
         setUpGradientColorLabel()
         self.presentationController?.delegate = self
+        setUpAudio()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -76,11 +77,20 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
    // var soundPack: SoundPack = FreePianoPack
     var player: AVAudioPlayer!
     
+    func setUpAudio(){
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback)
+        } catch(let error) {
+            print(error.localizedDescription)
+        }
+    }
+    
     func playSound(noteAnswerID:Int){
         if let soundURL = soundController.returnSoundPathFrom(noteID: noteAnswerID) {
             player = try! AVAudioPlayer(contentsOf: soundURL)
             player!.play()
         }
+        
     }
 
     //MARK: - Outlets

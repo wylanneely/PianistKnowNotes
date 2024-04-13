@@ -36,6 +36,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
         setUpProgressBar()
         setUpGradientColorLabel()
         self.presentationController?.delegate = self
+        setUpAudio()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -53,6 +54,15 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
             player!.play()
         }
     }
+    
+    func setUpAudio(){
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback)
+        } catch(let error) {
+            print(error.localizedDescription)
+        }
+    }
+    
     
     //MARK: - SetUP
     
