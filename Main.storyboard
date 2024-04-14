@@ -280,14 +280,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UvR-oy-ZaW">
-                                <rect key="frame" x="169.66666666666666" y="783" width="54" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="test"/>
-                                <connections>
-                                    <action selector="testButtonTapped:" destination="gyu-fa-F0D" eventType="touchUpInside" id="eal-ZE-ssF"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TestScore 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rM5-RP-vGu">
                                 <rect key="frame" x="105.66666666666669" y="443.66666666666669" width="182" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="37"/>
@@ -303,9 +295,7 @@
                             <constraint firstItem="I5w-38-cJh" firstAttribute="leading" secondItem="qSX-wA-KzX" secondAttribute="leading" id="GJF-yB-wzb"/>
                             <constraint firstItem="I5w-38-cJh" firstAttribute="trailing" secondItem="qSX-wA-KzX" secondAttribute="trailing" id="HrS-Jc-JGl"/>
                             <constraint firstItem="rM5-RP-vGu" firstAttribute="centerX" secondItem="qpi-Fr-jCr" secondAttribute="centerX" id="KAV-o0-r42"/>
-                            <constraint firstItem="UvR-oy-ZaW" firstAttribute="bottom" secondItem="qSX-wA-KzX" secondAttribute="bottom" id="aXX-7s-q9d"/>
                             <constraint firstItem="I5w-38-cJh" firstAttribute="height" secondItem="qpi-Fr-jCr" secondAttribute="height" multiplier="0.35" id="cXp-gc-aLO"/>
-                            <constraint firstItem="UvR-oy-ZaW" firstAttribute="centerX" secondItem="qpi-Fr-jCr" secondAttribute="centerX" id="cd7-do-xVU"/>
                             <constraint firstItem="uv1-og-8QN" firstAttribute="trailing" secondItem="qSX-wA-KzX" secondAttribute="trailing" id="hiR-rC-X66"/>
                             <constraint firstItem="uv1-og-8QN" firstAttribute="leading" secondItem="qSX-wA-KzX" secondAttribute="leading" id="q2z-i2-Z4j"/>
                             <constraint firstItem="rM5-RP-vGu" firstAttribute="centerY" secondItem="qpi-Fr-jCr" secondAttribute="centerY" constant="40" id="rxG-PR-2zi"/>
@@ -1016,9 +1006,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="206-VD-YWV"/>
-        <segue reference="btM-ea-5pk"/>
-        <segue reference="s1Z-ta-6xX"/>
+        <segue reference="k1q-hz-8y3"/>
+        <segue reference="KQn-fK-SF0"/>
+        <segue reference="fDB-b7-JAp"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AButton" width="80.5" height="80"/>
