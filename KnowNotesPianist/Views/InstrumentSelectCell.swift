@@ -12,13 +12,13 @@ class InstrumentSelectCell: UICollectionViewCell {
     var instrumentID: Int = 0
     var delegate: InstrumentSelectDelegate?
     
-    var InstrumentType: InstrumentTypeName {
+    var instrumentType: InstrumentType {
         switch instrumentID {
-        case 0: return InstrumentTypeName.FreePiano
-        case 1: return InstrumentTypeName.GrandPiano
-        case 2: return InstrumentTypeName.AcousticGuitar
-        case 3: return InstrumentTypeName.Keyboard
-        default: return InstrumentTypeName.FreePiano
+        case 0: return InstrumentType.FreePiano
+        case 1: return InstrumentType.GrandPiano
+        case 2: return InstrumentType.AcousticGuitar
+        case 3: return InstrumentType.Keyboard
+        default: return InstrumentType.FreePiano
         }
     }
     
@@ -73,20 +73,13 @@ class InstrumentSelectCell: UICollectionViewCell {
     
     //MARK: - Outlet
     @IBAction func cellButtonTapped(_ sender: Any) {
-        delegate?.openProgressViewFor(instrument: self.InstrumentType)
+        delegate?.openProgressViewFor(instrument: self.instrumentType)
     }
     
 
 }
 
 protocol InstrumentSelectDelegate {
-    func openProgressViewFor(instrument:InstrumentTypeName)
-}
-
-enum InstrumentTypeName: String {
-    case FreePiano = "Free Piano"
-    case GrandPiano = "Grand Piano"
-    case AcousticGuitar = "Acoustic Guitar"
-    case Keyboard = "Keyboard"
+    func openProgressViewFor(instrument:InstrumentType)
 }
 
