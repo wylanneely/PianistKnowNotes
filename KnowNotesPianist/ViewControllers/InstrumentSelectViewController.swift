@@ -7,24 +7,21 @@
 
 import UIKit
 
-class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, StartGameDelegate {
-   
-    
+class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, StartGameDelegate, InstrumentSelectDelegate {
     
     var startGameType: GameType = .Novice
-   
     
     //MARK: - Overrides
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCollectionView()
+        setTestHighScore()
     }
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
     
     //MARK: - Setup
     func setUpCollectionView(){
@@ -39,8 +36,8 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         self.startGameType = type
     }
     
-    
     func startGame() {
+        
         //add switch based on game level start point
         switch self.startGameType {
         case .Novice:
@@ -55,22 +52,28 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         
     }
     
-    
-    
-    //MARK: - Outlets
-    
-    @IBAction func testButtonTapped(_ sender: Any) {
+    func openProgressViewFor(instrument: InstrumentType) {
+        //add logic to launch progress with InstrumentType
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-             guard let destinationController = storyboard.instantiateViewController(withIdentifier: "ProgressPageViewController") as? ProgressPageViewController
+        guard let destinationController = storyboard.instantiateViewController(withIdentifier: "ProgressPageViewController") as? ProgressPageViewController
              else { return }
           
-             if let presentationController = destinationController.presentationController as? UISheetPresentationController {
+        if let presentationController = destinationController.presentationController as? UISheetPresentationController {
                  presentationController.detents = [.large()]
              }
         destinationController.startDelegate = self
+        destinationController.instrumentType = instrument
         self.present(destinationController, animated: true)
-             
     }
+    
+    //MARK: - Outlets
+    
+    @IBOutlet weak var testScore: UILabel!
+    func setTestHighScore(){
+        let score = AchievementesController().getFreePianoHighScore()
+        testScore.text = "testScore \(score)"
+    }
+    
     
     //MARK: - CollectionView
     
@@ -84,6 +87,7 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InstrumentSelectCell", for: indexPath) as? InstrumentSelectCell else {
             return UICollectionViewCell()
         }
+        cell.delegate = self
         cell.instrumentID = indexPath.row
         cell.awakeFromNib()
         return cell
