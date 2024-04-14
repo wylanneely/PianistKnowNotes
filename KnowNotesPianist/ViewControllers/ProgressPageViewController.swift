@@ -12,19 +12,20 @@ class ProgressPageViewController: UIViewController {
     // add instrumentType eventually
     var startDelegate: StartGameDelegate?
     var achievementsController = AchievementesController()
+    var instrumentType: InstrumentType?
     
-    var isRegularUnlocked: Bool = false
-    var isPianistUnlocked: Bool = false
-    var isVirtuosoUnlocked: Bool = false
+    private var isRegularUnlocked: Bool = false
+    private var isPianistUnlocked: Bool = false
+    private var isVirtuosoUnlocked: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUnlockedLockedLevelDifficulties()
-        // Do any additional setup after loading the view.
+        setInstrumentTypeLabel()
     }
     
     //MARK: SetUp
-    func setUnlockedLockedLevelDifficulties(){
+    private func setUnlockedLockedLevelDifficulties(){
         //eventually ad a switch case for instrument type
         if achievementsController.isFreePianoRegularUnlocked() == true {
             self.isRegularUnlocked = true
@@ -43,11 +44,10 @@ class ProgressPageViewController: UIViewController {
         } else {
             self.isVirtuosoUnlocked = false
         }
-        
         setButtonStates()
     }
     
-    func setButtonStates(){
+    private func setButtonStates(){
         let unlockedImage = UIImage(named: "UnlockedButtonImage")
         let lockedImage = UIImage(named: "LockedButtonImage")
         
@@ -77,6 +77,21 @@ class ProgressPageViewController: UIViewController {
         
     }
     
+    func setInstrumentTypeLabel(){
+        if let instrumentType {
+            switch instrumentType {
+            case .FreePiano:
+                instrumentTypeLabel.text = InstrumentTypeName.FreePiano.rawValue
+            case .GrandPiano:
+                instrumentTypeLabel.text = InstrumentTypeName.GrandPiano.rawValue
+            case .AcousticGuitar:
+                instrumentTypeLabel.text = InstrumentTypeName.AcousticGuitar.rawValue
+            case .Keyboard:
+                instrumentTypeLabel.text = InstrumentTypeName.Keyboard.rawValue
+            }
+        }
+    }
+    
     //MARK: - Outlets
     
     @IBOutlet weak var instrumentTypeLabel: UILabel!
@@ -90,23 +105,25 @@ class ProgressPageViewController: UIViewController {
     @IBOutlet weak var pianistButton: UIButton!
     @IBOutlet weak var virtuosoButton: UIButton!
     
-  
-    
     //MARK: - Actions
     
     @IBAction func noviceButtonTapped(_ sender: Any) {
+        noviceButton.pulsate()
         startDelegate?.difficultyType(type: .Novice)
     }
     
     @IBAction func regularButtonTapped(_ sender: Any) {
+        regularButton.pulsate()
         startDelegate?.difficultyType(type: .Regular)
     }
     
     @IBAction func pianistButtonTapped(_ sender: Any) {
+        pianistButton.pulsate()
         startDelegate?.difficultyType(type: .Pianist)
     }
     
     @IBAction func virtuosoButtonTapped(_ sender: Any) {
+        virtuosoButton.pulsate()
         startDelegate?.difficultyType(type: .Virtuoso)
     }
     
