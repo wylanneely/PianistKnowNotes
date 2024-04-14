@@ -27,20 +27,32 @@
                         <rect key="frame" x="10" y="10" width="269" height="269"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free Piano" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkF-D6-ycV">
-                        <rect key="frame" x="68.666666666666686" y="10" width="152" height="41"/>
+                        <rect key="frame" x="68.666666666666671" y="10" width="151.66666666666663" height="40.333333333333336"/>
                         <fontDescription key="fontDescription" name="Poppins-ExtraBold" family="Poppins" pointSize="28"/>
                         <nil key="highlightedColor"/>
                         <color key="shadowColor" systemColor="labelColor"/>
                         <size key="shadowOffset" width="1" height="1"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkR-8t-QD3">
+                        <rect key="frame" x="0.0" y="0.0" width="289" height="289"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain"/>
+                        <connections>
+                            <action selector="cellButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="tXr-KU-IPw"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" name="SeparatorColor"/>
             <constraints>
+                <constraint firstItem="hkR-8t-QD3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3Re-dT-VSn"/>
                 <constraint firstItem="zkF-D6-ycV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="6iE-zg-W1R"/>
+                <constraint firstAttribute="bottom" secondItem="hkR-8t-QD3" secondAttribute="bottom" id="8nT-PI-Yyc"/>
+                <constraint firstItem="hkR-8t-QD3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="B41-ol-k5a"/>
                 <constraint firstAttribute="bottom" secondItem="Ccp-6j-y4O" secondAttribute="bottom" constant="10" id="BjX-um-bRD"/>
                 <constraint firstAttribute="trailing" secondItem="Ccp-6j-y4O" secondAttribute="trailing" constant="10" id="LYX-Wh-C39"/>
+                <constraint firstAttribute="trailing" secondItem="hkR-8t-QD3" secondAttribute="trailing" id="Sik-QU-oDk"/>
                 <constraint firstItem="Ccp-6j-y4O" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="VTr-95-DZZ"/>
                 <constraint firstItem="Ccp-6j-y4O" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="Vj9-Rk-L6X"/>
                 <constraint firstItem="zkF-D6-ycV" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="eRe-0q-6gU"/>
@@ -61,7 +73,7 @@
     <resources>
         <image name="grandpiano" width="400" height="400"/>
         <namedColor name="SeparatorColor">
-            <color red="0.084646877360947809" green="0.068108156113037513" blue="0.10640053090927837" alpha="0.69839498299319724" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.085000000894069672" green="0.068000003695487976" blue="0.10599999874830246" alpha="0.69800001382827759" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
