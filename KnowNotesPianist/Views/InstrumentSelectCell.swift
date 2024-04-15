@@ -14,17 +14,18 @@ class InstrumentSelectCell: UICollectionViewCell {
     
     var instrumentType: InstrumentType {
         switch instrumentID {
-        case 0: return InstrumentType.FreePiano
+        case 0: return InstrumentType.BasicPiano
         case 1: return InstrumentType.GrandPiano
         case 2: return InstrumentType.AcousticGuitar
         case 3: return InstrumentType.Keyboard
-        default: return InstrumentType.FreePiano
+        default: return InstrumentType.BasicPiano
         }
     }
     
     //MARK: - Outlets
     
     @IBOutlet weak var instrumentImage: UIImageView!
+    
     @IBOutlet weak var instrumentLabel: UILabel!
     
     //MARK: - Setup
@@ -62,7 +63,7 @@ class InstrumentSelectCell: UICollectionViewCell {
     
    private func returnLabelText(id:Int)->String{
         switch id {
-        case 0: return InstrumentTypeName.FreePiano.rawValue
+        case 0: return InstrumentTypeName.BasicPiano.rawValue
         case 1: return InstrumentTypeName.GrandPiano.rawValue
         case 2: return InstrumentTypeName.AcousticGuitar.rawValue
         case 3: return InstrumentTypeName.Keyboard.rawValue
