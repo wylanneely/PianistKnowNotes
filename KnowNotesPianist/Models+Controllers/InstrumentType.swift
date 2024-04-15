@@ -8,7 +8,7 @@
 import Foundation
 
 enum InstrumentType {
-    case FreePiano
+    case BasicPiano
     case GrandPiano
     case AcousticGuitar
     case Keyboard
@@ -17,7 +17,7 @@ enum InstrumentType {
 
 
 enum InstrumentTypeName: String {
-    case FreePiano = "Free Piano"
+    case BasicPiano = "Basic Piano"
     case GrandPiano = "Grand Piano"
     case AcousticGuitar = "Acoustic Guitar"
     case Keyboard = "Keyboard"

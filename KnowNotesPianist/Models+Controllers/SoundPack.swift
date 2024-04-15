@@ -24,15 +24,8 @@ struct SoundPack {
     }
     
 }
-enum InstrumentType {
-    case GrandPiano
-    case Piano
-    case Keyboard
-    case AcousticGuitar
-    case Guitar
-}
 
-let FreePianoPack = SoundPack(name: "FreePiano", type: .GrandPiano, A: FPiano_A, AS: FPiano_AS, B: FPiano_B, C: FPiano_C, CS: FPiano_CS, D: FPiano_D, DS: FPiano_DS, E: FPiano_E, F: FPiano_F, FS: FPiano_FS, G: FPiano_G, GS: FPiano_GS)
+let BasicPianoPack = SoundPack(name: "BasicPiano", type: .GrandPiano, A: FPiano_A, AS: FPiano_AS, B: FPiano_B, C: FPiano_C, CS: FPiano_CS, D: FPiano_D, DS: FPiano_DS, E: FPiano_E, F: FPiano_F, FS: FPiano_FS, G: FPiano_G, GS: FPiano_GS)
 
 //MARK: - Notes
 
@@ -47,7 +40,7 @@ struct Note {
     }
     
 }
-//MARK: - FreePiano
+//MARK: - BasicPiano
 let FPiano_A = Note(note: "FPiano_A", noteID: 0, soundFileName: "FPiano-ANote")
 let FPiano_AS = Note(note: "FPiano_AS", noteID: 1, soundFileName: "FPiano-ASNote")
 let FPiano_B = Note(note: "FPiano_B", noteID: 2, soundFileName: "FPiano-BNote")
