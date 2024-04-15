@@ -80,8 +80,8 @@ class ProgressPageViewController: UIViewController {
     func setInstrumentTypeLabel(){
         if let instrumentType {
             switch instrumentType {
-            case .FreePiano:
-                instrumentTypeLabel.text = InstrumentTypeName.FreePiano.rawValue
+            case .BasicPiano:
+                instrumentTypeLabel.text = InstrumentTypeName.BasicPiano.rawValue
             case .GrandPiano:
                 instrumentTypeLabel.text = InstrumentTypeName.GrandPiano.rawValue
             case .AcousticGuitar:
