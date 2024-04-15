@@ -326,6 +326,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNO-Gb-euN" userLabel="InstrumentProgessView">
                                 <rect key="frame" x="16" y="230.66666666666663" width="361" height="391"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProgressBackgroundView" translatesAutoresizingMaskIntoConstraints="NO" id="RDK-T0-hoq">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="391"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DividerLine" translatesAutoresizingMaskIntoConstraints="NO" id="ldo-pM-9N7">
                                         <rect key="frame" x="23" y="95.666666666666657" width="315" height="1"/>
                                     </imageView>
@@ -341,7 +349,7 @@
                                             <constraint firstAttribute="width" constant="88" id="3MM-Um-cg0"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6BA-ZV-9Sv">
@@ -350,7 +358,7 @@
                                             <constraint firstAttribute="width" constant="88" id="9qF-nP-XGo"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Virtuoso" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6b-9f-r3d">
@@ -359,7 +367,7 @@
                                             <constraint firstAttribute="width" constant="88" id="2EJ-Gn-H3T"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pianist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfc-tc-fgy">
@@ -368,7 +376,7 @@
                                             <constraint firstAttribute="width" constant="88" id="Edr-25-9kN"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBN-TC-wfa">
@@ -418,11 +426,15 @@
                                     <constraint firstItem="V6b-9f-r3d" firstAttribute="leading" secondItem="nNO-Gb-euN" secondAttribute="leading" constant="12" id="CRq-Do-tPT"/>
                                     <constraint firstItem="gBN-TC-wfa" firstAttribute="leading" secondItem="V6b-9f-r3d" secondAttribute="trailing" constant="10" id="DXe-Bi-F0a"/>
                                     <constraint firstItem="ldo-pM-9N7" firstAttribute="top" secondItem="i9g-sf-nkN" secondAttribute="bottom" constant="12.333333333333343" id="DzQ-57-DPU"/>
+                                    <constraint firstItem="RDK-T0-hoq" firstAttribute="top" secondItem="nNO-Gb-euN" secondAttribute="top" id="GcR-pR-sFa"/>
                                     <constraint firstAttribute="trailing" secondItem="i9g-sf-nkN" secondAttribute="trailing" constant="10" id="IFc-rE-73v"/>
                                     <constraint firstItem="U0d-fM-OtI" firstAttribute="leading" secondItem="nNO-Gb-euN" secondAttribute="leading" constant="12" id="K8j-BK-7HH"/>
                                     <constraint firstItem="OxG-Ib-3Ra" firstAttribute="top" secondItem="T5f-Zp-7vF" secondAttribute="bottom" constant="11.666666666666657" id="KlH-NM-8Pa"/>
                                     <constraint firstItem="6Hn-XI-Bih" firstAttribute="centerX" secondItem="nNO-Gb-euN" secondAttribute="centerX" id="QMd-dy-hLT"/>
                                     <constraint firstItem="vfc-tc-fgy" firstAttribute="top" secondItem="OxG-Ib-3Ra" secondAttribute="bottom" constant="35" id="Qa5-vb-2FE"/>
+                                    <constraint firstItem="RDK-T0-hoq" firstAttribute="leading" secondItem="nNO-Gb-euN" secondAttribute="leading" id="Rwr-zh-EWS"/>
+                                    <constraint firstAttribute="trailing" secondItem="RDK-T0-hoq" secondAttribute="trailing" id="SFU-Gc-sQy"/>
+                                    <constraint firstAttribute="bottom" secondItem="RDK-T0-hoq" secondAttribute="bottom" id="UTi-YW-qgV"/>
                                     <constraint firstItem="i9g-sf-nkN" firstAttribute="centerX" secondItem="FBH-rk-ltb" secondAttribute="centerX" id="Uij-57-SkJ"/>
                                     <constraint firstItem="i9g-sf-nkN" firstAttribute="centerY" secondItem="U0d-fM-OtI" secondAttribute="centerY" id="VHk-Jd-0i9"/>
                                     <constraint firstItem="vfc-tc-fgy" firstAttribute="leading" secondItem="nNO-Gb-euN" secondAttribute="leading" constant="12" id="Y3n-If-hs5"/>
@@ -460,9 +472,9 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlP-wv-pib">
-                                <rect key="frame" x="90.666666666666686" y="633.66666666666663" width="212" height="58"/>
+                                <rect key="frame" x="81" y="633.66666666666663" width="231" height="74"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="StartButton"/>
+                                <buttonConfiguration key="configuration" style="plain" image="StartGameButton"/>
                                 <connections>
                                     <action selector="startButtonTapped:" destination="7Oc-b1-MXb" eventType="touchUpInside" id="tJ0-t2-7Z7"/>
                                 </connections>
@@ -496,7 +508,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uIb-nE-kVQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2474" y="-917"/>
+            <point key="canvasLocation" x="2023.6641221374045" y="-932.3943661971831"/>
         </scene>
         <!--Pianist Game View Controller-->
         <scene sceneID="mKC-zt-OZo">
@@ -1041,7 +1053,7 @@
         <image name="Lifes5" width="70" height="71.333335876464844"/>
         <image name="LockedButtonImage" width="56" height="57"/>
         <image name="MainBackgroundImage" width="585" height="1266"/>
-        <image name="StartButton" width="188" height="44"/>
+        <image name="ProgressBackgroundView" width="378" height="455"/>
         <image name="StartGameButton" width="207" height="60"/>
         <image name="UnlockedButtonImage" width="56" height="56"/>
         <image name="VirtuosoGameBackground" width="375" height="812"/>
