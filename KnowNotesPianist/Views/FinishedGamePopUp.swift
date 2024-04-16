@@ -24,8 +24,12 @@ class FinishedGamePopUp: UIViewController {
         super.viewDidLoad()
         setGradientLabel()
         beginingStateConfig()
-        shareImage = contentView.asImage()
         checkSetPausedState()
+        //shareImage = contentView.asImage()
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        shareImage = contentView.asImage()
     }
     
     init() {
@@ -42,13 +46,13 @@ class FinishedGamePopUp: UIViewController {
     func setGradientLabel(){
         if self.traitCollection.userInterfaceStyle == .dark {
             gradientScoreLabel.gradientColors = [
-                UIColor.white.cgColor,
+                UIColor.systemCyan.cgColor,
                 UIColor.systemPurple.cgColor
             ]
         } else {
             gradientScoreLabel.gradientColors = [
-                UIColor.black.cgColor,
-                UIColor.systemPurple.cgColor
+                UIColor.systemPurple.cgColor,
+                UIColor.systemCyan.cgColor
             ]
         }
 
@@ -113,6 +117,7 @@ class FinishedGamePopUp: UIViewController {
         submitScoreButton.pulsate()
         mediumImpact.impactOccurred()
         AchievementesController().setFreePiano(highScore: game?.score ?? 0)
+        submitScoreButton.isEnabled = false
     }
     
     @IBAction func shareButtonTapped(_ sender: Any) {
