@@ -14,6 +14,8 @@ class ProgressPageViewController: UIViewController {
     var achievementsController = AchievementesController()
     var instrumentType: InstrumentType?
     
+    let hapticGenerator = UINotificationFeedbackGenerator()
+    
     private var isRegularUnlocked: Bool = false
     private var isPianistUnlocked: Bool = false
     private var isVirtuosoUnlocked: Bool = false
@@ -22,6 +24,8 @@ class ProgressPageViewController: UIViewController {
         super.viewDidLoad()
         setUnlockedLockedLevelDifficulties()
         setInstrumentTypeLabel()
+        startDelegate?.difficultyType(type: .Novice)
+        updateViewFor(gameType: .Novice)
     }
     
     //MARK: SetUp
@@ -52,32 +56,32 @@ class ProgressPageViewController: UIViewController {
         let lockedImage = UIImage(named: "LockedButtonImage")
         
         if isRegularUnlocked {
-            regularButton.isEnabled = true
+           // regularButton.isEnabled = true
             regularButton.setImage(unlockedImage, for: .normal)
         } else {
-            regularButton.isEnabled = false
+           // regularButton.isEnabled = false
             regularButton.setImage(lockedImage, for: .disabled)
         }
         
         if isPianistUnlocked {
-            pianistButton.isEnabled = true
+           // pianistButton.isEnabled = true
             pianistButton.setImage(unlockedImage, for: .normal)
         } else {
-            pianistButton.isEnabled = false
+           // pianistButton.isEnabled = false
             pianistButton.setImage(lockedImage, for: .disabled)
         }
         
         if isVirtuosoUnlocked {
-            virtuosoButton.isEnabled = true
+           // virtuosoButton.isEnabled = true
             virtuosoButton.setImage(unlockedImage, for: .normal)
         } else {
-            virtuosoButton.isEnabled = false
+           // virtuosoButton.isEnabled = false
             virtuosoButton.setImage(lockedImage, for: .disabled)
         }
         
     }
     
-    func setInstrumentTypeLabel(){
+   private func setInstrumentTypeLabel(){
         if let instrumentType {
             switch instrumentType {
             case .BasicPiano:
@@ -91,6 +95,58 @@ class ProgressPageViewController: UIViewController {
             }
         }
     }
+    
+    //MARK: - Update
+    
+   private func updateViewFor(gameType: GameType){
+        switch gameType {
+        case .Novice:
+            noviceLabel.textColor = .white
+            if isRegularUnlocked {
+                regularLabel.textColor = .lightGray
+            } else {
+                regularLabel.textColor = .black
+            }
+            if isPianistUnlocked {
+                pianistLabel.textColor = .lightGray
+            } else {
+                pianistLabel.textColor = .black
+            }
+            if isVirtuosoUnlocked {
+                virtuosoLabel.textColor = .lightGray
+            } else {
+                virtuosoLabel.textColor = .black
+            }
+        case .Regular:
+            noviceLabel.textColor = .lightGray
+            regularLabel.textColor = .white
+            if isPianistUnlocked {
+                pianistLabel.textColor = .lightGray
+            } else {
+                pianistLabel.textColor = .black
+            }
+            if isVirtuosoUnlocked {
+                virtuosoLabel.textColor = .lightGray
+            } else {
+                virtuosoLabel.textColor = .black
+            }
+        case .Pianist:
+            noviceLabel.textColor = .lightGray
+            regularLabel.textColor = .lightGray
+            pianistLabel.textColor = .white
+            if isVirtuosoUnlocked {
+                virtuosoLabel.textColor = .lightGray
+            } else {
+                virtuosoLabel.textColor = .black
+            }
+        case .Virtuoso:
+            noviceLabel.textColor = .lightGray
+            regularLabel.textColor = .lightGray
+            pianistLabel.textColor = .lightGray
+            virtuosoLabel.textColor = .white
+        }
+    }
+    
     
     //MARK: - Outlets
     
@@ -110,25 +166,46 @@ class ProgressPageViewController: UIViewController {
     @IBAction func noviceButtonTapped(_ sender: Any) {
         noviceButton.pulsate()
         startDelegate?.difficultyType(type: .Novice)
+        updateViewFor(gameType: .Novice)
+        hapticGenerator.notificationOccurred(.success)
     }
     
     @IBAction func regularButtonTapped(_ sender: Any) {
-        regularButton.pulsate()
-        startDelegate?.difficultyType(type: .Regular)
+        if isRegularUnlocked {
+            regularButton.pulsate()
+            startDelegate?.difficultyType(type: .Regular)
+            updateViewFor(gameType: .Regular)
+            hapticGenerator.notificationOccurred(.success)
+        } else {
+            hapticGenerator.notificationOccurred(.error)
+        }
     }
     
     @IBAction func pianistButtonTapped(_ sender: Any) {
-        pianistButton.pulsate()
-        startDelegate?.difficultyType(type: .Pianist)
+        if isPianistUnlocked {
+            pianistButton.pulsate()
+            startDelegate?.difficultyType(type: .Pianist)
+            updateViewFor(gameType: .Pianist)
+            hapticGenerator.notificationOccurred(.success)
+        } else {
+            hapticGenerator.notificationOccurred(.error)
+        }
     }
     
     @IBAction func virtuosoButtonTapped(_ sender: Any) {
-        virtuosoButton.pulsate()
-        startDelegate?.difficultyType(type: .Virtuoso)
+        if isVirtuosoUnlocked {
+            virtuosoButton.pulsate()
+            startDelegate?.difficultyType(type: .Virtuoso)
+            updateViewFor(gameType: .Virtuoso)
+            hapticGenerator.notificationOccurred(.success)
+        } else {
+            hapticGenerator.notificationOccurred(.error)
+        }
     }
     
     @IBAction func startButtonTapped(_ sender: Any) {
         startButton.pulsate()
+        hapticGenerator.notificationOccurred(.success)
         self.dismiss(animated: true) {
             self.startDelegate?.startGame()
         }

@@ -20,6 +20,7 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
     var isNewNote: Bool = true
     var guessedNotesIDs = [Int]()
 
+    let hapticGenerator = UINotificationFeedbackGenerator()
     let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
     let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
     let guessedImpact = UIImpactFeedbackGenerator(style: .soft)
@@ -73,7 +74,7 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
     }
     
     //MARK: - Audio
-    var soundController: SoundController = SoundController(soundPack: FreePianoPack, gameType: .Novice)
+    var soundController: SoundController = SoundController(soundPack: BasicPianoPack, gameType: .Novice)
    // var soundPack: SoundPack = FreePianoPack
     var player: AVAudioPlayer!
     
@@ -142,6 +143,7 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
         if isNewGame {
             self.isNewGame = false
             self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.startButtonImage)
+            hapticGenerator.notificationOccurred(.success)
             return
         }
         if isNewNote {
@@ -192,18 +194,18 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
                 if result.isCorrect {
                     updateProgressBar()
                     AButton.pulsate()
-                    mediumImpact.impactOccurred()
+                    hapticGenerator.notificationOccurred(.success)
                     self.updateGameStats()
                     self.isNewNote = true
                     self.guessedNotesIDs = []
                     self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
                     if result.isGameOver {
-                        heavyImpact.impactOccurred()
+                        hapticGenerator.notificationOccurred(.error)
                         AButton.pulsateWrong()
                         self.endGame()
                     } else {
-                        heavyImpact.impactOccurred()
+                        hapticGenerator.notificationOccurred(.error)
                         AButton.pulsateWrong()
                         self.guessedNotesIDs.append(0)
                         self.updateGameStats()
@@ -230,9 +232,9 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
             } else {
                 let result = gameController.updateGameWith(noteAnswerID: 1)
                 self.playSound(noteAnswerID: 1)
-                CButton.pulsate()
-                mediumImpact.impactOccurred()
                 if result.isCorrect {
+                    hapticGenerator.notificationOccurred(.success)
+                    CButton.pulsate()
                     self.updateProgressBar()
                     self.updateGameStats()
                     self.isNewNote = true
@@ -240,11 +242,11 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
                     if result.isGameOver {
-                        heavyImpact.impactOccurred()
+                        hapticGenerator.notificationOccurred(.error)
                         CButton.pulsateWrong()
                         self.endGame()
                     } else {
-                        heavyImpact.impactOccurred()
+                        hapticGenerator.notificationOccurred(.error)
                         CButton.pulsateWrong()
                         self.guessedNotesIDs.append(1)
                         self.updateGameStats()
@@ -271,21 +273,21 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
             } else {
                 let result = gameController.updateGameWith(noteAnswerID: 2)
                 self.playSound(noteAnswerID: 2)
-                GButton.pulsate()
-                mediumImpact.impactOccurred()
                 if result.isCorrect {
                     self.updateProgressBar()
                     self.updateGameStats()
+                    GButton.pulsate()
+                    hapticGenerator.notificationOccurred(.success)
                     self.isNewNote = true
                     self.guessedNotesIDs = []
                     self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
                     if result.isGameOver {
-                        heavyImpact.impactOccurred()
+                        hapticGenerator.notificationOccurred(.error)
                         GButton.pulsateWrong()
                         self.endGame()
                     } else {
-                        heavyImpact.impactOccurred()
+                        hapticGenerator.notificationOccurred(.error)
                         GButton.pulsateWrong()
                         self.guessedNotesIDs.append(2)
                         self.updateGameStats()
