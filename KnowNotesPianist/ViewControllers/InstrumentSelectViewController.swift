@@ -8,14 +8,17 @@
 import UIKit
 
 class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, StartGameDelegate, InstrumentSelectDelegate {
-    
-    var startGameType: GameType = .Novice
-    
+        
     //MARK: - Overrides
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCollectionView()
+        setTestHighScore()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         setTestHighScore()
     }
     
@@ -32,14 +35,11 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     
     //MARK: - Start Game Delegate
     
-    func difficultyType(type: GameType) {
-        self.startGameType = type
-    }
     
-    func startGame() {
-        
+    
+    func startGame(type:GameType) {
         //add switch based on game level start point
-        switch self.startGameType {
+        switch type {
         case .Novice:
             self.performSegue(withIdentifier: "toStartNovice", sender: self)
         case .Regular:
