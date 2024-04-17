@@ -12,7 +12,7 @@ enum InstrumentType {
     case GrandPiano
     case AcousticGuitar
     case Keyboard
-    //case Guitar
+    case Violin
 }
 
 
@@ -21,4 +21,5 @@ enum InstrumentTypeName: String {
     case GrandPiano = "Grand Piano"
     case AcousticGuitar = "Acoustic Guitar"
     case Keyboard = "Keyboard"
+    case Violin = "Violin"
 }
