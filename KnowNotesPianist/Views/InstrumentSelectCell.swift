@@ -18,6 +18,7 @@ class InstrumentSelectCell: UICollectionViewCell {
         case 1: return InstrumentType.GrandPiano
         case 2: return InstrumentType.AcousticGuitar
         case 3: return InstrumentType.Keyboard
+        case 4: return InstrumentType.Violin
         default: return InstrumentType.BasicPiano
         }
     }
@@ -25,15 +26,15 @@ class InstrumentSelectCell: UICollectionViewCell {
     //MARK: - Outlets
     
     @IBOutlet weak var instrumentImage: UIImageView!
-    
     @IBOutlet weak var instrumentLabel: UILabel!
+    @IBOutlet weak var highScoreLabel: UILabel!
     
     //MARK: - Setup
         
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpVariables()
-        setUpGradientColorLabel()
+        setUpHighScoreLabel()
     }
     
     func setUpVariables(){
@@ -43,9 +44,41 @@ class InstrumentSelectCell: UICollectionViewCell {
         instrumentLabel.text = labelText
     }
     
-    func setUpGradientColorLabel(){
-        let labelColor = UIColor(named:"LabelColor")!
-        instrumentLabel.textColor = labelColor
+    func setUpHighScoreLabel(){
+        
+        switch instrumentType {
+        case .BasicPiano:
+            let hs = AchievementesController().getFreePianoHighScore()
+            highScoreLabel.text = "High Score \(hs)"
+        case .GrandPiano:
+            if AchievementesController().isGrandPianoNoviceUnlocked() {
+                let hs = AchievementesController().getGrandPianoHighScore()
+                highScoreLabel.text = "High Score \(hs)"
+            } else {
+                highScoreLabel.text = "Locked"
+            }
+        case .AcousticGuitar:
+            if AchievementesController().isAcousticNoviceUnlocked() {
+                let hs = AchievementesController().getAcousticHighScore()
+                highScoreLabel.text = "High Score \(hs)"
+            } else {
+                highScoreLabel.text = "Locked"
+            }
+        case .Keyboard:
+            if AchievementesController().isKeyboardNoviceUnlocked() {
+                let hs = AchievementesController().getKeyboardHighScore()
+                highScoreLabel.text = "High Score \(hs)"
+            } else {
+                highScoreLabel.text = "Locked"
+            }
+        case .Violin:
+            if AchievementesController().isViolinNoviceUnlocked() {
+                let hs = AchievementesController().getViolinHighScore()
+                highScoreLabel.text = "High Score \(hs)"
+            } else {
+                highScoreLabel.text = "Locked"
+            }
+        }
     }
     
     
@@ -56,6 +89,7 @@ class InstrumentSelectCell: UICollectionViewCell {
         case 1: return UIImage(named: "grandpiano")!
         case 2: return UIImage(named: "grandpiano")!
         case 3: return UIImage(named: "grandpiano")!
+        case 4: return UIImage(named: "grandpiano")!
         default:
             return UIImage(named: "grandpiano")!
         }
@@ -67,6 +101,7 @@ class InstrumentSelectCell: UICollectionViewCell {
         case 1: return InstrumentTypeName.GrandPiano.rawValue
         case 2: return InstrumentTypeName.AcousticGuitar.rawValue
         case 3: return InstrumentTypeName.Keyboard.rawValue
+        case 4: return InstrumentTypeName.Violin.rawValue
         default:
             return "Piano"
         }
