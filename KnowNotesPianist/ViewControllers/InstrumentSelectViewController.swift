@@ -74,13 +74,12 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         testScore.text = "testScore \(score)"
     }
     
-    
     //MARK: - CollectionView
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

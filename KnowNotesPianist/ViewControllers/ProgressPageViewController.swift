@@ -92,6 +92,8 @@ class ProgressPageViewController: UIViewController {
                 instrumentTypeLabel.text = InstrumentTypeName.AcousticGuitar.rawValue
             case .Keyboard:
                 instrumentTypeLabel.text = InstrumentTypeName.Keyboard.rawValue
+            case .Violin:
+                instrumentTypeLabel.text = InstrumentTypeName.Violin.rawValue
             }
         }
     }
