@@ -17,6 +17,7 @@ class ProgressPageViewController: UIViewController {
     
     let hapticGenerator = UINotificationFeedbackGenerator()
     
+    private var isNoviceUnlocked: Bool = true
     private var isRegularUnlocked: Bool = false
     private var isPianistUnlocked: Bool = false
     private var isVirtuosoUnlocked: Bool = false
@@ -29,54 +30,150 @@ class ProgressPageViewController: UIViewController {
     }
     
     //MARK: SetUp
+    
     private func setUnlockedLockedLevelDifficulties(){
         //eventually ad a switch case for instrument type
-        if achievementsController.isFreePianoRegularUnlocked() == true {
-            self.isRegularUnlocked = true
-        } else {
-            self.isRegularUnlocked = false
-        }
         
-        if achievementsController.isFreePianoPianistUnlocked() == true {
-            self.isPianistUnlocked = true
-        } else {
-            self.isPianistUnlocked = false
+        if let instrumentType {
+            switch instrumentType {
+            case .BasicPiano:
+                if achievementsController.isFreePianoRegularUnlocked() == true {
+                    self.isRegularUnlocked = true
+                } else {
+                    self.isRegularUnlocked = false
+                }
+                if achievementsController.isFreePianoPianistUnlocked() == true {
+                    self.isPianistUnlocked = true
+                } else {
+                    self.isPianistUnlocked = false
+                }
+                if achievementsController.isFreePianoVirtuosoUnlocked() == true {
+                    self.isVirtuosoUnlocked = true
+                } else {
+                    self.isVirtuosoUnlocked = false
+                }
+                setButtonStates()
+            case .GrandPiano:
+                if achievementsController.isGrandPianoNoviceUnlocked() == true {
+                    self.isNoviceUnlocked = true
+                } else {
+                    self.isNoviceUnlocked = false
+                }
+                if achievementsController.isGrandPianoRegularUnlocked() == true {
+                    self.isRegularUnlocked = true
+                } else {
+                    self.isRegularUnlocked = false
+                }
+                if achievementsController.isGrandPianoPianistUnlocked() == true {
+                    self.isPianistUnlocked = true
+                } else {
+                    self.isPianistUnlocked = false
+                }
+                if achievementsController.isGrandPianoVirtuosoUnlocked() == true {
+                    self.isVirtuosoUnlocked = true
+                } else {
+                    self.isVirtuosoUnlocked = false
+                }
+                setButtonStates()
+            case .AcousticGuitar:
+                if achievementsController.isAcousticNoviceUnlocked() == true {
+                    self.isNoviceUnlocked = true
+                } else {
+                    self.isNoviceUnlocked = false
+                }
+                if achievementsController.isAcousticRegularUnlocked() == true {
+                    self.isRegularUnlocked = true
+                } else {
+                    self.isRegularUnlocked = false
+                }
+                
+                if achievementsController.isAcousticPianistUnlocked() == true {
+                    self.isPianistUnlocked = true
+                } else {
+                    self.isPianistUnlocked = false
+                }
+                
+                if achievementsController.isAcousticVirtuosoUnlocked() == true {
+                    self.isVirtuosoUnlocked = true
+                } else {
+                    self.isVirtuosoUnlocked = false
+                }
+                setButtonStates()
+            case .Keyboard:
+                if achievementsController.isKeyboardNoviceUnlocked() == true {
+                    self.isNoviceUnlocked = true
+                } else {
+                    self.isNoviceUnlocked = false
+                }
+                if achievementsController.isKeyboardRegularUnlocked() == true {
+                    self.isRegularUnlocked = true
+                } else {
+                    self.isRegularUnlocked = false
+                }
+                
+                if achievementsController.isKeyboardPianistUnlocked() == true {
+                    self.isPianistUnlocked = true
+                } else {
+                    self.isPianistUnlocked = false
+                }
+                
+                if achievementsController.isKeyboardVirtuosoUnlocked() == true {
+                    self.isVirtuosoUnlocked = true
+                } else {
+                    self.isVirtuosoUnlocked = false
+                }
+                setButtonStates()
+            case .Violin:
+                if achievementsController.isViolinNoviceUnlocked() == true {
+                    self.isNoviceUnlocked = true
+                } else {
+                    self.isNoviceUnlocked = false
+                }
+                if achievementsController.isViolinRegularUnlocked() == true {
+                    self.isRegularUnlocked = true
+                } else {
+                    self.isRegularUnlocked = false
+                }
+                
+                if achievementsController.isViolinPianistUnlocked() == true {
+                    self.isPianistUnlocked = true
+                } else {
+                    self.isPianistUnlocked = false
+                }
+                
+                if achievementsController.isViolinVirtuosoUnlocked() == true {
+                    self.isVirtuosoUnlocked = true
+                } else {
+                    self.isVirtuosoUnlocked = false
+                }
+                setButtonStates()
+            }
         }
-        
-        if achievementsController.isFreePianoVirtuosoUnlocked() == true {
-            self.isVirtuosoUnlocked = true
-        } else {
-            self.isVirtuosoUnlocked = false
-        }
-        setButtonStates()
     }
     
     private func setButtonStates(){
         let unlockedImage = UIImage(named: "UnlockedButtonImage")
         let lockedImage = UIImage(named: "LockedButtonImage")
         
+        if isNoviceUnlocked {
+            noviceButton.setImage(unlockedImage, for: .normal)
+        } else {
+            noviceButton.setImage(lockedImage, for: .normal)
+        }
         if isRegularUnlocked {
-           // regularButton.isEnabled = true
             regularButton.setImage(unlockedImage, for: .normal)
         } else {
-           // regularButton.isEnabled = false
-            regularButton.setImage(lockedImage, for: .disabled)
+            regularButton.setImage(lockedImage, for: .normal)
         }
-        
         if isPianistUnlocked {
-           // pianistButton.isEnabled = true
             pianistButton.setImage(unlockedImage, for: .normal)
         } else {
-           // pianistButton.isEnabled = false
-            pianistButton.setImage(lockedImage, for: .disabled)
+            pianistButton.setImage(lockedImage, for: .normal)
         }
-        
         if isVirtuosoUnlocked {
-           // virtuosoButton.isEnabled = true
             virtuosoButton.setImage(unlockedImage, for: .normal)
         } else {
-           // virtuosoButton.isEnabled = false
-            virtuosoButton.setImage(lockedImage, for: .disabled)
+            virtuosoButton.setImage(lockedImage, for: .normal)
         }
         
     }
@@ -103,7 +200,11 @@ class ProgressPageViewController: UIViewController {
    private func updateViewFor(gameType: GameType){
         switch gameType {
         case .Novice:
-            noviceLabel.textColor = .white
+            if isNoviceUnlocked {
+                noviceLabel.textColor = .white
+            } else {
+                noviceLabel.textColor = .black
+            }
             if isRegularUnlocked {
                 regularLabel.textColor = .lightGray
             } else {
@@ -166,10 +267,14 @@ class ProgressPageViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func noviceButtonTapped(_ sender: Any) {
-        self.gameType = .Novice
-        noviceButton.pulsate()
-        updateViewFor(gameType: .Novice)
-        hapticGenerator.notificationOccurred(.success)
+        if isNoviceUnlocked {
+            self.gameType = .Novice
+            noviceButton.pulsate()
+            updateViewFor(gameType: .Novice)
+            hapticGenerator.notificationOccurred(.success)
+        } else {
+            hapticGenerator.notificationOccurred(.error)
+        }
     }
     
     @IBAction func regularButtonTapped(_ sender: Any) {
@@ -206,10 +311,16 @@ class ProgressPageViewController: UIViewController {
     }
     
     @IBAction func startButtonTapped(_ sender: Any) {
-        startButton.pulsate()
-        hapticGenerator.notificationOccurred(.success)
-        self.dismiss(animated: true) {
-            self.startDelegate?.startGame(type: self.gameType)
+        if isNoviceUnlocked == false {
+            startButton.pulsate()
+            hapticGenerator.notificationOccurred(.error)
+            return
+        } else {
+            startButton.pulsate()
+            hapticGenerator.notificationOccurred(.success)
+            self.dismiss(animated: true) {
+                self.startDelegate?.startGame(type: self.gameType)
+            }
         }
     }
     
