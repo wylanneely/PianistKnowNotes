@@ -13,6 +13,7 @@ class ProgressPageViewController: UIViewController {
     var startDelegate: StartGameDelegate?
     var achievementsController = AchievementesController()
     var instrumentType: InstrumentType?
+    var gameType: GameType = .Novice
     
     let hapticGenerator = UINotificationFeedbackGenerator()
     
@@ -24,7 +25,6 @@ class ProgressPageViewController: UIViewController {
         super.viewDidLoad()
         setUnlockedLockedLevelDifficulties()
         setInstrumentTypeLabel()
-        startDelegate?.difficultyType(type: .Novice)
         updateViewFor(gameType: .Novice)
     }
     
@@ -164,16 +164,16 @@ class ProgressPageViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func noviceButtonTapped(_ sender: Any) {
+        self.gameType = .Novice
         noviceButton.pulsate()
-        startDelegate?.difficultyType(type: .Novice)
         updateViewFor(gameType: .Novice)
         hapticGenerator.notificationOccurred(.success)
     }
     
     @IBAction func regularButtonTapped(_ sender: Any) {
         if isRegularUnlocked {
+            self.gameType = .Regular
             regularButton.pulsate()
-            startDelegate?.difficultyType(type: .Regular)
             updateViewFor(gameType: .Regular)
             hapticGenerator.notificationOccurred(.success)
         } else {
@@ -183,8 +183,8 @@ class ProgressPageViewController: UIViewController {
     
     @IBAction func pianistButtonTapped(_ sender: Any) {
         if isPianistUnlocked {
+            self.gameType = .Pianist
             pianistButton.pulsate()
-            startDelegate?.difficultyType(type: .Pianist)
             updateViewFor(gameType: .Pianist)
             hapticGenerator.notificationOccurred(.success)
         } else {
@@ -194,8 +194,8 @@ class ProgressPageViewController: UIViewController {
     
     @IBAction func virtuosoButtonTapped(_ sender: Any) {
         if isVirtuosoUnlocked {
+            self.gameType = .Virtuoso
             virtuosoButton.pulsate()
-            startDelegate?.difficultyType(type: .Virtuoso)
             updateViewFor(gameType: .Virtuoso)
             hapticGenerator.notificationOccurred(.success)
         } else {
@@ -207,7 +207,7 @@ class ProgressPageViewController: UIViewController {
         startButton.pulsate()
         hapticGenerator.notificationOccurred(.success)
         self.dismiss(animated: true) {
-            self.startDelegate?.startGame()
+            self.startDelegate?.startGame(type: self.gameType)
         }
     }
     
@@ -225,6 +225,5 @@ class ProgressPageViewController: UIViewController {
 }
 
 protocol StartGameDelegate {
-    func startGame()
-    func difficultyType(type:GameType)
+    func startGame(type:GameType)
 }
