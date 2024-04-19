@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GameKit
 
 class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, StartGameDelegate, InstrumentSelectDelegate {
         
@@ -14,12 +15,11 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCollectionView()
-        setTestHighScore()
+        authenticateUser()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        setTestHighScore()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -27,6 +27,24 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     }
     
     //MARK: - Setup
+    
+    func authenticateUser() {
+      let player = GKLocalPlayer.local
+      player.authenticateHandler = { vc, error in
+        guard error == nil else {
+          print(error?.localizedDescription ?? "")
+          return
+        }
+          if let vc = vc {
+              self.present(vc, animated: true, completion: nil)
+          }
+      }
+        GKAccessPoint.shared.location = .topTrailing
+        GKAccessPoint.shared.isActive = true
+        
+    }
+
+    
     func setUpCollectionView(){
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
@@ -68,11 +86,6 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     
     //MARK: - Outlets
     
-    @IBOutlet weak var testScore: UILabel!
-    func setTestHighScore(){
-        let score = AchievementesController().getFreePianoHighScore()
-        testScore.text = "testScore \(score)"
-    }
     
     //MARK: - CollectionView
     
@@ -95,8 +108,8 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let vcWidth = self.view.frame.width
         let vcHeight = self.view.frame.height
-        let collectionHeight = (vcHeight * 0.35)
-        let collectionWidth = (vcWidth * 0.71)
+        let collectionHeight = (vcHeight * 0.7)
+        let collectionWidth = (vcWidth * 0.88)
         return CGSize(width: collectionWidth , height: collectionHeight)
     }
     
