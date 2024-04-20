@@ -8,11 +8,14 @@
 import UIKit
 
 class FinishedGamePopUp: UIViewController {
+    
+    var gameKitController = GameKitController()
 
     var game: Game?
     var delegate: FinishedPopUpDelegate?
     var shareImage: UIImage?
     var isPaused: Bool = true
+    var instrument: InstrumentType = .GrandPiano
     
     let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
     let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
@@ -117,6 +120,7 @@ class FinishedGamePopUp: UIViewController {
         submitScoreButton.pulsate()
         mediumImpact.impactOccurred()
         AchievementesController().setFreePiano(highScore: game?.score ?? 0)
+        gameKitController.submitLeaderboard(score: game?.score ?? 0, instrument: self.instrument)
         submitScoreButton.isEnabled = false
     }
     
