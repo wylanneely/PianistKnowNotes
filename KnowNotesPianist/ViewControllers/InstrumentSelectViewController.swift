@@ -9,7 +9,11 @@ import UIKit
 import GameKit
 
 class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, StartGameDelegate, InstrumentSelectDelegate {
-        
+    
+    //MARK: - Variables
+    
+    var gameKitController = GameKitController()
+    
     //MARK: - Overrides
 
     override func viewDidLoad() {
@@ -28,6 +32,7 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     
     //MARK: - Setup
     
+    //GameKit
     func authenticateUser() {
       let player = GKLocalPlayer.local
       player.authenticateHandler = { vc, error in
@@ -39,9 +44,7 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
               self.present(vc, animated: true, completion: nil)
           }
       }
-        GKAccessPoint.shared.location = .topTrailing
-        GKAccessPoint.shared.isActive = true
-        
+        gameKitController.showGKAccessPoint()
     }
 
     
