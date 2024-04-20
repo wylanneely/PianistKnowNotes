@@ -122,6 +122,7 @@ class FinishedGamePopUp: UIViewController {
         AchievementesController().setFreePiano(highScore: game?.score ?? 0)
         gameKitController.submitLeaderboard(score: game?.score ?? 0, instrument: self.instrument)
         submitScoreButton.isEnabled = false
+        GameKitController().showGKAccessPoint()
     }
     
     @IBAction func shareButtonTapped(_ sender: Any) {
@@ -143,15 +144,19 @@ class FinishedGamePopUp: UIViewController {
     
     @IBAction func dismissButtonTapped(_ sender: Any) {
         self.hide()
+        GameKitController().hideGKAcessPoint()
     }
     
     @IBAction func exitButtonTapped(_ sender: Any) {
         exitButton.pulsate()
         heavyImpact.impactOccurred()
-        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: {
+            GameKitController().showGKAccessPoint()
+        })
     }
     
     @IBAction func restartButtonTapped(_ sender: Any) {
+        GameKitController().hideGKAcessPoint()
         restartButton.pulsate()
         heavyImpact.impactOccurred()
         self.dismiss(animated: true) {
