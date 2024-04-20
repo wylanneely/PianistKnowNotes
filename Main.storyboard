@@ -374,9 +374,25 @@
                                         <color key="shadowColor" systemColor="labelColor"/>
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdS-yI-om1">
+                                        <rect key="frame" x="167.66666666666666" y="24.999999999999996" width="34" height="47.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="Poppins-ExtraBold" family="Poppins" pointSize="34"/>
+                                        <color key="textColor" red="0.99645060299999999" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" systemColor="labelColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regular" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5K-jX-jM4">
                                         <rect key="frame" x="12" y="124.00000000000003" width="155.66666666666666" height="42"/>
                                         <fontDescription key="fontDescription" name="Poppins-ExtraBold" family="Poppins" pointSize="30"/>
+                                        <color key="textColor" red="0.99645060299999999" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" systemColor="labelColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQB-8V-r4U">
+                                        <rect key="frame" x="167.66666666666666" y="122.00000000000004" width="35.333333333333343" height="47.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Poppins-ExtraBold" family="Poppins" pointSize="34"/>
                                         <color key="textColor" red="0.99645060299999999" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" systemColor="labelColor"/>
@@ -398,17 +414,36 @@
                                         <color key="shadowColor" systemColor="labelColor"/>
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2A-vJ-rd5">
+                                        <rect key="frame" x="167.66666666666666" y="317" width="39" height="47.666666666666686"/>
+                                        <fontDescription key="fontDescription" name="Poppins-ExtraBold" family="Poppins" pointSize="34"/>
+                                        <color key="textColor" red="0.99645060299999999" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" systemColor="labelColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJj-td-QeY">
+                                        <rect key="frame" x="167.66666666666666" y="220.00000000000003" width="31" height="47.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="Poppins-ExtraBold" family="Poppins" pointSize="34"/>
+                                        <color key="textColor" red="0.99645060299999999" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" systemColor="labelColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" name="OpaquePurple"/>
                                 <constraints>
+                                    <constraint firstItem="qJj-td-QeY" firstAttribute="centerY" secondItem="eLm-Jt-0fl" secondAttribute="centerY" constant="1" id="1kP-NS-pqG"/>
                                     <constraint firstItem="eLm-Jt-0fl" firstAttribute="top" secondItem="OxG-Ib-3Ra" secondAttribute="bottom" constant="27.329999999999998" id="2RU-JS-c15"/>
                                     <constraint firstAttribute="trailing" secondItem="T5f-Zp-7vF" secondAttribute="trailing" constant="10" id="3SJ-71-TQJ"/>
                                     <constraint firstItem="ldo-pM-9N7" firstAttribute="centerX" secondItem="nNO-Gb-euN" secondAttribute="centerX" id="8Kn-hX-mod"/>
+                                    <constraint firstItem="g2A-vJ-rd5" firstAttribute="centerY" secondItem="7Nd-c6-fWV" secondAttribute="centerY" id="8ca-ly-J4Y"/>
                                     <constraint firstItem="ldo-pM-9N7" firstAttribute="top" secondItem="i9g-sf-nkN" secondAttribute="bottom" id="DzQ-57-DPU"/>
                                     <constraint firstItem="RDK-T0-hoq" firstAttribute="top" secondItem="nNO-Gb-euN" secondAttribute="top" id="GcR-pR-sFa"/>
                                     <constraint firstItem="I5K-jX-jM4" firstAttribute="top" secondItem="ldo-pM-9N7" secondAttribute="bottom" constant="27.329999999999998" id="Het-cS-FzH"/>
                                     <constraint firstAttribute="trailing" secondItem="i9g-sf-nkN" secondAttribute="trailing" constant="10" id="IFc-rE-73v"/>
                                     <constraint firstItem="OxG-Ib-3Ra" firstAttribute="top" secondItem="T5f-Zp-7vF" secondAttribute="bottom" id="KlH-NM-8Pa"/>
+                                    <constraint firstItem="g2A-vJ-rd5" firstAttribute="leading" secondItem="gBN-TC-wfa" secondAttribute="centerX" id="LH0-ga-ZwD"/>
                                     <constraint firstItem="eLm-Jt-0fl" firstAttribute="trailing" secondItem="FBH-rk-ltb" secondAttribute="centerX" id="Q3T-H6-FbR"/>
                                     <constraint firstItem="6Hn-XI-Bih" firstAttribute="centerX" secondItem="nNO-Gb-euN" secondAttribute="centerX" id="QMd-dy-hLT"/>
                                     <constraint firstItem="RDK-T0-hoq" firstAttribute="leading" secondItem="nNO-Gb-euN" secondAttribute="leading" id="Rwr-zh-EWS"/>
@@ -418,10 +453,14 @@
                                     <constraint firstItem="7Nd-c6-fWV" firstAttribute="trailing" secondItem="gBN-TC-wfa" secondAttribute="centerX" id="V5s-kF-D8K"/>
                                     <constraint firstAttribute="bottom" secondItem="gBN-TC-wfa" secondAttribute="bottom" id="VTY-Mo-3Cl"/>
                                     <constraint firstItem="FBH-rk-ltb" firstAttribute="top" secondItem="OxG-Ib-3Ra" secondAttribute="bottom" id="Wxq-Lt-4Jq"/>
+                                    <constraint firstItem="IdS-yI-om1" firstAttribute="centerY" secondItem="8yK-gW-V3B" secondAttribute="centerY" constant="1" id="XZ5-pC-Yxt"/>
                                     <constraint firstItem="7Nd-c6-fWV" firstAttribute="leading" secondItem="nNO-Gb-euN" secondAttribute="leading" constant="12" id="Yh1-jj-l1S"/>
+                                    <constraint firstItem="IdS-yI-om1" firstAttribute="leading" secondItem="i9g-sf-nkN" secondAttribute="centerX" id="Zee-LZ-ZuO"/>
+                                    <constraint firstItem="IQB-8V-r4U" firstAttribute="centerY" secondItem="I5K-jX-jM4" secondAttribute="centerY" constant="1" id="a9M-8x-Jhm"/>
                                     <constraint firstAttribute="height" constant="391" id="ap9-IL-tUC"/>
                                     <constraint firstItem="7Nd-c6-fWV" firstAttribute="top" secondItem="6Hn-XI-Bih" secondAttribute="bottom" constant="27.329999999999998" id="cGf-nz-Cma"/>
                                     <constraint firstItem="6Hn-XI-Bih" firstAttribute="top" secondItem="FBH-rk-ltb" secondAttribute="bottom" id="eXA-Ih-cjr"/>
+                                    <constraint firstItem="qJj-td-QeY" firstAttribute="leading" secondItem="FBH-rk-ltb" secondAttribute="centerX" id="f84-BD-tGg"/>
                                     <constraint firstItem="6Hn-XI-Bih" firstAttribute="top" secondItem="eLm-Jt-0fl" secondAttribute="bottom" constant="27.670000000000002" id="fu2-b8-THY"/>
                                     <constraint firstItem="I5K-jX-jM4" firstAttribute="trailing" secondItem="T5f-Zp-7vF" secondAttribute="centerX" id="guB-WK-FUE"/>
                                     <constraint firstItem="i9g-sf-nkN" firstAttribute="leading" secondItem="nNO-Gb-euN" secondAttribute="leading" constant="12" id="jii-1x-szX"/>
@@ -437,6 +476,7 @@
                                     <constraint firstItem="I5K-jX-jM4" firstAttribute="leading" secondItem="nNO-Gb-euN" secondAttribute="leading" constant="12" id="tzJ-P6-AK7"/>
                                     <constraint firstItem="8yK-gW-V3B" firstAttribute="top" secondItem="nNO-Gb-euN" secondAttribute="top" constant="27" id="ulU-hw-Sb2"/>
                                     <constraint firstItem="gBN-TC-wfa" firstAttribute="leading" secondItem="nNO-Gb-euN" secondAttribute="leading" constant="12" id="vtX-kN-eng"/>
+                                    <constraint firstItem="IQB-8V-r4U" firstAttribute="leading" secondItem="T5f-Zp-7vF" secondAttribute="centerX" id="wqE-1D-hli"/>
                                     <constraint firstItem="OxG-Ib-3Ra" firstAttribute="top" secondItem="I5K-jX-jM4" secondAttribute="bottom" constant="27.670000000000002" id="x8M-Dk-k9a"/>
                                     <constraint firstItem="ldo-pM-9N7" firstAttribute="top" secondItem="8yK-gW-V3B" secondAttribute="bottom" constant="26.670000000000002" id="xnj-ZJ-QVz"/>
                                     <constraint firstItem="i9g-sf-nkN" firstAttribute="top" secondItem="nNO-Gb-euN" secondAttribute="top" id="zOU-OS-uvE"/>
@@ -488,6 +528,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="fiveLabel" destination="IQB-8V-r4U" id="YX4-mK-9fe"/>
                         <outlet property="instrumentTypeLabel" destination="L1c-Og-zVS" id="GAg-AB-Oo8"/>
                         <outlet property="noviceButton" destination="i9g-sf-nkN" id="Y57-FH-JxV"/>
                         <outlet property="noviceLabel" destination="8yK-gW-V3B" id="UII-h4-iyM"/>
@@ -495,7 +536,10 @@
                         <outlet property="pianistLabel" destination="eLm-Jt-0fl" id="2gb-iK-MyR"/>
                         <outlet property="regularButton" destination="T5f-Zp-7vF" id="tUT-Oy-d6A"/>
                         <outlet property="regularLabel" destination="I5K-jX-jM4" id="Gl8-LK-1fD"/>
+                        <outlet property="sevenLabel" destination="qJj-td-QeY" id="WGz-KT-wvF"/>
                         <outlet property="startButton" destination="nlP-wv-pib" id="KIf-Nx-kh8"/>
+                        <outlet property="threeLabel" destination="IdS-yI-om1" id="xK4-Mv-EFk"/>
+                        <outlet property="twelveLabel" destination="g2A-vJ-rd5" id="1fP-MO-jt3"/>
                         <outlet property="virtuosoButton" destination="gBN-TC-wfa" id="icO-px-a5T"/>
                         <outlet property="virtuosoLabel" destination="7Nd-c6-fWV" id="59L-2E-OUb"/>
                     </connections>
@@ -1012,7 +1056,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="k1q-hz-8y3"/>
+        <segue reference="206-VD-YWV"/>
         <segue reference="KQn-fK-SF0"/>
         <segue reference="fDB-b7-JAp"/>
     </inferredMetricsTieBreakers>
