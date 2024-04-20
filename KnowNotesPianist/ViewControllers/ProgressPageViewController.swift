@@ -29,6 +29,11 @@ class ProgressPageViewController: UIViewController {
         updateViewFor(gameType: .Novice)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        startDelegate?.presentedViewDidClose()
+    }
+        
     //MARK: SetUp
     
     private func setUnlockedLockedLevelDifficulties(){
@@ -339,4 +344,5 @@ class ProgressPageViewController: UIViewController {
 
 protocol StartGameDelegate {
     func startGame(type:GameType)
+    func presentedViewDidClose()
 }

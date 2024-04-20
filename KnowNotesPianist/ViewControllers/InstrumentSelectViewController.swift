@@ -24,6 +24,12 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        gameKitController.showGKAccessPoint()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        gameKitController.hideGKAcessPoint()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -59,6 +65,7 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     
     
     func startGame(type:GameType) {
+        gameKitController.hideGKAcessPoint()
         //add switch based on game level start point
         switch type {
         case .Novice:
@@ -73,6 +80,11 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         
     }
     
+    func presentedViewDidClose(){
+        gameKitController.showGKAccessPoint()
+    }
+
+    
     func openProgressViewFor(instrument: InstrumentType) {
         //add logic to launch progress with InstrumentType
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -84,6 +96,7 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
              }
         destinationController.startDelegate = self
         destinationController.instrumentType = instrument
+        gameKitController.hideGKAcessPoint()
         self.present(destinationController, animated: true)
     }
     
