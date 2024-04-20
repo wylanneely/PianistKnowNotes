@@ -12,6 +12,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
 
     var gameController = GameController(gameType: .Virtuoso)
     var lifeImageController = LifeImages()
+    var instrument: InstrumentType = .BasicPiano
 
     var currentNoteID: Int?
     var isNewGame: Bool = true

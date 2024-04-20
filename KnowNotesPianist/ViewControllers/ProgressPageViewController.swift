@@ -323,8 +323,15 @@ class ProgressPageViewController: UIViewController {
         } else {
             startButton.pulsate()
             hapticGenerator.notificationOccurred(.success)
-            self.dismiss(animated: true) {
-                self.startDelegate?.startGame(type: self.gameType)
+            self.dismiss(
+                animated: true
+            ) {
+                if let instrument = self.instrumentType {
+                    self.startDelegate?.startGame(
+                        type: self.gameType,
+                        instrument: instrument
+                    )
+                }
             }
         }
     }
@@ -343,6 +350,6 @@ class ProgressPageViewController: UIViewController {
 }
 
 protocol StartGameDelegate {
-    func startGame(type:GameType)
+    func startGame(type:GameType,instrument:InstrumentType)
     func presentedViewDidClose()
 }

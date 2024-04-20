@@ -14,12 +14,14 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
     var gameController = GameController(gameType: .Novice)
     var lifeImageController = LifeImages()
     var achievementsController = AchievementesController()
+    var instrument: InstrumentType = .BasicPiano
 
     var currentNoteID: Int?
     var isNewGame: Bool = true
     var isNewNote: Bool = true
     var guessedNotesIDs = [Int]()
 
+    
     let hapticGenerator = UINotificationFeedbackGenerator()
     let mediumImpact = UIImpactFeedbackGenerator(style: .medium)
     let heavyImpact = UIImpactFeedbackGenerator(style: .heavy)
@@ -307,6 +309,7 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
 
     func showFinishedGamePopup(isPaused:Bool){
         let popUpView = FinishedGamePopUp()
+        popUpView.instrument = self.instrument
         popUpView.isPaused = isPaused
         popUpView.delegate = self
         popUpView.game = gameController.currentGame
@@ -363,6 +366,7 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
         let currentGame = gameController.currentGame
         currentGame.gameType = .Regular
         dVC.gameController.setGame(game: currentGame)
+        dVC.instrument = self.instrument
     }
     
 

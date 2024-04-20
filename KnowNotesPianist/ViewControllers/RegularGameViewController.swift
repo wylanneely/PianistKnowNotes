@@ -13,6 +13,8 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
     var gameController = GameController(gameType: .Regular)
     var lifeImageController = LifeImages()
     var achievementsController = AchievementesController()
+    var instrument: InstrumentType = .BasicPiano
+
 
     var currentNoteID: Int?
     var isNewGame: Bool = true
@@ -401,6 +403,7 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
     
     func showFinishedGamePopup(isPaused:Bool){
         let popUpView = FinishedGamePopUp()
+        popUpView.instrument = self.instrument
         popUpView.isPaused = isPaused
         popUpView.delegate = self
         popUpView.game = gameController.currentGame
@@ -457,6 +460,7 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
         let currentGame = gameController.currentGame
         currentGame.gameType = .Pianist
         dVC.gameController.setGame(game: currentGame)
+        dVC.instrument = self.instrument
     }
     
 

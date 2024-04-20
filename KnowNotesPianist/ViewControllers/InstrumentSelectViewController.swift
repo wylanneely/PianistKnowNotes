@@ -13,6 +13,7 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     //MARK: - Variables
     
     var gameKitController = GameKitController()
+    var instrumentType: InstrumentType = .BasicPiano
     
     //MARK: - Overrides
 
@@ -64,8 +65,9 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     
     
     
-    func startGame(type:GameType) {
+    func startGame(type:GameType,instrument:InstrumentType) {
         gameKitController.hideGKAcessPoint()
+        self.instrumentType = instrument
         //add switch based on game level start point
         switch type {
         case .Novice:
@@ -131,14 +133,26 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     
     //MARK: - Actions
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        if let noviceVC = segue.destination as? NoviceGameViewController {
+            noviceVC.instrument = self.instrumentType
+        }
+        if let regularVC = segue.destination as? RegularGameViewController {
+            regularVC.instrument = self.instrumentType
+        }
+        if let pianistVC = segue.destination as? PianistGameViewController {
+            pianistVC.instrument = self.instrumentType
+        }
+        if let virtuosoVC = segue.destination as? VirtuosoGameViewController {
+            virtuosoVC.instrument = self.instrumentType
+        }
+        
     }
-    */
+    
 
 }
