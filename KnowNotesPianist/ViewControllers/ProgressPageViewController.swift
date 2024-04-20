@@ -207,51 +207,74 @@ class ProgressPageViewController: UIViewController {
         case .Novice:
             if isNoviceUnlocked {
                 noviceLabel.textColor = .white
+                threeLabel.textColor = .white
             } else {
                 noviceLabel.textColor = .black
+                threeLabel.textColor = .black
             }
             if isRegularUnlocked {
                 regularLabel.textColor = .lightGray
+                fiveLabel.textColor = .lightGray
             } else {
                 regularLabel.textColor = .black
+                fiveLabel.textColor = .black
             }
             if isPianistUnlocked {
                 pianistLabel.textColor = .lightGray
+                sevenLabel.textColor = .lightGray
             } else {
                 pianistLabel.textColor = .black
+                sevenLabel.textColor = .black
             }
             if isVirtuosoUnlocked {
                 virtuosoLabel.textColor = .lightGray
+                twelveLabel.textColor = .lightGray
             } else {
                 virtuosoLabel.textColor = .black
+                twelveLabel.textColor = .black
             }
         case .Regular:
             noviceLabel.textColor = .lightGray
+            threeLabel.textColor = .lightGray
             regularLabel.textColor = .white
+            fiveLabel.textColor = .white
             if isPianistUnlocked {
                 pianistLabel.textColor = .lightGray
+                sevenLabel.textColor = .lightGray
             } else {
                 pianistLabel.textColor = .black
+                sevenLabel.textColor = .black
             }
             if isVirtuosoUnlocked {
                 virtuosoLabel.textColor = .lightGray
+                twelveLabel.textColor = .lightGray
             } else {
                 virtuosoLabel.textColor = .black
+                twelveLabel.textColor = .black
             }
         case .Pianist:
             noviceLabel.textColor = .lightGray
+            threeLabel.textColor = .lightGray
             regularLabel.textColor = .lightGray
+            fiveLabel.textColor = .lightGray
             pianistLabel.textColor = .white
+            sevenLabel.textColor = .white
             if isVirtuosoUnlocked {
                 virtuosoLabel.textColor = .lightGray
+                twelveLabel.textColor = .lightGray
             } else {
                 virtuosoLabel.textColor = .black
+                twelveLabel.textColor = .black
             }
         case .Virtuoso:
             noviceLabel.textColor = .lightGray
+            threeLabel.textColor = .lightGray
             regularLabel.textColor = .lightGray
+            fiveLabel.textColor = .lightGray
             pianistLabel.textColor = .lightGray
+            sevenLabel.textColor = .lightGray
             virtuosoLabel.textColor = .white
+            twelveLabel.textColor = .white
         }
     }
     
@@ -268,6 +291,10 @@ class ProgressPageViewController: UIViewController {
     @IBOutlet weak var regularButton: UIButton!
     @IBOutlet weak var pianistButton: UIButton!
     @IBOutlet weak var virtuosoButton: UIButton!
+    @IBOutlet weak var threeLabel: UILabel!
+    @IBOutlet weak var fiveLabel: UILabel!
+    @IBOutlet weak var sevenLabel: UILabel!
+    @IBOutlet weak var twelveLabel: UILabel!
     
     //MARK: - Actions
     
