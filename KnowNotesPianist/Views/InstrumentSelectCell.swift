@@ -42,6 +42,7 @@ class InstrumentSelectCell: UICollectionViewCell {
         instrumentImage.image = backGroundImage
         let labelText = returnLabelText(id: self.instrumentID)
         instrumentLabel.text = labelText
+        self.layer.borderWidth = 4
     }
     
     func setUpLabels(){
@@ -52,16 +53,20 @@ class InstrumentSelectCell: UICollectionViewCell {
             highScoreLabel.text = "High Score \(hs)"
             highScoreLabel.textColor =  UIColor.instrumentLabel
             instrumentLabel.textColor = UIColor.instrumentLabel
+            self.layer.borderColor = UIColor.instrumentLabel.cgColor
         case .GrandPiano:
             if AchievementesController().isGrandPianoNoviceUnlocked() {
                 let hs = AchievementesController().getGrandPianoHighScore()
                 highScoreLabel.text = "High Score \(hs)"
                 highScoreLabel.textColor =  UIColor.instrumentLabel
                 instrumentLabel.textColor = UIColor.instrumentLabel
+                self.layer.borderColor = UIColor.instrumentLabel.cgColor
+
             } else {
                 highScoreLabel.text = "Locked"
                 highScoreLabel.textColor = .systemRed
                 instrumentLabel.textColor = .systemRed
+                self.layer.borderColor = UIColor.systemRed.cgColor
             }
         case .AcousticGuitar:
             if AchievementesController().isAcousticNoviceUnlocked() {
@@ -69,10 +74,13 @@ class InstrumentSelectCell: UICollectionViewCell {
                 highScoreLabel.text = "High Score \(hs)"
                 highScoreLabel.textColor =  UIColor.instrumentLabel
                 instrumentLabel.textColor = UIColor.instrumentLabel
+                self.layer.borderColor = UIColor.instrumentLabel.cgColor
+
             } else {
                 highScoreLabel.text = "Locked"
                 highScoreLabel.textColor = .systemRed
                 instrumentLabel.textColor = .systemRed
+                self.layer.borderColor = UIColor.systemRed.cgColor
             }
         case .Keyboard:
             if AchievementesController().isKeyboardNoviceUnlocked() {
@@ -80,10 +88,12 @@ class InstrumentSelectCell: UICollectionViewCell {
                 highScoreLabel.text = "High Score \(hs)"
                 highScoreLabel.textColor =  UIColor.instrumentLabel
                 instrumentLabel.textColor = UIColor.instrumentLabel
+                self.layer.borderColor = UIColor.instrumentLabel.cgColor
             } else {
                 highScoreLabel.text = "Locked"
                 highScoreLabel.textColor = .systemRed
                 instrumentLabel.textColor = .systemRed
+                self.layer.borderColor = UIColor.systemRed.cgColor
             }
         case .Violin:
             if AchievementesController().isViolinNoviceUnlocked() {
@@ -91,10 +101,12 @@ class InstrumentSelectCell: UICollectionViewCell {
                 highScoreLabel.text = "High Score \(hs)"
                 highScoreLabel.textColor =  UIColor.instrumentLabel
                 instrumentLabel.textColor = UIColor.instrumentLabel
+                self.layer.borderColor = UIColor.instrumentLabel.cgColor
             } else {
                 highScoreLabel.text = "Locked"
                 highScoreLabel.textColor = .systemRed
                 instrumentLabel.textColor = .systemRed
+                self.layer.borderColor = UIColor.systemRed.cgColor
             }
         }
     }
