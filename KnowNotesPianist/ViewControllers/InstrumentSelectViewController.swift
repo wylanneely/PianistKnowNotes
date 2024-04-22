@@ -33,9 +33,9 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         gameKitController.hideGKAcessPoint()
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
+//    override var prefersStatusBarHidden: Bool {
+//        return true
+//    }
     
     //MARK: - Setup
     
