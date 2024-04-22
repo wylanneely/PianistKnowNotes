@@ -184,6 +184,12 @@ class ProgressPageViewController: UIViewController {
     }
     
    private func setInstrumentTypeLabel(){
+       instrumentTypeLabel.font =  UIFont(name: "Poppins-Bold", size: 34)
+       noviceLabel.font =  UIFont(name: "Poppins-Bold", size: 30)
+       regularLabel.font =  UIFont(name: "Poppins-Bold", size: 30)
+       pianistLabel.font =  UIFont(name: "Poppins-Bold", size: 30)
+       virtuosoLabel.font =  UIFont(name: "Poppins-Bold", size: 30)
+
         if let instrumentType {
             switch instrumentType {
             case .BasicPiano:
