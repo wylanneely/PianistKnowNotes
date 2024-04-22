@@ -213,66 +213,66 @@ class ProgressPageViewController: UIViewController {
                 threeLabel.textColor = .black
             }
             if isRegularUnlocked {
-                regularLabel.textColor = .lightGray
-                fiveLabel.textColor = .lightGray
+                regularLabel.textColor = .systemGray
+                fiveLabel.textColor = .systemGray
             } else {
                 regularLabel.textColor = .black
                 fiveLabel.textColor = .black
             }
             if isPianistUnlocked {
-                pianistLabel.textColor = .lightGray
-                sevenLabel.textColor = .lightGray
+                pianistLabel.textColor = .systemGray
+                sevenLabel.textColor = .systemGray
             } else {
                 pianistLabel.textColor = .black
                 sevenLabel.textColor = .black
             }
             if isVirtuosoUnlocked {
-                virtuosoLabel.textColor = .lightGray
-                twelveLabel.textColor = .lightGray
+                virtuosoLabel.textColor = .systemGray
+                twelveLabel.textColor = .systemGray
             } else {
                 virtuosoLabel.textColor = .black
                 twelveLabel.textColor = .black
             }
         case .Regular:
-            noviceLabel.textColor = .lightGray
-            threeLabel.textColor = .lightGray
+            noviceLabel.textColor = .systemGray
+            threeLabel.textColor = .systemGray
             regularLabel.textColor = .white
             fiveLabel.textColor = .white
             if isPianistUnlocked {
-                pianistLabel.textColor = .lightGray
-                sevenLabel.textColor = .lightGray
+                pianistLabel.textColor = .systemGray
+                sevenLabel.textColor = .systemGray
             } else {
                 pianistLabel.textColor = .black
                 sevenLabel.textColor = .black
             }
             if isVirtuosoUnlocked {
-                virtuosoLabel.textColor = .lightGray
-                twelveLabel.textColor = .lightGray
+                virtuosoLabel.textColor = .systemGray
+                twelveLabel.textColor = .systemGray
             } else {
                 virtuosoLabel.textColor = .black
                 twelveLabel.textColor = .black
             }
         case .Pianist:
-            noviceLabel.textColor = .lightGray
-            threeLabel.textColor = .lightGray
-            regularLabel.textColor = .lightGray
-            fiveLabel.textColor = .lightGray
+            noviceLabel.textColor = .systemGray
+            threeLabel.textColor = .systemGray
+            regularLabel.textColor = .systemGray
+            fiveLabel.textColor = .systemGray
             pianistLabel.textColor = .white
             sevenLabel.textColor = .white
             if isVirtuosoUnlocked {
-                virtuosoLabel.textColor = .lightGray
-                twelveLabel.textColor = .lightGray
+                virtuosoLabel.textColor = .systemGray
+                twelveLabel.textColor = .systemGray
             } else {
                 virtuosoLabel.textColor = .black
                 twelveLabel.textColor = .black
             }
         case .Virtuoso:
-            noviceLabel.textColor = .lightGray
-            threeLabel.textColor = .lightGray
-            regularLabel.textColor = .lightGray
-            fiveLabel.textColor = .lightGray
-            pianistLabel.textColor = .lightGray
-            sevenLabel.textColor = .lightGray
+            noviceLabel.textColor = .systemGray
+            threeLabel.textColor = .systemGray
+            regularLabel.textColor = .systemGray
+            fiveLabel.textColor = .systemGray
+            pianistLabel.textColor = .systemGray
+            sevenLabel.textColor = .systemGray
             virtuosoLabel.textColor = .white
             twelveLabel.textColor = .white
         }
