@@ -104,6 +104,7 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     
     //MARK: - Outlets
     
+    @IBOutlet weak var instrumetLabel: UILabel!
     
     //MARK: - CollectionView
     
@@ -126,7 +127,7 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let vcWidth = self.view.frame.width
         let vcHeight = self.view.frame.height
-        let collectionHeight = (vcHeight * 0.7)
+        let collectionHeight = (vcHeight * 0.77)
         let collectionWidth = (vcWidth * 0.88)
         return CGSize(width: collectionWidth , height: collectionHeight)
     }
