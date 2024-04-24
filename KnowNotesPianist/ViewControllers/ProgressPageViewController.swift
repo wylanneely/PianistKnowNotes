@@ -27,6 +27,7 @@ class ProgressPageViewController: UIViewController {
         setUnlockedLockedLevelDifficulties()
         setInstrumentTypeLabel()
         updateViewFor(gameType: .Novice)
+        setLanguageLocalizationLabelTexts()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -36,9 +37,19 @@ class ProgressPageViewController: UIViewController {
         
     //MARK: SetUp
     
+   private func setLanguageLocalizationLabelTexts(){
+       selectDifficultyLabel.text = selectDifficultyString
+        noviceLabel.text = noviceString
+        regularLabel.text = regularString
+        pianistLabel.text = pianistString
+        virtuosoLabel.text = virtuosoString
+        threeLabel.text = threeString
+        fiveLabel.text = fiveString
+        sevenLabel.text = sevenString
+        twelveLabel.text = twelveString
+    }
     private func setUnlockedLockedLevelDifficulties(){
         //eventually ad a switch case for instrument type
-        
         if let instrumentType {
             switch instrumentType {
             case .BasicPiano:
@@ -183,6 +194,8 @@ class ProgressPageViewController: UIViewController {
         
     }
     
+   
+    
    private func setInstrumentTypeLabel(){
        instrumentTypeLabel.font =  UIFont(name: "Poppins-Bold", size: 34)
        noviceLabel.font =  UIFont(name: "Poppins-Bold", size: 30)
@@ -193,15 +206,15 @@ class ProgressPageViewController: UIViewController {
         if let instrumentType {
             switch instrumentType {
             case .BasicPiano:
-                instrumentTypeLabel.text = InstrumentTypeName.BasicPiano.rawValue
+                instrumentTypeLabel.text = basicPianoString
             case .GrandPiano:
-                instrumentTypeLabel.text = InstrumentTypeName.GrandPiano.rawValue
+                instrumentTypeLabel.text = grandPianoString
             case .AcousticGuitar:
-                instrumentTypeLabel.text = InstrumentTypeName.AcousticGuitar.rawValue
+                instrumentTypeLabel.text = acousticString
             case .Keyboard:
-                instrumentTypeLabel.text = InstrumentTypeName.Keyboard.rawValue
+                instrumentTypeLabel.text = keyboardString
             case .Violin:
-                instrumentTypeLabel.text = InstrumentTypeName.Violin.rawValue
+                instrumentTypeLabel.text = violinString
             }
         }
     }
@@ -301,6 +314,23 @@ class ProgressPageViewController: UIViewController {
     @IBOutlet weak var fiveLabel: UILabel!
     @IBOutlet weak var sevenLabel: UILabel!
     @IBOutlet weak var twelveLabel: UILabel!
+    @IBOutlet weak var selectDifficultyLabel: UILabel!
+    
+    private let selectDifficultyString =  NSLocalizedString("Select Difficulty",comment: "")
+    private let noviceString = NSLocalizedString("Novice",comment: "")
+    private let regularString = NSLocalizedString("Regular",comment: "")
+    private let pianistString = NSLocalizedString("Pianist",comment: "")
+    private let virtuosoString = NSLocalizedString("Virtuoso",comment: "")
+    private let basicPianoString =  NSLocalizedString("Basic Piano",comment: "")
+    private let grandPianoString =  NSLocalizedString("Grand Piano",comment: "")
+    private let acousticString =  NSLocalizedString("Acoustic Guitar",comment: "")
+    private let keyboardString =  NSLocalizedString("Keyboard",comment: "")
+    private let violinString =  NSLocalizedString("Violin",comment: "")
+    private let threeString =  NSLocalizedString("3",comment: "")
+    private let fiveString =  NSLocalizedString("5",comment: "")
+    private let sevenString =  NSLocalizedString("7",comment: "")
+    private let twelveString =  NSLocalizedString("12",comment: "")
+    
     
     //MARK: - Actions
     

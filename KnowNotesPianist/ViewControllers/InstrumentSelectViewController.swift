@@ -14,6 +14,8 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     
     var gameKitController = GameKitController()
     var instrumentType: InstrumentType = .BasicPiano
+ //   let localizationLanguage = NSLocalizedString("AppLanguage", comment: "Preffered Language of localization")
+
     
     //MARK: - Overrides
 
@@ -21,6 +23,7 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         super.viewDidLoad()
         setUpCollectionView()
         authenticateUser()
+        setInstrumentLabel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,7 +41,8 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
 //    }
     
     //MARK: - Setup
-    
+    private let instrumentsString =  NSLocalizedString("Instruments",comment: "")
+
     //GameKit
     func authenticateUser() {
       let player = GKLocalPlayer.local
@@ -54,12 +58,19 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         gameKitController.showGKAccessPoint()
     }
 
+    func setInstrumentLabel(){
+        instrumetLabel.text = instrumentsString
+    }
     
     func setUpCollectionView(){
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.register(UINib(nibName: "InstrumentSelectCell", bundle: nil), forCellWithReuseIdentifier: "InstrumentSelectCell")
     }
+    
+//    func setLanguageLocalization(){
+//        if localizationLanguage
+//    }
     
     //MARK: - Start Game Delegate
     
