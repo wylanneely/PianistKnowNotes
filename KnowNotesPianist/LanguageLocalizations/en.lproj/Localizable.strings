@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  KnowNotesPianist
+
+  Created by Wylan L Neely on 4/23/24.
+  
+*/
+"AppLanguage" = "English";
+//InstrumentSelectCell
+"High Score" = "High Score";
+"Locked" = "Locked";

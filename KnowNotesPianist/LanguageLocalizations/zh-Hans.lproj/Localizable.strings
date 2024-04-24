@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  KnowNotesPianist
+
+  Created by Wylan L Neely on 4/23/24.
+  
+*/
+"AppLanguage" = "Chinese";
+//InstrumentSelectCell
+"High Score" = "最高分";
+"Locked" = "锁定";
