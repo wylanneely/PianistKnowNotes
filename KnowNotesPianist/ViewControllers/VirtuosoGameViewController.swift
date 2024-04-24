@@ -39,6 +39,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
         setUpGradientColorLabel()
         self.presentationController?.delegate = self
         setUpAudio()
+        setUpLanguageLocalization()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -50,14 +51,14 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
    // var soundPack: SoundPack = FreePianoPack
     var player: AVAudioPlayer!
     
-    func playSound(noteAnswerID:Int){
+   private func playSound(noteAnswerID:Int){
         if let soundURL = soundController.returnSoundPathFrom(noteID: noteAnswerID) {
            player = try! AVAudioPlayer(contentsOf: soundURL)
             player!.play()
         }
     }
     
-    func setUpAudio(){
+   private func setUpAudio(){
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback)
         } catch(let error) {
@@ -68,7 +69,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     
     //MARK: - SetUP
     
-    func setUpButtons(){
+   private func setUpButtons(){
         AButton.layer.shadowColor = UIColor.greenShadow.cgColor
         AButton.layer.shadowOffset = CGSize(width: 1.3, height: 3.0)
         AButton.layer.shadowRadius = 8
@@ -127,9 +128,16 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
         HomeButton.layer.shadowOpacity = 0.6
     }
     
-    func setUpGradientColorLabel(){
+    private func setUpGradientColorLabel(){
         ScoreLabel.gradientColors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
     }
+    
+    private func setUpLanguageLocalization(){
+        virtuosoLabel.text = virtuosoString
+    }
+    
+    private let virtuosoString =  NSLocalizedString("Vitruoso",comment: "")
+
     
     //MARK: - Outlets
     
@@ -150,6 +158,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBOutlet weak var GSButton: UIButton!
     @IBOutlet weak var PlayButton: UIButton!
     @IBOutlet weak var CircularProgressView: CircularProgressBar!
+    @IBOutlet weak var virtuosoLabel: UILabel!
     
     //MARK: - Circular Progress Bar
     
