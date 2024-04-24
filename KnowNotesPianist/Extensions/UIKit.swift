@@ -125,3 +125,15 @@ class GradientLabel: UILabel {
         return UIColor(patternImage: image)
     }
 }
+
+
+extension Int {
+    func returnIntAsChinese()-> String {
+        let value = self as NSNumber
+        let userLocale = Locale(identifier: "zh_Hans_CN")
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .spellOut
+        formatter.locale = userLocale
+        return (formatter.string(from: value)!)
+    }
+}
