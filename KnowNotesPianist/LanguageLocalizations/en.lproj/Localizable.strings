@@ -6,6 +6,23 @@
   
 */
 "AppLanguage" = "English";
+//InstrumentTypeName
+"Basic Piano" = "Basic Piano";
+"Grand Piano" = "Grand Piano";
+"Acoustic Guitar" = "Acoustic Guitar";
+"Keyboard" = "Keyboard";
+"Violin" = "Violin";
+"Instruments" = "Instruments";
 //InstrumentSelectCell
 "High Score" = "High Score";
 "Locked" = "Locked";
+//ProgressPage
+"Select Difficulty" = "Select Difficulty";
+"Novice" = "Novice";
+"Regular" = "Regular";
+"Pianist" = "Pianist";
+"Virtuoso" = "Virtuoso";
+"3" = "3";
+"5" = "5";
+"7" = "7";
+"12" = "12";
