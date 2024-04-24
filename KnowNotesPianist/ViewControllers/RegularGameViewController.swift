@@ -41,6 +41,7 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
         setUpGradientColorLabel()
         self.presentationController?.delegate = self
         setUpAudio()
+        setUpLanguageLocalization()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -104,6 +105,11 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
         ScoreLabel.gradientColors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
     }
     
+    func setUpLanguageLocalization(){
+        regularLabel.text = regularString
+    }
+    private let regularString =  NSLocalizedString("Regular",comment: "")
+
     //MARK: - Outlets
 
     @IBOutlet weak var HomeButton: UIButton!
@@ -116,6 +122,7 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBOutlet weak var lifeImage: UIImageView!
     @IBOutlet weak var CircularProgressView: CircularProgressBar!
     @IBOutlet weak var ScoreLabel: GradientLabel!
+    @IBOutlet weak var regularLabel: UILabel!
     
     //MARK: - Circular Progress Bar
     
