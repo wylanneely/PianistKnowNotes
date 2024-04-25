@@ -28,6 +28,7 @@ class FinishedGamePopUp: UIViewController {
         setGradientLabel()
         beginingStateConfig()
         checkSetPausedState()
+        setupLanguageLocalizaions()
         //shareImage = contentView.asImage()
     }
     override func viewDidLayoutSubviews() {
@@ -46,22 +47,39 @@ class FinishedGamePopUp: UIViewController {
     
     //MARK: - Setup
     
+    func setupLanguageLocalizaions(){
+        exitButton.setTitle(exitString, for: .normal)
+        restartButton.setTitle(restartString, for: .normal)
+        submitScoreButton.setTitle(submitString, for: .normal)
+    }
+    
     func setGradientLabel(){
-        if self.traitCollection.userInterfaceStyle == .dark {
-            gradientScoreLabel.gradientColors = [
-                UIColor.systemCyan.cgColor,
-                UIColor.systemPurple.cgColor
-            ]
+        if language == "Chinese" {
+                gradientScoreLabel.gradientColors = [
+                    UIColor.systemRed.cgColor,
+                    UIColor.systemYellow.cgColor
+                ]
+            if let game = game {
+                let score = game.score.returnIntAsChinese()
+                gradientScoreLabel.text = "\(score)"
+            }
         } else {
-            gradientScoreLabel.gradientColors = [
-                UIColor.systemPurple.cgColor,
-                UIColor.systemCyan.cgColor
-            ]
-        }
-
-        if let game = game {
-            let score = game.score
-            gradientScoreLabel.text = "\(score)"
+            if self.traitCollection.userInterfaceStyle == .dark {
+                gradientScoreLabel.gradientColors = [
+                    UIColor.systemCyan.cgColor,
+                    UIColor.systemPurple.cgColor
+                ]
+            } else {
+                gradientScoreLabel.gradientColors = [
+                    UIColor.systemPurple.cgColor,
+                    UIColor.systemCyan.cgColor
+                ]
+            }
+            
+            if let game = game {
+                let score = game.score
+                gradientScoreLabel.text = "\(score)"
+            }
         }
     }
     
@@ -115,13 +133,17 @@ class FinishedGamePopUp: UIViewController {
     @IBOutlet weak var gradientScoreLabel: GradientLabel!
     @IBOutlet weak var dismissButton: UIButton!
     
+    let exitString:String =  NSLocalizedString("Exit",comment: "exit home")
+    let restartString:String = NSLocalizedString("Restart",comment: "restart game")
+    let submitString:String = NSLocalizedString("Submit",comment: "submit score")
+    private var language: String = NSLocalizedString("AppLanguage", comment: "to help adjust certain views/settings")
+
     //MARK: - Actions
     @IBAction func submitScoreTapped(_ sender: Any) {
         submitScoreButton.pulsate()
         mediumImpact.impactOccurred()
-        AchievementesController().setFreePiano(highScore: game?.score ?? 0)
+       // AchievementesController().setFreePiano(highScore: game?.score ?? 0)
         gameKitController.submitLeaderboard(score: game?.score ?? 0, instrument: self.instrument)
-        submitScoreButton.isEnabled = false
         GameKitController().showGKAccessPoint()
     }
     

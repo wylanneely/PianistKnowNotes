@@ -57,7 +57,7 @@
                             </subviews>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="69" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZd-YD-aCR" customClass="GradientLabel" customModule="KnowNotesPianist" customModuleProvider="target">
-                            <rect key="frame" x="94.333333333333343" y="25.666666666666693" width="121" height="107.66666666666669"/>
+                            <rect key="frame" x="94.333333333333343" y="15.666666666666693" width="121" height="107.66666666666669"/>
                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="90"/>
                             <nil key="textColor"/>
                             <color key="highlightedColor" systemColor="placeholderTextColor"/>
@@ -65,7 +65,6 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AC5-My-xnT">
                             <rect key="frame" x="96" y="113.33333333333333" width="117.66666666666669" height="47.666666666666671"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="117.67" id="9L4-tJ-VpZ"/>
                                 <constraint firstAttribute="height" constant="47.670000000000002" id="Tfa-uQ-4tf"/>
                             </constraints>
                             <color key="tintColor" name="PopUpTextColor"/>
@@ -115,7 +114,7 @@
                         <constraint firstAttribute="bottom" secondItem="Xzo-fx-8CX" secondAttribute="bottom" constant="20" id="N9z-Sp-FWF"/>
                         <constraint firstItem="AC5-My-xnT" firstAttribute="bottom" secondItem="Xi3-qM-Q8w" secondAttribute="centerY" constant="6" id="b4w-Lg-1jR"/>
                         <constraint firstItem="mZd-YD-aCR" firstAttribute="centerX" secondItem="Xi3-qM-Q8w" secondAttribute="centerX" id="bbC-OF-q0e"/>
-                        <constraint firstItem="AC5-My-xnT" firstAttribute="top" secondItem="mZd-YD-aCR" secondAttribute="bottom" constant="-20" id="cDA-aR-fVu"/>
+                        <constraint firstItem="AC5-My-xnT" firstAttribute="top" secondItem="mZd-YD-aCR" secondAttribute="bottom" constant="-10" id="cDA-aR-fVu"/>
                         <constraint firstItem="AC5-My-xnT" firstAttribute="centerX" secondItem="Xi3-qM-Q8w" secondAttribute="centerX" id="epx-UT-S74"/>
                         <constraint firstItem="Xzo-fx-8CX" firstAttribute="leading" secondItem="Xi3-qM-Q8w" secondAttribute="leading" constant="29" id="jZF-yn-9k2"/>
                     </constraints>
