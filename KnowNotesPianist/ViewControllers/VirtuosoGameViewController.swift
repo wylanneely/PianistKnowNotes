@@ -29,6 +29,11 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     let playButtonImage = UIImage(named: "PlayButton")
     let repeatButtonImage = UIImage(named: "RepeatButton")
     
+    //language localization
+    private var language: String = NSLocalizedString("AppLanguage", comment: "to help adjust certain views/settings")
+    private let virtuosoString =  NSLocalizedString("Virtuoso",comment: "")
+    
+    
     //MARK: - Overrides
     
     override func viewDidLoad() {
@@ -129,15 +134,16 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     }
     
     private func setUpGradientColorLabel(){
-        ScoreLabel.gradientColors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
+        if language == "Chinese"{
+            ScoreLabel.gradientColors = [UIColor.systemRed.cgColor, UIColor.systemYellow.cgColor]
+        } else {
+            ScoreLabel.gradientColors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
+        }
     }
     
     private func setUpLanguageLocalization(){
         virtuosoLabel.text = virtuosoString
     }
-    
-    private let virtuosoString =  NSLocalizedString("Vitruoso",comment: "")
-
     
     //MARK: - Outlets
     

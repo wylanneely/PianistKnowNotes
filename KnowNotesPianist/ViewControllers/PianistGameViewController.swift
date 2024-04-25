@@ -31,6 +31,11 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
     let playButtonImage = UIImage(named: "PlayButton")
     let repeatButtonImage = UIImage(named: "RepeatButton")
     
+    
+    //language localization
+    private var language: String = NSLocalizedString("AppLanguage", comment: "to help adjust certain views/settings")
+    private let pianistString =  NSLocalizedString("Pianist",comment: "")
+    
     //MARK: - Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,15 +115,19 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
     }
     
     func setUpGradientColorLabel(){
-        ScoreLabel.gradientColors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
+        if language == "Chinese"{
+            ScoreLabel.gradientColors = [UIColor.systemRed.cgColor, UIColor.systemYellow.cgColor]
+        } else {
+            ScoreLabel.gradientColors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
+        }
     }
     
     func setUpLanguageLocalization(){
         pianistLabel.text = pianistString
+        if language == "Chinese"{
+            ScoreLabel.font.withSize(28)
+        }
     }
-
-    private let pianistString =  NSLocalizedString("Pianist",comment: "")
-
     
     //MARK: - Outlets
     

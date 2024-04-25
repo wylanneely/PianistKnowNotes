@@ -30,6 +30,11 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
     let startButtonImage = UIImage(named: "StartGameButton")
     let playButtonImage = UIImage(named: "PlayButton")
     let repeatButtonImage = UIImage(named: "RepeatButton")
+    
+    //Language localization
+    private var language: String = NSLocalizedString("AppLanguage", comment: "to help adjust certain views/settings")
+    private let regularString =  NSLocalizedString("Regular",comment: "")
+
 
     //MARK: - Override
     
@@ -102,13 +107,16 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
     }
     
     func setUpGradientColorLabel(){
-        ScoreLabel.gradientColors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
+        if language == "Chinese"{
+            ScoreLabel.gradientColors = [UIColor.systemRed.cgColor, UIColor.systemYellow.cgColor]
+        } else {
+            ScoreLabel.gradientColors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
+        }
     }
     
     func setUpLanguageLocalization(){
         regularLabel.text = regularString
     }
-    private let regularString =  NSLocalizedString("Regular",comment: "")
 
     //MARK: - Outlets
 

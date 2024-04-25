@@ -31,6 +31,9 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
     let playButtonImage = UIImage(named: "PlayButton")
     let repeatButtonImage = UIImage(named: "RepeatButton")
     
+    //language localization
+    private var language: String = NSLocalizedString("AppLanguage", comment: "to help adjust certain views/settings")
+    private let noviceString =  NSLocalizedString("Novice",comment: "")
     //MARK: - Overrides
     
     override func viewDidLoad() {
@@ -38,6 +41,7 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
         setupButtons()
         setUpProgressBar()
         setUpGradientColorLabel()
+        updateGameStats()
         self.presentationController?.delegate = self
         setUpAudio()
         setupLanguageLocalization()
@@ -73,7 +77,11 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
     }
     
     func setUpGradientColorLabel(){
-        ScoreLabel.gradientColors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
+        if language == "Chinese"{
+            ScoreLabel.gradientColors = [UIColor.systemRed.cgColor, UIColor.systemYellow.cgColor]
+        } else {
+            ScoreLabel.gradientColors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
+        }
     }
     
     //MARK: - Audio
@@ -100,8 +108,6 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
     func setupLanguageLocalization(){
         noviceLabel.text = noviceString
     }
-
-    private let noviceString =  NSLocalizedString("Novice",comment: "")
     
     //MARK: - Outlets
     
@@ -329,6 +335,8 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
         updateLifeImage(lifes: result.lifes)
         ScoreLabel.text = "\(result.score)"
     }
+    
+    
     
     func updateLifeImage(lifes: Int){
         let image = lifeImageController.returnLifeImage(for: lifes)
