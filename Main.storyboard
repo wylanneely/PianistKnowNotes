@@ -241,6 +241,7 @@
                         <outlet property="LifeImage" destination="7JV-gJ-Yoa" id="1zC-aP-gAK"/>
                         <outlet property="PlayButton" destination="jHZ-ew-0wt" id="nva-y9-BYl"/>
                         <outlet property="ScoreLabel" destination="YXT-Nm-iaB" id="X33-eA-W3T"/>
+                        <outlet property="virtuosoLabel" destination="WUY-hf-hpz" id="lM9-0E-oSJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -259,7 +260,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="I5w-38-cJh">
-                                <rect key="frame" x="0.0" y="127.66666666666669" width="393" height="596.66666666666652"/>
+                                <rect key="frame" x="0.0" y="128" width="393" height="656"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lhc-ny-vnU">
                                     <size key="itemSize" width="289" height="289"/>
@@ -280,22 +281,33 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instruments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zk-FX-bV8">
+                                <rect key="frame" x="89.666666666666671" y="69" width="213.66666666666663" height="46.333333333333343"/>
+                                <fontDescription key="fontDescription" name="Poppins-ExtraBold" family="Poppins" pointSize="33"/>
+                                <color key="textColor" name="InstrumentLabelColor"/>
+                                <color key="highlightedColor" systemColor="labelColor"/>
+                                <color key="shadowColor" systemColor="labelColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qSX-wA-KzX"/>
                         <color key="backgroundColor" name="MainBackground"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="uv1-og-8QN" secondAttribute="bottom" id="0nC-rP-ZcU"/>
+                            <constraint firstItem="6zk-FX-bV8" firstAttribute="centerX" secondItem="qpi-Fr-jCr" secondAttribute="centerX" id="1Uf-Eb-Wvu"/>
                             <constraint firstItem="uv1-og-8QN" firstAttribute="top" secondItem="qpi-Fr-jCr" secondAttribute="top" id="D7c-tJ-UWX"/>
                             <constraint firstItem="I5w-38-cJh" firstAttribute="leading" secondItem="qSX-wA-KzX" secondAttribute="leading" id="GJF-yB-wzb"/>
                             <constraint firstItem="I5w-38-cJh" firstAttribute="trailing" secondItem="qSX-wA-KzX" secondAttribute="trailing" id="HrS-Jc-JGl"/>
-                            <constraint firstItem="I5w-38-cJh" firstAttribute="height" secondItem="qpi-Fr-jCr" secondAttribute="height" multiplier="0.7" id="cXp-gc-aLO"/>
+                            <constraint firstItem="I5w-38-cJh" firstAttribute="height" secondItem="qpi-Fr-jCr" secondAttribute="height" multiplier="0.77" id="cXp-gc-aLO"/>
+                            <constraint firstItem="6zk-FX-bV8" firstAttribute="top" secondItem="qSX-wA-KzX" secondAttribute="top" constant="10" id="glJ-fy-O4a"/>
                             <constraint firstItem="uv1-og-8QN" firstAttribute="trailing" secondItem="qSX-wA-KzX" secondAttribute="trailing" id="hiR-rC-X66"/>
-                            <constraint firstItem="I5w-38-cJh" firstAttribute="centerY" secondItem="qpi-Fr-jCr" secondAttribute="centerY" id="kHm-6K-Sy4"/>
+                            <constraint firstItem="I5w-38-cJh" firstAttribute="centerY" secondItem="qpi-Fr-jCr" secondAttribute="centerY" constant="30" id="kHm-6K-Sy4"/>
                             <constraint firstItem="uv1-og-8QN" firstAttribute="leading" secondItem="qSX-wA-KzX" secondAttribute="leading" id="q2z-i2-Z4j"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="I5w-38-cJh" id="kdj-BO-5eL"/>
+                        <outlet property="instrumetLabel" destination="6zk-FX-bV8" id="YuJ-Vg-UEm"/>
                         <segue destination="1Ic-O4-xgA" kind="showDetail" identifier="toStartNovice" id="EhJ-Nh-tA4"/>
                         <segue destination="ijP-be-UXx" kind="showDetail" identifier="toStartRegular" id="k1q-hz-8y3"/>
                         <segue destination="5IX-dh-HyF" kind="showDetail" identifier="toStartPianist" id="KQn-fK-SF0"/>
@@ -536,6 +548,7 @@
                         <outlet property="pianistLabel" destination="eLm-Jt-0fl" id="2gb-iK-MyR"/>
                         <outlet property="regularButton" destination="T5f-Zp-7vF" id="tUT-Oy-d6A"/>
                         <outlet property="regularLabel" destination="I5K-jX-jM4" id="Gl8-LK-1fD"/>
+                        <outlet property="selectDifficultyLabel" destination="iQj-1f-YE9" id="RWB-tU-Ufy"/>
                         <outlet property="sevenLabel" destination="qJj-td-QeY" id="WGz-KT-wvF"/>
                         <outlet property="startButton" destination="nlP-wv-pib" id="KIf-Nx-kh8"/>
                         <outlet property="threeLabel" destination="IdS-yI-om1" id="xK4-Mv-EFk"/>
@@ -727,6 +740,7 @@
                         <outlet property="PlayButton" destination="aJC-Ra-44H" id="aRg-Qn-RS5"/>
                         <outlet property="ScoreLabel" destination="1PD-wc-FT2" id="SL5-rl-n0w"/>
                         <outlet property="lifeImage" destination="naN-Aj-cmh" id="YNE-tU-TOw"/>
+                        <outlet property="pianistLabel" destination="Kw0-FX-7eG" id="SRB-pf-Csg"/>
                         <segue destination="BYZ-38-t0r" kind="showDetail" identifier="toContinueVirtuoso" id="s1Z-ta-6xX"/>
                     </connections>
                 </viewController>
@@ -893,6 +907,7 @@
                         <outlet property="PlayButton" destination="JPm-n0-bMr" id="lr6-xY-XnJ"/>
                         <outlet property="ScoreLabel" destination="577-x4-a00" id="N4l-TX-klz"/>
                         <outlet property="lifeImage" destination="ChB-IQ-Gvw" id="tjO-sP-lmK"/>
+                        <outlet property="regularLabel" destination="7fK-qh-TM2" id="csS-nF-b6v"/>
                         <segue destination="5IX-dh-HyF" kind="showDetail" identifier="toContinuePianist" id="btM-ea-5pk"/>
                     </connections>
                 </viewController>
@@ -1047,6 +1062,7 @@
                         <outlet property="PlayButton" destination="wyw-no-amH" id="3Mj-8P-khj"/>
                         <outlet property="ScoreLabel" destination="DP7-UP-WQW" id="tET-mW-4Ql"/>
                         <outlet property="lifeImage" destination="exg-xq-Qic" id="ech-Vt-rYr"/>
+                        <outlet property="noviceLabel" destination="mtf-HL-SEA" id="Lhe-mU-fX9"/>
                         <segue destination="ijP-be-UXx" kind="showDetail" identifier="toContinueRegular" id="206-VD-YWV"/>
                     </connections>
                 </viewController>
@@ -1057,8 +1073,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="206-VD-YWV"/>
-        <segue reference="KQn-fK-SF0"/>
-        <segue reference="fDB-b7-JAp"/>
+        <segue reference="btM-ea-5pk"/>
+        <segue reference="s1Z-ta-6xX"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AButton" width="80.5" height="80"/>
@@ -1095,6 +1111,9 @@
         <image name="StartGameButton" width="207" height="60"/>
         <image name="UnlockedButtonImage" width="42" height="42"/>
         <image name="VirtuosoGameBackground" width="375" height="812"/>
+        <namedColor name="InstrumentLabelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="MainBackground">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -1102,7 +1121,7 @@
             <color red="0.57999998331069946" green="0.2460000067949295" blue="0.77899998426437378" alpha="0.93999999761581421" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SeparatorColor">
-            <color red="0.085000000894069672" green="0.068000003695487976" blue="0.10599999874830246" alpha="0.42999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.92527395486831665" green="0.9891154943739785" blue="1" alpha="0.39000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
