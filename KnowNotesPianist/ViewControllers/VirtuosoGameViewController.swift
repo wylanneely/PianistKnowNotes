@@ -134,9 +134,22 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     }
     
     private func setUpGradientColorLabel(){
-        if language == "Chinese"{
+        switch language {
+        case "Chinese":
             ScoreLabel.gradientColors = [UIColor.systemRed.cgColor, UIColor.systemYellow.cgColor]
-        } else {
+        case "Potruguese":
+            ScoreLabel.gradientColors = [UIColor.systemGreen.cgColor, UIColor.systemYellow.cgColor]
+        case "French":
+            ScoreLabel.gradientColors = [UIColor.darkBlue.cgColor, UIColor.systemRed.cgColor]
+        case "Spanish":
+            ScoreLabel.gradientColors = [UIColor.systemBlue.cgColor, UIColor.systemCyan.cgColor]
+        case "Korean":
+            ScoreLabel.gradientColors = [UIColor.darkBlue.cgColor, UIColor.systemRed.cgColor]
+        case "Japanese":
+            ScoreLabel.gradientColors = [UIColor.systemRed.cgColor, UIColor.red.cgColor]
+        case "German":
+            ScoreLabel.gradientColors = [UIColor.systemYellow.cgColor, UIColor.systemRed.cgColor]
+        default:
             ScoreLabel.gradientColors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
         }
     }
