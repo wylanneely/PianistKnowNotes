@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  KnowNotesPianist
+
+  Created by Wylan L Neely on 4/23/24.
+  
+*/
+"AppLanguage" = "Potruguese";
+//InstrumentTypeName
+"Basic Piano" = "Piano";
+"Grand Piano" = "Piano de Cauda";
+"Acoustic Guitar" = "Violão";
+"Keyboard" = "Teclado";
+"Violin" = "Violino";
+"Instruments" = "Instrumentos";
+//InstrumentSelectCell
+"High Score" = "Pontuação Alta";
+"Locked" = "Bloqueado";
+//ProgressPage
+"Select Difficulty" = "Dificuldade";
+"Novice" = "Novato";
+"Regular" = "Regular";
+"Pianist" = "Pianista";
+"Virtuoso" = "Virtuoso";
+"3" = "3";
+"5" = "5";
+"7" = "7";
+"12" = "12";
+//FinishedGamePopUp
+"Exit" = "Sair";
+"Restart" = "Reiniciar";
+"Submit" = "Enviar";

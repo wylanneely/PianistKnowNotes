@@ -26,3 +26,7 @@
 "5" = "五";
 "7" = "七";
 "12" = "十二";
+//FinishedGamePopUp
+"Exit" = "退出";
+"Restart" = "重试";
+"Submit" = "提交分数";
