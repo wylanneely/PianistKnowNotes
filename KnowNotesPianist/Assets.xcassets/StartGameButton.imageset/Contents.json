@@ -1,11 +1,12 @@
 {
   "images" : [
     {
+      "filename" : "StartButton 1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ProgressBackgroundView.png",
+      "filename" : "StartButton.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -19,7 +20,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "CHProgressBackgroundView.png",
+      "filename" : "CHStartButton.png",
       "idiom" : "universal",
       "locale" : "zh-Hans",
       "scale" : "2x"
@@ -35,7 +36,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "SPProgressBackgroundView.png",
+      "filename" : "SPStartButton.png",
       "idiom" : "universal",
       "locale" : "es-419",
       "scale" : "2x"
@@ -51,7 +52,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "FRProgressBackgroundView.png",
+      "filename" : "FRStartButton.png",
       "idiom" : "universal",
       "locale" : "fr",
       "scale" : "2x"
@@ -67,7 +68,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "GProgressBackgroundView.png",
+      "filename" : "GEStartButton.png",
       "idiom" : "universal",
       "locale" : "de",
       "scale" : "2x"
@@ -83,7 +84,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "KProgressBackgroundView.png",
+      "filename" : "KStartButton.png",
       "idiom" : "universal",
       "locale" : "ko",
       "scale" : "2x"
@@ -99,7 +100,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "JProgressBackgroundView.png",
+      "filename" : "JStartButton.png",
       "idiom" : "universal",
       "locale" : "ja",
       "scale" : "2x"
@@ -115,7 +116,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "PProgressBackgroundView.png",
+      "filename" : "PStartButton.png",
       "idiom" : "universal",
       "locale" : "pt-BR",
       "scale" : "2x"

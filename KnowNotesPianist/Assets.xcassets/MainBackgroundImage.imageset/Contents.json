@@ -5,7 +5,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "ProgressBackgroundView.png",
+      "filename" : "MainBackgroundImage2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -19,7 +19,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "CHProgressBackgroundView.png",
+      "filename" : "CHMainBackgroundImage.png",
       "idiom" : "universal",
       "locale" : "zh-Hans",
       "scale" : "2x"
@@ -35,7 +35,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "SPProgressBackgroundView.png",
+      "filename" : "SPMainBackgroundImage.png",
       "idiom" : "universal",
       "locale" : "es-419",
       "scale" : "2x"
@@ -51,7 +51,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "FRProgressBackgroundView.png",
+      "filename" : "FRMainBackgroundImage.png",
       "idiom" : "universal",
       "locale" : "fr",
       "scale" : "2x"
@@ -67,7 +67,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "GProgressBackgroundView.png",
+      "filename" : "GEMainBackgroundImage.png",
       "idiom" : "universal",
       "locale" : "de",
       "scale" : "2x"
@@ -83,7 +83,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "KProgressBackgroundView.png",
+      "filename" : "KMainBackgroundImage.png",
       "idiom" : "universal",
       "locale" : "ko",
       "scale" : "2x"
@@ -99,7 +99,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "JProgressBackgroundView.png",
+      "filename" : "JMainBackgroundImage.png",
       "idiom" : "universal",
       "locale" : "ja",
       "scale" : "2x"
@@ -115,7 +115,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "PProgressBackgroundView.png",
+      "filename" : "PMainBackgroundImage.png",
       "idiom" : "universal",
       "locale" : "pt-BR",
       "scale" : "2x"
