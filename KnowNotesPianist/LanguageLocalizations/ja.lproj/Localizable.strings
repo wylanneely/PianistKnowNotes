@@ -5,28 +5,28 @@
   Created by Wylan L Neely on 4/23/24.
   
 */
-"AppLanguage" = "English";
+"AppLanguage" = "Japanese";
 //InstrumentTypeName
-"Basic Piano" = "Basic Piano";
-"Grand Piano" = "Grand Piano";
-"Acoustic Guitar" = "Acoustic Guitar";
-"Keyboard" = "Keyboard";
-"Violin" = "Violin";
-"Instruments" = "Instruments";
+"Basic Piano" = "ピアノ";
+"Grand Piano" = "グランドピアノ";
+"Acoustic Guitar" = "アコースティックギター";
+"Keyboard" = "キーボード";
+"Violin" = "バイオリン";
+"Instruments" = "楽器";
 //InstrumentSelectCell
-"High Score" = "High Score";
-"Locked" = "Locked";
+"High Score" = "ハイスコア";
+"Locked" = "ロックされた";
 //ProgressPage
-"Select Difficulty" = "Select Difficulty";
-"Novice" = "Novice";
-"Regular" = "Regular";
-"Pianist" = "Pianist";
-"Virtuoso" = "Virtuoso";
+"Select Difficulty" = "難易度を選択する";
+"Novice" = "初心者";
+"Regular" = "中間";
+"Pianist" = "ピアニスト";
+"Virtuoso" = "ヴィルトゥオーゾ";
 "3" = "3";
 "5" = "5";
 "7" = "7";
 "12" = "12";
 //FinishedGamePopUp
-"Exit" = "Exit";
-"Restart" = "Restart";
-"Submit" = "Submit";
+"Exit" = "戻る";
+"Restart" = "やり直す";
+"Submit" = "送信";
