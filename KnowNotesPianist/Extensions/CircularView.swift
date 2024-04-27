@@ -9,6 +9,10 @@ import UIKit
 
 class CircularProgressBar: UIView {
     
+    //Language for Colors
+    private var language: String = NSLocalizedString("AppLanguage", comment: "to help adjust certain views/settings")
+
+    
     //MARK: awakeFromNib
     
     override func awakeFromNib() {
@@ -136,6 +140,24 @@ class CircularProgressBar: UIView {
         foregroundLayer.strokeColor = UIColor.systemPurple.cgColor
         foregroundLayer.strokeEnd = 0
         
+        switch language {
+        case "Chinese":        
+            foregroundLayer.strokeColor = UIColor.systemRed.cgColor
+        case "Potruguese":
+            foregroundLayer.strokeColor = UIColor.systemGreen.cgColor
+        case "French":
+            foregroundLayer.strokeColor = UIColor.systemBlue.cgColor
+        case "Spanish":
+            foregroundLayer.strokeColor = UIColor.systemBlue.cgColor
+        case "Korean":
+            foregroundLayer.strokeColor = UIColor.blue.cgColor
+        case "Japanese":
+            foregroundLayer.strokeColor = UIColor.systemRed.cgColor
+        case "German":
+            foregroundLayer.strokeColor = UIColor.systemYellow.cgColor
+        default:
+            foregroundLayer.strokeColor = UIColor.systemPurple.cgColor
+        }
         self.layer.addSublayer(foregroundLayer)
         
     }
