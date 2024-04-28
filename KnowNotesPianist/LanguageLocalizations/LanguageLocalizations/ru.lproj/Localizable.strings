@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  KnowNotesPianist
+
+  Created by Wylan L Neely on 4/23/24.
+  
+*/
+"AppLanguage" = "Russian";
+//InstrumentTypeName
+"Basic Piano" = "Пианино";
+"Grand Piano" = "Рояль";
+"Acoustic Guitar" = "Гитара";
+"Keyboard" = "Электропианино";
+"Violin" = "Скрипка";
+"Instruments" = "Инструменты";
+//InstrumentSelectCell
+"High Score" = "Высокий Cчёт";
+"Locked" = "Заблокировано";
+//ProgressPage
+"Select Difficulty" = "Сложность";
+"Novice" = "Новичок";
+"Regular" = "Обычный";
+"Pianist" = "Пианист";
+"Virtuoso" = "Виртуоз";
+"3" = "3";
+"5" = "5";
+"7" = "7";
+"12" = "12";
+//FinishedGamePopUp
+"Exit" = "Выход";
+"Restart" = "Pестарт";
+"Submit" = "Отправить";

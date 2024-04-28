@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  KnowNotesPianist
+
+  Created by Wylan L Neely on 4/23/24.
+  
+*/
+"AppLanguage" = "Japanese";
+//InstrumentTypeName
+"Basic Piano" = "ピアノ";
+"Grand Piano" = "グランドピアノ";
+"Acoustic Guitar" = "アコースティックギター";
+"Keyboard" = "キーボード";
+"Violin" = "バイオリン";
+"Instruments" = "楽器";
+//InstrumentSelectCell
+"High Score" = "ハイスコア";
+"Locked" = "ロックされた";
+//ProgressPage
+"Select Difficulty" = "難易度を選択する";
+"Novice" = "初心者";
+"Regular" = "中間";
+"Pianist" = "ピアニスト";
+"Virtuoso" = "難しい";
+"3" = "3";
+"5" = "5";
+"7" = "7";
+"12" = "12";
+//FinishedGamePopUp
+"Exit" = "戻る";
+"Restart" = "やり直す";
+"Submit" = "送信";

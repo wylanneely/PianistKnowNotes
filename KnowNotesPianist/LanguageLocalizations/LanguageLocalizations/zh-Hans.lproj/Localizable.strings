@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  KnowNotesPianist
+
+  Created by Wylan L Neely on 4/23/24.
+  
+*/
+"AppLanguage" = "Chinese";
+//InstrumentTypeName
+"Basic Piano" = "钢琴";
+"Grand Piano" = "三角钢琴";
+"Acoustic Guitar" = "原声吉他";
+"Keyboard" = "电子钢琴";
+"Violin" = "小提琴";
+"Instruments" = "乐器";
+//InstrumentSelectCell
+"High Score" = "最高分";
+"Locked" = "锁定";
+//ProgressPage
+"Select Difficulty" = "选择难度";
+"Novice" = "新手";
+"Regular" = "普通难度";
+"Pianist" = "专业";
+"Virtuoso" = "音乐大师";
+"3" = "三";
+"5" = "五";
+"7" = "七";
+"12" = "十二";
+//FinishedGamePopUp
+"Exit" = "退出";
+"Restart" = "重试";
+"Submit" = "提交分数";
