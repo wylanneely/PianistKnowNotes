@@ -29,7 +29,22 @@ class InstrumentSelectCell: UICollectionViewCell {
     @IBOutlet weak var instrumentLabel: UILabel!
     @IBOutlet weak var highScoreLabel: UILabel!
     
+    //MARK: - Localized Strings
+    
+    private var language: String = NSLocalizedString("AppLanguage", comment: "to help adjust certain views/settings")
+    
+   private let highscoreString =  NSLocalizedString("High Score",comment: "high score label")
+   private let lockedString = NSLocalizedString("Locked", comment: "locked label")
+    private let basicPianoString =  NSLocalizedString("Basic Piano",comment: "")
+    private let grandPianoString =  NSLocalizedString("Grand Piano",comment: "")
+    private let acousticString =  NSLocalizedString("Acoustic Guitar",comment: "")
+    private let keyboardString =  NSLocalizedString("Keyboard",comment: "")
+    private let violinString =  NSLocalizedString("Violin",comment: "")
+    
+    
     //MARK: - Setup
+    
+
         
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,9 +58,19 @@ class InstrumentSelectCell: UICollectionViewCell {
         let labelText = returnLabelText(id: self.instrumentID)
         instrumentLabel.text = labelText
         self.layer.borderWidth = 3
-        instrumentLabel.font = UIFont(name: "Poppins-Bold", size: 38)
-        highScoreLabel.font = UIFont(name: "Poppins-Bold", size: 35)
+        
+        instrumentLabel.font = UIFont(name: "Poppins-Bold", size: 36)
+        highScoreLabel.font = UIFont(name: "Poppins-Bold", size: 33)
 
+    }
+    
+    private func setHSLabelText(score:Int){
+        if language == "Chinese" {
+            let cHS = score.returnIntAsChinese()
+            highScoreLabel.text = highscoreString + cHS
+        } else {
+            highScoreLabel.text = highscoreString + " \(score)"
+        }
     }
     
     func setUpLabels(){
@@ -53,20 +78,20 @@ class InstrumentSelectCell: UICollectionViewCell {
         switch instrumentType {
         case .BasicPiano:
             let hs = AchievementesController().getFreePianoHighScore()
-            highScoreLabel.text = "High Score \(hs)"
+            setHSLabelText(score: hs)
             highScoreLabel.textColor =  UIColor.instrumentLabel
             instrumentLabel.textColor = UIColor.instrumentLabel
             self.layer.borderColor = UIColor.unlockedBorder.cgColor
         case .GrandPiano:
             if AchievementesController().isGrandPianoNoviceUnlocked() {
                 let hs = AchievementesController().getGrandPianoHighScore()
-                highScoreLabel.text = "High Score \(hs)"
+                setHSLabelText(score: hs)
                 highScoreLabel.textColor =  UIColor.instrumentLabel
                 instrumentLabel.textColor = UIColor.instrumentLabel
                 self.layer.borderColor = UIColor.unlockedBorder.cgColor
 
             } else {
-                highScoreLabel.text = "Locked"
+                highScoreLabel.text = lockedString
                 highScoreLabel.textColor = UIColor.lockedBorder
                 instrumentLabel.textColor = UIColor.lockedBorder
                 self.layer.borderColor = UIColor.lockedBorder.cgColor
@@ -74,13 +99,13 @@ class InstrumentSelectCell: UICollectionViewCell {
         case .AcousticGuitar:
             if AchievementesController().isAcousticNoviceUnlocked() {
                 let hs = AchievementesController().getAcousticHighScore()
-                highScoreLabel.text = "High Score \(hs)"
+                setHSLabelText(score: hs)
                 highScoreLabel.textColor =  UIColor.instrumentLabel
                 instrumentLabel.textColor = UIColor.instrumentLabel
                 self.layer.borderColor = UIColor.unlockedBorder.cgColor
 
             } else {
-                highScoreLabel.text = "Locked"
+                highScoreLabel.text = lockedString
                 highScoreLabel.textColor = UIColor.lockedBorder
                 instrumentLabel.textColor = UIColor.lockedBorder
                 self.layer.borderColor = UIColor.lockedBorder.cgColor
@@ -88,12 +113,12 @@ class InstrumentSelectCell: UICollectionViewCell {
         case .Keyboard:
             if AchievementesController().isKeyboardNoviceUnlocked() {
                 let hs = AchievementesController().getKeyboardHighScore()
-                highScoreLabel.text = "High Score \(hs)"
+                setHSLabelText(score: hs)
                 highScoreLabel.textColor =  UIColor.instrumentLabel
                 instrumentLabel.textColor = UIColor.instrumentLabel
                 self.layer.borderColor = UIColor.unlockedBorder.cgColor
             } else {
-                highScoreLabel.text = "Locked"
+                highScoreLabel.text = lockedString
                 highScoreLabel.textColor = UIColor.lockedBorder
                 instrumentLabel.textColor = UIColor.lockedBorder
                 self.layer.borderColor = UIColor.lockedBorder.cgColor
@@ -101,12 +126,12 @@ class InstrumentSelectCell: UICollectionViewCell {
         case .Violin:
             if AchievementesController().isViolinNoviceUnlocked() {
                 let hs = AchievementesController().getViolinHighScore()
-                highScoreLabel.text = "High Score \(hs)"
+                setHSLabelText(score: hs)
                 highScoreLabel.textColor =  UIColor.instrumentLabel
                 instrumentLabel.textColor = UIColor.instrumentLabel
                 self.layer.borderColor = UIColor.unlockedBorder.cgColor
             } else {
-                highScoreLabel.text = "Locked"
+                highScoreLabel.text = lockedString
                 highScoreLabel.textColor = UIColor.lockedBorder
                 instrumentLabel.textColor = UIColor.lockedBorder
                 self.layer.borderColor = UIColor.lockedBorder.cgColor
@@ -130,13 +155,13 @@ class InstrumentSelectCell: UICollectionViewCell {
     
    private func returnLabelText(id:Int)->String{
         switch id {
-        case 0: return InstrumentTypeName.BasicPiano.rawValue
-        case 1: return InstrumentTypeName.GrandPiano.rawValue
-        case 2: return InstrumentTypeName.AcousticGuitar.rawValue
-        case 3: return InstrumentTypeName.Keyboard.rawValue
-        case 4: return InstrumentTypeName.Violin.rawValue
+        case 0: return basicPianoString
+        case 1: return grandPianoString
+        case 2: return acousticString
+        case 3: return keyboardString
+        case 4: return violinString
         default:
-            return "Piano"
+            return basicPianoString
         }
     }
     
