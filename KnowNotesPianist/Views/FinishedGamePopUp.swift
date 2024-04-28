@@ -54,16 +54,34 @@ class FinishedGamePopUp: UIViewController {
     }
     
     func setGradientLabel(){
-        if language == "Chinese" {
-                gradientScoreLabel.gradientColors = [
-                    UIColor.systemRed.cgColor,
-                    UIColor.systemYellow.cgColor
-                ]
-            if let game = game {
-                let score = game.score.returnIntAsChinese()
-                gradientScoreLabel.text = "\(score)"
-            }
-        } else {
+        switch language {
+        case "Chinese":
+            gradientScoreLabel.gradientColors = [
+                UIColor.systemRed.cgColor,
+                UIColor.systemYellow.cgColor
+            ]
+        if let game = game {
+            let score = game.score.returnIntAsChinese()
+            gradientScoreLabel.text = "\(score)"
+        }
+            return
+        case "Potruguese":
+            gradientScoreLabel.gradientColors = [UIColor.systemGreen.cgColor, UIColor.systemYellow.cgColor]
+        case "French":
+            gradientScoreLabel.gradientColors = [UIColor.systemRed.cgColor, UIColor.darkBlue.cgColor]
+        case "Spanish":
+            gradientScoreLabel.gradientColors = [UIColor.systemBlue.cgColor, UIColor.systemCyan.cgColor]
+        case "Korean":
+            gradientScoreLabel.gradientColors = [UIColor.systemRed.cgColor, UIColor.darkBlue.cgColor]
+        case "Japanese":
+            gradientScoreLabel.gradientColors = [UIColor.systemRed.cgColor, UIColor.red.cgColor]
+        case "German":
+            gradientScoreLabel.gradientColors = [UIColor.systemYellow.cgColor, UIColor.systemRed.cgColor]
+        case "Russian":
+            gradientScoreLabel.gradientColors = [UIColor.systemRed.cgColor, UIColor.darkBlue.cgColor]
+        case "Italian":
+            gradientScoreLabel.gradientColors = [UIColor.systemRed.cgColor, UIColor.systemGreen.cgColor]
+        default:
             if self.traitCollection.userInterfaceStyle == .dark {
                 gradientScoreLabel.gradientColors = [
                     UIColor.systemCyan.cgColor,
@@ -75,12 +93,13 @@ class FinishedGamePopUp: UIViewController {
                     UIColor.systemCyan.cgColor
                 ]
             }
+        }
             
             if let game = game {
                 let score = game.score
                 gradientScoreLabel.text = "\(score)"
             }
-        }
+    
     }
     
     func checkSetPausedState(){
