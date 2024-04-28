@@ -93,6 +93,8 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
             ScoreLabel.gradientColors = [UIColor.systemRed.cgColor, UIColor.red.cgColor]
         case "German":
             ScoreLabel.gradientColors = [UIColor.systemYellow.cgColor, UIColor.systemRed.cgColor]
+        case "Russian":
+            ScoreLabel.gradientColors = [UIColor.darkBlue.cgColor, UIColor.systemRed.cgColor]
         default:
             ScoreLabel.gradientColors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
         }
