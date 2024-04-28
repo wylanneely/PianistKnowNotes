@@ -75,51 +75,51 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     //MARK: - SetUP
     
    private func setUpButtons(){
-        AButton.layer.shadowColor = UIColor.greenShadow.cgColor
+        AButton.layer.shadowColor = UIColor.regularShadow.cgColor
         AButton.layer.shadowOffset = CGSize(width: 1.3, height: 3.0)
         AButton.layer.shadowRadius = 8
         AButton.layer.shadowOpacity = 0.6 
-        ASButton.layer.shadowColor = UIColor.redShadow.cgColor
+        ASButton.layer.shadowColor = UIColor.regularShadow.cgColor
         ASButton.layer.shadowOffset = CGSize(width: 1.3, height: 3.0)
         ASButton.layer.shadowRadius = 8
         ASButton.layer.shadowOpacity = 0.6
-        BButton.layer.shadowColor = UIColor.redShadow.cgColor
+        BButton.layer.shadowColor = UIColor.regularShadow.cgColor
         BButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         BButton.layer.shadowRadius = 8
         BButton.layer.shadowOpacity = 0.6
-        CButton.layer.shadowColor = UIColor.blueShadow.cgColor
+        CButton.layer.shadowColor = UIColor.regularShadow.cgColor
         CButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         CButton.layer.shadowRadius = 8
         CButton.layer.shadowOpacity = 0.6
-        CSButton.layer.shadowColor = UIColor.blueShadow.cgColor
+        CSButton.layer.shadowColor = UIColor.regularShadow.cgColor
         CSButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         CSButton.layer.shadowRadius = 8
         CSButton.layer.shadowOpacity = 0.6
-        DButton.layer.shadowColor = UIColor.blueShadow.cgColor
+        DButton.layer.shadowColor = UIColor.regularShadow.cgColor
         DButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         DButton.layer.shadowRadius = 8
         DButton.layer.shadowOpacity = 0.6
-        DSButton.layer.shadowColor = UIColor.blueShadow.cgColor
+        DSButton.layer.shadowColor = UIColor.regularShadow.cgColor
         DSButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         DSButton.layer.shadowRadius = 8
         DSButton.layer.shadowOpacity = 0.6
-        EButton.layer.shadowColor = UIColor.redShadow.cgColor
+        EButton.layer.shadowColor = UIColor.regularShadow.cgColor
         EButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         EButton.layer.shadowRadius = 8
         EButton.layer.shadowOpacity = 0.6
-        FButton.layer.shadowColor = UIColor.greenShadow.cgColor
+        FButton.layer.shadowColor = UIColor.regularShadow.cgColor
         FButton.layer.shadowOffset = CGSize(width: 1.3, height: 3.0)
         FButton.layer.shadowRadius = 8
         FButton.layer.shadowOpacity = 0.6
-        FSButton.layer.shadowColor = UIColor.pinkShadow.cgColor
+        FSButton.layer.shadowColor = UIColor.regularShadow.cgColor
         FSButton.layer.shadowOffset = CGSize(width: 1.3, height: 3.0)
         FSButton.layer.shadowRadius = 8
         FSButton.layer.shadowOpacity = 0.6
-        GButton.layer.shadowColor = UIColor.pinkShadow.cgColor
+        GButton.layer.shadowColor = UIColor.regularShadow.cgColor
         GButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         GButton.layer.shadowRadius = 8
         GButton.layer.shadowOpacity = 0.6
-        GSButton.layer.shadowColor = UIColor.pinkShadow.cgColor
+        GSButton.layer.shadowColor = UIColor.regularShadow.cgColor
         GSButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         GSButton.layer.shadowRadius = 8
         GSButton.layer.shadowOpacity = 0.6
@@ -151,6 +151,8 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
             ScoreLabel.gradientColors = [UIColor.systemYellow.cgColor, UIColor.systemRed.cgColor]
         case "Russian":
             ScoreLabel.gradientColors = [UIColor.systemRed.cgColor, UIColor.darkBlue.cgColor]
+        case "Italian":
+            ScoreLabel.gradientColors = [UIColor.systemRed.cgColor, UIColor.systemGreen.cgColor]
         default:
             ScoreLabel.gradientColors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
         }

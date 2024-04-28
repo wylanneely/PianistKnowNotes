@@ -54,15 +54,15 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
     
     //MARK: SetUp
     func setupButtons(){
-        AButton.layer.shadowColor = UIColor.greenShadow.cgColor
+        AButton.layer.shadowColor = UIColor.regularShadow.cgColor
         AButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         AButton.layer.shadowRadius = 8
         AButton.layer.shadowOpacity = 0.6
-        CButton.layer.shadowColor = UIColor.blueShadow.cgColor
+        CButton.layer.shadowColor = UIColor.regularShadow.cgColor
         CButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         CButton.layer.shadowRadius = 8
         CButton.layer.shadowOpacity = 0.6
-        GButton.layer.shadowColor = UIColor.pinkShadow.cgColor
+        GButton.layer.shadowColor = UIColor.regularShadow.cgColor
         GButton.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
         GButton.layer.shadowRadius = 8
         GButton.layer.shadowOpacity = 0.6
@@ -95,6 +95,8 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
             ScoreLabel.gradientColors = [UIColor.systemYellow.cgColor, UIColor.systemRed.cgColor]
         case "Russian":
             ScoreLabel.gradientColors = [UIColor.systemRed.cgColor, UIColor.darkBlue.cgColor]
+        case "Italian":
+            ScoreLabel.gradientColors = [UIColor.systemRed.cgColor, UIColor.systemGreen.cgColor]
         default:
             ScoreLabel.gradientColors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
         }
