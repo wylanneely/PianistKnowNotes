@@ -9,8 +9,8 @@
 //InstrumentTypeName
 "Basic Piano" = "Пианино";
 "Grand Piano" = "Рояль";
-"Acoustic Guitar" = "Акустическая Гитара";
-"Keyboard" = "Клавишный Инструмент";
+"Acoustic Guitar" = "Гитара";
+"Keyboard" = "Электропианино";
 "Violin" = "Скрипка";
 "Instruments" = "Инструменты";
 //InstrumentSelectCell
@@ -20,7 +20,7 @@
 "Select Difficulty" = "Сложность";
 "Novice" = "Новичок";
 "Regular" = "Обычный";
-"Pianist" = "Pianist";
+"Pianist" = "Пианист";
 "Virtuoso" = "Виртуоз";
 "3" = "3";
 "5" = "5";
