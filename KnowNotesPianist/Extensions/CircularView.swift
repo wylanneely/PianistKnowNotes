@@ -155,6 +155,10 @@ class CircularProgressBar: UIView {
             foregroundLayer.strokeColor = UIColor.systemRed.cgColor
         case "German":
             foregroundLayer.strokeColor = UIColor.systemYellow.cgColor
+        case "Russian":
+            foregroundLayer.strokeColor = UIColor.systemRed.cgColor
+        case "Italian":
+            foregroundLayer.strokeColor = UIColor.systemGreen.cgColor
         default:
             foregroundLayer.strokeColor = UIColor.systemPurple.cgColor
         }
