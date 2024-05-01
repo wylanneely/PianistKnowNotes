@@ -124,6 +124,38 @@
       "idiom" : "universal",
       "locale" : "pt-BR",
       "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "ru",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "RuRepeatButton.png",
+      "idiom" : "universal",
+      "locale" : "ru",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "ru",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "it",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "ItRepeatButton.png",
+      "idiom" : "universal",
+      "locale" : "it",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "it",
+      "scale" : "3x"
     }
   ],
   "info" : {
