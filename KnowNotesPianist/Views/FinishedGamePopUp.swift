@@ -29,6 +29,8 @@ class FinishedGamePopUp: UIViewController {
         beginingStateConfig()
         checkSetPausedState()
         setupLanguageLocalizaions()
+        contentView.layer.borderWidth = 3
+        contentView.layer.borderColor = UIColor.popUpText.cgColor
         //shareImage = contentView.asImage()
     }
     override func viewDidLayoutSubviews() {
@@ -48,9 +50,35 @@ class FinishedGamePopUp: UIViewController {
     //MARK: - Setup
     
     func setupLanguageLocalizaions(){
-        exitButton.setTitle(exitString, for: .normal)
-        restartButton.setTitle(restartString, for: .normal)
+        exitLabel.text = exitString
+        exitLabel.font =  UIFont(name: "Poppins-Bold", size: 22)
+        restartLabel.text = restartString
+        restartLabel.font =  UIFont(name: "Poppins-Bold", size: 22)
         submitScoreButton.setTitle(submitString, for: .normal)
+        submitScoreButton.titleLabel?.font =  UIFont(name: "Poppins-Bold", size: 28)
+        
+//        switch language {
+//        case "Chinese":
+//            contentView.layer.borderColor = UIColor.red.cgColor
+//        case "Potruguese":
+//            contentView.layer.borderColor = UIColor.systemGreen.cgColor
+//        case "French":
+//            contentView.layer.borderColor = UIColor.darkBlue.cgColor
+//        case "Spanish":
+//            contentView.layer.borderColor = UIColor.systemBlue.cgColor
+//        case "Korean":
+//            contentView.layer.borderColor = UIColor.darkBlue.cgColor
+//        case "Japanese":
+//            contentView.layer.borderColor = UIColor.red.cgColor
+//        case "German":
+//            contentView.layer.borderColor = UIColor.systemYellow.cgColor
+//        case "Russian":
+//            contentView.layer.borderColor = UIColor.darkBlue.cgColor
+//        case "Italian":
+//            contentView.layer.borderColor = UIColor.systemGreen.cgColor
+//        default:
+//            contentView.layer.borderColor = UIColor.popUpText.cgColor
+//        }
     }
     
     func setGradientLabel(){
@@ -151,6 +179,9 @@ class FinishedGamePopUp: UIViewController {
     @IBOutlet weak var submitScoreButton: UIButton!
     @IBOutlet weak var gradientScoreLabel: GradientLabel!
     @IBOutlet weak var dismissButton: UIButton!
+    @IBOutlet weak var exitLabel: UILabel!
+    @IBOutlet weak var restartLabel: UILabel!
+    
     
     let exitString:String =  NSLocalizedString("Exit",comment: "exit home")
     let restartString:String = NSLocalizedString("Restart",comment: "restart game")
