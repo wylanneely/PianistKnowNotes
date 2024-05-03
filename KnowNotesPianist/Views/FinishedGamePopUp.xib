@@ -15,8 +15,10 @@
                 <outlet property="contentView" destination="Xi3-qM-Q8w" id="3mi-dp-tkp"/>
                 <outlet property="dismissButton" destination="r9T-rw-839" id="p7U-7q-XqL"/>
                 <outlet property="exitButton" destination="kxi-lV-U0W" id="NP8-9A-DpR"/>
+                <outlet property="exitLabel" destination="fOv-ZJ-AfW" id="NGG-Tx-lER"/>
                 <outlet property="gradientScoreLabel" destination="mZd-YD-aCR" id="S6S-df-fFG"/>
                 <outlet property="restartButton" destination="3mY-Lb-OVd" id="mrn-pI-cXy"/>
+                <outlet property="restartLabel" destination="Ngf-eQ-HnV" id="4DS-vS-txr"/>
                 <outlet property="submitScoreButton" destination="AC5-My-xnT" id="H7b-2z-Ma4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -29,27 +31,25 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xi3-qM-Q8w">
                     <rect key="frame" x="41.666666666666657" y="311" width="310" height="310"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="Xzo-fx-8CX">
-                            <rect key="frame" x="29" y="181.66666666666669" width="252" height="108.33333333333331"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="Xzo-fx-8CX">
+                            <rect key="frame" x="39" y="181" width="232" height="69"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxi-lV-U0W">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="108.33333333333333"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxi-lV-U0W">
+                                    <rect key="frame" x="0.0" y="0.0" width="90" height="69"/>
+                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
                                     <color key="tintColor" name="PopUpTextColor"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="HomeButtonMedium" imagePlacement="top" title=" Exit  ">
-                                        <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="21"/>
-                                    </buttonConfiguration>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="HomeButtonMedium"/>
                                     <connections>
                                         <action selector="exitButtonTapped:" destination="-1" eventType="touchUpInside" id="ued-7y-ziJ"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mY-Lb-OVd">
-                                    <rect key="frame" x="152" y="0.0" width="100" height="108.33333333333333"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mY-Lb-OVd">
+                                    <rect key="frame" x="142" y="0.0" width="90" height="69"/>
+                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                     <color key="tintColor" name="PopUpTextColor"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="RestartGame" imagePlacement="top" title="Restart">
-                                        <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="20"/>
-                                    </buttonConfiguration>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="RestartGame"/>
                                     <connections>
                                         <action selector="restartButtonTapped:" destination="-1" eventType="touchUpInside" id="Tob-el-3wS"/>
                                     </connections>
@@ -63,15 +63,14 @@
                             <color key="highlightedColor" systemColor="placeholderTextColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AC5-My-xnT">
-                            <rect key="frame" x="96" y="113.33333333333333" width="117.66666666666669" height="47.666666666666671"/>
+                            <rect key="frame" x="108" y="113.33333333333333" width="94" height="47.666666666666671"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="47.670000000000002" id="Tfa-uQ-4tf"/>
                             </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                             <color key="tintColor" name="PopUpTextColor"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="Submit">
-                                <fontDescription key="titleFontDescription" type="boldSystem" pointSize="28"/>
-                            </buttonConfiguration>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Submit"/>
                             <connections>
                                 <action selector="submitScoreTapped:" destination="-1" eventType="touchUpInside" id="KU7-Bh-SUi"/>
                             </connections>
@@ -102,21 +101,37 @@
                                 <action selector="dismissButtonTapped:" destination="-1" eventType="touchUpInside" id="2oo-fu-OAd"/>
                             </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOv-ZJ-AfW">
+                            <rect key="frame" x="70.333333333333343" y="258" width="27" height="20.333333333333314"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" name="PopUpTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="restart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngf-eQ-HnV">
+                            <rect key="frame" x="200.66666666666669" y="258" width="50.333333333333343" height="20.333333333333314"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" name="PopUpTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" name="PopUpContent"/>
                     <constraints>
                         <constraint firstItem="XiU-j8-M9B" firstAttribute="top" secondItem="Xi3-qM-Q8w" secondAttribute="top" constant="8" id="38v-hX-vAG"/>
                         <constraint firstItem="r9T-rw-839" firstAttribute="top" secondItem="Xi3-qM-Q8w" secondAttribute="top" constant="8" id="7B3-A1-7QZ"/>
-                        <constraint firstAttribute="trailing" secondItem="Xzo-fx-8CX" secondAttribute="trailing" constant="29" id="AY3-Uj-VQe"/>
+                        <constraint firstAttribute="trailing" secondItem="Xzo-fx-8CX" secondAttribute="trailing" constant="39" id="AY3-Uj-VQe"/>
+                        <constraint firstItem="Ngf-eQ-HnV" firstAttribute="top" secondItem="Xzo-fx-8CX" secondAttribute="bottom" constant="8" symbolic="YES" id="Gd5-k3-ZUa"/>
                         <constraint firstItem="Xzo-fx-8CX" firstAttribute="centerX" secondItem="Xi3-qM-Q8w" secondAttribute="centerX" id="Hob-QE-Rjy"/>
+                        <constraint firstItem="fOv-ZJ-AfW" firstAttribute="centerX" secondItem="kxi-lV-U0W" secondAttribute="centerX" id="Iol-IS-n8M"/>
                         <constraint firstItem="r9T-rw-839" firstAttribute="leading" secondItem="Xi3-qM-Q8w" secondAttribute="leading" constant="8" id="JGf-IY-DUi"/>
                         <constraint firstAttribute="trailing" secondItem="XiU-j8-M9B" secondAttribute="trailing" constant="8" id="Knc-Gx-jru"/>
-                        <constraint firstAttribute="bottom" secondItem="Xzo-fx-8CX" secondAttribute="bottom" constant="20" id="N9z-Sp-FWF"/>
+                        <constraint firstAttribute="bottom" secondItem="Xzo-fx-8CX" secondAttribute="bottom" constant="60" id="N9z-Sp-FWF"/>
                         <constraint firstItem="AC5-My-xnT" firstAttribute="bottom" secondItem="Xi3-qM-Q8w" secondAttribute="centerY" constant="6" id="b4w-Lg-1jR"/>
                         <constraint firstItem="mZd-YD-aCR" firstAttribute="centerX" secondItem="Xi3-qM-Q8w" secondAttribute="centerX" id="bbC-OF-q0e"/>
                         <constraint firstItem="AC5-My-xnT" firstAttribute="top" secondItem="mZd-YD-aCR" secondAttribute="bottom" constant="-10" id="cDA-aR-fVu"/>
                         <constraint firstItem="AC5-My-xnT" firstAttribute="centerX" secondItem="Xi3-qM-Q8w" secondAttribute="centerX" id="epx-UT-S74"/>
-                        <constraint firstItem="Xzo-fx-8CX" firstAttribute="leading" secondItem="Xi3-qM-Q8w" secondAttribute="leading" constant="29" id="jZF-yn-9k2"/>
+                        <constraint firstItem="fOv-ZJ-AfW" firstAttribute="top" secondItem="Xzo-fx-8CX" secondAttribute="bottom" constant="8" symbolic="YES" id="hGd-uj-F3W"/>
+                        <constraint firstItem="Xzo-fx-8CX" firstAttribute="leading" secondItem="Xi3-qM-Q8w" secondAttribute="leading" constant="39" id="jZF-yn-9k2"/>
+                        <constraint firstItem="Ngf-eQ-HnV" firstAttribute="centerX" secondItem="3mY-Lb-OVd" secondAttribute="centerX" id="wSQ-EU-ytV"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -151,7 +166,7 @@
             <color red="0.56000000238418579" green="0.0030000000260770321" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="placeholderTextColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
