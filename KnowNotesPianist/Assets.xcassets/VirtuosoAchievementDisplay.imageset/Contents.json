@@ -12,10 +12,141 @@
     {
       "idiom" : "universal",
       "scale" : "3x"
+    },
+    {
+      "filename" : "CVirtuosoAchievementDisplay.png",
+      "idiom" : "universal",
+      "locale" : "zh-Hans",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "zh-Hans",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "zh-Hans",
+      "scale" : "3x"
+    },
+    {
+      "filename" : "FVirtuosoAchievementDisplay.png",
+      "idiom" : "universal",
+      "locale" : "fr",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "fr",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "fr",
+      "scale" : "3x"
+    },
+    {
+      "filename" : "GVirtuosoAchievementDisplay.png",
+      "idiom" : "universal",
+      "locale" : "de",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "de",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "de",
+      "scale" : "3x"
+    },
+    {
+      "filename" : "KVirtuosoAchievementDisplay.png",
+      "idiom" : "universal",
+      "locale" : "ko",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "ko",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "ko",
+      "scale" : "3x"
+    },
+    {
+      "filename" : "JVirtuosoAchievementDisplay.png",
+      "idiom" : "universal",
+      "locale" : "ja",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "ja",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "ja",
+      "scale" : "3x"
+    },
+    {
+      "filename" : "BVirtuosoAchievementDisplay.png",
+      "idiom" : "universal",
+      "locale" : "pt-BR",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "pt-BR",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "pt-BR",
+      "scale" : "3x"
+    },
+    {
+      "filename" : "RVirtuosoAchievementDisplay.png",
+      "idiom" : "universal",
+      "locale" : "ru",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "ru",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "ru",
+      "scale" : "3x"
+    },
+    {
+      "filename" : "IVirtuosoAchievementDisplay.png",
+      "idiom" : "universal",
+      "locale" : "it",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "it",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "it",
+      "scale" : "3x"
     }
   ],
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "localizable" : true
   }
 }
