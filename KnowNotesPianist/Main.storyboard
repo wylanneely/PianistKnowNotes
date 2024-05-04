@@ -289,6 +289,37 @@
                                 <color key="shadowColor" systemColor="labelColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Mg0-o0-7dl">
+                                <rect key="frame" x="8" y="724.33333333333337" width="377" height="93.666666666666629"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3M-iD-4WP">
+                                        <rect key="frame" x="0.0" y="0.0" width="94.333333333333329" height="93.666666666666671"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="100ClubAchievementDisplay"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AmR-60-PgM">
+                                        <rect key="frame" x="94.333333333333343" y="0.0" width="94.333333333333343" height="93.666666666666671"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="200ClubAchievementDisplay"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3W-OD-HJ3">
+                                        <rect key="frame" x="188.66666666666666" y="0.0" width="93.999999999999972" height="93.666666666666671"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="300ClubAchievementDisplay"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szb-2g-TUs">
+                                        <rect key="frame" x="282.66666666666669" y="0.0" width="94.333333333333314" height="93.666666666666671"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="VirtuosoAchievementDisplay"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.11378463273195871" green="5.5133940808254688e-05" blue="0.090777923229218752" alpha="0.33110119047619047" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qSX-wA-KzX"/>
                         <color key="backgroundColor" name="MainBackground"/>
@@ -296,9 +327,13 @@
                             <constraint firstAttribute="bottom" secondItem="uv1-og-8QN" secondAttribute="bottom" id="0nC-rP-ZcU"/>
                             <constraint firstItem="6zk-FX-bV8" firstAttribute="centerX" secondItem="qpi-Fr-jCr" secondAttribute="centerX" id="1Uf-Eb-Wvu"/>
                             <constraint firstItem="uv1-og-8QN" firstAttribute="top" secondItem="qpi-Fr-jCr" secondAttribute="top" id="D7c-tJ-UWX"/>
+                            <constraint firstItem="qSX-wA-KzX" firstAttribute="trailing" secondItem="Mg0-o0-7dl" secondAttribute="trailing" constant="8" id="G9R-fh-COC"/>
                             <constraint firstItem="I5w-38-cJh" firstAttribute="leading" secondItem="qSX-wA-KzX" secondAttribute="leading" id="GJF-yB-wzb"/>
                             <constraint firstItem="I5w-38-cJh" firstAttribute="trailing" secondItem="qSX-wA-KzX" secondAttribute="trailing" id="HrS-Jc-JGl"/>
+                            <constraint firstItem="Mg0-o0-7dl" firstAttribute="top" secondItem="I5w-38-cJh" secondAttribute="bottom" constant="8" id="M48-Jt-2gL"/>
                             <constraint firstItem="I5w-38-cJh" firstAttribute="height" secondItem="qpi-Fr-jCr" secondAttribute="height" multiplier="0.7" id="cXp-gc-aLO"/>
+                            <constraint firstItem="qSX-wA-KzX" firstAttribute="bottom" secondItem="Mg0-o0-7dl" secondAttribute="bottom" id="dKK-iw-qov"/>
+                            <constraint firstItem="Mg0-o0-7dl" firstAttribute="leading" secondItem="qpi-Fr-jCr" secondAttribute="leading" constant="8" id="fZg-xg-ro2"/>
                             <constraint firstItem="6zk-FX-bV8" firstAttribute="top" secondItem="qSX-wA-KzX" secondAttribute="top" constant="10" id="glJ-fy-O4a"/>
                             <constraint firstItem="uv1-og-8QN" firstAttribute="trailing" secondItem="qSX-wA-KzX" secondAttribute="trailing" id="hiR-rC-X66"/>
                             <constraint firstItem="I5w-38-cJh" firstAttribute="centerY" secondItem="qpi-Fr-jCr" secondAttribute="centerY" constant="-8" id="kHm-6K-Sy4"/>
@@ -316,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4JV-5T-SFE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1208" y="-932"/>
+            <point key="canvasLocation" x="1206.8702290076335" y="-932.3943661971831"/>
         </scene>
         <!--Progress Page View Controller-->
         <scene sceneID="QnG-Lg-fqS">
@@ -1077,6 +1112,9 @@
         <segue reference="fDB-b7-JAp"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="100ClubAchievementDisplay" width="74" height="76"/>
+        <image name="200ClubAchievementDisplay" width="74" height="76"/>
+        <image name="300ClubAchievementDisplay" width="74" height="77"/>
         <image name="AButton" width="80.5" height="80"/>
         <image name="AButtonBig" width="100" height="100"/>
         <image name="AButtonHuge" width="116.5" height="116"/>
@@ -1110,6 +1148,7 @@
         <image name="ProgressBackgroundView" width="378" height="455"/>
         <image name="StartGameButton" width="207" height="60"/>
         <image name="UnlockedButtonImage" width="42" height="42"/>
+        <image name="VirtuosoAchievementDisplay" width="82" height="74"/>
         <image name="VirtuosoGameBackground" width="375" height="812"/>
         <namedColor name="InstrumentLabelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
