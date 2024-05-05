@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "100ClubAchievementDisplayx2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "100ClubAchievementDisplayx3.png",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -20,27 +22,31 @@
       "scale" : "1x"
     },
     {
+      "filename" : "C100ClubAchievementDisplayx2.png",
       "idiom" : "universal",
       "locale" : "zh-Hans",
       "scale" : "2x"
     },
     {
+      "filename" : "C100ClubAchievementDisplayx3.png",
       "idiom" : "universal",
       "locale" : "zh-Hans",
       "scale" : "3x"
     },
     {
-      "filename" : "F100ClubAchievementDisplay.png",
+      "filename" : "RedBlue100ClubAchievementDisplay 2.png",
       "idiom" : "universal",
       "locale" : "fr",
       "scale" : "1x"
     },
     {
+      "filename" : "RedBlue100ClubAchievementDisplayx2 1.png",
       "idiom" : "universal",
       "locale" : "fr",
       "scale" : "2x"
     },
     {
+      "filename" : "RedBlue100ClubAchievementDisplayx3 2.png",
       "idiom" : "universal",
       "locale" : "fr",
       "scale" : "3x"
@@ -52,27 +58,31 @@
       "scale" : "1x"
     },
     {
+      "filename" : "G100ClubAchievementDisplayx2.png",
       "idiom" : "universal",
       "locale" : "de",
       "scale" : "2x"
     },
     {
+      "filename" : "G100ClubAchievementDisplayx3.png",
       "idiom" : "universal",
       "locale" : "de",
       "scale" : "3x"
     },
     {
-      "filename" : "F100ClubAchievementDisplay 1.png",
+      "filename" : "RedBlue100ClubAchievementDisplay 1.png",
       "idiom" : "universal",
       "locale" : "ko",
       "scale" : "1x"
     },
     {
+      "filename" : "RedBlue100ClubAchievementDisplayx2.png",
       "idiom" : "universal",
       "locale" : "ko",
       "scale" : "2x"
     },
     {
+      "filename" : "RedBlue100ClubAchievementDisplayx3 1.png",
       "idiom" : "universal",
       "locale" : "ko",
       "scale" : "3x"
@@ -84,11 +94,13 @@
       "scale" : "1x"
     },
     {
+      "filename" : "J100ClubAchievementDisplayx2.png",
       "idiom" : "universal",
       "locale" : "ja",
       "scale" : "2x"
     },
     {
+      "filename" : "J100ClubAchievementDisplayx3.png",
       "idiom" : "universal",
       "locale" : "ja",
       "scale" : "3x"
@@ -100,27 +112,31 @@
       "scale" : "1x"
     },
     {
+      "filename" : "B100ClubAchievementDisplayx2.png",
       "idiom" : "universal",
       "locale" : "pt-BR",
       "scale" : "2x"
     },
     {
+      "filename" : "B100ClubAchievementDisplayx3.png",
       "idiom" : "universal",
       "locale" : "pt-BR",
       "scale" : "3x"
     },
     {
-      "filename" : "R100ClubAchievementDisplay.png",
+      "filename" : "RedBlue100ClubAchievementDisplay.png",
       "idiom" : "universal",
       "locale" : "ru",
       "scale" : "1x"
     },
     {
+      "filename" : "RedBlue100ClubAchievementDisplayx2 2.png",
       "idiom" : "universal",
       "locale" : "ru",
       "scale" : "2x"
     },
     {
+      "filename" : "RedBlue100ClubAchievementDisplayx3.png",
       "idiom" : "universal",
       "locale" : "ru",
       "scale" : "3x"
@@ -132,13 +148,33 @@
       "scale" : "1x"
     },
     {
+      "filename" : "I100ClubAchievementDisplayx2.png",
       "idiom" : "universal",
       "locale" : "it",
       "scale" : "2x"
     },
     {
+      "filename" : "I100ClubAchievementDisplayx3.png",
       "idiom" : "universal",
       "locale" : "it",
+      "scale" : "3x"
+    },
+    {
+      "filename" : "T100ClubAchievementDisplay.png",
+      "idiom" : "universal",
+      "locale" : "th",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "T100ClubAchievementDisplay 1.png",
+      "idiom" : "universal",
+      "locale" : "th",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "T100ClubAchievementDisplayx3.png",
+      "idiom" : "universal",
+      "locale" : "th",
       "scale" : "3x"
     }
   ],
