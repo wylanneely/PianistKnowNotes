@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "VirtuosoAchievementDisplayx2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "VirtuosoAchievementDisplayx3.png",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -20,27 +22,31 @@
       "scale" : "1x"
     },
     {
+      "filename" : "CVirtuosoAchievementDisplayx2.png",
       "idiom" : "universal",
       "locale" : "zh-Hans",
       "scale" : "2x"
     },
     {
+      "filename" : "CVirtuosoAchievementDisplayx3.png",
       "idiom" : "universal",
       "locale" : "zh-Hans",
       "scale" : "3x"
     },
     {
-      "filename" : "FVirtuosoAchievementDisplay.png",
+      "filename" : "FrenchVirtuosoAchievementDisplay.png",
       "idiom" : "universal",
       "locale" : "fr",
       "scale" : "1x"
     },
     {
+      "filename" : "FrenchVirtuosoAchievementDisplayx2.png",
       "idiom" : "universal",
       "locale" : "fr",
       "scale" : "2x"
     },
     {
+      "filename" : "FrenchVirtuosoAchievementDisplayx3.png",
       "idiom" : "universal",
       "locale" : "fr",
       "scale" : "3x"
@@ -52,27 +58,31 @@
       "scale" : "1x"
     },
     {
+      "filename" : "GVirtuosoAchievementDisplayx2.png",
       "idiom" : "universal",
       "locale" : "de",
       "scale" : "2x"
     },
     {
+      "filename" : "GVirtuosoAchievementDisplayx3.png",
       "idiom" : "universal",
       "locale" : "de",
       "scale" : "3x"
     },
     {
-      "filename" : "KVirtuosoAchievementDisplay.png",
+      "filename" : "KoreanVirtuosoAchievementDisplay.png",
       "idiom" : "universal",
       "locale" : "ko",
       "scale" : "1x"
     },
     {
+      "filename" : "KoreanVirtuosoAchievementDisplayx2.png",
       "idiom" : "universal",
       "locale" : "ko",
       "scale" : "2x"
     },
     {
+      "filename" : "KoreanVirtuosoAchievementDisplayx3.png",
       "idiom" : "universal",
       "locale" : "ko",
       "scale" : "3x"
@@ -84,11 +94,13 @@
       "scale" : "1x"
     },
     {
+      "filename" : "JVirtuosoAchievementDisplayx2.png",
       "idiom" : "universal",
       "locale" : "ja",
       "scale" : "2x"
     },
     {
+      "filename" : "JVirtuosoAchievementDisplayx3.png",
       "idiom" : "universal",
       "locale" : "ja",
       "scale" : "3x"
@@ -100,27 +112,31 @@
       "scale" : "1x"
     },
     {
+      "filename" : "BVirtuosoAchievementDisplayx2.png",
       "idiom" : "universal",
       "locale" : "pt-BR",
       "scale" : "2x"
     },
     {
+      "filename" : "BVirtuosoAchievementDisplayx3.png",
       "idiom" : "universal",
       "locale" : "pt-BR",
       "scale" : "3x"
     },
     {
-      "filename" : "RVirtuosoAchievementDisplay.png",
+      "filename" : "RussianVirtuosoAchievementDisplay.png",
       "idiom" : "universal",
       "locale" : "ru",
       "scale" : "1x"
     },
     {
+      "filename" : "RussianVirtuosoAchievementDisplayx2.png",
       "idiom" : "universal",
       "locale" : "ru",
       "scale" : "2x"
     },
     {
+      "filename" : "RussianVirtuosoAchievementDisplayx3.png",
       "idiom" : "universal",
       "locale" : "ru",
       "scale" : "3x"
@@ -132,13 +148,33 @@
       "scale" : "1x"
     },
     {
+      "filename" : "IVirtuosoAchievementDisplayx2.png",
       "idiom" : "universal",
       "locale" : "it",
       "scale" : "2x"
     },
     {
+      "filename" : "IVirtuosoAchievementDisplayx3.png",
       "idiom" : "universal",
       "locale" : "it",
+      "scale" : "3x"
+    },
+    {
+      "filename" : "TVirtuosoAchievementDisplay.png",
+      "idiom" : "universal",
+      "locale" : "th",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "TVirtuosoAchievementDisplayx2.png",
+      "idiom" : "universal",
+      "locale" : "th",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "TVirtuosoAchievementDisplayx3.png",
+      "idiom" : "universal",
+      "locale" : "th",
       "scale" : "3x"
     }
   ],
