@@ -5,11 +5,12 @@
       "scale" : "1x"
     },
     {
-      "filename" : "RepeatButton.png",
+      "filename" : "ReplayButton.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "ReplayButton3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -25,6 +26,7 @@
       "scale" : "2x"
     },
     {
+      "filename" : "CHRepeatButton3x.png",
       "idiom" : "universal",
       "locale" : "zh-Hans",
       "scale" : "3x"
@@ -35,12 +37,13 @@
       "scale" : "1x"
     },
     {
-      "filename" : "SPRepeatButton.png",
+      "filename" : "SpanishRepeatButton.png",
       "idiom" : "universal",
       "locale" : "es-419",
       "scale" : "2x"
     },
     {
+      "filename" : "SpanishRepeatButton3x.png",
       "idiom" : "universal",
       "locale" : "es-419",
       "scale" : "3x"
@@ -155,6 +158,23 @@
     {
       "idiom" : "universal",
       "locale" : "it",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "th",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "ThaiReplayButton.png",
+      "idiom" : "universal",
+      "locale" : "th",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "ThaiReplayButton3x.png",
+      "idiom" : "universal",
+      "locale" : "th",
       "scale" : "3x"
     }
   ],
