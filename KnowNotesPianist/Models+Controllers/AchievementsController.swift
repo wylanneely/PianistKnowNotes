@@ -10,6 +10,11 @@ import Foundation
 
 struct AchievementesController {
     
+    init() {
+        checkSetAchievementsClub()
+        checkSetCompleteVirtuosoAchievement()
+    }
+    
     //MARK: Local GamePlay
     
     let defaults = UserDefaults.standard
@@ -243,7 +248,8 @@ struct AchievementesController {
         if defaults.bool(forKey: kViolinVirtuoso) == true
         { return true } else { return false }
     }
-    //Achievements
+    
+    //MARK: - Achievements
     
     var is100ClubUnlocked: Bool {
         if defaults.bool(forKey: k100Club) == true {
