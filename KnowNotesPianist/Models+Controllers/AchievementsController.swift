@@ -261,10 +261,80 @@ struct AchievementesController {
     }
     
     var isVirtuosoAchiUnlocked: Bool {
-        if defaults.bool(forKey: kVirtuoso) == true {
+        if defaults.bool(forKey: kVirtuosoAchievement) == true {
             return true } else { return false }
     }
     
+    private func checkSetAchievementsClub() {
+        let fPiano = getFreePianoHighScore()
+        let gPiano = getGrandPianoHighScore()
+        let acou = getAcousticHighScore()
+        let keyB = getKeyboardHighScore()
+        let violin = getViolinHighScore()
+        
+        let highScores: [Int] = [fPiano,gPiano,acou,keyB,violin]
+        
+        for score in highScores {
+            switch score {
+            case 300...:
+                unlock300ClubAchievement()
+            case 200...299:
+                unlock200ClubAchievement()
+            case 100...199:
+                unlock100ClubAchievement()
+            default:
+                break
+            }
+        }
+    }
+    
+    private func checkSetCompleteVirtuosoAchievement() {
+        var freePianoRef: Int {
+            if getFreePianoHighScore() >= 100 {
+                return 1 } else { return 0 }
+        }
+        
+        var grandPianoRef: Int {
+            if getGrandPianoHighScore() >= 100 {
+                return 1 } else { return 0 }
+        }
+        
+        var acousticRef: Int {
+            if getAcousticHighScore() >= 100 {
+                return 1 } else { return 0 }
+        }
+        
+        var keyboardRef: Int {
+            if getKeyboardHighScore() >= 100 {
+                return 1 } else { return 0 }
+        }
+        
+        var violinRef: Int {
+            if getViolinHighScore() >= 100 {
+                return 1 } else { return 0 }
+        }
+        
+        if (freePianoRef + grandPianoRef + acousticRef + keyboardRef + violinRef) == 5 {
+            unlockVirtuosoAcievement()
+        }
+        
+    }
+    
+    fileprivate func unlock100ClubAchievement(){
+        defaults.setValue(true, forKey: k100Club)
+    }
+    
+    fileprivate func unlock200ClubAchievement(){
+        defaults.setValue(true, forKey: k200Club)
+    }
+    
+    fileprivate func unlock300ClubAchievement(){
+        defaults.setValue(true, forKey: k300Club)
+    }
+    
+    fileprivate func unlockVirtuosoAcievement(){
+        defaults.setValue(true, forKey: kVirtuosoAchievement)
+    }
     
     //MARK: Local Keys
     
@@ -301,5 +371,5 @@ struct AchievementesController {
     fileprivate let k100Club = "100ClubAchievement"
     fileprivate let k200Club = "200ClubAchievement"
     fileprivate let k300Club = "300ClubAchievement"
-    fileprivate let kVirtuoso = "VirtuosoAchievement"
+    fileprivate let kVirtuosoAchievement = "VirtuosoAchievement"
 }
