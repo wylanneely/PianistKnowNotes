@@ -243,6 +243,27 @@ struct AchievementesController {
         if defaults.bool(forKey: kViolinVirtuoso) == true
         { return true } else { return false }
     }
+    //Achievements
+    
+    var is100ClubUnlocked: Bool {
+        if defaults.bool(forKey: k100Club) == true {
+            return true } else { return false }
+    }
+    
+    var is200ClubUnlocked: Bool {
+        if defaults.bool(forKey: k200Club) == true {
+            return true } else { return false }
+    }
+    
+    var is300ClubUnlocked: Bool {
+        if defaults.bool(forKey: k300Club) == true {
+            return true } else { return false }
+    }
+    
+    var isVirtuosoAchiUnlocked: Bool {
+        if defaults.bool(forKey: kVirtuoso) == true {
+            return true } else { return false }
+    }
     
     
     //MARK: Local Keys
@@ -276,4 +297,9 @@ struct AchievementesController {
     fileprivate let kHighScoreAGuitar = "AcousticGuitarHS"
     fileprivate let kHighScoreKeyboard = "KeyboardHS"
     fileprivate let kHighScoreViolin = "ViolinHS"
+    
+    fileprivate let k100Club = "100ClubAchievement"
+    fileprivate let k200Club = "200ClubAchievement"
+    fileprivate let k300Club = "300ClubAchievement"
+    fileprivate let kVirtuoso = "VirtuosoAchievement"
 }
