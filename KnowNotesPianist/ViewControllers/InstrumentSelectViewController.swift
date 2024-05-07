@@ -116,6 +116,21 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     //MARK: - Outlets
     
     @IBOutlet weak var instrumetLabel: UILabel!
+    @IBOutlet weak var hundredClubButton: UIButton!
+    @IBOutlet weak var twohundredClubButton: UIButton!
+    @IBOutlet weak var threeHundredClubButton: UIButton!
+    @IBOutlet weak var virtuosoCompleteButton: UIButton!
+    
+    //MARK: - Actions
+    @IBAction func hundredTapped(_ sender: Any) {
+    }
+    @IBAction func twoHundredTapped(_ sender: Any) {
+    }
+    @IBAction func threeHundredTapped(_ sender: Any) {
+    }
+    @IBAction func virtuosoAchievmentTapped(_ sender: Any) {
+    }
+    
     
     //MARK: - CollectionView
     
@@ -143,8 +158,7 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         return CGSize(width: collectionWidth , height: collectionHeight)
     }
     
-    //MARK: - Actions
-    
+   
     
     // MARK: - Navigation
 
