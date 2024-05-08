@@ -16,6 +16,8 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     var achievementsController = AchievementesController()
     var instrumentType: InstrumentType = .BasicPiano
     
+    let hapticGenerator = UINotificationFeedbackGenerator()
+    
     //Achievments
     
     var is100ClubUnlocked: Bool {
@@ -96,7 +98,6 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
                 ),
                 for: .normal
             )
-            hundredClubButton.isEnabled = true
         } else {
             hundredClubButton.setImage(
                 UIImage(
@@ -104,7 +105,6 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
                 ),
                 for: .normal
             )
-            hundredClubButton.isEnabled = false
         }
         
         if is200ClubUnlocked {
@@ -114,7 +114,6 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
                 ),
                 for: .normal
             )
-            twohundredClubButton.isEnabled = true
         } else {
             twohundredClubButton.setImage(
                 UIImage(
@@ -122,7 +121,6 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
                 ),
                 for: .normal
             )
-            twohundredClubButton.isEnabled = false
         }
         
         if is300ClubUnlocked {
@@ -132,7 +130,6 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
                 ),
                 for: .normal
             )
-            threeHundredClubButton.isEnabled = true
         } else {
             threeHundredClubButton.setImage(
                 UIImage(
@@ -140,7 +137,6 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
                 ),
                 for: .normal
             )
-            threeHundredClubButton.isEnabled = false
         }
         
         if isVirtuosoAchiUnlocked {
@@ -150,7 +146,6 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
                 ),
                 for: .normal
             )
-            virtuosoCompleteButton.isEnabled = true
         } else {
             virtuosoCompleteButton.setImage(
                 UIImage(
@@ -158,7 +153,6 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
                 ),
                 for: .normal
             )
-            virtuosoCompleteButton.isEnabled = false
         }
         
     }
@@ -218,12 +212,36 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     
     //MARK: - Actions
     @IBAction func hundredTapped(_ sender: Any) {
+        if is100ClubUnlocked {
+            //add notification here explaining how to unlock, make sure to localize
+            hapticGenerator.notificationOccurred(.success)
+        } else {
+            hapticGenerator.notificationOccurred(.warning)
+        }
     }
     @IBAction func twoHundredTapped(_ sender: Any) {
+        if is200ClubUnlocked {
+            //add notification here explaining how to unlock, make sure to localize
+            hapticGenerator.notificationOccurred(.success)
+        } else {
+            hapticGenerator.notificationOccurred(.warning)
+        }
     }
     @IBAction func threeHundredTapped(_ sender: Any) {
+        if is300ClubUnlocked {
+            //add notification here explaining how to unlock, make sure to localize
+            hapticGenerator.notificationOccurred(.success)
+        } else {
+            hapticGenerator.notificationOccurred(.warning)
+        }
     }
     @IBAction func virtuosoAchievmentTapped(_ sender: Any) {
+        if isVirtuosoAchiUnlocked {
+            //add notification here explaining how to unlock, make sure to localize
+            hapticGenerator.notificationOccurred(.success)
+        } else {
+            hapticGenerator.notificationOccurred(.warning)
+        }
     }
     
     
