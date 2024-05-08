@@ -13,7 +13,25 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     //MARK: - Variables
     
     var gameKitController = GameKitController()
+    var achievementsController = AchievementesController()
     var instrumentType: InstrumentType = .BasicPiano
+    
+    //Achievments
+    
+    var is100ClubUnlocked: Bool {
+        achievementsController.is100ClubUnlocked
+    }
+    var is200ClubUnlocked: Bool {
+        achievementsController.is200ClubUnlocked
+    }
+    var is300ClubUnlocked: Bool {
+        achievementsController.is300ClubUnlocked
+    }
+    var isVirtuosoAchiUnlocked: Bool {
+        achievementsController.isVirtuosoAchiUnlocked
+    }
+    
+    
  //   let localizationLanguage = NSLocalizedString("AppLanguage", comment: "Preffered Language of localization")
 
     
@@ -24,6 +42,7 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         setUpCollectionView()
         authenticateUser()
         setInstrumentLabel()
+        setAchievementsButtons()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,6 +85,82 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.register(UINib(nibName: "InstrumentSelectCell", bundle: nil), forCellWithReuseIdentifier: "InstrumentSelectCell")
+    }
+    
+    func setAchievementsButtons(){
+        
+        if is100ClubUnlocked {
+            hundredClubButton.setImage(
+                UIImage(
+                    named: "100ClubAchievementDisplay"
+                ),
+                for: .normal
+            )
+            hundredClubButton.isEnabled = true
+        } else {
+            hundredClubButton.setImage(
+                UIImage(
+                    named: "LockedAchievement"
+                ),
+                for: .normal
+            )
+            hundredClubButton.isEnabled = false
+        }
+        
+        if is200ClubUnlocked {
+            twohundredClubButton.setImage(
+                UIImage(
+                    named: "200ClubAchievementDisplay"
+                ),
+                for: .normal
+            )
+            twohundredClubButton.isEnabled = true
+        } else {
+            twohundredClubButton.setImage(
+                UIImage(
+                    named: "LockedAchievement"
+                ),
+                for: .normal
+            )
+            twohundredClubButton.isEnabled = false
+        }
+        
+        if is300ClubUnlocked {
+            threeHundredClubButton.setImage(
+                UIImage(
+                    named: "300ClubAchievementDisplay"
+                ),
+                for: .normal
+            )
+            threeHundredClubButton.isEnabled = true
+        } else {
+            threeHundredClubButton.setImage(
+                UIImage(
+                    named: "LockedAchievement"
+                ),
+                for: .normal
+            )
+            threeHundredClubButton.isEnabled = false
+        }
+        
+        if isVirtuosoAchiUnlocked {
+            virtuosoCompleteButton.setImage(
+                UIImage(
+                    named: "VirtuosoAchievementDisplay"
+                ),
+                for: .normal
+            )
+            virtuosoCompleteButton.isEnabled = true
+        } else {
+            virtuosoCompleteButton.setImage(
+                UIImage(
+                    named: "LockedAchievement"
+                ),
+                for: .normal
+            )
+            virtuosoCompleteButton.isEnabled = false
+        }
+        
     }
     
 //    func setLanguageLocalization(){
