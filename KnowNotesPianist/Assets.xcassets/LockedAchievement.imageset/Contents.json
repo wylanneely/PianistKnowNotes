@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "LockedAchievement2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "LockedAchievement3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -20,11 +22,13 @@
       "scale" : "1x"
     },
     {
+      "filename" : "CHLockedAchievement2x.png",
       "idiom" : "universal",
       "locale" : "zh-Hans",
       "scale" : "2x"
     },
     {
+      "filename" : "CHLockedAchievement3x.png",
       "idiom" : "universal",
       "locale" : "zh-Hans",
       "scale" : "3x"
@@ -36,27 +40,31 @@
       "scale" : "1x"
     },
     {
+      "filename" : "LockedAchievement2x 1.png",
       "idiom" : "universal",
       "locale" : "es-419",
       "scale" : "2x"
     },
     {
+      "filename" : "LockedAchievement3x 1.png",
       "idiom" : "universal",
       "locale" : "es-419",
       "scale" : "3x"
     },
     {
-      "filename" : "FrLockedAchievement.png",
+      "filename" : "RedBlueLockedAchievement.png",
       "idiom" : "universal",
       "locale" : "fr",
       "scale" : "1x"
     },
     {
+      "filename" : "RedBlueLockedAchievement2x.png",
       "idiom" : "universal",
       "locale" : "fr",
       "scale" : "2x"
     },
     {
+      "filename" : "RedBlueLockedAchievement3x.png",
       "idiom" : "universal",
       "locale" : "fr",
       "scale" : "3x"
@@ -68,27 +76,31 @@
       "scale" : "1x"
     },
     {
+      "filename" : "GeLockedAchievement2x.png",
       "idiom" : "universal",
       "locale" : "de",
       "scale" : "2x"
     },
     {
+      "filename" : "GeLockedAchievement3x.png",
       "idiom" : "universal",
       "locale" : "de",
       "scale" : "3x"
     },
     {
-      "filename" : "FrLockedAchievement 1.png",
+      "filename" : "RedBlueLockedAchievement 1.png",
       "idiom" : "universal",
       "locale" : "ko",
       "scale" : "1x"
     },
     {
+      "filename" : "RedBlueLockedAchievement2x 1.png",
       "idiom" : "universal",
       "locale" : "ko",
       "scale" : "2x"
     },
     {
+      "filename" : "RedBlueLockedAchievement3x 1.png",
       "idiom" : "universal",
       "locale" : "ko",
       "scale" : "3x"
@@ -100,11 +112,13 @@
       "scale" : "1x"
     },
     {
+      "filename" : "JPLockedAchievement2x.png",
       "idiom" : "universal",
       "locale" : "ja",
       "scale" : "2x"
     },
     {
+      "filename" : "JPLockedAchievement3x.png",
       "idiom" : "universal",
       "locale" : "ja",
       "scale" : "3x"
@@ -116,27 +130,31 @@
       "scale" : "1x"
     },
     {
+      "filename" : "BrzLockedAchievement2x.png",
       "idiom" : "universal",
       "locale" : "pt-BR",
       "scale" : "2x"
     },
     {
+      "filename" : "BrzLockedAchievement3x.png",
       "idiom" : "universal",
       "locale" : "pt-BR",
       "scale" : "3x"
     },
     {
-      "filename" : "RuLockedAchievement.png",
+      "filename" : "RedBlueLockedAchievement 2.png",
       "idiom" : "universal",
       "locale" : "ru",
       "scale" : "1x"
     },
     {
+      "filename" : "RedBlueLockedAchievement2x 2.png",
       "idiom" : "universal",
       "locale" : "ru",
       "scale" : "2x"
     },
     {
+      "filename" : "RedBlueLockedAchievement3x 2.png",
       "idiom" : "universal",
       "locale" : "ru",
       "scale" : "3x"
@@ -148,13 +166,33 @@
       "scale" : "1x"
     },
     {
+      "filename" : "ItLockedAchievement2x.png",
       "idiom" : "universal",
       "locale" : "it",
       "scale" : "2x"
     },
     {
+      "filename" : "ItLockedAchievement3x.png",
       "idiom" : "universal",
       "locale" : "it",
+      "scale" : "3x"
+    },
+    {
+      "filename" : "ThaiLockedAchievement.png",
+      "idiom" : "universal",
+      "locale" : "th",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "ThaiLockedAchievement2x.png",
+      "idiom" : "universal",
+      "locale" : "th",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "ThaiLockedAchievement3x.png",
+      "idiom" : "universal",
+      "locale" : "th",
       "scale" : "3x"
     }
   ],
