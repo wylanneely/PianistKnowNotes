@@ -15,6 +15,11 @@ struct AchievementesController {
         checkSetCompleteVirtuosoAchievement()
     }
     
+    func refreshAchievments(){
+        checkSetAchievementsClub()
+        checkSetCompleteVirtuosoAchievement()
+    }
+    
     //MARK: Local GamePlay
     
     let defaults = UserDefaults.standard
