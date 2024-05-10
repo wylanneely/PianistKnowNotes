@@ -215,8 +215,8 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         if is100ClubUnlocked {
             hapticGenerator.notificationOccurred(.success)
         } else {
+            hapticGenerator.notificationOccurred(.success)
             let alert = AchievementAlert()
-            hapticGenerator.notificationOccurred(.warning)
             alert.appear(sender: self,achievement: .club100)
         }
     }
@@ -225,8 +225,8 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
             //add notification here explaining how to unlock, make sure to localize
             hapticGenerator.notificationOccurred(.success)
         } else {
+            hapticGenerator.notificationOccurred(.success)
             let alert = AchievementAlert()
-            hapticGenerator.notificationOccurred(.warning)
             alert.appear(sender: self,achievement: .club200)
         }
     }
@@ -235,8 +235,8 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
             //add notification here explaining how to unlock, make sure to localize
             hapticGenerator.notificationOccurred(.success)
         } else {
-            let alert = AchievementAlert()
             hapticGenerator.notificationOccurred(.warning)
+            let alert = AchievementAlert()
             alert.appear(sender: self,achievement: .club300)
         }
     }
@@ -245,8 +245,8 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
             //add notification here explaining how to unlock, make sure to localize
             hapticGenerator.notificationOccurred(.success)
         } else {
+            hapticGenerator.notificationOccurred(.success)
             let alert = AchievementAlert()
-            hapticGenerator.notificationOccurred(.warning)
             alert.appear(sender: self,achievement: .virtuosoClub)
         }
     }
