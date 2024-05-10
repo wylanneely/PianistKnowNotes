@@ -213,10 +213,11 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     //MARK: - Actions
     @IBAction func hundredTapped(_ sender: Any) {
         if is100ClubUnlocked {
-            //add notification here explaining how to unlock, make sure to localize
             hapticGenerator.notificationOccurred(.success)
         } else {
+            let alert = AchievementAlert()
             hapticGenerator.notificationOccurred(.warning)
+            alert.appear(sender: self,achievement: .club100)
         }
     }
     @IBAction func twoHundredTapped(_ sender: Any) {
@@ -224,7 +225,9 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
             //add notification here explaining how to unlock, make sure to localize
             hapticGenerator.notificationOccurred(.success)
         } else {
+            let alert = AchievementAlert()
             hapticGenerator.notificationOccurred(.warning)
+            alert.appear(sender: self,achievement: .club200)
         }
     }
     @IBAction func threeHundredTapped(_ sender: Any) {
@@ -232,7 +235,9 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
             //add notification here explaining how to unlock, make sure to localize
             hapticGenerator.notificationOccurred(.success)
         } else {
+            let alert = AchievementAlert()
             hapticGenerator.notificationOccurred(.warning)
+            alert.appear(sender: self,achievement: .club300)
         }
     }
     @IBAction func virtuosoAchievmentTapped(_ sender: Any) {
@@ -240,7 +245,9 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
             //add notification here explaining how to unlock, make sure to localize
             hapticGenerator.notificationOccurred(.success)
         } else {
+            let alert = AchievementAlert()
             hapticGenerator.notificationOccurred(.warning)
+            alert.appear(sender: self,achievement: .virtuosoClub)
         }
     }
     
