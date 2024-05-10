@@ -43,13 +43,15 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MW3-u1-zBY">
-                            <rect key="frame" x="114.66666666666669" y="261" width="180" height="70"/>
+                            <rect key="frame" x="114.66666666666669" y="271" width="180" height="60"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="70" id="lSi-1M-ZEx"/>
+                                <constraint firstAttribute="height" constant="60" id="lSi-1M-ZEx"/>
                                 <constraint firstAttribute="width" constant="180" id="oZz-Nj-maB"/>
                             </constraints>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="OK"/>
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="OK"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                     <integer key="value" value="15"/>

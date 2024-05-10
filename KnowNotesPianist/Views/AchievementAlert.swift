@@ -27,7 +27,7 @@ class AchievementAlert: UIViewController {
     private func setUpButtonGradient(){
         let gradient = CAGradientLayer()
         gradient.frame =  CGRect(origin: .zero, size: okButton.frame.size)
-        gradient.colors = [UIColor.darkBlue.cgColor, UIColor.systemPurple.cgColor]
+        gradient.colors = [UIColor.systemCyan.cgColor, UIColor.systemPurple.cgColor]
         let shape = CAShapeLayer()
         shape.lineWidth = 2
         shape.path = UIBezierPath(rect: okButton.bounds).cgPath
@@ -38,13 +38,31 @@ class AchievementAlert: UIViewController {
     }
     
     func setUpLabels(withAchievement:Achievements) {
-        titleLabel.font =  UIFont(name: "Poppins-ExtraBold", size: 30)
-        messageLabel.font = UIFont(name: "Poppins-Medium", size: 20)
-        okButton.titleLabel?.font = UIFont(name: "Poppins-Bold", size: 22)
+        titleLabel.font =  UIFont(name: "Poppins-ExtraBold", size: 33)
+        titleLabel.text = lockedString
+        messageLabel.font = UIFont(name: "Poppins-Medium", size: 22)
+        okButton.setTitle(okMessage, for: .normal)
+        
+        switch withAchievement {
+        case .club100: messageLabel.text = achievementMessage1
+        case .club200: messageLabel.text = achievementMessage2
+        case .club300: messageLabel.text = achievementMessage3
+        case .virtuosoClub: messageLabel.text = achievementMessageV
+        }
         
         
     }
     
+    
+    //MARK: Localized Strings
+    private let achievementMessage1 =  NSLocalizedString("AchievementMessage1",comment: "")
+    private let achievementMessage2 =  NSLocalizedString("AchievementMessage2",comment: "")
+    private let achievementMessage3 =  NSLocalizedString("AchievementMessage3",comment: "")
+    private let achievementMessageV =  NSLocalizedString("AchievementMessageV",comment: "")
+
+    private let lockedString =  NSLocalizedString("Locked",comment: "")
+    private let okMessage =  NSLocalizedString("OK",comment: "")
+
     //MARK: - Show
     
     func appear(sender: UIViewController,achievement:Achievements) {
@@ -56,7 +74,7 @@ class AchievementAlert: UIViewController {
     private func show(achievement:Achievements) {
         setUpLabels(withAchievement: achievement)
         self.achievement = achievement
-        UIView.animate(withDuration: 1, delay: 0.05) {
+        UIView.animate(withDuration: 1.5, delay: 0.15) {
             self.backgroundView.alpha = 1
           // self.contentView.alpha = 1
         }
