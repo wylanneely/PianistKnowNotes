@@ -30,3 +30,9 @@
 "Exit" = "Beenden";
 "Restart" = "Neustart";
 "Submit" = "Absenden";
+//achievementAlert
+"AchievementMessage1" = "Score 100 points to unlock achievement.";
+"AchievementMessage2" = "Score 200 points to unlock achievement.";
+"AchievementMessage3" = "Score 300 points to unlock achievement.";
+"AchievementMessageV" = "Score 100 points with 5 instruments to unlock achievement.";
+"OK" = "OK";
