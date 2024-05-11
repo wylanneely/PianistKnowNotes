@@ -66,6 +66,38 @@
       "color" : {
         "color-space" : "srgb",
         "components" : {
+          "alpha" : "0.914",
+          "blue" : "1.000",
+          "green" : "0.978",
+          "red" : "0.000"
+        }
+      },
+      "idiom" : "universal",
+      "locale" : "es-419"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "color" : {
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "0.792",
+          "blue" : "1.000",
+          "green" : "1.000",
+          "red" : "0.000"
+        }
+      },
+      "idiom" : "universal",
+      "locale" : "es-419"
+    },
+    {
+      "color" : {
+        "color-space" : "srgb",
+        "components" : {
           "alpha" : "1.000",
           "blue" : "1.000",
           "green" : "0.204",
@@ -93,6 +125,38 @@
       },
       "idiom" : "universal",
       "locale" : "ja"
+    },
+    {
+      "color" : {
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "0.914",
+          "blue" : "0.000",
+          "green" : "0.982",
+          "red" : "1.000"
+        }
+      },
+      "idiom" : "universal",
+      "locale" : "pt-BR"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "color" : {
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "0.887",
+          "blue" : "0.000",
+          "green" : "1.000",
+          "red" : "0.903"
+        }
+      },
+      "idiom" : "universal",
+      "locale" : "pt-BR"
     },
     {
       "color" : {
