@@ -12,6 +12,10 @@ class AchievementAlert: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpButtonGradient()
+        okButton.setTitle(okMessage, for: .normal)
+        titleLabel.font =  UIFont(name: "Poppins-ExtraBold", size: 33)
+        titleLabel.text = lockedString
+        messageLabel.font = UIFont(name: "Poppins-Medium", size: 22)
     }
 
     //MARK: Set up
@@ -38,10 +42,6 @@ class AchievementAlert: UIViewController {
     }
     
     func setUpLabels(withAchievement:Achievements, completion: (Bool) -> ()) {
-        titleLabel.font =  UIFont(name: "Poppins-ExtraBold", size: 33)
-        titleLabel.text = lockedString
-        messageLabel.font = UIFont(name: "Poppins-Medium", size: 22)
-        okButton.setTitle(okMessage, for: .normal)
         
         switch withAchievement {
         case .club100: messageLabel.text = achievementMessage1

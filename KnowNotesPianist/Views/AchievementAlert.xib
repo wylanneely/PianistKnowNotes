@@ -34,7 +34,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Score 100 points to unlock achievement item." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DZ-Zf-Fre">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Score 100 points to unlock achievement item." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DZ-Zf-Fre">
                             <rect key="frame" x="70" y="156.33333333333334" width="269" height="48"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="269" id="Xes-PB-vyX"/>
@@ -44,9 +44,9 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MW3-u1-zBY">
-                            <rect key="frame" x="114.66666666666669" y="271" width="180" height="60"/>
+                            <rect key="frame" x="114.66666666666669" y="271" width="180" height="56"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="60" id="lSi-1M-ZEx"/>
+                                <constraint firstAttribute="height" constant="56" id="lSi-1M-ZEx"/>
                                 <constraint firstAttribute="width" constant="180" id="oZz-Nj-maB"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
@@ -75,7 +75,7 @@
                         <constraint firstItem="6DZ-Zf-Fre" firstAttribute="centerY" secondItem="A0a-cZ-PbV" secondAttribute="centerY" constant="-10" id="hyf-pO-j4O"/>
                         <constraint firstItem="6DZ-Zf-Fre" firstAttribute="centerX" secondItem="yYt-4r-RKM" secondAttribute="centerX" id="n2h-0n-5R4"/>
                         <constraint firstAttribute="trailing" secondItem="A0a-cZ-PbV" secondAttribute="trailing" constant="16" id="ov3-e9-b84"/>
-                        <constraint firstItem="MW3-u1-zBY" firstAttribute="bottom" secondItem="A0a-cZ-PbV" secondAttribute="bottom" constant="-50" id="qoG-fF-mNY"/>
+                        <constraint firstItem="MW3-u1-zBY" firstAttribute="bottom" secondItem="A0a-cZ-PbV" secondAttribute="bottom" constant="-54" id="qoG-fF-mNY"/>
                     </constraints>
                 </view>
             </subviews>
