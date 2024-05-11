@@ -212,6 +212,7 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     
     //MARK: - Actions
     @IBAction func hundredTapped(_ sender: Any) {
+        hundredClubButton.pulsate()
         if is100ClubUnlocked {
             hapticGenerator.notificationOccurred(.success)
         } else {
@@ -221,6 +222,7 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         }
     }
     @IBAction func twoHundredTapped(_ sender: Any) {
+        twohundredClubButton.pulsate()
         if is200ClubUnlocked {
             //add notification here explaining how to unlock, make sure to localize
             hapticGenerator.notificationOccurred(.success)
@@ -231,6 +233,7 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         }
     }
     @IBAction func threeHundredTapped(_ sender: Any) {
+        threeHundredClubButton.pulsate()
         if is300ClubUnlocked {
             //add notification here explaining how to unlock, make sure to localize
             hapticGenerator.notificationOccurred(.success)
@@ -241,6 +244,7 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         }
     }
     @IBAction func virtuosoAchievmentTapped(_ sender: Any) {
+        virtuosoCompleteButton.pulsate()
         if isVirtuosoAchiUnlocked {
             //add notification here explaining how to unlock, make sure to localize
             hapticGenerator.notificationOccurred(.success)
