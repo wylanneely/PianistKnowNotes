@@ -30,3 +30,10 @@
 "Exit" = "Sortie";
 "Restart" = "Réessayer";
 "Submit" = "Soumettre";
+//achievementAlert
+"AchievementMessage1" = "Marquez 100 points pour débloquer la réussite.";
+"AchievementMessage2" = "Marquez 200 points pour débloquer la réussite.";
+"AchievementMessage3" = "Marquez 300 points pour débloquer la réussite.";
+"AchievementMessageV" = "Marquez 100 points avec 5 instruments pour débloquer la réussite.";
+
+"OK" = "OK";

@@ -30,3 +30,9 @@
 "Exit" = "Beenden";
 "Restart" = "Neustart";
 "Submit" = "Absenden";
+//achievementAlert
+"AchievementMessage1" = "Erziele 100 Punkte, um die Leistung freizuschalten.";
+"AchievementMessage2" = "Erziele 100 Punkte, um die Leistung freizuschalten.";
+"AchievementMessage3" = "Erziele 100 Punkte, um die Leistung freizuschalten.";
+"AchievementMessageV" = "Erziele 100 Punkte mit 5 Instrumenten, um die Leistung freizuschalten.";
+"OK" = "OK";

@@ -30,3 +30,9 @@
 "Exit" = "Sair";
 "Restart" = "Reiniciar";
 "Submit" = "Enviar";
+//achievementAlert
+"AchievementMessage1" = "Marque 100 pontos para desbloquear a conquista.";
+"AchievementMessage2" = "Marque 200 pontos para desbloquear a conquista.";
+"AchievementMessage3" = "Marque 300 pontos para desbloquear a conquista.";
+"AchievementMessageV" = "Marque 100 pontos com 5 instrumentos para desbloquear a conquista.";
+"OK" = "OK";

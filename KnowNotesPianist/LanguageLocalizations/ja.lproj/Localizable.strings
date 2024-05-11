@@ -21,7 +21,7 @@
 "Novice" = "初心者";
 "Regular" = "中間";
 "Pianist" = "ピアニスト";
-"Virtuoso" = "ヴィルトゥオーゾ";
+"Virtuoso" = "難しい";
 "3" = "3";
 "5" = "5";
 "7" = "7";
@@ -30,3 +30,10 @@
 "Exit" = "戻る";
 "Restart" = "やり直す";
 "Submit" = "送信";
+//achievementAlert
+"AchievementMessage1" = "実績を解除するには100ポイントを獲得してください。";
+"AchievementMessage2" = "実績を解除するには200ポイントを獲得してください。";
+"AchievementMessage3" = "実績を解除するには300ポイントを獲得してください。";
+"AchievementMessageV" = "成就を解除するには、5つの楽器で100ポイントを獲得してください。";
+
+"OK" = "わかりました";
