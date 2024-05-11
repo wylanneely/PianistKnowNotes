@@ -30,3 +30,10 @@
 "Exit" = "나가기";
 "Restart" = "재시작";
 "Submit" = "점수 제출";
+//achievementAlert
+"AchievementMessage1" = "성취를 잠금 해제하려면 100점을 획득하세요.";
+"AchievementMessage2" = "성취를 잠금 해제하려면 200점을 획득하세요.";
+"AchievementMessage3" = "성취를 잠금 해제하려면 300점을 획득하세요.";
+"AchievementMessageV" = "성취를 잠금 해제하려면 5개의 악기로 100점을 획득하세요.";
+
+"OK" = "오케이";

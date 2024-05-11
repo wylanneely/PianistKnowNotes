@@ -30,3 +30,10 @@
 "Exit" = "Salir";
 "Restart" = "Reintentar";
 "Submit" = "Enviar";
+//achievementAlert
+"AchievementMessage1" = "Consigue 100 puntos para obtener logro.";
+"AchievementMessage2" = "Consigue 200 puntos para obtener logro.";
+"AchievementMessage3" = "Consigue 300 puntos para obtener logro.";
+"AchievementMessageV" = "Marca 100 puntos con 5 instrumentos para obtener el logro.";
+
+"OK" = "OK";
