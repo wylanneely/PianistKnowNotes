@@ -27,7 +27,7 @@ class AchievementAlert: UIViewController {
     private func setUpButtonGradient(){
         let gradient = CAGradientLayer()
         gradient.frame =  CGRect(origin: .zero, size: okButton.frame.size)
-        gradient.colors = [UIColor.systemCyan.cgColor, UIColor.systemPurple.cgColor]
+        gradient.colors = [UIColor.white.cgColor, UIColor.popUpText.cgColor]
         let shape = CAShapeLayer()
         shape.lineWidth = 2
         shape.path = UIBezierPath(rect: okButton.bounds).cgPath
@@ -37,7 +37,7 @@ class AchievementAlert: UIViewController {
         okButton.layer.addSublayer(gradient)
     }
     
-    func setUpLabels(withAchievement:Achievements) {
+    func setUpLabels(withAchievement:Achievements, completion: (Bool) -> ()) {
         titleLabel.font =  UIFont(name: "Poppins-ExtraBold", size: 33)
         titleLabel.text = lockedString
         messageLabel.font = UIFont(name: "Poppins-Medium", size: 22)
@@ -50,6 +50,7 @@ class AchievementAlert: UIViewController {
         case .virtuosoClub: messageLabel.text = achievementMessageV
         }
         
+        completion(true)
         
     }
     
@@ -66,26 +67,25 @@ class AchievementAlert: UIViewController {
     //MARK: - Show
     
     func appear(sender: UIViewController,achievement:Achievements) {
+      //  setUpLabels(withAchievement: achievement)
         sender.present(self,animated: false){
-            self.show(achievement: self.achievement)
+            self.show(achievement: achievement)
         }
     }
     
     private func show(achievement:Achievements) {
-        setUpLabels(withAchievement: achievement)
-        self.achievement = achievement
-        UIView.animate(withDuration: 1.5, delay: 0.15) {
-            self.backgroundView.alpha = 1
-          // self.contentView.alpha = 1
+        setUpLabels(withAchievement: achievement) { _ in
+            UIView.animate(withDuration: 1.0, delay: 0.3) {
+                self.contectView.alpha = 1
+            }
         }
     }
     
     //MARK: - Dismiss
     
     func hide() {
-        UIView.animate(withDuration: 1, delay: 0.0, options: .curveEaseOut) {
-            self.backgroundView.alpha = 0
-           // self.contentView.alpha = 0
+        UIView.animate(withDuration: 0.7, delay: 0.0, options: .curveEaseOut) {
+            self.contectView.alpha = 0
         } completion: { _ in
             self.dismiss(animated: false)
             self.removeFromParent()
@@ -94,12 +94,13 @@ class AchievementAlert: UIViewController {
     
    //MARK: Outlets
     
-    var achievement: Achievements = .club100
+   // var achievement: Achievements = .club100
     
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet var contectView: UIView!
     
     
     //MARK: Actions

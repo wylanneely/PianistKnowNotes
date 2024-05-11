@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AchievementAlert" customModule="KnowNotesPianist" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundView" destination="yYt-4r-RKM" id="Wiv-87-EO2"/>
+                <outlet property="contectView" destination="i5M-Pr-FkT" id="ZmQ-RT-S3B"/>
                 <outlet property="messageLabel" destination="6DZ-Zf-Fre" id="P05-Qs-uw2"/>
                 <outlet property="okButton" destination="MW3-u1-zBY" id="Ca0-W2-Ap1"/>
                 <outlet property="titleLabel" destination="Lpz-ov-OS2" id="oiW-77-jTo"/>
