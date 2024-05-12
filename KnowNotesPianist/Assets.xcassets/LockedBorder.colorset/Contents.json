@@ -56,11 +56,139 @@
           "alpha" : "1.000",
           "blue" : "0.000",
           "green" : "0.123",
-          "red" : "0.998"
+          "red" : "0.897"
         }
       },
       "idiom" : "universal",
       "locale" : "zh-Hans"
+    },
+    {
+      "color" : {
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.000",
+          "green" : "0.157",
+          "red" : "0.875"
+        }
+      },
+      "idiom" : "universal",
+      "locale" : "ru"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "color" : {
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.000",
+          "green" : "0.123",
+          "red" : "0.998"
+        }
+      },
+      "idiom" : "universal",
+      "locale" : "ru"
+    },
+    {
+      "color" : {
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.875",
+          "green" : "0.000",
+          "red" : "0.477"
+        }
+      },
+      "idiom" : "universal",
+      "locale" : "es-419"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "color" : {
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.998",
+          "green" : "0.000",
+          "red" : "0.700"
+        }
+      },
+      "idiom" : "universal",
+      "locale" : "es-419"
+    },
+    {
+      "color" : {
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.000",
+          "green" : "0.157",
+          "red" : "0.875"
+        }
+      },
+      "idiom" : "universal",
+      "locale" : "fr"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "color" : {
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.000",
+          "green" : "0.123",
+          "red" : "0.998"
+        }
+      },
+      "idiom" : "universal",
+      "locale" : "fr"
+    },
+    {
+      "color" : {
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.000",
+          "green" : "0.157",
+          "red" : "0.875"
+        }
+      },
+      "idiom" : "universal",
+      "locale" : "ko"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "color" : {
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.000",
+          "green" : "0.123",
+          "red" : "0.998"
+        }
+      },
+      "idiom" : "universal",
+      "locale" : "ko"
     },
     {
       "color" : {
@@ -93,6 +221,70 @@
       },
       "idiom" : "universal",
       "locale" : "ja"
+    },
+    {
+      "color" : {
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.030",
+          "green" : "0.875",
+          "red" : "0.001"
+        }
+      },
+      "idiom" : "universal",
+      "locale" : "pt-BR"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "color" : {
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.035",
+          "green" : "0.956",
+          "red" : "0.018"
+        }
+      },
+      "idiom" : "universal",
+      "locale" : "pt-BR"
+    },
+    {
+      "color" : {
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.000",
+          "green" : "0.000",
+          "red" : "0.924"
+        }
+      },
+      "idiom" : "universal",
+      "locale" : "it"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "color" : {
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "0.000",
+          "green" : "0.000",
+          "red" : "0.941"
+        }
+      },
+      "idiom" : "universal",
+      "locale" : "it"
     },
     {
       "color" : {
