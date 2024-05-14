@@ -33,10 +33,6 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         achievementsController.isVirtuosoAchiUnlocked
     }
     
-    
- //   let localizationLanguage = NSLocalizedString("AppLanguage", comment: "Preffered Language of localization")
-
-    
     //MARK: - Overrides
 
     override func viewDidLoad() {
@@ -180,7 +176,6 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     func presentedViewDidClose(){
         gameKitController.showGKAccessPoint()
     }
-
     
     func openProgressViewFor(instrument: InstrumentType) {
         //add logic to launch progress with InstrumentType
@@ -250,7 +245,6 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         }
     }
     
-    
     //MARK: - CollectionView
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -277,8 +271,6 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         return CGSize(width: collectionWidth , height: collectionHeight)
     }
     
-   
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -296,7 +288,6 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         if let virtuosoVC = segue.destination as? VirtuosoGameViewController {
             virtuosoVC.instrument = self.instrumentType
         }
-        
     }
     
 
