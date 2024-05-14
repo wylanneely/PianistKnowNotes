@@ -156,13 +156,8 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         }
         
     }
-    
-//    func setLanguageLocalization(){
-//        if localizationLanguage
-//    }
-    
+ 
     //MARK: - Start Game Delegate
-    
     
     
     func startGame(type:GameType,instrument:InstrumentType) {
