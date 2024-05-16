@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  KnowNotesPianist
+
+  Created by Wylan L Neely on 4/23/24.
+  
+*/
+"AppLanguage" = "English";
+//InstrumentTypeName
+"Basic Piano" = "鋼琴";
+"Grand Piano" = "三角鋼琴";
+"Acoustic Guitar" = "原聲吉他";
+"Keyboard" = "電子鋼琴";
+"Violin" = "小提琴";
+"Instruments" = "樂器";
+//InstrumentSelectCell
+"High Score" = "最高分";
+"Locked" = "鎖定";
+//ProgressPage
+"Select Difficulty" = "選擇難度";
+"Novice" = "新手";
+"Regular" = "普通難度";
+"Pianist" = "專業";
+"Virtuoso" = "音樂大師";
+"3" = "三";
+"5" = "五";
+"7" = "七";
+"12" = "十二";
+//FinishedGamePopUp
+"Exit" = "退出";
+"Restart" = "重試";
+"Submit" = "提交分數";
+//achievementAlert
+"AchievementMessage1" = "得分一百分以解鎖成就。";
+"AchievementMessage2" = "得分二百分以解鎖成就。";
+"AchievementMessage3" = "得分三百分以解鎖成就。";
+"AchievementMessageV" = "使用五種樂器得分一百分，達成成功。";
+
+"OK" = "好的";

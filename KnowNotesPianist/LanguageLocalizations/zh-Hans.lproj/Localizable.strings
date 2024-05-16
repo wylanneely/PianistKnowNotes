@@ -31,9 +31,9 @@
 "Restart" = "重试";
 "Submit" = "提交分数";
 //achievementAlert
-"AchievementMessage1" = "得分100分以解锁成就。";
-"AchievementMessage2" = "得分200分以解锁成就。";
-"AchievementMessage3" = "得分300分以解锁成就。";
-"AchievementMessageV" = "用5种乐器得分100分，达成成功";
+"AchievementMessage1" = "得分一百分以解锁成就。";
+"AchievementMessage2" = "得分二百分以解锁成就。";
+"AchievementMessage3" = "得分三百分以解锁成就。";
+"AchievementMessageV" = "使用五种乐器得分一百分，达成成功";
 
 "OK" = "好的";
