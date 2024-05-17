@@ -256,7 +256,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="uv1-og-8QN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="uv1-og-8QN">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="I5w-38-cJh">
@@ -289,28 +289,40 @@
                                 <color key="shadowColor" systemColor="labelColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Mg0-o0-7dl">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Mg0-o0-7dl" userLabel="AchievementsStackView">
                                 <rect key="frame" x="8" y="724.33333333333337" width="377" height="93.666666666666629"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3M-iD-4WP">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3M-iD-4WP">
                                         <rect key="frame" x="0.0" y="0.0" width="94.333333333333329" height="93.666666666666671"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="100ClubAchievementDisplay"/>
+                                        <connections>
+                                            <action selector="hundredTapped:" destination="gyu-fa-F0D" eventType="touchUpInside" id="p1l-pM-wEG"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AmR-60-PgM">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AmR-60-PgM">
                                         <rect key="frame" x="94.333333333333343" y="0.0" width="94.333333333333343" height="93.666666666666671"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="200ClubAchievementDisplay"/>
+                                        <connections>
+                                            <action selector="twoHundredTapped:" destination="gyu-fa-F0D" eventType="touchUpInside" id="Uz5-YQ-2m4"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3W-OD-HJ3">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3W-OD-HJ3">
                                         <rect key="frame" x="188.66666666666666" y="0.0" width="93.999999999999972" height="93.666666666666671"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="300ClubAchievementDisplay"/>
+                                        <connections>
+                                            <action selector="threeHundredTapped:" destination="gyu-fa-F0D" eventType="touchUpInside" id="Gs5-SZ-Hqm"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szb-2g-TUs">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szb-2g-TUs">
                                         <rect key="frame" x="282.66666666666669" y="0.0" width="94.333333333333314" height="93.666666666666671"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="VirtuosoAchievementDisplay"/>
+                                        <connections>
+                                            <action selector="virtuosoAchievmentTapped:" destination="gyu-fa-F0D" eventType="touchUpInside" id="XIM-qm-gvg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.11378463273195871" green="5.5133940808254688e-05" blue="0.090777923229218752" alpha="0.33110119047619047" colorSpace="custom" customColorSpace="sRGB"/>
@@ -342,7 +354,11 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="I5w-38-cJh" id="kdj-BO-5eL"/>
+                        <outlet property="hundredClubButton" destination="l3M-iD-4WP" id="3hx-T1-luM"/>
                         <outlet property="instrumetLabel" destination="6zk-FX-bV8" id="YuJ-Vg-UEm"/>
+                        <outlet property="threeHundredClubButton" destination="J3W-OD-HJ3" id="7fx-VF-nka"/>
+                        <outlet property="twohundredClubButton" destination="AmR-60-PgM" id="OET-QO-nTp"/>
+                        <outlet property="virtuosoCompleteButton" destination="Szb-2g-TUs" id="SpQ-fw-F2n"/>
                         <segue destination="1Ic-O4-xgA" kind="showDetail" identifier="toStartNovice" id="EhJ-Nh-tA4"/>
                         <segue destination="ijP-be-UXx" kind="showDetail" identifier="toStartRegular" id="k1q-hz-8y3"/>
                         <segue destination="5IX-dh-HyF" kind="showDetail" identifier="toStartPianist" id="KQn-fK-SF0"/>
@@ -1112,12 +1128,12 @@
         <segue reference="fDB-b7-JAp"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="100ClubAchievementDisplay" width="74" height="76"/>
-        <image name="200ClubAchievementDisplay" width="74" height="76"/>
-        <image name="300ClubAchievementDisplay" width="74" height="77"/>
+        <image name="100ClubAchievementDisplay" width="74" height="76.333335876464844"/>
+        <image name="200ClubAchievementDisplay" width="74" height="76.333335876464844"/>
+        <image name="300ClubAchievementDisplay" width="74" height="76.333335876464844"/>
         <image name="AButton" width="80.5" height="80"/>
         <image name="AButtonBig" width="100" height="100"/>
-        <image name="AButtonHuge" width="116.5" height="116"/>
+        <image name="AButtonHuge" width="116.33333587646484" height="116"/>
         <image name="ASharpButton" width="80" height="80"/>
         <image name="BButton" width="80" height="80"/>
         <image name="BButtonBig" width="100" height="100"/>
@@ -1141,14 +1157,14 @@
         <image name="GButtonBig" width="100" height="100"/>
         <image name="GButtonHuge" width="116" height="116"/>
         <image name="GSharpButton" width="80" height="80"/>
-        <image name="HomeButton" width="46" height="48"/>
+        <image name="HomeButton" width="47" height="48"/>
         <image name="Lifes5" width="70" height="71.333335876464844"/>
         <image name="LockedButtonImage" width="42.5" height="42.5"/>
         <image name="MainBackgroundImage" width="585" height="1266"/>
         <image name="ProgressBackgroundView" width="378" height="455"/>
         <image name="StartGameButton" width="207" height="60"/>
         <image name="UnlockedButtonImage" width="42" height="42"/>
-        <image name="VirtuosoAchievementDisplay" width="82" height="74"/>
+        <image name="VirtuosoAchievementDisplay" width="79.666664123535156" height="74"/>
         <image name="VirtuosoGameBackground" width="375" height="812"/>
         <namedColor name="InstrumentLabelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
