@@ -25,8 +25,59 @@
       "scale" : "2x"
     },
     {
+      "filename" : "CHDButtonBig3x 2.png",
       "idiom" : "universal",
       "locale" : "zh-Hans",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "ru",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "RuDButtonBig.png",
+      "idiom" : "universal",
+      "locale" : "ru",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "ru",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "zh-HK",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "CHDButtonBig 2.png",
+      "idiom" : "universal",
+      "locale" : "zh-HK",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "CHDButtonBig3x 3.png",
+      "idiom" : "universal",
+      "locale" : "zh-HK",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "zh-Hant",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "CHDButtonBig 1.png",
+      "idiom" : "universal",
+      "locale" : "zh-Hant",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "CHDButtonBig3x 1.png",
+      "idiom" : "universal",
+      "locale" : "zh-Hant",
       "scale" : "3x"
     }
   ],

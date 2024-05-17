@@ -5,11 +5,12 @@
       "scale" : "1x"
     },
     {
-      "filename" : "EButtonHuge.png",
+      "filename" : "EButtonHuge2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "EButtonHuge3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -25,8 +26,59 @@
       "scale" : "2x"
     },
     {
+      "filename" : "CHEButtonHuge3x.png",
       "idiom" : "universal",
       "locale" : "zh-Hans",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "ru",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "RuEButtonHuge.png",
+      "idiom" : "universal",
+      "locale" : "ru",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "ru",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "zh-HK",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "CHEButtonHuge 2.png",
+      "idiom" : "universal",
+      "locale" : "zh-HK",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "CHEButtonHuge3x 2.png",
+      "idiom" : "universal",
+      "locale" : "zh-HK",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "zh-Hant",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "CHEButtonHuge 1.png",
+      "idiom" : "universal",
+      "locale" : "zh-Hant",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "CHEButtonHuge3x 1.png",
+      "idiom" : "universal",
+      "locale" : "zh-Hant",
       "scale" : "3x"
     }
   ],
