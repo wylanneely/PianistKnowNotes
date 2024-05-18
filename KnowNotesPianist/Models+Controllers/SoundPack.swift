@@ -25,7 +25,8 @@ struct SoundPack {
     
 }
 
-let BasicPianoPack = SoundPack(name: "BasicPiano", type: .GrandPiano, A: FPiano_A, AS: FPiano_AS, B: FPiano_B, C: FPiano_C, CS: FPiano_CS, D: FPiano_D, DS: FPiano_DS, E: FPiano_E, F: FPiano_F, FS: FPiano_FS, G: FPiano_G, GS: FPiano_GS)
+let BasicPianoPack = SoundPack(name: "BasicPiano", type: .BasicPiano, A: FPiano_A, AS: FPiano_AS, B: FPiano_B, C: FPiano_C, CS: FPiano_CS, D: FPiano_D, DS: FPiano_DS, E: FPiano_E, F: FPiano_F, FS: FPiano_FS, G: FPiano_G, GS: FPiano_GS)
+
 
 //MARK: - Notes
 
