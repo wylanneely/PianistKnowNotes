@@ -58,9 +58,9 @@ let FPiano_GS = Note(note: "FPiano_GS", noteID: 11, soundFileName: "FPiano-GSNot
 //MARK: - GrandPiano
 let A_GrandPiano = Note(note: "A_GrandPiano", noteID: 0, soundFileName: "A_GrandPiano_Test")
 //let AS_GrandPiano = Note(note: "AS_GrandPiano", noteID: 1, soundFileName: "AS_GrandPiano_Test")
-//let B_GrandPiano = Note(note: "B_GrandPiano", noteID: 2, soundFileName: "B_GrandPiano_Test")
+let B_GrandPiano = Note(note: "B_GrandPiano", noteID: 2, soundFileName: "B_GrandPiano_Test")
 let C_GrandPiano = Note(note: "C_GrandPiano", noteID: 3, soundFileName: "C_GrandPiano_Test")
-//let CS_GrandPiano = Note(note: "CS_GrandPiano", noteID: 4, soundFileName: "CS_GrandPiano_Test")
+let CS_GrandPiano = Note(note: "CS_GrandPiano", noteID: 4, soundFileName: "CS_GrandPiano_Test")
 let D_GrandPiano = Note(note: "D_GrandPiano", noteID: 5, soundFileName: "D_GrandPiano_Test")
 let DS_GrandPiano = Note(note: "DS_GrandPiano", noteID: 6, soundFileName: "DS_GrandPiano_Test")
 let E_GrandPiano = Note(note: "E_GrandPiano", noteID: 7, soundFileName: "E_GrandPiano_Test")
