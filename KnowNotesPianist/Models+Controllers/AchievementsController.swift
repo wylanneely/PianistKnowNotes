@@ -162,9 +162,10 @@ struct AchievementesController {
             return 0
         }
     }
+    //Testing Change back
     func isGrandPianoNoviceUnlocked()->Bool {
         if defaults.bool(forKey: kGrandPianoNovice) == true
-        { return true } else { return false }
+        { return true } else { return true }
     }
     func isGrandPianoRegularUnlocked()->Bool {
         if defaults.bool(forKey: kGrandPianoRegular) == true
