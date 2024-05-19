@@ -43,6 +43,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
         setUpProgressBar()
         setUpGradientColorLabel()
         self.presentationController?.delegate = self
+        setSoundPack()
         setUpAudio()
         setUpLanguageLocalization()
     }
@@ -53,7 +54,22 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     
     //MARK: - Audio
     var soundController: SoundController = SoundController(soundPack: BasicPianoPack, gameType: .Virtuoso)
-   // var soundPack: SoundPack = FreePianoPack
+
+    func setSoundPack(){
+        switch instrument {
+        case .BasicPiano:
+            soundController = SoundController(soundPack: BasicPianoPack, gameType: .Regular)
+        case .GrandPiano:
+           soundController = SoundController(soundPack: GrandPianoPack, gameType: .Regular)
+        case .AcousticGuitar:
+            return
+        case .Keyboard:
+            return
+        case .Violin:
+            return
+        }
+    }
+
     var player: AVAudioPlayer!
     
    private func playSound(noteAnswerID:Int){

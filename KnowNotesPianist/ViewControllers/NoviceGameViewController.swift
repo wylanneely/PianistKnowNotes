@@ -43,6 +43,7 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
         setUpGradientColorLabel()
         updateGameStats()
         self.presentationController?.delegate = self
+        setSoundPack()
         setUpAudio()
         setupLanguageLocalization()
     }
@@ -107,6 +108,22 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
     
     //MARK: - Audio
     var soundController: SoundController = SoundController(soundPack: BasicPianoPack, gameType: .Novice)
+    
+    func setSoundPack(){
+        switch instrument {
+        case .BasicPiano:
+            soundController = SoundController(soundPack: BasicPianoPack, gameType: .Novice)
+        case .GrandPiano:
+           soundController = SoundController(soundPack: GrandPianoPack, gameType: .Novice)
+        case .AcousticGuitar:
+            return
+        case .Keyboard:
+            return
+        case .Violin:
+            return
+        }
+    }
+    
    // var soundPack: SoundPack = FreePianoPack
     var player: AVAudioPlayer!
     
@@ -391,8 +408,18 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
     func checkContinueGame(){
         //13
         if currentRound == 13 {
-            //unlock gameState using AchievementsController
-            achievementsController.unlockFreePianoRegular()
+            switch instrument {
+            case .BasicPiano:
+                achievementsController.unlockFreePianoRegular()
+            case .GrandPiano:
+                achievementsController.unlockGrandPianoRegular()
+            case .AcousticGuitar:
+                achievementsController.unlockAcousticRegular()
+            case .Keyboard:
+                achievementsController.unlockKeyboardRegular()
+            case .Violin:
+                achievementsController.unlockViolinRegular()
+            }
             self.performSegue(withIdentifier: "toContinueRegular", sender: self)
         }
     }

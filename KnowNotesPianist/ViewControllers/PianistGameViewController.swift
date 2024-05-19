@@ -54,7 +54,22 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
     
     //MARK: - Audio
     var soundController: SoundController = SoundController(soundPack: BasicPianoPack, gameType: .Pianist)
-   // var soundPack: SoundPack = FreePianoPack
+
+    func setSoundPack(){
+        switch instrument {
+        case .BasicPiano:
+            soundController = SoundController(soundPack: BasicPianoPack, gameType: .Pianist)
+        case .GrandPiano:
+           soundController = SoundController(soundPack: GrandPianoPack, gameType: .Pianist)
+        case .AcousticGuitar:
+            return
+        case .Keyboard:
+            return
+        case .Violin:
+            return
+        }
+    }
+
     var player: AVAudioPlayer!
     
     func setUpAudio(){
@@ -577,7 +592,20 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
      func checkContinueGame(){
          //29
          if currentRound == 29 {
-             achievementsController.unlockFreePianoVirtuoso()
+
+             switch instrument {
+             case .BasicPiano:
+                 achievementsController.unlockFreePianoVirtuoso()
+             case .GrandPiano:
+                 achievementsController.unlockGrandPianoVirtuoso()
+             case .AcousticGuitar:
+                 achievementsController.unlockAcousticVirtuoso()
+             case .Keyboard:
+                 achievementsController.unlockKeyboardVirtuoso()
+             case .Violin:
+                 achievementsController.unlockViolinVirtuoso()
+             }
+
              self.performSegue(withIdentifier: "toContinueVirtuoso", sender: self)
          }
      }
