@@ -45,6 +45,7 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
         setUpGradientColorLabel()
         self.presentationController?.delegate = self
         setUpAudio()
+        setSoundPack()
         setUpLanguageLocalization()
     }
     
