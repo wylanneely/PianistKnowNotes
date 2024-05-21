@@ -58,9 +58,9 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     func setSoundPack(){
         switch instrument {
         case .BasicPiano:
-            soundController = SoundController(soundPack: BasicPianoPack, gameType: .Regular)
+            soundController = SoundController(soundPack: BasicPianoPack, gameType: .Virtuoso)
         case .GrandPiano:
-           soundController = SoundController(soundPack: GrandPianoPack, gameType: .Regular)
+           soundController = SoundController(soundPack: GrandPianoPack, gameType: .Virtuoso)
         case .AcousticGuitar:
             return
         case .Keyboard:
