@@ -27,6 +27,7 @@ struct SoundPack {
 
 let BasicPianoPack = SoundPack(name: "BasicPiano", type: .BasicPiano, A: FPiano_A, AS: FPiano_AS, B: FPiano_B, C: FPiano_C, CS: FPiano_CS, D: FPiano_D, DS: FPiano_DS, E: FPiano_E, F: FPiano_F, FS: FPiano_FS, G: FPiano_G, GS: FPiano_GS)
 let GrandPianoPack = SoundPack(name: "GrandPiano", type: .GrandPiano, A: A_GrandPiano, AS: AS_GrandPiano, B: B_GrandPiano, C: C_GrandPiano, CS: CS_GrandPiano, D: D_GrandPiano, DS: DS_GrandPiano, E: E_GrandPiano, F: F_GrandPiano, FS: FS_GrandPiano, G: G_GrandPiano, GS: GS_GrandPiano)
+let ViolinPack = SoundPack(name: "Violin", type: .Violin, A: A_Violin, AS: AS_Violin, B: B_Violin, C: C_Violin, CS: CS_Violin, D: D_Violin, DS: DS_Violin, E: E_Violin, F: F_Violin, FS: FS_Violin, G: G_Violin, GS: GS_Violin)
 
 //MARK: - Notes
 
@@ -68,3 +69,17 @@ let F_GrandPiano = Note(note: "F_GrandPiano", noteID: 8, soundFileName: "F_Grand
 let FS_GrandPiano = Note(note: "FS_GrandPiano", noteID: 9, soundFileName: "FS_GrandPiano_Test")
 let G_GrandPiano = Note(note: "G_GrandPiano", noteID: 10, soundFileName: "G_GrandPiano_Test")
 let GS_GrandPiano = Note(note: "GS_GrandPiano", noteID: 11, soundFileName: "GS_GrandPiano_Test")
+
+//MARK: - Violin
+let A_Violin = Note(note: "A_Violin", noteID: 0, soundFileName: "A_Violin")
+let AS_Violin = Note(note: "AS_Violin", noteID: 1, soundFileName: "AS_Violin")
+let B_Violin = Note(note: "B_Violin", noteID: 2, soundFileName: "B_Violin")
+let C_Violin = Note(note: "C_Violin", noteID: 3, soundFileName: "C_Violin")
+let CS_Violin = Note(note: "CS_Violin", noteID: 4, soundFileName: "CS_Violin")
+let D_Violin = Note(note: "D_Violin", noteID: 5, soundFileName: "D_Violin")
+let DS_Violin = Note(note: "DS_Violin", noteID: 6, soundFileName: "DS_Violin")
+let E_Violin = Note(note: "E_Violin", noteID: 7, soundFileName: "E_Violin")
+let F_Violin = Note(note: "F_Violin", noteID: 8, soundFileName: "F_Violin")
+let FS_Violin = Note(note: "FS_Violin", noteID: 9, soundFileName: "FS_Violin")
+let G_Violin = Note(note: "G_Violin", noteID: 10, soundFileName: "G_Violin")
+let GS_Violin = Note(note: "GS_Violin", noteID: 11, soundFileName: "GS_Violin")
