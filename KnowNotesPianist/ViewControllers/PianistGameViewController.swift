@@ -67,7 +67,7 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
         case .Keyboard:
             return
         case .Violin:
-            return
+            soundController = SoundController(soundPack: ViolinPack, gameType: .Pianist)
         }
     }
 
