@@ -83,3 +83,21 @@ let F_Violin = Note(note: "F_Violin", noteID: 8, soundFileName: "F_Violin")
 let FS_Violin = Note(note: "FS_Violin", noteID: 9, soundFileName: "FS_Violin")
 let G_Violin = Note(note: "G_Violin", noteID: 10, soundFileName: "G_Violin")
 let GS_Violin = Note(note: "GS_Violin", noteID: 11, soundFileName: "GS_Violin")
+
+//MARK: - Keyboard
+
+let A_Keyboard = Note(note: "A_Keyboard", noteID: 0, soundFileName: "A_Keyboard")
+let AS_Keyboard = Note(note: "AS_Keybord", noteID: 1, soundFileName: "AS_Keyboard")
+let B_Keyboard = Note(note: "B_Keyboard", noteID: 2, soundFileName: "B_Keyboard")
+let C_Keyboard = Note(note: "C_Keyboard", noteID: 3, soundFileName: "C_Keyboard")
+let CS_Keyboard = Note(note: "CS_Keyboard", noteID: 4, soundFileName: "CS_Keyboard")
+let D_Keyboard = Note(note: "D_Keyboard", noteID: 5, soundFileName: "D_Keyboard")
+let DS_Keyboard = Note(note: "DS_Keyboard", noteID: 6, soundFileName: "DS_Keyboard")
+let E_Keyboard = Note(note: "E_Keyboard", noteID: 7, soundFileName: "E_Keyboard")
+let F_Keyboard = Note(note: "F_Keyboard", noteID: 8, soundFileName: "F_Keyboard")
+let FS_Keyboard = Note(note: "FS_Keyboard", noteID: 9, soundFileName: "FS_Keyboard")
+let G_Keyboard = Note(note: "G_Keyboard", noteID: 10, soundFileName: "G_Keyboard")
+let GS_Keyboard = Note(note: "GS_Keyboard", noteID: 11, soundFileName: "GS_Keyboard")
+
+
+
