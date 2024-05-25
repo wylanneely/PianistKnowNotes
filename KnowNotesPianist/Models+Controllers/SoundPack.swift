@@ -28,6 +28,7 @@ struct SoundPack {
 let BasicPianoPack = SoundPack(name: "BasicPiano", type: .BasicPiano, A: FPiano_A, AS: FPiano_AS, B: FPiano_B, C: FPiano_C, CS: FPiano_CS, D: FPiano_D, DS: FPiano_DS, E: FPiano_E, F: FPiano_F, FS: FPiano_FS, G: FPiano_G, GS: FPiano_GS)
 let GrandPianoPack = SoundPack(name: "GrandPiano", type: .GrandPiano, A: A_GrandPiano, AS: AS_GrandPiano, B: B_GrandPiano, C: C_GrandPiano, CS: CS_GrandPiano, D: D_GrandPiano, DS: DS_GrandPiano, E: E_GrandPiano, F: F_GrandPiano, FS: FS_GrandPiano, G: G_GrandPiano, GS: GS_GrandPiano)
 let ViolinPack = SoundPack(name: "Violin", type: .Violin, A: A_Violin, AS: AS_Violin, B: B_Violin, C: C_Violin, CS: CS_Violin, D: D_Violin, DS: DS_Violin, E: E_Violin, F: F_Violin, FS: FS_Violin, G: G_Violin, GS: GS_Violin)
+let KeyboardPack = SoundPack(name: "Keyboard", type: .Keyboard, A: A_Keyboard, AS: AS_Keyboard, B: B_Keyboard, C: C_Keyboard, CS: CS_Keyboard, D: D_Keyboard, DS: DS_Keyboard, E: E_Keyboard, F: F_Keyboard, FS: FS_Keyboard, G: G_Keyboard, GS: GS_Keyboard)
 
 //MARK: - Notes
 
@@ -99,5 +100,12 @@ let FS_Keyboard = Note(note: "FS_Keyboard", noteID: 9, soundFileName: "FS_Keyboa
 let G_Keyboard = Note(note: "G_Keyboard", noteID: 10, soundFileName: "G_Keyboard")
 let GS_Keyboard = Note(note: "GS_Keyboard", noteID: 11, soundFileName: "GS_Keyboard")
 
+//MARK: Maj AccGuitar
 
-
+let AMaj_AGuitar = Note(note: "AMaj_AGuitar", noteID: 0, soundFileName: "AMaj_AccGuitar")
+let BMaj_AGuitar = Note(note: "BMaj_AGuitar", noteID: 2, soundFileName: "BMaj_AccGuitar")
+let CMaj_AGuitar = Note(note: "CMaj_AGuitar", noteID: 3, soundFileName: "CMaj_AccGuitar")
+let DMaj_AGuitar = Note(note: "DMaj_AGuitar", noteID: 5, soundFileName: "DMaj_AccGuitar")
+let EMaj_AGuitar = Note(note: "EMaj_AGuitar", noteID: 7, soundFileName: "EMaj_AccGuitar")
+let FMaj_AGuitar = Note(note: "FMaj_AGuitar", noteID: 8, soundFileName: "FMaj_AccGuitar")
+let GMaj_AGuitar = Note(note: "GMaj_AGuitar", noteID: 10, soundFileName: "GMaj_AccGuitar")
