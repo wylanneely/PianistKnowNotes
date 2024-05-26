@@ -25,10 +25,86 @@ struct SoundPack {
     
 }
 
-let BasicPianoPack = SoundPack(name: "BasicPiano", type: .BasicPiano, A: FPiano_A, AS: FPiano_AS, B: FPiano_B, C: FPiano_C, CS: FPiano_CS, D: FPiano_D, DS: FPiano_DS, E: FPiano_E, F: FPiano_F, FS: FPiano_FS, G: FPiano_G, GS: FPiano_GS)
-let GrandPianoPack = SoundPack(name: "GrandPiano", type: .GrandPiano, A: A_GrandPiano, AS: AS_GrandPiano, B: B_GrandPiano, C: C_GrandPiano, CS: CS_GrandPiano, D: D_GrandPiano, DS: DS_GrandPiano, E: E_GrandPiano, F: F_GrandPiano, FS: FS_GrandPiano, G: G_GrandPiano, GS: GS_GrandPiano)
-let ViolinPack = SoundPack(name: "Violin", type: .Violin, A: A_Violin, AS: AS_Violin, B: B_Violin, C: C_Violin, CS: CS_Violin, D: D_Violin, DS: DS_Violin, E: E_Violin, F: F_Violin, FS: FS_Violin, G: G_Violin, GS: GS_Violin)
-let KeyboardPack = SoundPack(name: "Keyboard", type: .Keyboard, A: A_Keyboard, AS: AS_Keyboard, B: B_Keyboard, C: C_Keyboard, CS: CS_Keyboard, D: D_Keyboard, DS: DS_Keyboard, E: E_Keyboard, F: F_Keyboard, FS: FS_Keyboard, G: G_Keyboard, GS: GS_Keyboard)
+let BasicPianoPack = SoundPack(
+    name: "BasicPiano",
+    type: .BasicPiano,
+    A: FPiano_A,
+    AS: FPiano_AS,
+    B: FPiano_B,
+    C: FPiano_C,
+    CS: FPiano_CS,
+    D: FPiano_D,
+    DS: FPiano_DS,
+    E: FPiano_E,
+    F: FPiano_F,
+    FS: FPiano_FS,
+    G: FPiano_G,
+    GS: FPiano_GS
+)
+let GrandPianoPack = SoundPack(
+    name: "GrandPiano",
+    type: .GrandPiano,
+    A: A_GrandPiano,
+    AS: AS_GrandPiano,
+    B: B_GrandPiano,
+    C: C_GrandPiano,
+    CS: CS_GrandPiano,
+    D: D_GrandPiano,
+    DS: DS_GrandPiano,
+    E: E_GrandPiano,
+    F: F_GrandPiano,
+    FS: FS_GrandPiano,
+    G: G_GrandPiano,
+    GS: GS_GrandPiano
+)
+let ViolinPack = SoundPack(
+    name: "Violin",
+    type: .Violin,
+    A: A_Violin,
+    AS: AS_Violin,
+    B: B_Violin,
+    C: C_Violin,
+    CS: CS_Violin,
+    D: D_Violin,
+    DS: DS_Violin,
+    E: E_Violin,
+    F: F_Violin,
+    FS: FS_Violin,
+    G: G_Violin,
+    GS: GS_Violin
+)
+let KeyboardPack = SoundPack(
+    name: "Keyboard",
+    type: .Keyboard,
+    A: A_Keyboard,
+    AS: AS_Keyboard,
+    B: B_Keyboard,
+    C: C_Keyboard,
+    CS: CS_Keyboard,
+    D: D_Keyboard,
+    DS: DS_Keyboard,
+    E: E_Keyboard,
+    F: F_Keyboard,
+    FS: FS_Keyboard,
+    G: G_Keyboard,
+    GS: GS_Keyboard
+)
+let AGuitarMajorPack = SoundPack(
+    name: "MajorAGuitar",
+    type: .AcousticGuitar,
+    A: AMaj_AGuitar,
+    AS: ASMaj_AGuitar,
+    B: BMaj_AGuitar,
+    C: CMaj_AGuitar,
+    CS: CSMaj_AGuitar,
+    D: DMaj_AGuitar,
+    DS: DSMaj_AGuitar,
+    E: EMaj_AGuitar,
+    F: FMaj_AGuitar,
+    FS: FSMaj_AGuitar,
+    G: GMaj_AGuitar,
+    GS: GSMaj_AGuitar
+)
 
 //MARK: - Notes
 
@@ -103,9 +179,14 @@ let GS_Keyboard = Note(note: "GS_Keyboard", noteID: 11, soundFileName: "GS_Keybo
 //MARK: Maj AccGuitar
 
 let AMaj_AGuitar = Note(note: "AMaj_AGuitar", noteID: 0, soundFileName: "AMaj_AccGuitar")
+let ASMaj_AGuitar = Note(note: "ASMaj_AGuitar", noteID: 1, soundFileName: "ASMaj_AccGuitar")
 let BMaj_AGuitar = Note(note: "BMaj_AGuitar", noteID: 2, soundFileName: "BMaj_AccGuitar")
 let CMaj_AGuitar = Note(note: "CMaj_AGuitar", noteID: 3, soundFileName: "CMaj_AccGuitar")
+let CSMaj_AGuitar = Note(note: "CSMaj_AGuitar", noteID: 4, soundFileName: "CSMaj_AccGuitar")
 let DMaj_AGuitar = Note(note: "DMaj_AGuitar", noteID: 5, soundFileName: "DMaj_AccGuitar")
+let DSMaj_AGuitar = Note(note: "DSMaj_AGuitar", noteID: 6, soundFileName: "DSMaj_AccGuitar")
 let EMaj_AGuitar = Note(note: "EMaj_AGuitar", noteID: 7, soundFileName: "EMaj_AccGuitar")
 let FMaj_AGuitar = Note(note: "FMaj_AGuitar", noteID: 8, soundFileName: "FMaj_AccGuitar")
+let FSMaj_AGuitar = Note(note: "FSMaj_AGuitar", noteID: 9, soundFileName: "FSMaj_AccGuitar")
 let GMaj_AGuitar = Note(note: "GMaj_AGuitar", noteID: 10, soundFileName: "GMaj_AccGuitar")
+let GSMaj_AGuitar = Note(note: "GSMaj_AGuitar", noteID: 11, soundFileName: "GSMaj_AccGuitar")
