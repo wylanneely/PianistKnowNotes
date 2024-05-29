@@ -146,7 +146,7 @@ class InstrumentSelectCell: UICollectionViewCell {
         case 0: return UIImage(named: "basicPiano")!
         case 1: return UIImage(named: "grandpiano")!
         case 2: return UIImage(named: "AcousticGuitar")!
-        case 3: return UIImage(named: "grandpiano")!
+        case 3: return UIImage(named: "ElectricKeyboard")!
         case 4: return UIImage(named: "violin")!
         default:
             return UIImage(named: "grandpiano")!
