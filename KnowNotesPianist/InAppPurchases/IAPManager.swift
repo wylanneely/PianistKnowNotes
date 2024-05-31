@@ -11,10 +11,11 @@ import StoreKit
 class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
         
     var productIDS: [String] = [
-        "grandPiano69",
-        "acousticGuitarMajorChords",
-        "electronicKeyboard69",
-        "violin420"
+//        "grandPiano69",
+//        "acousticGuitarMajorChords",
+//        "electronicKeyboard69",
+//        "violin420"
+        "com.wylan.apps.KnowNotes2024.guitar"
     ]
     
     
@@ -29,6 +30,7 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
             productsRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
             productsRequest.delegate = self
             productsRequest.start()
+           
         }
 
         func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
