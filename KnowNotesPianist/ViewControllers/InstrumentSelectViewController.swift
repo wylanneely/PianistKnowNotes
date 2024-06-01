@@ -7,6 +7,7 @@
 
 import UIKit
 import GameKit
+import StoreKit
 
 class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, StartGameDelegate, InstrumentSelectDelegate {
     
@@ -41,6 +42,7 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         authenticateUser()
         setInstrumentLabel()
         setAchievementsButtons()
+        IAPManager.shared.fetchProducts()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -179,6 +181,26 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     
     func openProgressViewFor(instrument: InstrumentType) {
         //add logic to launch progress with InstrumentType
+        
+       //to test but product
+        switch instrument {
+        case .BasicPiano:
+            break
+        case .GrandPiano:
+            let product = IAPManager.shared.availableProducts[3]
+            IAPManager.shared.buyProduct(product)
+        case .AcousticGuitar:
+            let product = IAPManager.shared.availableProducts[2]
+            IAPManager.shared.buyProduct(product)
+        case .Keyboard:
+            let product = IAPManager.shared.availableProducts[1]
+            IAPManager.shared.buyProduct(product)
+        case .Violin:
+            let product = IAPManager.shared.availableProducts[0]
+            IAPManager.shared.buyProduct(product)
+        }
+        
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let destinationController = storyboard.instantiateViewController(withIdentifier: "ProgressPageViewController") as? ProgressPageViewController
              else { return }
@@ -201,6 +223,8 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     @IBOutlet weak var virtuosoCompleteButton: UIButton!
     
     //MARK: - Actions
+    
+    
     @IBAction func hundredTapped(_ sender: Any) {
         hundredClubButton.pulsate()
         if is100ClubUnlocked {
