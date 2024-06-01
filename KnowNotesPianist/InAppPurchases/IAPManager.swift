@@ -15,7 +15,10 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
 //        "acousticGuitarMajorChords",
 //        "electronicKeyboard69",
 //        "violin420"
-        "com.wylan.apps.KnowNotes2024.guitar"
+        "com.wylan.apps.KnowNotes2024.piano",
+        "com.wylan.apps.KnowNotes2024.guitar",
+        "com.wylan.apps.KnowNotes2024.keyboard",
+        "com.wylan.apps.KnowNotes2024.violin"
     ]
     
     

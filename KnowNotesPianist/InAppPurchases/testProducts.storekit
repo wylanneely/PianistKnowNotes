@@ -18,10 +18,57 @@
       "productID" : "com.wylan.apps.KnowNotes2024.guitar",
       "referenceName" : "Test Guitar",
       "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "E6420354",
+      "localizations" : [
+        {
+          "description" : "Test Buy Piano Sounds",
+          "displayName" : "Test Piano",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.wylan.apps.KnowNotes2024.piano",
+      "referenceName" : "Test Piano",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "91DE444E",
+      "localizations" : [
+        {
+          "description" : "Test Buy Violin Sounds",
+          "displayName" : "Test Violin",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.wylan.apps.KnowNotes2024.violin",
+      "referenceName" : "Test Violin",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "F9D97925",
+      "localizations" : [
+        {
+          "description" : "Test Buy Keyboard sounds",
+          "displayName" : "Test Keyboard",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.wylan.apps.KnowNotes2024.keyboard",
+      "referenceName" : "Test Keyboard",
+      "type" : "NonConsumable"
     }
   ],
   "settings" : {
     "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
     "_storeKitErrors" : [
       {
         "current" : null,
