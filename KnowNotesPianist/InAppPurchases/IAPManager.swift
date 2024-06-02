@@ -10,6 +10,12 @@ import StoreKit
 
 class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
+    //Availible
+    public var grandPianoStatus: IAPStatus = .not
+    public var guitarMajorChords: IAPStatus = .not
+    public var keyboard: IAPStatus = .not
+    public var violin: IAPStatus = .not
+    
     var productIDS: [String] = [
         //        "grandPiano69",
         //        "acousticGuitarMajorChords",
@@ -20,6 +26,7 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
         "com.wylan.apps.KnowNotes2024.keyboard",
         "com.wylan.apps.KnowNotes2024.violin"
     ]
+    
     
     func getSpecificProductID(instrument: InstrumentType)-> String {
         switch instrument {
@@ -38,6 +45,18 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
             // "com.wylan.apps.KnowNotes2024.violin"
             return  "com.wylan.apps.KnowNotes2024.violin"
         }
+    }
+    
+    func getInstrumentType(from productID: String) -> InstrumentType? {
+        switch productID {
+        case "com.wylan.apps.KnowNotes2024.piano": return InstrumentType.GrandPiano
+        case "com.wylan.apps.KnowNotes2024.guitar": return InstrumentType.AcousticGuitar
+        case "com.wylan.apps.KnowNotes2024.keyboard": return InstrumentType.Keyboard
+        case "com.wylan.apps.KnowNotes2024.violin" : return InstrumentType.Violin
+        default :
+            return nil
+        }
+        
     }
     
     
@@ -76,12 +95,24 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
         }
     }
     
+    func storePurchases(transaction:SKPaymentTransaction){
+        
+        let  productID = transaction.payment.productIdentifier
+            print(productID)
+        //add switch on product identifier
+        
+            
+        
+    
+    }
+    
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             switch transaction.transactionState {
             case .purchased:
                 // Unlock content
                 print("Purchase successful: \(transaction.payment.productIdentifier)")
+                storePurchases(transaction: transaction)
                 SKPaymentQueue.default().finishTransaction(transaction)
             case .failed:
                 if let error = transaction.error as NSError? {
@@ -162,4 +193,8 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
 //    }
 //    
    
+enum IAPStatus {
+    case purchased
+    case not
+}
 
