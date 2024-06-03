@@ -1,0 +1,6 @@
+framework module Pods_KnowNotesPianist {
+  umbrella header "Pods-KnowNotesPianist-umbrella.h"
+
+  export *
+  module * { export * }
+}
