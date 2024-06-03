@@ -19,10 +19,10 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
     var availableProducts = [SKProduct]()
     
     
-    public var grandPianoStatus: IAPStatus = .not
-    public var guitarMajorChords: IAPStatus = .not
-    public var keyboard: IAPStatus = .not
-    public var violin: IAPStatus = .not
+    public var isGrandPianoNotesPurchased: Bool = false
+    public var isGuitarMajorChordsPurchased: Bool = false
+    public var isKeyboardNotesPurchased: Bool = false
+    public var isViolinNotesPurchased: Bool = false
     
     
     //MARK: - In App Purchases
@@ -130,6 +130,27 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
     private let keyboardNotesKS: String = "KNKS"
     private let violinNotesKS: String = "VNKS"
     
+    func setPuchaseStates(){
+        
+    }
+    
+    func checkIfPurchased(instrumentPack: InstrumentType)->Bool{
+        
+        switch instrumentPack {
+        case .BasicPiano:
+            return true
+        case .GrandPiano:
+            return isGrandPianoNotesPurchased
+        case .AcousticGuitar:
+            return isGuitarMajorChordsPurchased
+        case .Keyboard:
+            return isKeyboardNotesPurchased
+        case .Violin:
+            return isViolinNotesPurchased
+        }
+        
+    }
+    
     func storePurchases(transaction:SKPaymentTransaction){
         
         let keychain = Keychain(service: serviceString)
@@ -137,7 +158,6 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
         if let  productInstrumentType = getInstrumentType(
             from: transaction.payment.productIdentifier
         ) {
-            
             switch productInstrumentType {
             case .BasicPiano:
                 break
@@ -186,14 +206,11 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
                     )
                         }
             }
-            
         }
-            
-        
-            
-        
-    
     }
+    
+    
+    
     
     
 }
