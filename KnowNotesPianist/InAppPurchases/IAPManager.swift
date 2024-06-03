@@ -7,15 +7,25 @@
 
 import Foundation
 import StoreKit
+import KeychainAccess
 
 class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
-    //Availible
+    
+    static let shared = IAPManager()
+    private override init() {}
+    
+    var productsRequest: SKProductsRequest!
+    var availableProducts = [SKProduct]()
+    
+    
     public var grandPianoStatus: IAPStatus = .not
     public var guitarMajorChords: IAPStatus = .not
     public var keyboard: IAPStatus = .not
     public var violin: IAPStatus = .not
     
+    
+    //MARK: - In App Purchases
     var productIDS: [String] = [
         //        "grandPiano69",
         //        "acousticGuitarMajorChords",
@@ -26,6 +36,7 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
         "com.wylan.apps.KnowNotes2024.keyboard",
         "com.wylan.apps.KnowNotes2024.violin"
     ]
+    
     
     
     func getSpecificProductID(instrument: InstrumentType)-> String {
@@ -59,13 +70,6 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
         
     }
     
-    
-    static let shared = IAPManager()
-    private override init() {}
-    
-    var productsRequest: SKProductsRequest!
-    var availableProducts = [SKProduct]()
-    
     func fetchProducts() {
         let productIdentifiers = Set(productIDS)
         productsRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
@@ -95,17 +99,6 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
         }
     }
     
-    func storePurchases(transaction:SKPaymentTransaction){
-        
-        let  productID = transaction.payment.productIdentifier
-            print(productID)
-        //add switch on product identifier
-        
-            
-        
-    
-    }
-    
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             switch transaction.transactionState {
@@ -128,70 +121,83 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
             }
         }
     }
-}
-//
-//    public func processReceipt() -> Bool {
-//            print("receiptValidationStarted")
-//            
-//            receipt = IAPReceipt()
-//
-//            guard receipt.isReachable,
-//                  receipt.load(),
-//                  receipt.validateSigning(),
-//                  receipt.read(),
-//                  receipt.validate() else {
-//
-//                print("receiptProcessingFailure")
-//                return false
-//            }
-//
-//            createValidatedPurchasedProductIds(receipt: receipt)
-//            print("receiptProcessingSuccess")
-//            return true
-//        }
-//
-//        func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-//            // Handle completed restore transactions
-//            print("Restore transactions finished")
-//        }
-//
-//        func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
-//            print("Restore failed: \(error.localizedDescription)")
-//        }
-//    
-//    
-//    
-      
     
-//    // Keep a strong reference to the product request.
-//    var request: SKProductsRequest!
-//
-//    func validate(productIdentifiers: [String]) {
-//         let productIdentifiers = Set(productIdentifiers)
-//
-//        
-//         request = SKProductsRequest(productIdentifiers: productIdentifiers)
-//         request.delegate = self
-//         request.start()
-//    }
-//
-//
-//    var products = [SKProduct]()
-//    // Create the SKProductsRequestDelegate protocol method
-//    // to receive the array of products.
-//    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-//        if !response.products.isEmpty {
-//           products = response.products
-//           // Implement your custom method here.
-//         //  displayStore(products)
-//        }
-//
-//
-//        for invalidIdentifier in response.invalidProductIdentifiers {
-//           // Handle any invalid product identifiers as appropriate.
-//        }
-//    }
-//    
+    //MARK: - KeychainAccess
+    
+    private let serviceString: String = "com.wylan.apps.KnowNotes2024"
+    private let grandPianoNotesKS: String = "GPNKS"
+    private let acousticGuitarMajorChordsKS: String = "AGMCKS"
+    private let keyboardNotesKS: String = "KNKS"
+    private let violinNotesKS: String = "VNKS"
+    
+    func storePurchases(transaction:SKPaymentTransaction){
+        
+        let keychain = Keychain(service: serviceString)
+        
+        if let  productInstrumentType = getInstrumentType(
+            from: transaction.payment.productIdentifier
+        ) {
+            
+            switch productInstrumentType {
+            case .BasicPiano:
+                break
+            case .GrandPiano:
+                do {
+                    try keychain.set("purchased", key: grandPianoNotesKS)
+                    print(
+                        "GrandPianoNotes purchase stored successfully"
+                    )
+                } catch let error {
+                    print(
+                        "Error storing GrandPianoNotes purchased"
+                    )
+                        }
+            case .AcousticGuitar:
+                do {
+                    try keychain.set("purchased", key: acousticGuitarMajorChordsKS)
+                    print(
+                        "AcousticGuitarMajorChords purchase stored successfully"
+                    )
+                } catch let error {
+                    print(
+                        "Error storing AcousticGuitarMajorChords purchased"
+                    )
+                        }
+            case .Keyboard:
+                do {
+                    try keychain.set("purchased", key: keyboardNotesKS)
+                    print(
+                        "KeyboardNotes purchase stored successfully"
+                    )
+                } catch let error {
+                    print(
+                        "Error storing KeyboardNotes purchased"
+                    )
+                        }
+            case .Violin:
+                do {
+                    try keychain.set("purchased", key: violinNotesKS)
+                    print(
+                        "ViolinNotes purchase stored successfully"
+                    )
+                } catch let error {
+                    print(
+                        "Error storing ViolinNotes purchased"
+                    )
+                        }
+            }
+            
+        }
+            
+        
+            
+        
+    
+    }
+    
+    
+}
+
    
 enum IAPStatus {
     case purchased
