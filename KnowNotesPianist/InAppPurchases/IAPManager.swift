@@ -74,6 +74,18 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
         
     }
     
+    func getProductFrom(instrument:InstrumentType)->SKProduct{
+        let id = getSpecificProductID(instrument: instrument)
+        
+        for p in availableProducts {
+            if p.productIdentifier == id {
+                return p
+            }
+        }
+         
+        return SKProduct()
+    }
+    
     func fetchProducts() {
         let productIdentifiers = Set(productIDS)
         productsRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
