@@ -13,7 +13,11 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
     
     
     static let shared = IAPManager()
-    private override init() {}
+    private override init() {
+        super.init()
+        inistializeKeychainValues()
+        getPuchaseStates()
+    }
     
     var productsRequest: SKProductsRequest!
     var availableProducts = [SKProduct]()
@@ -130,7 +134,137 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
     private let keyboardNotesKS: String = "KNKS"
     private let violinNotesKS: String = "VNKS"
     
-    func setPuchaseStates(){
+    func inistializeKeychainValues(){
+        let keychain = Keychain(service: serviceString)
+
+        // Check if the key exists
+               do {
+                   if let gPValue = try keychain.get(grandPianoNotesKS) {
+                       print("Key exists with value: \(gPValue)")
+                   } else {
+                       print("Key does not exist, setting a new value")
+                       try keychain.set("nil", key: grandPianoNotesKS)
+                       print("New value set successfully")
+                   }
+               } catch let error {
+                   print("Error: \(error)")
+               }
+        do {
+            if let aGValue = try keychain.get(acousticGuitarMajorChordsKS) {
+                print("Key exists with value: \(aGValue)")
+            } else {
+                print("Key does not exist, setting a new value")
+                try keychain.set("nil", key: acousticGuitarMajorChordsKS)
+                print("New value set successfully")
+            }
+        } catch let error {
+            print("Error: \(error)")
+        }
+        
+        do {
+            if let keyboardNValue = try keychain.get(keyboardNotesKS) {
+                print("Key exists with value: \(keyboardNValue)")
+            } else {
+                print("Key does not exist, setting a new value")
+                try keychain.set("nil", key: keyboardNotesKS)
+                print("New value set successfully")
+            }
+        } catch let error {
+            print("Error: \(error)")
+        }
+        
+        do {
+            if let vNValue = try keychain.get(violinNotesKS) {
+                print("Key exists with value: \(vNValue)")
+            } else {
+                print("Key does not exist, setting a new value")
+                try keychain.set("nil", key: violinNotesKS)
+                print("New value set successfully")
+            }
+        } catch let error {
+            print("Error: \(error)")
+        }
+    }
+    
+    func getPuchaseStates(){
+        let keychain = Keychain(service: serviceString)
+
+        do {
+            if let gPValue = try keychain.get(
+                grandPianoNotesKS
+            ) {
+                if gPValue == "purchased" {
+                    isGrandPianoNotesPurchased = true
+                } else {
+                    isGrandPianoNotesPurchased = false
+                }
+            } else {
+                print(
+                    "No value found"
+                )
+            }
+        } catch let error {
+            print(
+                "Error retrieving value: \(error)"
+            )
+               }
+        do {
+            if let aGValue = try keychain.get(
+                acousticGuitarMajorChordsKS
+            ) {
+                if aGValue == "purchased" {
+                    isGuitarMajorChordsPurchased = true
+                } else {
+                    isGuitarMajorChordsPurchased = false
+                }
+            } else {
+                print(
+                    "No value found"
+                )
+            }
+        } catch let error {
+            print(
+                "Error retrieving value: \(error)"
+            )
+               }
+        do {
+            if let kNValue = try keychain.get(
+                keyboardNotesKS
+            ) {
+                if kNValue == "purchased" {
+                    isKeyboardNotesPurchased = true
+                } else {
+                    isKeyboardNotesPurchased = false
+                }
+            } else {
+                print(
+                    "No value found"
+                )
+            }
+        } catch let error {
+            print(
+                "Error retrieving value: \(error)"
+            )
+               }
+        do {
+            if let vNValue = try keychain.get(
+                violinNotesKS
+            ) {
+                if vNValue == "purchased" {
+                    isViolinNotesPurchased = true
+                } else {
+                    isViolinNotesPurchased = false
+                }
+            } else {
+                print(
+                    "No value found"
+                )
+            }
+        } catch let error {
+            print(
+                "Error retrieving value: \(error)"
+            )
+               }
         
     }
     
@@ -207,6 +341,7 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
                         }
             }
         }
+        getPuchaseStates()
     }
     
     
