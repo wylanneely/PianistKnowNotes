@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InApPurchasePopUp" customModule="KnowNotesPianist" customModuleProvider="target">
             <connections>
+                <outlet property="productImage" destination="uPD-Qa-yzm" id="5tx-hQ-o8P"/>
+                <outlet property="productLabel" destination="PI9-ln-Wou" id="Wxb-1q-mrQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,32 +32,47 @@
                             <color key="tintColor" name="PopUpTextColor"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
+                            <connections>
+                                <action selector="dismissButtonTapped:" destination="-1" eventType="touchUpInside" id="icO-fJ-opq"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9D-Vv-ZOd">
-                            <rect key="frame" x="125" y="212" width="60" height="38"/>
+                            <rect key="frame" x="126.66666666666667" y="214" width="56.333333333333329" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="o3J-qy-pfa"/>
+                            </constraints>
                             <color key="tintColor" name="PopUpTextColor"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Buy">
-                                <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="buyButtonTapped:" destination="-1" eventType="touchUpInside" id="Udg-0X-fZ7"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6t-gd-Eum">
-                            <rect key="frame" x="117.33333333333334" y="258" width="75" height="31"/>
+                            <rect key="frame" x="120.66666666666669" y="262" width="68.666666666666686" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="t7k-wd-97q"/>
+                            </constraints>
                             <color key="tintColor" name="PopUpTextColor"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Restore">
-                                <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="14"/>
+                                <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="12"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="retoreButtonTapped:" destination="-1" eventType="touchUpInside" id="d0c-6b-5Op"/>
+                            </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="grandpiano" translatesAutoresizingMaskIntoConstraints="NO" id="uPD-Qa-yzm">
-                            <rect key="frame" x="57" y="56" width="194" height="148"/>
+                            <rect key="frame" x="57" y="57.6666666666667" width="194" height="148.33333333333337"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrument" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PI9-ln-Wou">
-                            <rect key="frame" x="65" y="28" width="180" height="20"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guitar Major Chords" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PI9-ln-Wou">
+                            <rect key="frame" x="65" y="28" width="180" height="21.666666666666671"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="180" id="q2s-Sz-oxu"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -70,7 +87,7 @@
                         <constraint firstItem="PI9-ln-Wou" firstAttribute="top" secondItem="Yo3-CF-HY8" secondAttribute="top" constant="28" id="c0g-q2-Tjm"/>
                         <constraint firstItem="uPD-Qa-yzm" firstAttribute="leading" secondItem="Yo3-CF-HY8" secondAttribute="leading" constant="57" id="cKk-tl-rJw"/>
                         <constraint firstItem="V6t-gd-Eum" firstAttribute="top" secondItem="o9D-Vv-ZOd" secondAttribute="bottom" constant="8" symbolic="YES" id="hsk-mp-kxH"/>
-                        <constraint firstAttribute="bottom" secondItem="V6t-gd-Eum" secondAttribute="bottom" constant="21" id="i15-Lr-a2C"/>
+                        <constraint firstAttribute="bottom" secondItem="V6t-gd-Eum" secondAttribute="bottom" constant="8" id="i15-Lr-a2C"/>
                         <constraint firstItem="o9D-Vv-ZOd" firstAttribute="centerX" secondItem="V6t-gd-Eum" secondAttribute="centerX" id="n7v-S5-WGu"/>
                         <constraint firstItem="PI9-ln-Wou" firstAttribute="centerX" secondItem="Yo3-CF-HY8" secondAttribute="centerX" id="oMn-vl-EYU"/>
                         <constraint firstAttribute="trailing" secondItem="uPD-Qa-yzm" secondAttribute="trailing" constant="59" id="xl2-Gy-RNX"/>
