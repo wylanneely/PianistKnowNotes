@@ -182,36 +182,49 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     func openProgressViewFor(instrument: InstrumentType) {
         //add logic to launch progress with InstrumentType
         
-       //to test but product
-        switch instrument {
-        case .BasicPiano:
-            break
-        case .GrandPiano:
-            let product = IAPManager.shared.availableProducts[3]
-            IAPManager.shared.buyProduct(product)
-        case .AcousticGuitar:
-            let product = IAPManager.shared.availableProducts[2]
-            IAPManager.shared.buyProduct(product)
-        case .Keyboard:
-            let product = IAPManager.shared.availableProducts[1]
-            IAPManager.shared.buyProduct(product)
-        case .Violin:
-            let product = IAPManager.shared.availableProducts[0]
-            IAPManager.shared.buyProduct(product)
+        
+        if IAPManager.shared.checkIfPurchased(instrumentPack: instrument) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let destinationController = storyboard.instantiateViewController(withIdentifier: "ProgressPageViewController") as? ProgressPageViewController
+                 else { return }
+              
+            if let presentationController = destinationController.presentationController as? UISheetPresentationController {
+                     presentationController.detents = [.large()]
+                 }
+            destinationController.startDelegate = self
+            destinationController.instrumentType = instrument
+            gameKitController.hideGKAcessPoint()
+            self.present(destinationController, animated: true)
+        } else {
+            let IAPPopUp = InApPurchasePopUp()
+            IAPPopUp.appear(sender: self,instrument: instrument)
         }
         
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let destinationController = storyboard.instantiateViewController(withIdentifier: "ProgressPageViewController") as? ProgressPageViewController
-             else { return }
-          
-        if let presentationController = destinationController.presentationController as? UISheetPresentationController {
-                 presentationController.detents = [.large()]
-             }
-        destinationController.startDelegate = self
-        destinationController.instrumentType = instrument
-        gameKitController.hideGKAcessPoint()
-        self.present(destinationController, animated: true)
+        
+//       //to test but product
+//        switch instrument {
+//        case .BasicPiano:
+//            break
+//        case .GrandPiano:
+//            let product = IAPManager.shared.availableProducts[3]
+//            IAPManager.shared.buyProduct(product)
+//        case .AcousticGuitar:
+//            let product = IAPManager.shared.availableProducts[2]
+//            IAPManager.shared.buyProduct(product)
+//        case .Keyboard:
+//            let product = IAPManager.shared.availableProducts[1]
+//            IAPManager.shared.buyProduct(product)
+//        case .Violin:
+//            let product = IAPManager.shared.availableProducts[0]
+//            IAPManager.shared.buyProduct(product)
+//        }
+//        
+        
+     
+        
+        
+        
     }
     
     //MARK: - Outlets
