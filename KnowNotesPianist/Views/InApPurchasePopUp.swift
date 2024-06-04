@@ -79,16 +79,16 @@ class InApPurchasePopUp: UIViewController {
                case .BasicPiano:
                    break
                case .GrandPiano:
-                   let product = IAPManager.shared.availableProducts[3]
+            let product = IAPManager.shared.getProductFrom(instrument: instrument)
                    IAPManager.shared.buyProduct(product)
                case .AcousticGuitar:
-                   let product = IAPManager.shared.availableProducts[2]
+            let product = IAPManager.shared.getProductFrom(instrument: instrument)
                    IAPManager.shared.buyProduct(product)
                case .Keyboard:
-                   let product = IAPManager.shared.availableProducts[1]
+            let product = IAPManager.shared.getProductFrom(instrument: instrument)
                    IAPManager.shared.buyProduct(product)
                case .Violin:
-                   let product = IAPManager.shared.availableProducts[0]
+            let product = IAPManager.shared.getProductFrom(instrument: instrument)
                    IAPManager.shared.buyProduct(product)
                }
 
