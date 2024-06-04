@@ -91,13 +91,15 @@ class InApPurchasePopUp: UIViewController {
             let product = IAPManager.shared.getProductFrom(instrument: instrument)
                    IAPManager.shared.buyProduct(product)
                }
+        self.hide()
 
     }
     
     
     @IBAction func retoreButtonTapped(_ sender: Any) {
         mediumHaptic.impactOccurred()
-
+        IAPManager.shared.restoreProducts()
+        self.hide()
     }
     
     
