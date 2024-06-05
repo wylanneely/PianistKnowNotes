@@ -115,6 +115,11 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
         }
     }
     
+    func restoreProducts(){
+        SKPaymentQueue.default().add(self)
+        SKPaymentQueue.default().restoreCompletedTransactions()
+    }
+    
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             switch transaction.transactionState {
@@ -131,6 +136,7 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
             case .restored:
                 // Restore content
                 print("Purchase restored: \(transaction.payment.productIdentifier)")
+                storePurchases(transaction: transaction)
                 SKPaymentQueue.default().finishTransaction(transaction)
             default:
                 break
@@ -298,7 +304,7 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
     }
     
     func storePurchases(transaction:SKPaymentTransaction){
-        
+        let localAchievementsController = AchievementesController()
         let keychain = Keychain(service: serviceString)
         
         if let  productInstrumentType = getInstrumentType(
@@ -308,45 +314,49 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
             case .BasicPiano:
                 break
             case .GrandPiano:
+                localAchievementsController.unlockGrandPianoNovice()
                 do {
                     try keychain.set("purchased", key: grandPianoNotesKS)
                     print(
                         "GrandPianoNotes purchase stored successfully"
                     )
-                } catch let error {
+                } catch _ {
                     print(
                         "Error storing GrandPianoNotes purchased"
                     )
                         }
             case .AcousticGuitar:
+                localAchievementsController.unlockAcousticNovice()
                 do {
                     try keychain.set("purchased", key: acousticGuitarMajorChordsKS)
                     print(
                         "AcousticGuitarMajorChords purchase stored successfully"
                     )
-                } catch let error {
+                } catch _ {
                     print(
                         "Error storing AcousticGuitarMajorChords purchased"
                     )
                         }
             case .Keyboard:
+                localAchievementsController.unlockKeyboardNovice()
                 do {
                     try keychain.set("purchased", key: keyboardNotesKS)
                     print(
                         "KeyboardNotes purchase stored successfully"
                     )
-                } catch let error {
+                } catch _ {
                     print(
                         "Error storing KeyboardNotes purchased"
                     )
                         }
             case .Violin:
+                localAchievementsController.unlockViolinNovice()
                 do {
                     try keychain.set("purchased", key: violinNotesKS)
                     print(
                         "ViolinNotes purchase stored successfully"
                     )
-                } catch let error {
+                } catch _ {
                     print(
                         "Error storing ViolinNotes purchased"
                     )
