@@ -165,7 +165,7 @@ struct AchievementesController {
     //Testing Change back
     func isGrandPianoNoviceUnlocked()->Bool {
         if defaults.bool(forKey: kGrandPianoNovice) == true
-        { return true } else { return true }
+        { return true } else { return false }
     }
     func isGrandPianoRegularUnlocked()->Bool {
         if defaults.bool(forKey: kGrandPianoRegular) == true
@@ -225,10 +225,7 @@ struct AchievementesController {
     }
     func isKeyboardVirtuosoUnlocked()->Bool {
         if defaults.bool(forKey: kKeyboardVirtuoso) == true {
-            return true
-        } else {
-            return false
-        }
+            return true } else { return false }
     }
     //Violin
     func getViolinHighScore()->Int{
@@ -242,14 +239,17 @@ struct AchievementesController {
         if defaults.bool(forKey: kViolinNovice) == true
             { return true } else { return false }
     }
+    
     func isViolinRegularUnlocked()->Bool {
         if defaults.bool(forKey: kViolinRegular) == true
             { return true } else { return false }
     }
+    
     func isViolinPianistUnlocked()->Bool {
         if defaults.bool(forKey: kViolinPianist) == true
             { return true } else { return false }
     }
+    
     func isViolinVirtuosoUnlocked()->Bool {
         if defaults.bool(forKey: kViolinVirtuoso) == true
         { return true } else { return false }
