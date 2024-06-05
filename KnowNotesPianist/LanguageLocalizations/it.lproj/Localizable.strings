@@ -35,4 +35,8 @@
 "AchievementMessage2" = "Segna 200 punti per sbloccare l'obiettivo.";
 "AchievementMessage3" = "Segna 300 punti per sbloccare l'obiettivo.";
 "AchievementMessageV" = "Segna 100 punti con 5 strumenti per sbloccare l'obiettivo.";
+
 "OK" = "OK";
+//In App Purchases
+"Buy" = "Acquistare";
+"Restore" = "Ripristina";

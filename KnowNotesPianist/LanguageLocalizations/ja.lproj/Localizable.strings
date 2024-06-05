@@ -37,3 +37,6 @@
 "AchievementMessageV" = "成就を解除するには、5つの楽器で100ポイントを獲得してください。";
 
 "OK" = "わかりました";
+//In App Purchases
+"Buy" = "購入";
+"Restore" = "復元";

@@ -37,3 +37,6 @@
 "AchievementMessageV" = "성취를 잠금 해제하려면 5개의 악기로 100점을 획득하세요.";
 
 "OK" = "오케이";
+//In App Purchases
+"Buy" = "구매";
+"Restore" = "복원";

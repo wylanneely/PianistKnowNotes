@@ -35,4 +35,8 @@
 "AchievementMessage2" = "Erziele 100 Punkte, um die Leistung freizuschalten.";
 "AchievementMessage3" = "Erziele 100 Punkte, um die Leistung freizuschalten.";
 "AchievementMessageV" = "Erziele 100 Punkte mit 5 Instrumenten, um die Leistung freizuschalten.";
+
 "OK" = "OK";
+//In App Purchases
+"Buy" = "Kaufen";
+"Restore" = "Wiederherstellen";

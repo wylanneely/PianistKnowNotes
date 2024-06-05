@@ -37,3 +37,6 @@
 "AchievementMessageV" = "Score 100 points with 5 instruments to unlock achievement.";
 
 "OK" = "OK";
+//In App Purchases
+"Buy" = "Buy";
+"Restore" = "Restore";

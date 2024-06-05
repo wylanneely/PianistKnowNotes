@@ -37,3 +37,6 @@
 "AchievementMessageV" = "使用五种乐器得分一百分，达成成功";
 
 "OK" = "好的";
+//In App Purchases
+"Buy" = "购买";
+"Restore" = "恢复";

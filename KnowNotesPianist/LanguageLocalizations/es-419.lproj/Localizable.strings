@@ -37,3 +37,6 @@
 "AchievementMessageV" = "Marca 100 puntos con 5 instrumentos para obtener el logro.";
 
 "OK" = "OK";
+//In App Purchases
+"Buy" = "Comprar";
+"Restore" = "Restaurar";

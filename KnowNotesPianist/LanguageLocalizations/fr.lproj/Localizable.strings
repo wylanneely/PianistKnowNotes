@@ -37,3 +37,6 @@
 "AchievementMessageV" = "Marquez 100 points avec 5 instruments pour débloquer la réussite.";
 
 "OK" = "OK";
+//In App Purchases
+"Buy" = "Acheter";
+"Restore" = "Restaurer";
