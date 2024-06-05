@@ -47,6 +47,7 @@ class InApPurchasePopUp: UIViewController {
     
     func setImagesLabels(instrumet:InstrumentType){
         self.instrument = instrumet
+        productLabel.font = UIFont(name: "Poppins-Bold", size: 23)
         switch instrumet {
         case .BasicPiano:
             return
@@ -66,10 +67,17 @@ class InApPurchasePopUp: UIViewController {
     }
     
     func setUpLanguageLocalizations(){
-        
-        buyButton.setTitle(buyString, for: .normal)
-        restoreButton.setTitle(restoreString, for: .normal)
-        
+        var buyAttributes = AttributeContainer()
+        buyAttributes.font = UIFont(name: "Helvetica Bold", size: 21)
+        let buyTitle = AttributedString(buyString, attributes: buyAttributes)
+        buyButton.configuration?.attributedTitle = buyTitle
+        var restoreAttributes = AttributeContainer()
+        restoreAttributes.font = UIFont(name: "Helvetica Bold", size: 18)
+        let restoreTitle = AttributedString(restoreString, attributes: restoreAttributes)
+        restoreButton.configuration?.attributedTitle = restoreTitle
+    //    restoreButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+      //  restoreButton.setTitle(restoreString, for: .normal)
+
     }
     
     //MARK: - Outlets
