@@ -205,6 +205,7 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
     }
     
     func getPuchaseStates(){
+        let localAController = AchievementesController()
         let keychain = Keychain(service: serviceString)
 
         do {
@@ -213,6 +214,7 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
             ) {
                 if gPValue == "purchased" {
                     isGrandPianoNotesPurchased = true
+                    localAController.unlockGrandPianoNovice()
                 } else {
                     isGrandPianoNotesPurchased = false
                 }
@@ -232,6 +234,7 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
             ) {
                 if aGValue == "purchased" {
                     isGuitarMajorChordsPurchased = true
+                    localAController.unlockAcousticNovice()
                 } else {
                     isGuitarMajorChordsPurchased = false
                 }
@@ -251,6 +254,7 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
             ) {
                 if kNValue == "purchased" {
                     isKeyboardNotesPurchased = true
+                    localAController.unlockKeyboardNovice()
                 } else {
                     isKeyboardNotesPurchased = false
                 }
@@ -270,6 +274,7 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
             ) {
                 if vNValue == "purchased" {
                     isViolinNotesPurchased = true
+                    localAController.unlockViolinNovice()
                 } else {
                     isViolinNotesPurchased = false
                 }
