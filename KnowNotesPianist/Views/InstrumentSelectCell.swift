@@ -33,8 +33,8 @@ class InstrumentSelectCell: UICollectionViewCell {
     
     private var language: String = NSLocalizedString("AppLanguage", comment: "to help adjust certain views/settings")
     
-   private let highscoreString =  NSLocalizedString("High Score",comment: "high score label")
-   private let lockedString = NSLocalizedString("Locked", comment: "locked label")
+    private let highscoreString =  NSLocalizedString("High Score",comment: "high score label")
+    private let lockedString = NSLocalizedString("Locked", comment: "locked label")
     private let basicPianoString =  NSLocalizedString("Basic Piano",comment: "")
     private let grandPianoString =  NSLocalizedString("Grand Piano",comment: "")
     private let acousticString =  NSLocalizedString("Acoustic Guitar",comment: "")
@@ -83,7 +83,7 @@ class InstrumentSelectCell: UICollectionViewCell {
             instrumentLabel.textColor = UIColor.instrumentLabel
             self.layer.borderColor = UIColor.unlockedBorder.cgColor
         case .GrandPiano:
-            if AchievementesController().isGrandPianoNoviceUnlocked() {
+            if IAPManager.shared.isGrandPianoNotesPurchased == true {
                 let hs = AchievementesController().getGrandPianoHighScore()
                 setHSLabelText(score: hs)
                 highScoreLabel.textColor =  UIColor.instrumentLabel
@@ -97,7 +97,7 @@ class InstrumentSelectCell: UICollectionViewCell {
                 self.layer.borderColor = UIColor.lockedBorder.cgColor
             }
         case .AcousticGuitar:
-            if AchievementesController().isAcousticNoviceUnlocked() {
+            if IAPManager.shared.isGuitarMajorChordsPurchased == true {
                 let hs = AchievementesController().getAcousticHighScore()
                 setHSLabelText(score: hs)
                 highScoreLabel.textColor =  UIColor.instrumentLabel
@@ -111,7 +111,7 @@ class InstrumentSelectCell: UICollectionViewCell {
                 self.layer.borderColor = UIColor.lockedBorder.cgColor
             }
         case .Keyboard:
-            if AchievementesController().isKeyboardNoviceUnlocked() {
+            if IAPManager.shared.isKeyboardNotesPurchased == true {
                 let hs = AchievementesController().getKeyboardHighScore()
                 setHSLabelText(score: hs)
                 highScoreLabel.textColor =  UIColor.instrumentLabel
@@ -124,7 +124,7 @@ class InstrumentSelectCell: UICollectionViewCell {
                 self.layer.borderColor = UIColor.lockedBorder.cgColor
             }
         case .Violin:
-            if AchievementesController().isViolinNoviceUnlocked() {
+            if IAPManager.shared.isViolinNotesPurchased == true {
                 let hs = AchievementesController().getViolinHighScore()
                 setHSLabelText(score: hs)
                 highScoreLabel.textColor =  UIColor.instrumentLabel
