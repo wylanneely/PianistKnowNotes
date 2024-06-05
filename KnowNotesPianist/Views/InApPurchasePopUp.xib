@@ -10,8 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InApPurchasePopUp" customModule="KnowNotesPianist" customModuleProvider="target">
             <connections>
+                <outlet property="buyButton" destination="o9D-Vv-ZOd" id="sfl-Re-oKY"/>
                 <outlet property="productImage" destination="uPD-Qa-yzm" id="5tx-hQ-o8P"/>
                 <outlet property="productLabel" destination="PI9-ln-Wou" id="Wxb-1q-mrQ"/>
+                <outlet property="restoreButton" destination="V6t-gd-Eum" id="jOJ-mV-YHq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

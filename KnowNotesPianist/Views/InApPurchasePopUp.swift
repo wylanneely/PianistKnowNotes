@@ -13,6 +13,7 @@ class InApPurchasePopUp: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpLanguageLocalizations()
         beginingStateConfig()
     }
     
@@ -64,11 +65,20 @@ class InApPurchasePopUp: UIViewController {
         }
     }
     
+    func setUpLanguageLocalizations(){
+        
+        buyButton.setTitle(buyString, for: .normal)
+        restoreButton.setTitle(restoreString, for: .normal)
+        
+    }
+    
     //MARK: - Outlets
     
     
     @IBOutlet weak var productLabel: UILabel!
     @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var buyButton: UIButton!
+    @IBOutlet weak var restoreButton: UIButton!
     
     
     //MARK: - Actions
