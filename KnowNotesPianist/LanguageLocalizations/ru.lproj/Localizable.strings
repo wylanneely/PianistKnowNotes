@@ -9,7 +9,7 @@
 //InstrumentTypeName
 "Basic Piano" = "Пианино";
 "Grand Piano" = "Рояль";
-"Acoustic Guitar" = "Гитара";
+"Acoustic Guitar" = "Мажорные аккорды на гитаре";
 "Keyboard" = "Электропианино";
 "Violin" = "Скрипка";
 "Instruments" = "Инструменты";

@@ -9,7 +9,7 @@
 //InstrumentTypeName
 "Basic Piano" = "피아노";
 "Grand Piano" = "그랜드 피아노";
-"Acoustic Guitar" = "어쿠스틱 기타";
+"Acoustic Guitar" = "기타 메이저 코드";
 "Keyboard" = "키보드";
 "Violin" = "바이올린";
 "Instruments" = "악기";

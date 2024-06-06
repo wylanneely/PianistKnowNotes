@@ -9,7 +9,7 @@
 //InstrumentTypeName
 "Basic Piano" = "Klavier";
 "Grand Piano" = "Flügel";
-"Acoustic Guitar" = "Akustikgitarre";
+"Acoustic Guitar" = "Gitarre Dur-Akkorde";
 "Keyboard" = "Keyboard";
 "Violin" = "Violine";
 "Instruments" = "Instrumente";

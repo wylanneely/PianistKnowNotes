@@ -9,7 +9,7 @@
 //InstrumentTypeName
 "Basic Piano" = "钢琴";
 "Grand Piano" = "三角钢琴";
-"Acoustic Guitar" = "原声吉他";
+"Acoustic Guitar" = "吉他大调和弦";
 "Keyboard" = "电子钢琴";
 "Violin" = "小提琴";
 "Instruments" = "乐器";
