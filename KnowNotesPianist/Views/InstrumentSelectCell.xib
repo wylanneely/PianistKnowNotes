@@ -24,7 +24,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="grandpiano" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ccp-6j-y4O">
-                        <rect key="frame" x="10" y="76.333333333333329" width="269" height="137.66666666666669"/>
+                        <rect key="frame" x="10" y="64" width="269" height="185"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZ1-Lo-7qe">
                         <rect key="frame" x="0.0" y="0.0" width="289" height="289"/>
@@ -34,8 +34,8 @@
                             <action selector="cellButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="dBK-m9-1YE"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free Piano" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkF-D6-ycV">
-                        <rect key="frame" x="55.666666666666671" y="30.000000000000004" width="177.66666666666663" height="46.333333333333343"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free Piano" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkF-D6-ycV">
+                        <rect key="frame" x="0.0" y="28.000000000000004" width="289" height="46.333333333333343"/>
                         <fontDescription key="fontDescription" name="Poppins-ExtraBold" family="Poppins" pointSize="33"/>
                         <color key="textColor" name="InstrumentLabelColor"/>
                         <color key="highlightedColor" systemColor="labelColor"/>
@@ -56,14 +56,16 @@
             <color key="backgroundColor" name="SeparatorColor"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="OZ1-Lo-7qe" secondAttribute="bottom" id="1c1-uM-IHz"/>
-                <constraint firstItem="zkF-D6-ycV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="30" id="6iE-zg-W1R"/>
+                <constraint firstItem="zkF-D6-ycV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="28" id="6iE-zg-W1R"/>
                 <constraint firstAttribute="trailing" secondItem="OZ1-Lo-7qe" secondAttribute="trailing" id="8IR-AI-HMn"/>
-                <constraint firstItem="IZZ-e1-Q3u" firstAttribute="top" secondItem="Ccp-6j-y4O" secondAttribute="bottom" id="G7u-sA-pm8"/>
+                <constraint firstItem="zkF-D6-ycV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" symbolic="YES" id="AZt-pe-2xP"/>
+                <constraint firstAttribute="bottom" secondItem="Ccp-6j-y4O" secondAttribute="bottom" constant="40" id="Bdh-DD-Eh1"/>
+                <constraint firstItem="Ccp-6j-y4O" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="64" id="IUF-6M-vZA"/>
                 <constraint firstAttribute="trailing" secondItem="Ccp-6j-y4O" secondAttribute="trailing" constant="10" id="LYX-Wh-C39"/>
                 <constraint firstItem="OZ1-Lo-7qe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OpX-ZD-N6l"/>
                 <constraint firstItem="Ccp-6j-y4O" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="VTr-95-DZZ"/>
-                <constraint firstItem="Ccp-6j-y4O" firstAttribute="top" secondItem="zkF-D6-ycV" secondAttribute="bottom" id="XTh-61-IpM"/>
                 <constraint firstAttribute="bottom" secondItem="IZZ-e1-Q3u" secondAttribute="bottom" constant="30" id="aLM-fo-EQ7"/>
+                <constraint firstAttribute="trailing" secondItem="zkF-D6-ycV" secondAttribute="trailing" symbolic="YES" id="b5V-NR-RWf"/>
                 <constraint firstItem="zkF-D6-ycV" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="eRe-0q-6gU"/>
                 <constraint firstItem="OZ1-Lo-7qe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jqQ-bz-ofu"/>
                 <constraint firstItem="IZZ-e1-Q3u" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="v0j-JE-rOr"/>
