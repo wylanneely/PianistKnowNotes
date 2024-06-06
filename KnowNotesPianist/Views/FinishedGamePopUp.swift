@@ -56,29 +56,6 @@ class FinishedGamePopUp: UIViewController {
         restartLabel.font =  UIFont(name: "Poppins-Bold", size: 22)
         submitScoreButton.setTitle(submitString, for: .normal)
         submitScoreButton.titleLabel?.font =  UIFont(name: "Poppins-Bold", size: 28)
-        
-//        switch language {
-//        case "Chinese":
-//            contentView.layer.borderColor = UIColor.red.cgColor
-//        case "Potruguese":
-//            contentView.layer.borderColor = UIColor.systemGreen.cgColor
-//        case "French":
-//            contentView.layer.borderColor = UIColor.darkBlue.cgColor
-//        case "Spanish":
-//            contentView.layer.borderColor = UIColor.systemBlue.cgColor
-//        case "Korean":
-//            contentView.layer.borderColor = UIColor.darkBlue.cgColor
-//        case "Japanese":
-//            contentView.layer.borderColor = UIColor.red.cgColor
-//        case "German":
-//            contentView.layer.borderColor = UIColor.systemYellow.cgColor
-//        case "Russian":
-//            contentView.layer.borderColor = UIColor.darkBlue.cgColor
-//        case "Italian":
-//            contentView.layer.borderColor = UIColor.systemGreen.cgColor
-//        default:
-//            contentView.layer.borderColor = UIColor.popUpText.cgColor
-//        }
     }
     
     func setGradientLabel(){
@@ -109,6 +86,8 @@ class FinishedGamePopUp: UIViewController {
             gradientScoreLabel.gradientColors = [UIColor.systemRed.cgColor, UIColor.darkBlue.cgColor]
         case "Italian":
             gradientScoreLabel.gradientColors = [UIColor.systemRed.cgColor, UIColor.systemGreen.cgColor]
+        case "Thai":
+            gradientScoreLabel.gradientColors = [UIColor.systemBlue.cgColor, UIColor.systemGreen.cgColor]
         default:
             if self.traitCollection.userInterfaceStyle == .dark {
                 gradientScoreLabel.gradientColors = [
@@ -135,6 +114,7 @@ class FinishedGamePopUp: UIViewController {
             dismissButton.isHidden = false
         } else {
             dismissButton.isHidden = true
+            submitScoreTapped(self)
         }
     }
     
