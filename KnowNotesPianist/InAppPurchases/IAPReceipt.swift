@@ -10,5 +10,6 @@ import StoreKit
 
 class IAPReceipt {
     
+    var data: Data?
 }
 
