@@ -172,7 +172,6 @@ class FinishedGamePopUp: UIViewController {
     @IBAction func submitScoreTapped(_ sender: Any) {
         submitScoreButton.pulsate()
         mediumImpact.impactOccurred()
-       // AchievementesController().setFreePiano(highScore: game?.score ?? 0)
         gameKitController.submitLeaderboard(score: game?.score ?? 0, instrument: self.instrument)
         GameKitController().showGKAccessPoint()
     }
