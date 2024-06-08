@@ -31,14 +31,14 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
     
     //MARK: - In App Purchases
     var productIDS: [String] = [
-        //        "grandPiano69",
-        //        "acousticGuitarMajorChords",
-        //        "electronicKeyboard69",
-        //        "violin420"
-        "com.wylan.apps.KnowNotes2024.piano",
-        "com.wylan.apps.KnowNotes2024.guitar",
-        "com.wylan.apps.KnowNotes2024.keyboard",
-        "com.wylan.apps.KnowNotes2024.violin"
+                "grandPiano69",
+                "acousticGuitarMajorChords",
+                "electronicKeyboard69",
+                "violin420"
+//                "com.wylan.apps.KnowNotes2024.piano",
+// test products  "com.wylan.apps.KnowNotes2024.guitar",
+//                 "com.wylan.apps.KnowNotes2024.keyboard",
+//                 "com.wylan.apps.KnowNotes2024.violin"
     ]
     
     
@@ -48,26 +48,22 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
         case .BasicPiano:
             return ""
         case .GrandPiano:
-            //        "grandPiano69"
-            return "com.wylan.apps.KnowNotes2024.piano"
+            return     "grandPiano69"
         case .AcousticGuitar:
-            //        "acousticGuitarMajorChords"
-            return "com.wylan.apps.KnowNotes2024.guitar"
+            return    "acousticGuitarMajorChords"
         case .Keyboard:
-            //        "electronicKeyboard69"
-            return "com.wylan.apps.KnowNotes2024.keyboard"
+            return    "electronicKeyboard69"
         case .Violin:
-            // "com.wylan.apps.KnowNotes2024.violin"
-            return  "com.wylan.apps.KnowNotes2024.violin"
+            return "violin420"
         }
     }
     
     func getInstrumentType(from productID: String) -> InstrumentType? {
         switch productID {
-        case "com.wylan.apps.KnowNotes2024.piano": return InstrumentType.GrandPiano
-        case "com.wylan.apps.KnowNotes2024.guitar": return InstrumentType.AcousticGuitar
-        case "com.wylan.apps.KnowNotes2024.keyboard": return InstrumentType.Keyboard
-        case "com.wylan.apps.KnowNotes2024.violin" : return InstrumentType.Violin
+        case "grandPiano69": return InstrumentType.GrandPiano
+        case "acousticGuitarMajorChords": return InstrumentType.AcousticGuitar
+        case "electronicKeyboard69": return InstrumentType.Keyboard
+        case "violin420" : return InstrumentType.Violin
         default :
             return nil
         }
