@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WalkThroughVC" customModule="KnowNotesPianist" customModuleProvider="target">
+            <connections>
+                <outlet property="hint1Label" destination="rg6-1k-IIj" id="kh0-Se-EBV"/>
+                <outlet property="hint2Label" destination="3cp-V2-3h0" id="aQa-rc-SvD"/>
+                <outlet property="okButton" destination="l9H-Bk-w1f" id="OyW-xb-3ff"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click &quot;Start&quot; when ready to start playing, match the played sound with the correct note button to win." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cp-V2-3h0">
+                    <rect key="frame" x="8" y="564" width="377" height="180"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="180" id="EXF-GK-jEh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click note buttons to test and familiarize sounds." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rg6-1k-IIj">
+                    <rect key="frame" x="24" y="321" width="361" height="210"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9H-Bk-w1f">
+                    <rect key="frame" x="156.66666666666666" y="774" width="80" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="QVc-Hm-bla"/>
+                        <constraint firstAttribute="height" constant="44" id="uSy-0g-Ri8"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="tinted" title="OK"/>
+                    <connections>
+                        <action selector="okTapped:" destination="-1" eventType="touchUpInside" id="Ymv-y0-xaK"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.29357420475879609" green="0.29149087126848094" blue="0.30573453608247425" alpha="0.098400297619047616" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="rg6-1k-IIj" firstAttribute="trailing" secondItem="3cp-V2-3h0" secondAttribute="trailing" id="04a-rM-luy"/>
+                <constraint firstItem="l9H-Bk-w1f" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="05Q-Pt-Itu"/>
+                <constraint firstItem="3cp-V2-3h0" firstAttribute="top" secondItem="rg6-1k-IIj" secondAttribute="bottom" constant="33" id="19N-h3-3An"/>
+                <constraint firstItem="3cp-V2-3h0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="AhB-Yl-1dC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3cp-V2-3h0" secondAttribute="trailing" constant="8" id="Stz-av-1YW"/>
+                <constraint firstItem="rg6-1k-IIj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="262" id="aCH-UL-nPe"/>
+                <constraint firstItem="l9H-Bk-w1f" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cis-n7-Vk4"/>
+                <constraint firstItem="rg6-1k-IIj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ss8-rM-dn7"/>
+                <constraint firstItem="rg6-1k-IIj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="szk-bV-oKr"/>
+            </constraints>
+            <point key="canvasLocation" x="46.564885496183201" y="-11.267605633802818"/>
+        </view>
+    </objects>
+</document>
