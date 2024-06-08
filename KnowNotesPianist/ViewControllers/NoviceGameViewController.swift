@@ -48,6 +48,11 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
         setupLanguageLocalization()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkShowHintState()
+    }
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -106,6 +111,15 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
         
     }
     
+    func checkShowHintState(){
+        if achievementsController.hasHintsBeenShown() == true {
+            return
+        } else {
+            let hintsVC = WalkThroughVC()
+            hintsVC.appear(sender: self)
+        }
+    }
+    
     //MARK: - Audio
     var soundController: SoundController = SoundController(soundPack: BasicPianoPack, gameType: .Novice)
     
@@ -116,9 +130,9 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
         case .GrandPiano:
            soundController = SoundController(soundPack: GrandPianoPack, gameType: .Novice)
         case .AcousticGuitar:
-            return
+            soundController = SoundController(soundPack: AGuitarMajorPack, gameType: .Novice)
         case .Keyboard:
-            return
+            soundController = SoundController(soundPack: KeyboardPack, gameType: .Novice)
         case .Violin:
             soundController = SoundController(soundPack: ViolinPack, gameType: .Novice)
         }
