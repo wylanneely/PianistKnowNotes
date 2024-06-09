@@ -43,6 +43,7 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         setInstrumentLabel()
         setAchievementsButtons()
         IAPManager.shared.fetchProducts()
+        addIAPNotication()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +54,11 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         gameKitController.hideGKAcessPoint()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
     }
     
 //    override var prefersStatusBarHidden: Bool {
@@ -155,7 +161,20 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         
     }
  
-    //MARK: - Start Game Delegate
+    //MARK: - Notification Center
+    
+    static let IAPNotifName = Notification.Name("IAPCompleted")
+    
+    func addIAPNotication(){
+        NotificationCenter.default.addObserver(self, selector: #selector(IAPRefresh(notification:)), name: InstrumentSelectViewController.IAPNotifName, object: nil)
+    }
+    
+    @objc func IAPRefresh(notification:NSNotification){
+        self.collectionView.reloadData()
+        self.collectionView.reloadInputViews()
+    }
+    
+    //MARK: - Delegates
     
     
     func startGame(type:GameType,instrument:InstrumentType) {
@@ -199,7 +218,6 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
             let IAPPopUp = InApPurchasePopUp()
             IAPPopUp.appear(sender: self,instrument: instrument)
         }
-        
         
         
 //       //to test but product
