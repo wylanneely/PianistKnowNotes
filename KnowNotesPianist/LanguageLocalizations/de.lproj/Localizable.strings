@@ -40,3 +40,6 @@
 //In App Purchases
 "Buy" = "Kaufen";
 "Restore" = "Wiederherstellen";
+//Hints
+"Hint1" = "Klicken Sie auf die Notenknöpfe, um die Töne zu testen und sich mit ihnen vertraut zu machen.";
+"Hint2" = "Klicken Sie auf 'Start', wenn Sie bereit sind zu spielen, und ordnen Sie den gespielten Ton dem richtigen Notenknopf zu, um zu gewinnen.";

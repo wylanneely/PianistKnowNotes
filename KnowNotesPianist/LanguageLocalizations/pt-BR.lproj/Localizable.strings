@@ -40,3 +40,6 @@
 //In App Purchases
 "Buy" = "Comprar";
 "Restore" = "Restaurar";
+//Hints
+"Hint1" = "Clique nos botões de notas para testar e se familiarizar com os sons.";
+"Hint2" = "Clique em 'Iniciar' quando estiver pronto para começar a jogar, combine o som reproduzido com o botão de nota correto para ganhar.";

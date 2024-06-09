@@ -40,3 +40,6 @@
 //In App Purchases
 "Buy" = "Buy";
 "Restore" = "Restore";
+//Hints
+"Hint1" = "Click note buttons to test and familiarize sounds.";
+"Hint2" = "Click 'Start' when ready to start playing, match the played sound with the correct note button to win.";
