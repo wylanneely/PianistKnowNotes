@@ -28,13 +28,14 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
     public var isKeyboardNotesPurchased: Bool = false
     public var isViolinNotesPurchased: Bool = false
     
-    
+    static let IAPNotifName = Notification.Name("IAPCompleted")
+
     //MARK: - In App Purchases
     var productIDS: [String] = [
-                "grandPiano69",
-                "acousticGuitarMajorChords",
-                "electronicKeyboard69",
-                "violin420"
+                "knownotes.grandpiano.notes",
+                "knownotes.acousticguitar.majorchords",
+                "knownotes.keyboard.notes",
+                "knownotes.violin.notes"
 //                "com.wylan.apps.KnowNotes2024.piano",
 // test products  "com.wylan.apps.KnowNotes2024.guitar",
 //                 "com.wylan.apps.KnowNotes2024.keyboard",
@@ -43,27 +44,29 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
     
     
     
-    func getSpecificProductID(instrument: InstrumentType)-> String {
+    func getSpecificProductID(
+        instrument: InstrumentType
+    )-> String {
         switch instrument {
         case .BasicPiano:
             return ""
         case .GrandPiano:
-            return     "grandPiano69"
+            return     "knownotes.grandpiano.notes"
         case .AcousticGuitar:
-            return    "acousticGuitarMajorChords"
+            return    "knownotes.acousticguitar.majorchords"
         case .Keyboard:
-            return    "electronicKeyboard69"
+            return    "knownotes.keyboard.notes"
         case .Violin:
-            return "violin420"
+            return "knownotes.violin.notes"
         }
     }
     
     func getInstrumentType(from productID: String) -> InstrumentType? {
         switch productID {
-        case "grandPiano69": return InstrumentType.GrandPiano
-        case "acousticGuitarMajorChords": return InstrumentType.AcousticGuitar
-        case "electronicKeyboard69": return InstrumentType.Keyboard
-        case "violin420" : return InstrumentType.Violin
+        case "knownotes.grandpiano.notes" : return InstrumentType.GrandPiano
+        case "knownotes.acousticguitar.majorchords" : return InstrumentType.AcousticGuitar
+        case "knownotes.keyboard.notes" : return InstrumentType.Keyboard
+        case "knownotes.violin.notes" : return InstrumentType.Violin
         default :
             return nil
         }
@@ -365,6 +368,7 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
             }
         }
         getPuchaseStates()
+        NotificationCenter.default.post(name: IAPManager.IAPNotifName, object: nil)
     }
     
     
@@ -373,7 +377,9 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
     
 }
 
-   
+protocol PurchasedOrRestoredDelegate {
+    func didPurchaseOrRestore()
+}
 enum IAPStatus {
     case purchased
     case not
