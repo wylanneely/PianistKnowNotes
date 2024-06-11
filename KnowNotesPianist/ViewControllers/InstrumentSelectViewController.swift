@@ -217,32 +217,7 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         } else {
             let IAPPopUp = InApPurchasePopUp()
             IAPPopUp.appear(sender: self,instrument: instrument)
-        }
-        
-        
-//       //to test but product
-//        switch instrument {
-//        case .BasicPiano:
-//            break
-//        case .GrandPiano:
-//            let product = IAPManager.shared.availableProducts[3]
-//            IAPManager.shared.buyProduct(product)
-//        case .AcousticGuitar:
-//            let product = IAPManager.shared.availableProducts[2]
-//            IAPManager.shared.buyProduct(product)
-//        case .Keyboard:
-//            let product = IAPManager.shared.availableProducts[1]
-//            IAPManager.shared.buyProduct(product)
-//        case .Violin:
-//            let product = IAPManager.shared.availableProducts[0]
-//            IAPManager.shared.buyProduct(product)
-//        }
-//        
-        
-     
-        
-        
-        
+        }       
     }
     
     //MARK: - Outlets
