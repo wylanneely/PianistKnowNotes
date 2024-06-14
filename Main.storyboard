@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gyu-fa-F0D">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -256,7 +257,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="uv1-og-8QN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="uv1-og-8QN">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="I5w-38-cJh">
@@ -1069,6 +1070,9 @@
                                 <color key="shadowColor" systemColor="labelColor"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ubp-OD-6pb">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ejx-Mu-ab4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1081,16 +1085,19 @@
                             <constraint firstItem="mtf-HL-SEA" firstAttribute="centerY" secondItem="ay2-i2-PeS" secondAttribute="centerY" constant="-8" id="GBK-sU-e7x"/>
                             <constraint firstItem="cRj-1r-JmB" firstAttribute="height" secondItem="ZaD-Ff-Prn" secondAttribute="height" multiplier="0.39" id="Goe-s3-wv3"/>
                             <constraint firstAttribute="bottom" secondItem="ZaD-Ff-Prn" secondAttribute="bottom" id="IUO-s5-FdW"/>
+                            <constraint firstItem="Ubp-OD-6pb" firstAttribute="top" secondItem="Ejx-Mu-ab4" secondAttribute="top" id="KAe-Uf-K4o"/>
                             <constraint firstItem="ZaD-Ff-Prn" firstAttribute="top" secondItem="QIe-hQ-HeB" secondAttribute="top" id="LAx-bp-tDM"/>
                             <constraint firstItem="wyw-no-amH" firstAttribute="centerX" secondItem="QIe-hQ-HeB" secondAttribute="centerX" id="MYa-7Y-zmU"/>
                             <constraint firstItem="ay2-i2-PeS" firstAttribute="top" secondItem="QIe-hQ-HeB" secondAttribute="top" constant="20" id="Mcs-Pr-CGQ"/>
                             <constraint firstItem="cRj-1r-JmB" firstAttribute="centerX" secondItem="QIe-hQ-HeB" secondAttribute="centerX" id="N30-Hy-7eN"/>
+                            <constraint firstItem="Ubp-OD-6pb" firstAttribute="leading" secondItem="Ejx-Mu-ab4" secondAttribute="leading" id="NJ9-Ah-7QB"/>
                             <constraint firstItem="DP7-UP-WQW" firstAttribute="centerY" secondItem="exg-xq-Qic" secondAttribute="centerY" constant="10" id="Nhs-7r-Yhh"/>
                             <constraint firstItem="Ejx-Mu-ab4" firstAttribute="trailing" secondItem="mtf-HL-SEA" secondAttribute="trailing" constant="26" id="OLU-C5-dG2"/>
                             <constraint firstItem="mcb-gL-Dah" firstAttribute="trailing" secondItem="Ejx-Mu-ab4" secondAttribute="trailing" id="OSm-YO-hnX"/>
                             <constraint firstItem="ZaD-Ff-Prn" firstAttribute="top" secondItem="Ejx-Mu-ab4" secondAttribute="top" id="PWt-pP-M3b"/>
                             <constraint firstItem="exg-xq-Qic" firstAttribute="height" secondItem="ZaD-Ff-Prn" secondAttribute="height" multiplier="0.23" id="RJn-zG-Vvg"/>
                             <constraint firstItem="ZaD-Ff-Prn" firstAttribute="trailing" secondItem="Ejx-Mu-ab4" secondAttribute="trailing" id="Rtt-J5-7UX"/>
+                            <constraint firstItem="Ubp-OD-6pb" firstAttribute="bottom" secondItem="Ejx-Mu-ab4" secondAttribute="bottom" id="Zf6-hI-rFO"/>
                             <constraint firstItem="wyw-no-amH" firstAttribute="top" secondItem="mcb-gL-Dah" secondAttribute="bottom" constant="10" id="cXq-cN-WBZ"/>
                             <constraint firstItem="DP7-UP-WQW" firstAttribute="centerX" secondItem="exg-xq-Qic" secondAttribute="centerX" id="dCf-AJ-H15"/>
                             <constraint firstItem="cRj-1r-JmB" firstAttribute="top" secondItem="ZaD-Ff-Prn" secondAttribute="top" constant="20" id="fN8-P5-K2b"/>
@@ -1098,6 +1105,7 @@
                             <constraint firstItem="mcb-gL-Dah" firstAttribute="height" secondItem="ZaD-Ff-Prn" secondAttribute="height" multiplier="0.384977" id="iOQ-xw-NRp"/>
                             <constraint firstItem="ay2-i2-PeS" firstAttribute="width" secondItem="ZaD-Ff-Prn" secondAttribute="height" multiplier="35:426" id="ixl-wU-493"/>
                             <constraint firstItem="ZaD-Ff-Prn" firstAttribute="leading" secondItem="Ejx-Mu-ab4" secondAttribute="leading" id="jCA-Jv-gKF"/>
+                            <constraint firstItem="Ubp-OD-6pb" firstAttribute="trailing" secondItem="Ejx-Mu-ab4" secondAttribute="trailing" id="lSs-HK-Meq"/>
                             <constraint firstItem="mcb-gL-Dah" firstAttribute="leading" secondItem="Ejx-Mu-ab4" secondAttribute="leading" id="mNQ-pU-O7n"/>
                             <constraint firstItem="ay2-i2-PeS" firstAttribute="leading" secondItem="Ejx-Mu-ab4" secondAttribute="leading" constant="16" id="w8e-Gb-bmv"/>
                             <constraint firstItem="exg-xq-Qic" firstAttribute="centerX" secondItem="ZaD-Ff-Prn" secondAttribute="centerX" id="wyG-mb-cHU"/>
@@ -1112,6 +1120,7 @@
                         <outlet property="HomeButton" destination="ay2-i2-PeS" id="7Cf-5P-Sbt"/>
                         <outlet property="PlayButton" destination="wyw-no-amH" id="3Mj-8P-khj"/>
                         <outlet property="ScoreLabel" destination="DP7-UP-WQW" id="tET-mW-4Ql"/>
+                        <outlet property="correctIncorrectImageV" destination="Ubp-OD-6pb" id="woT-xq-ekT"/>
                         <outlet property="lifeImage" destination="exg-xq-Qic" id="ech-Vt-rYr"/>
                         <outlet property="noviceLabel" destination="mtf-HL-SEA" id="Lhe-mU-fX9"/>
                         <segue destination="ijP-be-UXx" kind="showDetail" identifier="toContinueRegular" id="206-VD-YWV"/>
@@ -1123,7 +1132,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="k1q-hz-8y3"/>
+        <segue reference="206-VD-YWV"/>
         <segue reference="KQn-fK-SF0"/>
         <segue reference="fDB-b7-JAp"/>
     </inferredMetricsTieBreakers>
