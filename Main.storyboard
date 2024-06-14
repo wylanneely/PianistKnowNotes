@@ -978,6 +978,9 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundGameView" translatesAutoresizingMaskIntoConstraints="NO" id="ZaD-Ff-Prn">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ubp-OD-6pb">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcb-gL-Dah">
                                 <rect key="frame" x="0.0" y="390.33333333333337" width="393" height="324.33333333333337"/>
                                 <subviews>
@@ -1016,6 +1019,7 @@
                                     <constraint firstItem="kda-d1-IpX" firstAttribute="bottom" secondItem="mcb-gL-Dah" secondAttribute="centerY" constant="-16" id="MjF-rd-8Rk"/>
                                     <constraint firstAttribute="trailing" secondItem="Vnc-04-S5e" secondAttribute="trailing" constant="20" id="Pel-gZ-bms"/>
                                     <constraint firstItem="Vnc-04-S5e" firstAttribute="bottom" secondItem="mcb-gL-Dah" secondAttribute="centerY" constant="-16" id="QKc-iD-aua"/>
+                                    <constraint firstItem="Vnc-04-S5e" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kda-d1-IpX" secondAttribute="trailing" constant="8" symbolic="YES" id="l8R-br-nUH"/>
                                     <constraint firstItem="MAm-2W-T2Q" firstAttribute="centerX" secondItem="mcb-gL-Dah" secondAttribute="centerX" id="u3S-Yr-20F"/>
                                 </constraints>
                             </view>
@@ -1070,9 +1074,6 @@
                                 <color key="shadowColor" systemColor="labelColor"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ubp-OD-6pb">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ejx-Mu-ab4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1097,7 +1098,8 @@
                             <constraint firstItem="ZaD-Ff-Prn" firstAttribute="top" secondItem="Ejx-Mu-ab4" secondAttribute="top" id="PWt-pP-M3b"/>
                             <constraint firstItem="exg-xq-Qic" firstAttribute="height" secondItem="ZaD-Ff-Prn" secondAttribute="height" multiplier="0.23" id="RJn-zG-Vvg"/>
                             <constraint firstItem="ZaD-Ff-Prn" firstAttribute="trailing" secondItem="Ejx-Mu-ab4" secondAttribute="trailing" id="Rtt-J5-7UX"/>
-                            <constraint firstItem="Ubp-OD-6pb" firstAttribute="bottom" secondItem="Ejx-Mu-ab4" secondAttribute="bottom" id="Zf6-hI-rFO"/>
+                            <constraint firstItem="Ubp-OD-6pb" firstAttribute="bottom" secondItem="QIe-hQ-HeB" secondAttribute="bottom" id="Zf6-hI-rFO"/>
+                            <constraint firstItem="mtf-HL-SEA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ay2-i2-PeS" secondAttribute="trailing" constant="8" symbolic="YES" id="cXQ-DG-WxS"/>
                             <constraint firstItem="wyw-no-amH" firstAttribute="top" secondItem="mcb-gL-Dah" secondAttribute="bottom" constant="10" id="cXq-cN-WBZ"/>
                             <constraint firstItem="DP7-UP-WQW" firstAttribute="centerX" secondItem="exg-xq-Qic" secondAttribute="centerX" id="dCf-AJ-H15"/>
                             <constraint firstItem="cRj-1r-JmB" firstAttribute="top" secondItem="ZaD-Ff-Prn" secondAttribute="top" constant="20" id="fN8-P5-K2b"/>
