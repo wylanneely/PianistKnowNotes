@@ -62,9 +62,9 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
         case .GrandPiano:
            soundController = SoundController(soundPack: GrandPianoPack, gameType: .Virtuoso)
         case .AcousticGuitar:
-            return
+            soundController = SoundController(soundPack: AGuitarMajorPack, gameType: .Virtuoso)
         case .Keyboard:
-            return
+            soundController = SoundController(soundPack: KeyboardPack, gameType: .Virtuoso)
         case .Violin:
             soundController = SoundController(soundPack: ViolinPack, gameType: .Virtuoso)
         }
@@ -200,6 +200,8 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBOutlet weak var PlayButton: UIButton!
     @IBOutlet weak var CircularProgressView: CircularProgressBar!
     @IBOutlet weak var virtuosoLabel: UILabel!
+    @IBOutlet weak var correctIncorrectImageV: UIImageView!
+
     
     //MARK: - Circular Progress Bar
     
@@ -232,6 +234,39 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
     
         let totalGroupRounds: Double = 49.00
         var currentRound: Double = 1.00
+    
+    
+    //MARK: Correct Incorrect Updates
+    
+    let correctImage = UIImage(named: "CorrectBackground")
+    let incorrectImage = UIImage(named: "IncorrectBackground")
+    
+    func updateCorrect(){
+        correctIncorrectImageV.alpha = 00
+        correctIncorrectImageV.image = correctImage
+        UIView.animate(withDuration: 0.2,delay: 0,options:[.curveEaseOut] ,animations: {
+                   self.correctIncorrectImageV.alpha = 1.0
+               }, completion: { _ in
+                   // After the image view appears, hide it again after a delay
+                   UIView.animate(withDuration: 0.2, delay: 0.22, options: [.curveEaseIn], animations: {
+                       self.correctIncorrectImageV.alpha = 0.0
+                   }, completion: nil)
+               })
+    }
+    
+    func updateIncorrect(){
+        correctIncorrectImageV.alpha = 00
+        correctIncorrectImageV.image = incorrectImage
+        UIView.animate(withDuration: 0.2,delay: 0,options:[.curveEaseOut] ,animations: {
+                   self.correctIncorrectImageV.alpha = 1.0
+               }, completion: { _ in
+                   // After the image view appears, hide it again after a delay
+                   UIView.animate(withDuration: 0.2, delay: 0.22, options: [.curveEaseIn], animations: {
+                       self.correctIncorrectImageV.alpha = 0.0
+                   }, completion: nil)
+               })
+    }
+    
     
     //MARK: - Actions
     
@@ -286,6 +321,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                 let result = gameController.updateGameWith(noteAnswerID: 0)
                 self.playSound(noteAnswerID: 0)
                 if result.isCorrect {
+                    updateCorrect()
                     AButton.pulsate()
                     hapticGenerator.notificationOccurred(.success)
                     updateProgressBar()
@@ -294,6 +330,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.guessedNotesIDs = []
                     self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
+                    updateIncorrect()
                     if result.isGameOver {
                         hapticGenerator.notificationOccurred(.error)
                         AButton.pulsateWrong()
@@ -329,6 +366,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                 let result = gameController.updateGameWith(noteAnswerID: 1)
                 self.playSound(noteAnswerID: 1)
                 if result.isCorrect {
+                    updateCorrect()
                     ASButton.pulsate()
                     hapticGenerator.notificationOccurred(.success)
                     updateProgressBar()
@@ -337,6 +375,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.guessedNotesIDs = []
                     self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
+                    updateIncorrect()
                     if result.isGameOver {
                         hapticGenerator.notificationOccurred(.error)
                         ASButton.pulsateWrong()
@@ -371,6 +410,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                 let result = gameController.updateGameWith(noteAnswerID: 2)
                 self.playSound(noteAnswerID: 2)
                 if result.isCorrect {
+                    updateCorrect()
                     BButton.pulsate()
                     hapticGenerator.notificationOccurred(.success)
                     updateProgressBar()
@@ -379,6 +419,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.guessedNotesIDs = []
                     self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
+                    updateIncorrect()
                     if result.isGameOver {
                         hapticGenerator.notificationOccurred(.error)
                         BButton.pulsateWrong()
@@ -414,6 +455,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                 let result = gameController.updateGameWith(noteAnswerID: 3)
                 self.playSound(noteAnswerID: 3)
                 if result.isCorrect {
+                    updateCorrect()
                     CButton.pulsate()
                     hapticGenerator.notificationOccurred(.success)
                     updateProgressBar()
@@ -422,6 +464,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.guessedNotesIDs = []
                     self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
+                    updateIncorrect()
                     if result.isGameOver {
                         hapticGenerator.notificationOccurred(.error)
                         CButton.pulsateWrong()
@@ -456,6 +499,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                 let result = gameController.updateGameWith(noteAnswerID: 4)
                 self.playSound(noteAnswerID: 4)
                 if result.isCorrect {
+                    updateCorrect()
                     CSButton.pulsate()
                     hapticGenerator.notificationOccurred(.success)
                     updateProgressBar()
@@ -464,6 +508,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.guessedNotesIDs = []
                     self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
+                    updateIncorrect()
                     if result.isGameOver {
                         hapticGenerator.notificationOccurred(.error)
                         CSButton.pulsateWrong()
@@ -498,6 +543,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                 let result = gameController.updateGameWith(noteAnswerID: 5)
                 self.playSound(noteAnswerID: 5)
                 if result.isCorrect {
+                    updateCorrect()
                     DButton.pulsate()
                     hapticGenerator.notificationOccurred(.success)
                     updateProgressBar()
@@ -506,6 +552,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.guessedNotesIDs = []
                     self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
+                    updateIncorrect()
                     if result.isGameOver {
                         hapticGenerator.notificationOccurred(.error)
                         DButton.pulsateWrong()
@@ -540,6 +587,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                 let result = gameController.updateGameWith(noteAnswerID: 6)
                 self.playSound(noteAnswerID: 6)
                 if result.isCorrect {
+                    updateCorrect()
                     DSButton.pulsate()
                     hapticGenerator.notificationOccurred(.success)
                     updateProgressBar()
@@ -548,6 +596,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.guessedNotesIDs = []
                     self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
+                    updateIncorrect()
                     if result.isGameOver {
                         hapticGenerator.notificationOccurred(.error)
                         DSButton.pulsateWrong()
@@ -582,6 +631,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                 let result = gameController.updateGameWith(noteAnswerID: 7)
                 self.playSound(noteAnswerID: 7)
                 if result.isCorrect {
+                    updateCorrect()
                     EButton.pulsate()
                     hapticGenerator.notificationOccurred(.success)
                     updateProgressBar()
@@ -590,6 +640,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.guessedNotesIDs = []
                     self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
+                    updateIncorrect()
                     if result.isGameOver {
                         hapticGenerator.notificationOccurred(.error)
                         EButton.pulsateWrong()
@@ -624,6 +675,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                 let result = gameController.updateGameWith(noteAnswerID: 8)
                 self.playSound(noteAnswerID: 8)
                 if result.isCorrect {
+                    updateCorrect()
                     FButton.pulsate()
                     hapticGenerator.notificationOccurred(.success)
                     updateProgressBar()
@@ -632,6 +684,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.guessedNotesIDs = []
                     self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
+                    updateIncorrect()
                     if result.isGameOver {
                         hapticGenerator.notificationOccurred(.error)
                         FButton.pulsateWrong()
@@ -666,6 +719,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                 let result = gameController.updateGameWith(noteAnswerID: 9)
                 self.playSound(noteAnswerID: 9)
                 if result.isCorrect {
+                    updateCorrect()
                     FSButton.pulsate()
                     hapticGenerator.notificationOccurred(.success)
                     updateProgressBar()
@@ -674,6 +728,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.guessedNotesIDs = []
                     self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
+                    updateIncorrect()
                     if result.isGameOver {
                         hapticGenerator.notificationOccurred(.error)
                         FSButton.pulsateWrong()
@@ -708,6 +763,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                 let result = gameController.updateGameWith(noteAnswerID: 10)
                 self.playSound(noteAnswerID: 10)
                 if result.isCorrect {
+                    updateCorrect()
                     GButton.pulsate()
                     hapticGenerator.notificationOccurred(.success)
                     updateProgressBar()
@@ -716,6 +772,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.guessedNotesIDs = []
                     self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
+                    updateIncorrect()
                     if result.isGameOver {
                         hapticGenerator.notificationOccurred(.error)
                         GButton.pulsateWrong()
@@ -750,6 +807,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                 let result = gameController.updateGameWith(noteAnswerID: 11)
                 self.playSound(noteAnswerID: 11)
                 if result.isCorrect {
+                    updateCorrect()
                     GSButton.pulsate()
                     hapticGenerator.notificationOccurred(.success)
                     updateProgressBar()
@@ -759,6 +817,7 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
                     if result.isGameOver {
+                        updateIncorrect()
                         hapticGenerator.notificationOccurred(.error)
                         GSButton.pulsateWrong()
                         self.endGame()
