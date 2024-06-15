@@ -64,9 +64,9 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
         case .GrandPiano:
            soundController = SoundController(soundPack: GrandPianoPack, gameType: .Regular)
         case .AcousticGuitar:
-            return
+            soundController = SoundController(soundPack: AGuitarMajorPack, gameType: .Regular)
         case .Keyboard:
-            return
+            soundController = SoundController(soundPack: KeyboardPack, gameType: .Regular)
         case .Violin:
             soundController = SoundController(soundPack: ViolinPack, gameType: .Regular)
         }
@@ -166,6 +166,8 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
     @IBOutlet weak var CircularProgressView: CircularProgressBar!
     @IBOutlet weak var ScoreLabel: GradientLabel!
     @IBOutlet weak var regularLabel: UILabel!
+    @IBOutlet weak var correctIncorrectImageV: UIImageView!
+
     
     //MARK: - Circular Progress Bar
     
@@ -197,6 +199,40 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
     
         let totalGroupRounds: Double = 20.00
         var currentRound: Double = 1.00
+    
+    
+    //MARK: Correct Incorrect Updates
+    
+    let correctImage = UIImage(named: "CorrectBackground")
+    let incorrectImage = UIImage(named: "IncorrectBackground")
+    
+    func updateCorrect(){
+        correctIncorrectImageV.alpha = 00
+        correctIncorrectImageV.image = correctImage
+        UIView.animate(withDuration: 0.2,delay: 0,options:[.curveEaseOut] ,animations: {
+                   self.correctIncorrectImageV.alpha = 1.0
+               }, completion: { _ in
+                   // After the image view appears, hide it again after a delay
+                   UIView.animate(withDuration: 0.2, delay: 0.22, options: [.curveEaseIn], animations: {
+                       self.correctIncorrectImageV.alpha = 0.0
+                   }, completion: nil)
+               })
+    }
+    
+    func updateIncorrect(){
+        correctIncorrectImageV.alpha = 00
+        correctIncorrectImageV.image = incorrectImage
+        UIView.animate(withDuration: 0.2,delay: 0,options:[.curveEaseOut] ,animations: {
+                   self.correctIncorrectImageV.alpha = 1.0
+               }, completion: { _ in
+                   // After the image view appears, hide it again after a delay
+                   UIView.animate(withDuration: 0.2, delay: 0.22, options: [.curveEaseIn], animations: {
+                       self.correctIncorrectImageV.alpha = 0.0
+                   }, completion: nil)
+               })
+    }
+    
+    
     
     //MARK: - Actions
     
@@ -252,6 +288,7 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
                 let result = gameController.updateGameWith(noteAnswerID: 0)
                 self.playSound(noteAnswerID: 0)
                 if result.isCorrect {
+                    updateCorrect()
                     AButton.pulsate()
                     hapticGenerator.notificationOccurred(.success)
                     updateProgressBar()
@@ -260,6 +297,7 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.guessedNotesIDs = []
                     self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
+                    updateIncorrect()
                     if result.isGameOver {
                         hapticGenerator.notificationOccurred(.error)
                         AButton.pulsateWrong()
@@ -294,6 +332,7 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
                 let result = gameController.updateGameWith(noteAnswerID: 1)
                 self.playSound(noteAnswerID: 1)
                 if result.isCorrect {
+                    updateCorrect()
                     CButton.pulsate()
                     hapticGenerator.notificationOccurred(.success)
                     updateProgressBar()
@@ -302,6 +341,7 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.guessedNotesIDs = []
                     self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
+                    updateIncorrect()
                     if result.isGameOver {
                         hapticGenerator.notificationOccurred(.error)
                         CButton.pulsateWrong()
@@ -336,6 +376,7 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
                 let result = gameController.updateGameWith(noteAnswerID: 2)
                 self.playSound(noteAnswerID: 2)
                 if result.isCorrect {
+                    updateCorrect()
                     DButton.pulsate()
                     hapticGenerator.notificationOccurred(.success)
                     updateProgressBar()
@@ -344,6 +385,7 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.guessedNotesIDs = []
                     self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
+                    updateIncorrect()
                     if result.isGameOver {
                         hapticGenerator.notificationOccurred(.error)
                         DButton.pulsateWrong()
@@ -378,6 +420,7 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
                 let result = gameController.updateGameWith(noteAnswerID: 3)
                 self.playSound(noteAnswerID: 3)
                 if result.isCorrect {
+                    updateCorrect()
                     EButton.pulsate()
                     hapticGenerator.notificationOccurred(.success)
                     updateProgressBar()
@@ -386,6 +429,7 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.guessedNotesIDs = []
                     self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
+                    updateIncorrect()
                     if result.isGameOver {
                         hapticGenerator.notificationOccurred(.error)
                         EButton.pulsateWrong()
@@ -420,6 +464,7 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
                 let result = gameController.updateGameWith(noteAnswerID: 4)
                 self.playSound(noteAnswerID: 4)
                 if result.isCorrect {
+                    updateCorrect()
                     GButton.pulsate()
                     hapticGenerator.notificationOccurred(.success)
                     updateProgressBar()
@@ -428,6 +473,7 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
                     self.guessedNotesIDs = []
                     self.PlayButton.changeImageAnimated(toImage: self.playButtonImage, fromImage: self.repeatButtonImage)
                 } else {
+                    updateIncorrect()
                     if result.isGameOver {
                         hapticGenerator.notificationOccurred(.error)
                         GButton.pulsateWrong()
