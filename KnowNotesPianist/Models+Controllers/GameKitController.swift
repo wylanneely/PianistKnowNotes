@@ -11,11 +11,12 @@ import GameKit
 struct GameKitController {
     
     //MARK: - Identifiers
-    private let basicPianoLID = "basicPianoScore"
-    private let grandPianoLID = "grandPianoScore"
-    private let acousticGuitarLID = "acousticGuitarScore"
-    private let keyboardLID = "keyboardScore"
-    private let violinLID = "violinScore"
+    private let basicPianoLID = "knowNotes.BasicPianoScore"
+    private let grandPianoLID = "knowNotes.GrandPianoHighScore"
+    private let acousticGuitarLID = "knowNotes.GuitarMajorChords"
+    private let keyboardLID = "knowNotes.KeyboardNotesHighScore"
+    private let violinLID = "knowNotes.ViolinNotesHighScore"
+    private let acousticMinorLID = "knowNotes.AcousticMinorChordsHighScore"
     
     //MARK: - Submit
     
@@ -31,10 +32,13 @@ struct GameKitController {
             submitKeyboardScore(score: score)
         case .Violin:
             submitViolinScore(score: score)
+        case .AcousticMinor:
+            submitAcousticMinorScore(score: score)
         }
     }
     
    private func submitBasicPianoScore(score:Int) {
+       AchievementesController().setFreePiano(highScore: score)
         GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: [basicPianoLID]) { error in
             if let error {
                 print(error.localizedDescription.localizedLowercase)
@@ -43,6 +47,7 @@ struct GameKitController {
     }
     
     private func submitGrandPianoScore(score:Int) {
+        AchievementesController().setGrandPiano(highScore: score)
          GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: [grandPianoLID]) { error in
              if let error {
                  print(error.localizedDescription.localizedLowercase)
@@ -51,6 +56,7 @@ struct GameKitController {
      }
     
     private func submitAcousticGuitarScore(score:Int) {
+        AchievementesController().setAcoustic(highScore: score)
          GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: [acousticGuitarLID]) { error in
              if let error {
                  print(error.localizedDescription.localizedLowercase)
@@ -59,6 +65,7 @@ struct GameKitController {
      }
     
     private func submitKeyboardScore(score:Int) {
+        AchievementesController().setKeyboard(highScore: score)
          GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: [keyboardLID]) { error in
              if let error {
                  print(error.localizedDescription.localizedLowercase)
@@ -67,7 +74,17 @@ struct GameKitController {
      }
     
     private func submitViolinScore(score:Int) {
+        AchievementesController().setViolin(highScore: score)
          GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: [violinLID]) { error in
+             if let error {
+                 print(error.localizedDescription.localizedLowercase)
+             }
+         }
+     }
+    
+    private func submitAcousticMinorScore(score:Int) {
+        AchievementesController().setAcousticMinor(highScore: score)
+         GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: [acousticMinorLID]) { error in
              if let error {
                  print(error.localizedDescription.localizedLowercase)
              }
