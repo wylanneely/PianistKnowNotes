@@ -69,6 +69,8 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
             soundController = SoundController(soundPack: KeyboardPack, gameType: .Regular)
         case .Violin:
             soundController = SoundController(soundPack: ViolinPack, gameType: .Regular)
+        case .AcousticMinor:
+            soundController = SoundController(soundPack: AGuitarMinorPack, gameType: .Regular)
         }
     }    
     
@@ -555,6 +557,8 @@ class RegularGameViewController: UIViewController, FinishedPopUpDelegate {
                 achievementsController.unlockKeyboardPianist()
             case .Violin:
                 achievementsController.unlockViolinPianist()
+            case .AcousticMinor:
+                achievementsController.unlockAcousticMinPianist()
             }
             self.performSegue(withIdentifier: "toContinuePianist", sender: self)
         }

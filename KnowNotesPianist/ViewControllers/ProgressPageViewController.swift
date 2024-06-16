@@ -163,6 +163,29 @@ class ProgressPageViewController: UIViewController {
                     self.isVirtuosoUnlocked = false
                 }
                 setButtonStates()
+            case .AcousticMinor:
+                if achievementsController.isAcousticMinorNoviceUnlocked() == true {
+                    self.isNoviceUnlocked = true
+                } else {
+                    self.isNoviceUnlocked = false
+                }
+                if achievementsController.isAcousticMinorRegularUnlocked() == true {
+                    self.isRegularUnlocked = true
+                } else {
+                    self.isRegularUnlocked = false
+                }
+                
+                if achievementsController.isAcousticMinorPianistUnlocked() == true {
+                    self.isPianistUnlocked = true
+                } else {
+                    self.isPianistUnlocked = false
+                }
+                
+                if achievementsController.isAcousticMinorVirtuosoUnlocked() == true {
+                    self.isVirtuosoUnlocked = true
+                } else {
+                    self.isVirtuosoUnlocked = false
+                }
             }
         }
     }
@@ -215,6 +238,8 @@ class ProgressPageViewController: UIViewController {
                 instrumentTypeLabel.text = keyboardString
             case .Violin:
                 instrumentTypeLabel.text = violinString
+            case .AcousticMinor:
+                instrumentTypeLabel.text = acousticMinorString
             }
         }
     }
@@ -324,6 +349,7 @@ class ProgressPageViewController: UIViewController {
     private let basicPianoString =  NSLocalizedString("Basic Piano",comment: "")
     private let grandPianoString =  NSLocalizedString("Grand Piano",comment: "")
     private let acousticString =  NSLocalizedString("Acoustic Guitar",comment: "")
+    private let acousticMinorString =  NSLocalizedString("Acoustic Minor Chords",comment: "")
     private let keyboardString =  NSLocalizedString("Keyboard",comment: "")
     private let violinString =  NSLocalizedString("Violin",comment: "")
     private let threeString =  NSLocalizedString("3",comment: "")

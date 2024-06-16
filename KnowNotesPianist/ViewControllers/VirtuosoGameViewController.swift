@@ -67,6 +67,8 @@ class VirtuosoGameViewController: UIViewController, FinishedPopUpDelegate {
             soundController = SoundController(soundPack: KeyboardPack, gameType: .Virtuoso)
         case .Violin:
             soundController = SoundController(soundPack: ViolinPack, gameType: .Virtuoso)
+        case .AcousticMinor:
+            soundController = SoundController(soundPack: AGuitarMinorPack, gameType: .Virtuoso)
         }
     }
 

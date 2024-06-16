@@ -135,6 +135,8 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
             soundController = SoundController(soundPack: KeyboardPack, gameType: .Novice)
         case .Violin:
             soundController = SoundController(soundPack: ViolinPack, gameType: .Novice)
+        case .AcousticMinor:
+            soundController = SoundController(soundPack: AGuitarMinorPack, gameType: .Novice)
         }
     }
     
@@ -161,7 +163,7 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
         noviceLabel.text = noviceString
     }
     
-    //MARK: - Outlets
+    //MARK: - Outlets`
     
     @IBOutlet weak var HomeButton: UIButton!
     @IBOutlet weak var AButton: UIButton!
@@ -471,6 +473,8 @@ class NoviceGameViewController: UIViewController, FinishedPopUpDelegate {
                 achievementsController.unlockKeyboardRegular()
             case .Violin:
                 achievementsController.unlockViolinRegular()
+            case .AcousticMinor:
+                achievementsController.unlockAcousticMinRegular()
             }
             self.performSegue(withIdentifier: "toContinueRegular", sender: self)
         }

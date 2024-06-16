@@ -68,6 +68,8 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
             soundController = SoundController(soundPack: KeyboardPack, gameType: .Pianist)
         case .Violin:
             soundController = SoundController(soundPack: ViolinPack, gameType: .Pianist)
+        case .AcousticMinor:
+            soundController = SoundController(soundPack: AGuitarMinorPack, gameType: .Pianist)
         }
     }
 
@@ -652,6 +654,8 @@ class PianistGameViewController: UIViewController, FinishedPopUpDelegate {
                  achievementsController.unlockKeyboardVirtuoso()
              case .Violin:
                  achievementsController.unlockViolinVirtuoso()
+             case .AcousticMinor:
+                 achievementsController.unlockAcousticMinVirtuoso()
              }
 
              self.performSegue(withIdentifier: "toContinueVirtuoso", sender: self)
