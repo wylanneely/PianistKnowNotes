@@ -58,6 +58,8 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
             return    "knownotes.keyboard.notes"
         case .Violin:
             return "knownotes.violin.notes"
+        case .AcousticMinor:
+            return ""
         }
     }
     
@@ -303,6 +305,8 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
             return isKeyboardNotesPurchased
         case .Violin:
             return isViolinNotesPurchased
+        case .AcousticMinor:
+            return true
         }
         
     }
@@ -365,6 +369,8 @@ class IAPManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObser
                         "Error storing ViolinNotes purchased"
                     )
                         }
+            case .AcousticMinor:
+                break
             }
         }
         getPuchaseStates()
