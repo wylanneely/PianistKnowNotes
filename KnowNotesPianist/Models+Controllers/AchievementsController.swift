@@ -14,12 +14,10 @@ struct AchievementesController {
         checkSetAchievementsClub()
         checkSetCompleteVirtuosoAchievement()
     }
-    
     func refreshAchievments(){
         checkSetAchievementsClub()
         checkSetCompleteVirtuosoAchievement()
     }
-    
     //MARK: Local GamePlay
     
     let defaults = UserDefaults.standard
@@ -44,6 +42,7 @@ struct AchievementesController {
     func unlockFreePianoVirtuoso(){
             defaults.setValue(true, forKey: kFreePianoVirtuoso)
     }
+    
     //GrandPiano
     func setGrandPiano(highScore:Int) {
         guard let oldHS = defaults.object(forKey: kHighScoreGrandPiano) as? Int else {
@@ -57,16 +56,19 @@ struct AchievementesController {
     func unlockGrandPianoNovice(){
             defaults.setValue(true, forKey: kGrandPianoNovice)
     }
+    
     func unlockGrandPianoRegular(){
             defaults.setValue(true, forKey: kGrandPianoRegular)
     }
+    
     func unlockGrandPianoPianist(){
             defaults.setValue(true, forKey: kGrandPianoPianist)
     }
+    
     func unlockGrandPianoVirtuoso(){
             defaults.setValue(true, forKey: kGrandPianoVirtuoso)
     }
-    //Acoustic
+    //Acoustic Major
     func setAcoustic(highScore:Int) {
         guard let oldHS = defaults.object(forKey: kHighScoreAGuitar) as? Int else {
             defaults.setValue(highScore, forKey: kHighScoreAGuitar)
@@ -88,6 +90,30 @@ struct AchievementesController {
     func unlockAcousticVirtuoso(){
             defaults.setValue(true, forKey: kAcousticVirtuoso)
     }
+    //Acoustic Min
+    func setAcousticMinor(highScore:Int) {
+        guard let oldHS = defaults.object(forKey: kHighScoreAMinGuitar) as? Int else {
+            defaults.setValue(highScore, forKey: kHighScoreAMinGuitar)
+            return
+        }
+        if highScore > oldHS {
+            defaults.setValue(highScore, forKey: kHighScoreAMinGuitar)
+        }
+    }
+    func unlockAcousticMinNovice(){
+            defaults.setValue(true, forKey: kAcousticMinorNovice)
+    }
+    func unlockAcousticMinRegular(){
+            defaults.setValue(true, forKey: kAcousticMinorRegular)
+    }
+    func unlockAcousticMinPianist(){
+            defaults.setValue(true, forKey: kAcousticMinorPianist)
+    }
+    func unlockAcousticMinVirtuoso(){
+            defaults.setValue(true, forKey: kAcousticMinorVirtuoso)
+    }
+    
+    
     //Keyboard
     func setKeyboard(highScore:Int) {
         guard let oldHS = defaults.object(forKey: kHighScoreKeyboard) as? Int else {
@@ -179,7 +205,7 @@ struct AchievementesController {
         if defaults.bool(forKey: kGrandPianoVirtuoso) == true
             { return true } else { return false }
     }
-    //Acoustic
+    //Acoustic Major
     func getAcousticHighScore()->Int{
         if let highScore = defaults.object(forKey: kHighScoreAGuitar) as? Int {
             return highScore
@@ -203,6 +229,31 @@ struct AchievementesController {
         if defaults.bool(forKey: kAcousticVirtuoso) == true
             { return true } else { return false }
     }
+    //Acoustic Minor
+    func getAcousticMinorHighScore()->Int{
+        if let highScore = defaults.object(forKey: kHighScoreAMinGuitar) as? Int {
+            return highScore
+        } else {
+            return 0
+        }
+    }
+    func isAcousticMinorNoviceUnlocked()->Bool {
+        if defaults.bool(forKey: kAcousticMinorNovice) == true
+            { return true } else { return false }
+    }
+    func isAcousticMinorRegularUnlocked()->Bool {
+        if defaults.bool(forKey: kAcousticMinorRegular) == true
+            { return true } else { return false }
+    }
+    func isAcoustiMinorPianistUnlocked()->Bool {
+        if defaults.bool(forKey: kAcousticMinorPianist) == true
+            { return true } else { return false }
+    }
+    func isAcousticMinorVirtuosoUnlocked()->Bool {
+        if defaults.bool(forKey: kAcousticMinorVirtuoso) == true
+            { return true } else { return false }
+    }
+    
     //Keyboard
     func getKeyboardHighScore()->Int{
         if let highScore = defaults.object(forKey: kHighScoreKeyboard) as? Int {
@@ -239,39 +290,32 @@ struct AchievementesController {
         if defaults.bool(forKey: kViolinNovice) == true
             { return true } else { return false }
     }
-    
     func isViolinRegularUnlocked()->Bool {
         if defaults.bool(forKey: kViolinRegular) == true
             { return true } else { return false }
     }
-    
     func isViolinPianistUnlocked()->Bool {
         if defaults.bool(forKey: kViolinPianist) == true
             { return true } else { return false }
     }
-    
     func isViolinVirtuosoUnlocked()->Bool {
         if defaults.bool(forKey: kViolinVirtuoso) == true
         { return true } else { return false }
     }
-    
     //MARK: - Achievements
     
     var is100ClubUnlocked: Bool {
         if defaults.bool(forKey: k100Club) == true {
             return true } else { return false }
     }
-    
     var is200ClubUnlocked: Bool {
         if defaults.bool(forKey: k200Club) == true {
             return true } else { return false }
     }
-    
     var is300ClubUnlocked: Bool {
         if defaults.bool(forKey: k300Club) == true {
             return true } else { return false }
     }
-    
     var isVirtuosoAchiUnlocked: Bool {
         if defaults.bool(forKey: kVirtuosoAchievement) == true {
             return true } else { return false }
@@ -283,8 +327,9 @@ struct AchievementesController {
         let acou = getAcousticHighScore()
         let keyB = getKeyboardHighScore()
         let violin = getViolinHighScore()
+        let acouMin = getAcousticMinorHighScore()
         
-        let highScores: [Int] = [fPiano,gPiano,acou,keyB,violin]
+        let highScores: [Int] = [fPiano,gPiano,acou,keyB,violin,acouMin]
         
         for score in highScores {
             switch score {
@@ -316,6 +361,11 @@ struct AchievementesController {
                 return 1 } else { return 0 }
         }
         
+        var acousticMinRef: Int {
+            if getAcousticMinorHighScore() >= 100 {
+                return 1 } else { return 0 }
+        }
+        
         var keyboardRef: Int {
             if getKeyboardHighScore() >= 100 {
                 return 1 } else { return 0 }
@@ -326,7 +376,7 @@ struct AchievementesController {
                 return 1 } else { return 0 }
         }
         
-        if (freePianoRef + grandPianoRef + acousticRef + keyboardRef + violinRef) == 5 {
+        if (acousticMinRef + freePianoRef + grandPianoRef + acousticRef + keyboardRef + violinRef) == 5 {
             unlockVirtuosoAcievement()
         }
         
@@ -348,7 +398,22 @@ struct AchievementesController {
         defaults.setValue(true, forKey: kVirtuosoAchievement)
     }
     
+    //MARK: - Hints
+    
+    func hasHintsBeenShown()->Bool{
+        if defaults.bool(forKey: kHasHintsBeenShown) == true {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func hintsHaveBeenShown(){
+        defaults.setValue(true, forKey: kHasHintsBeenShown)
+    }
+    
     //MARK: Local Keys
+    fileprivate let kHasHintsBeenShown = "HintsShown"
     
     fileprivate let kFreePianoRegular = "FreePianoRegular"
     fileprivate let kFreePianoPianist = "FreePianoPianist"
@@ -363,6 +428,11 @@ struct AchievementesController {
     fileprivate let kAcousticRegular = "AcousticRegular"
     fileprivate let kAcousticPianist = "AcousticPianist"
     fileprivate let kAcousticVirtuoso = "AcousticVirtuoso"
+    
+    fileprivate let kAcousticMinorNovice = "AcousticMinNovice"
+    fileprivate let kAcousticMinorRegular = "AcousticMinRegular"
+    fileprivate let kAcousticMinorPianist = "AcousticMinPianist"
+    fileprivate let kAcousticMinorVirtuoso = "AcousticMinVirtuoso"
 
     fileprivate let kKeyboardNovice = "KeyboardNovice"
     fileprivate let kKeyboardRegular = "KeyboardRegular"
@@ -377,6 +447,7 @@ struct AchievementesController {
     fileprivate let kHighScoreFreePiano = "FreePianoHS"
     fileprivate let kHighScoreGrandPiano = "FreeGrandHS"
     fileprivate let kHighScoreAGuitar = "AcousticGuitarHS"
+    fileprivate let kHighScoreAMinGuitar = "AcousticMinGuitarHS"
     fileprivate let kHighScoreKeyboard = "KeyboardHS"
     fileprivate let kHighScoreViolin = "ViolinHS"
     
