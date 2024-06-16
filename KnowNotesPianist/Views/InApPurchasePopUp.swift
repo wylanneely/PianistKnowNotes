@@ -18,7 +18,6 @@ class InApPurchasePopUp: UIViewController {
     }
     
     let InAppPurchaseManager = IAPManager.shared
-    
     var instrument: InstrumentType = .BasicPiano
     
     let buyString:String =  NSLocalizedString("Buy",comment: "buy Purchase")
@@ -63,6 +62,8 @@ class InApPurchasePopUp: UIViewController {
         case .Violin:
             productLabel.text = violinNotesString
             productImage.image = UIImage(named: "violin")
+        case .AcousticMinor:
+            return
         }
     }
     
@@ -75,9 +76,6 @@ class InApPurchasePopUp: UIViewController {
         restoreAttributes.font = UIFont(name: "Helvetica Bold", size: 18)
         let restoreTitle = AttributedString(restoreString, attributes: restoreAttributes)
         restoreButton.configuration?.attributedTitle = restoreTitle
-    //    restoreButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-      //  restoreButton.setTitle(restoreString, for: .normal)
-
     }
     
     //MARK: - Outlets
@@ -108,7 +106,9 @@ class InApPurchasePopUp: UIViewController {
                case .Violin:
             let product = IAPManager.shared.getProductFrom(instrument: instrument)
                    IAPManager.shared.buyProduct(product)
-               }
+        case .AcousticMinor:
+            break
+        }
         self.hide()
 
     }
@@ -154,3 +154,6 @@ class InApPurchasePopUp: UIViewController {
     }
 
 }
+
+
+

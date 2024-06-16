@@ -16,9 +16,10 @@ class InstrumentSelectCell: UICollectionViewCell {
         switch instrumentID {
         case 0: return InstrumentType.BasicPiano
         case 1: return InstrumentType.GrandPiano
-        case 2: return InstrumentType.AcousticGuitar
-        case 3: return InstrumentType.Keyboard
-        case 4: return InstrumentType.Violin
+        case 2: return InstrumentType.AcousticMinor
+        case 3: return InstrumentType.AcousticGuitar
+        case 4: return InstrumentType.Keyboard
+        case 5: return InstrumentType.Violin
         default: return InstrumentType.BasicPiano
         }
     }
@@ -40,6 +41,8 @@ class InstrumentSelectCell: UICollectionViewCell {
     private let acousticString =  NSLocalizedString("Acoustic Guitar",comment: "")
     private let keyboardString =  NSLocalizedString("Keyboard",comment: "")
     private let violinString =  NSLocalizedString("Violin",comment: "")
+    private let acousticMinorString = NSLocalizedString("Acoustic Minor Chords", comment: "")
+
     
     
     //MARK: - Setup
@@ -136,6 +139,12 @@ class InstrumentSelectCell: UICollectionViewCell {
                 instrumentLabel.textColor = UIColor.lockedBorder
                 self.layer.borderColor = UIColor.lockedBorder.cgColor
             }
+        case .AcousticMinor:
+            let hs = AchievementesController().getAcousticMinorHighScore()
+            setHSLabelText(score: hs)
+            highScoreLabel.textColor =  UIColor.instrumentLabel
+            instrumentLabel.textColor = UIColor.instrumentLabel
+            self.layer.borderColor = UIColor.unlockedBorder.cgColor
         }
     }
     
@@ -146,8 +155,9 @@ class InstrumentSelectCell: UICollectionViewCell {
         case 0: return UIImage(named: "basicPiano")!
         case 1: return UIImage(named: "grandpiano")!
         case 2: return UIImage(named: "AcousticGuitar")!
-        case 3: return UIImage(named: "ElectricKeyboard")!
-        case 4: return UIImage(named: "violin")!
+        case 3: return UIImage(named: "AcousticGuitar")!
+        case 4: return UIImage(named: "ElectricKeyboard")!
+        case 5: return UIImage(named: "violin")!
         default:
             return UIImage(named: "grandpiano")!
         }
@@ -157,9 +167,10 @@ class InstrumentSelectCell: UICollectionViewCell {
         switch id {
         case 0: return basicPianoString
         case 1: return grandPianoString
-        case 2: return acousticString
-        case 3: return keyboardString
-        case 4: return violinString
+        case 2: return acousticMinorString
+        case 3: return acousticString
+        case 4: return keyboardString
+        case 5: return violinString
         default:
             return basicPianoString
         }
