@@ -106,6 +106,23 @@ let AGuitarMajorPack = SoundPack(
     GS: GSMaj_AGuitar
 )
 
+let AGuitarMinorPack = SoundPack(
+    name: "MinorAGuitar",
+    type: .AcousticMinor,
+    A: AMin_AGuitar,
+    AS: ASMin_AGuitar,
+    B: BMin_AGuitar,
+    C: CMin_AGuitar,
+    CS: CSMin_AGuitar,
+    D: DMin_AGuitar,
+    DS: DSMin_AGuitar,
+    E: EMin_AGuitar,
+    F: FMin_AGuitar,
+    FS: FSMin_AGuitar,
+    G: GMin_AGuitar,
+    GS: GSMin_AGuitar
+)
+
 //MARK: - Notes
 
 struct Note {
@@ -190,3 +207,18 @@ let FMaj_AGuitar = Note(note: "FMaj_AGuitar", noteID: 8, soundFileName: "FMaj_Ac
 let FSMaj_AGuitar = Note(note: "FSMaj_AGuitar", noteID: 9, soundFileName: "FSMaj_AccGuitar")
 let GMaj_AGuitar = Note(note: "GMaj_AGuitar", noteID: 10, soundFileName: "GMaj_AccGuitar")
 let GSMaj_AGuitar = Note(note: "GSMaj_AGuitar", noteID: 11, soundFileName: "GSMaj_AccGuitar")
+
+//MARK: Min AccGuitar
+
+let AMin_AGuitar = Note(note: "AMaj_AGuitar", noteID: 0, soundFileName: "AMaj_AccGuitar")
+let ASMin_AGuitar = Note(note: "ASMaj_AGuitar", noteID: 1, soundFileName: "ASMaj_AccGuitar")
+let BMin_AGuitar = Note(note: "BMaj_AGuitar", noteID: 2, soundFileName: "BMaj_AccGuitar")
+let CMin_AGuitar = Note(note: "CMaj_AGuitar", noteID: 3, soundFileName: "CMaj_AccGuitar")
+let CSMin_AGuitar = Note(note: "CSMaj_AGuitar", noteID: 4, soundFileName: "CSMaj_AccGuitar")
+let DMin_AGuitar = Note(note: "DMaj_AGuitar", noteID: 5, soundFileName: "DMaj_AccGuitar")
+let DSMin_AGuitar = Note(note: "DSMaj_AGuitar", noteID: 6, soundFileName: "DSMaj_AccGuitar")
+let EMin_AGuitar = Note(note: "EMaj_AGuitar", noteID: 7, soundFileName: "EMaj_AccGuitar")
+let FMin_AGuitar = Note(note: "FMaj_AGuitar", noteID: 8, soundFileName: "FMaj_AccGuitar")
+let FSMin_AGuitar = Note(note: "FSMaj_AGuitar", noteID: 9, soundFileName: "FSMaj_AccGuitar")
+let GMin_AGuitar = Note(note: "GMaj_AGuitar", noteID: 10, soundFileName: "GMaj_AccGuitar")
+let GSMin_AGuitar = Note(note: "GSMaj_AGuitar", noteID: 11, soundFileName: "GSMaj_AccGuitar")
