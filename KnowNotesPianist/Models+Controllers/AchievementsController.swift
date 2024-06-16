@@ -238,14 +238,13 @@ struct AchievementesController {
         }
     }
     func isAcousticMinorNoviceUnlocked()->Bool {
-        if defaults.bool(forKey: kAcousticMinorNovice) == true
-            { return true } else { return false }
+        return true
     }
     func isAcousticMinorRegularUnlocked()->Bool {
         if defaults.bool(forKey: kAcousticMinorRegular) == true
             { return true } else { return false }
     }
-    func isAcoustiMinorPianistUnlocked()->Bool {
+    func isAcousticMinorPianistUnlocked()->Bool {
         if defaults.bool(forKey: kAcousticMinorPianist) == true
             { return true } else { return false }
     }
