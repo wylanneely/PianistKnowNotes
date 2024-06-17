@@ -8,6 +8,7 @@
 import UIKit
 import GameKit
 import StoreKit
+import AVFoundation
 
 class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, StartGameDelegate, InstrumentSelectDelegate {
     
@@ -38,6 +39,7 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpAudio()
         setUpCollectionView()
         authenticateUser()
         setInstrumentLabel()
@@ -58,7 +60,7 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        welcomeAnimation()
     }
     
 //    override var prefersStatusBarHidden: Bool {
@@ -161,6 +163,28 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
         
     }
  
+    //MARK: - Audio
+    var player: AVAudioPlayer!
+    
+    var positiveSoundURL: URL {
+      let filePath =  Bundle.main.path(forResource: "PositiveSound", ofType: "wav")!
+        return URL(filePath: filePath)
+    }
+    
+    func setUpAudio(){
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback)
+        } catch(let error) {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func playPositiveSound(){
+         let soundURL = positiveSoundURL
+            player = try! AVAudioPlayer(contentsOf: soundURL)
+            player!.play()
+    }
+    
     //MARK: - Notification Center
     
     static let IAPNotifName = Notification.Name("IAPCompleted")
@@ -227,6 +251,43 @@ class InstrumentSelectViewController: UIViewController, UICollectionViewDelegate
     @IBOutlet weak var twohundredClubButton: UIButton!
     @IBOutlet weak var threeHundredClubButton: UIButton!
     @IBOutlet weak var virtuosoCompleteButton: UIButton!
+    
+    
+    @IBOutlet weak var welcomeView: UIView!
+    @IBOutlet weak var welcomeBackLabel: UILabel!
+    
+    //MARK: - Welcome Back
+    
+    var didShowWelcomeAnimation = false
+    let welcomeBackString = NSLocalizedString("Welcome Back...", comment: "none")
+    
+    func welcomeAnimation(){
+        
+        if didShowWelcomeAnimation == true {
+            return
+        }
+        let text = welcomeBackString
+        let duration = 2.2
+        welcomeBackLabel.font = UIFont(name: "Poppins-Bold", size: 39)
+        let totalLength = text.count
+        let interval = duration / Double(totalLength)
+        var currentIndex = 0
+                
+        Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { timer in
+            if currentIndex < totalLength {
+                let index = text.index(text.startIndex, offsetBy: currentIndex)
+                self.welcomeBackLabel.text = String(text.prefix(currentIndex + 1))
+                currentIndex += 1
+                    } else {
+                        timer.invalidate()
+                        // Transition to the main view controller after the animation
+                        self.welcomeView.isHidden = true
+                        self.didShowWelcomeAnimation = true
+                        self.playPositiveSound()
+                        return
+                    }
+                }
+    }
     
     //MARK: - Actions
     
