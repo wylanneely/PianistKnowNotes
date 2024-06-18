@@ -176,11 +176,17 @@ class InstrumentSelectCell: UICollectionViewCell {
         }
     }
     
-    //MARK: - Outlet
-    @IBAction func cellButtonTapped(_ sender: Any) {
-        delegate?.openProgressViewFor(instrument: self.instrumentType)
+  
+    func successfulTapFeedback() {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(.success)
     }
     
+    //MARK: - Outlet
+    @IBAction func cellButtonTapped(_ sender: Any) {
+        successfulTapFeedback()
+        delegate?.openProgressViewFor(instrument: self.instrumentType)
+    }
 
 }
 
