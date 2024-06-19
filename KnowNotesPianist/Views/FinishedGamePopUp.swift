@@ -184,11 +184,11 @@ class FinishedGamePopUp: UIViewController {
     @objc private func presentShareSheet() {
         //in future replace link with link to game
         guard let image = self.shareImage else {
-        // let url = URL(string: "https://apps.apple.com/us/app/sober-today/id6478566365") else {
+         //let url = URL(string: "https://apps.apple.com/us/app/know-notes-master-music/id1536356966")
             print("error")
             return
         }
-        let shareSheetVC = UIActivityViewController(activityItems: [image],
+        let shareSheetVC = UIActivityViewController(activityItems: [url,image],
                                                     applicationActivities: nil)
         present(shareSheetVC, animated: true)
     }
