@@ -188,7 +188,7 @@ class FinishedGamePopUp: UIViewController {
             print("error")
             return
         }
-        let shareSheetVC = UIActivityViewController(activityItems: [url,image],
+        let shareSheetVC = UIActivityViewController(activityItems: [image],
                                                     applicationActivities: nil)
         present(shareSheetVC, animated: true)
     }
@@ -213,7 +213,6 @@ class FinishedGamePopUp: UIViewController {
         self.dismiss(animated: true) {
             self.delegate?.finishedPopUpRestartedGame()
         }
-       // delegate?.finishedPopUpRestartedGame()
     }
     
 }
