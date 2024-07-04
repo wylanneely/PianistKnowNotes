@@ -162,18 +162,32 @@ class FinishedGamePopUp: UIViewController {
     @IBOutlet weak var exitLabel: UILabel!
     @IBOutlet weak var restartLabel: UILabel!
     
+    @IBOutlet weak var submitedScoreImage: UIImageView!
     
     let exitString:String =  NSLocalizedString("Exit",comment: "exit home")
     let restartString:String = NSLocalizedString("Restart",comment: "restart game")
     let submitString:String = NSLocalizedString("Submit",comment: "submit score")
     private var language: String = NSLocalizedString("AppLanguage", comment: "to help adjust certain views/settings")
 
+    //MARK:- ANimation
+    
+    func flashSubmitScore(){
+        UIView.animate(withDuration: 2, delay: 1, options: .transitionFlipFromTop, animations: {
+            self.submitedScoreImage.isHidden = false
+            self.submitedScoreImage.alpha = 0
+        }, completion: { finished in
+            self.submitedScoreImage.isHidden = true
+            self.submitedScoreImage.alpha = 1 // reset alpha to 1
+        })
+    }
+    
     //MARK: - Actions
     @IBAction func submitScoreTapped(_ sender: Any) {
         submitScoreButton.pulsate()
         mediumImpact.impactOccurred()
         gameKitController.submitLeaderboard(score: game?.score ?? 0, instrument: self.instrument)
         GameKitController().showGKAccessPoint()
+        flashSubmitScore()
     }
     
     @IBAction func shareButtonTapped(_ sender: Any) {

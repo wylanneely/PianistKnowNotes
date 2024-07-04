@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -20,6 +21,7 @@
                 <outlet property="restartButton" destination="3mY-Lb-OVd" id="mrn-pI-cXy"/>
                 <outlet property="restartLabel" destination="Ngf-eQ-HnV" id="4DS-vS-txr"/>
                 <outlet property="submitScoreButton" destination="AC5-My-xnT" id="H7b-2z-Ma4"/>
+                <outlet property="submitedScoreImage" destination="QqT-Lu-RNY" id="h1x-iZ-55g"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -32,11 +34,11 @@
                     <rect key="frame" x="41.666666666666657" y="311" width="310" height="310"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="Xzo-fx-8CX">
-                            <rect key="frame" x="39" y="181" width="232" height="69"/>
+                            <rect key="frame" x="39" y="173" width="232" height="77"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxi-lV-U0W">
-                                    <rect key="frame" x="0.0" y="0.0" width="90" height="69"/>
-                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="90" height="77"/>
+                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                     <color key="tintColor" name="PopUpTextColor"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" image="HomeButtonMedium"/>
@@ -45,7 +47,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mY-Lb-OVd">
-                                    <rect key="frame" x="142" y="0.0" width="90" height="69"/>
+                                    <rect key="frame" x="142" y="0.0" width="90" height="77"/>
                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                     <color key="tintColor" name="PopUpTextColor"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -119,18 +121,18 @@
                         <constraint firstItem="XiU-j8-M9B" firstAttribute="top" secondItem="Xi3-qM-Q8w" secondAttribute="top" constant="8" id="38v-hX-vAG"/>
                         <constraint firstItem="r9T-rw-839" firstAttribute="top" secondItem="Xi3-qM-Q8w" secondAttribute="top" constant="8" id="7B3-A1-7QZ"/>
                         <constraint firstAttribute="trailing" secondItem="Xzo-fx-8CX" secondAttribute="trailing" constant="39" id="AY3-Uj-VQe"/>
-                        <constraint firstItem="Ngf-eQ-HnV" firstAttribute="top" secondItem="Xzo-fx-8CX" secondAttribute="bottom" constant="8" symbolic="YES" id="Gd5-k3-ZUa"/>
                         <constraint firstItem="Xzo-fx-8CX" firstAttribute="centerX" secondItem="Xi3-qM-Q8w" secondAttribute="centerX" id="Hob-QE-Rjy"/>
                         <constraint firstItem="fOv-ZJ-AfW" firstAttribute="centerX" secondItem="kxi-lV-U0W" secondAttribute="centerX" id="Iol-IS-n8M"/>
                         <constraint firstItem="r9T-rw-839" firstAttribute="leading" secondItem="Xi3-qM-Q8w" secondAttribute="leading" constant="8" id="JGf-IY-DUi"/>
                         <constraint firstAttribute="trailing" secondItem="XiU-j8-M9B" secondAttribute="trailing" constant="8" id="Knc-Gx-jru"/>
                         <constraint firstAttribute="bottom" secondItem="Xzo-fx-8CX" secondAttribute="bottom" constant="60" id="N9z-Sp-FWF"/>
                         <constraint firstItem="AC5-My-xnT" firstAttribute="bottom" secondItem="Xi3-qM-Q8w" secondAttribute="centerY" constant="6" id="b4w-Lg-1jR"/>
+                        <constraint firstItem="fOv-ZJ-AfW" firstAttribute="top" secondItem="Xzo-fx-8CX" secondAttribute="bottom" constant="8" symbolic="YES" id="bGH-Id-c8a"/>
                         <constraint firstItem="mZd-YD-aCR" firstAttribute="centerX" secondItem="Xi3-qM-Q8w" secondAttribute="centerX" id="bbC-OF-q0e"/>
                         <constraint firstItem="AC5-My-xnT" firstAttribute="top" secondItem="mZd-YD-aCR" secondAttribute="bottom" constant="-10" id="cDA-aR-fVu"/>
                         <constraint firstItem="AC5-My-xnT" firstAttribute="centerX" secondItem="Xi3-qM-Q8w" secondAttribute="centerX" id="epx-UT-S74"/>
-                        <constraint firstItem="fOv-ZJ-AfW" firstAttribute="top" secondItem="Xzo-fx-8CX" secondAttribute="bottom" constant="8" symbolic="YES" id="hGd-uj-F3W"/>
                         <constraint firstItem="Xzo-fx-8CX" firstAttribute="leading" secondItem="Xi3-qM-Q8w" secondAttribute="leading" constant="39" id="jZF-yn-9k2"/>
+                        <constraint firstItem="Ngf-eQ-HnV" firstAttribute="top" secondItem="Xzo-fx-8CX" secondAttribute="bottom" constant="8" symbolic="YES" id="uYB-Br-mXk"/>
                         <constraint firstItem="Ngf-eQ-HnV" firstAttribute="centerX" secondItem="3mY-Lb-OVd" secondAttribute="centerX" id="wSQ-EU-ytV"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
@@ -139,12 +141,21 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand.thumbsup.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QqT-Lu-RNY">
+                    <rect key="frame" x="121" y="143" width="151" height="127.66666666666669"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="QqT-Lu-RNY" secondAttribute="height" multiplier="151:129" id="86G-YD-3wo"/>
+                        <constraint firstAttribute="width" constant="151" id="8ER-Om-9Oi"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="PopUpBackground"/>
             <constraints>
                 <constraint firstItem="Xi3-qM-Q8w" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.36385" id="4gh-xf-OUZ"/>
                 <constraint firstItem="Xi3-qM-Q8w" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="40" id="D9N-SM-s0N"/>
+                <constraint firstItem="Xi3-qM-Q8w" firstAttribute="top" secondItem="QqT-Lu-RNY" secondAttribute="bottom" constant="40" id="FOz-nW-RjE"/>
+                <constraint firstItem="QqT-Lu-RNY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Oh6-ku-iCs"/>
                 <constraint firstItem="Xi3-qM-Q8w" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gI4-Qs-ep1"/>
                 <constraint firstItem="Xi3-qM-Q8w" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.788804" id="kU2-Vd-udO"/>
             </constraints>
@@ -152,8 +163,9 @@
         </view>
     </objects>
     <resources>
-        <image name="HomeButtonMedium" width="69" height="69"/>
-        <image name="RestartGame" width="64" height="66"/>
+        <image name="HomeButtonMedium" width="77" height="77"/>
+        <image name="RestartGame" width="77" height="77"/>
+        <image name="hand.thumbsup.circle" catalog="system" width="128" height="123"/>
         <image name="square.and.arrow.up" catalog="system" width="108" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="PopUpBackground">
