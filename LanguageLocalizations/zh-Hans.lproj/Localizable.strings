@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  KnowNotesPianist
+
+  Created by Wylan L Neely on 4/23/24.
+  
+*/
+"AppLanguage" = "Chinese";
+//InstrumentTypeName
+"Basic Piano" = "钢琴";
+"Grand Piano" = "三角钢琴";
+"Acoustic Guitar" = "吉他大调和弦";
+"Keyboard" = "电子钢琴";
+"Violin" = "小提琴";
+"Acoustic Minor Chords" = "原声吉他小和弦";
+"Instruments" = "乐器";
+//InstrumentSelect
+"Welcome Back..." = "欢迎回来...";
+"High Score" = "最高分";
+"Locked" = "锁定";
+//ProgressPage
+"Select Difficulty" = "选择难度";
+"Novice" = "新手";
+"Regular" = "普通难度";
+"Pianist" = "专业";
+"Virtuoso" = "音乐大师";
+"3" = "三";
+"5" = "五";
+"7" = "七";
+"12" = "十二";
+//FinishedGamePopUp
+"Exit" = "退出";
+"Restart" = "重试";
+"Submit" = "提交分数";
+//achievementAlert
+"AchievementMessage1" = "得分一百分以解锁成就。";
+"AchievementMessage2" = "得分二百分以解锁成就。";
+"AchievementMessage3" = "得分三百分以解锁成就。";
+"AchievementMessageV" = "使用五种乐器得分一百分，达成成功";
+
+"OK" = "好的";
+//In App Purchases
+"Buy" = "购买";
+"Restore" = "恢复";
+//Hints
+"Hint1" = "点击音符按钮测试并熟悉声音。";
+"Hint2" = "准备好开始游戏时，点击“开始”，将播放的声音与正确的音符按钮匹配即可获胜。";

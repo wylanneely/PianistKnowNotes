@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  KnowNotesPianist
+
+  Created by Wylan L Neely on 4/23/24.
+  
+*/
+"AppLanguage" = "Potruguese";
+//InstrumentTypeName
+"Basic Piano" = "Piano";
+"Grand Piano" = "Piano de Cauda";
+"Acoustic Guitar" = "Acordes Maiores de Guitarra";
+"Keyboard" = "Teclado";
+"Violin" = "Violino";
+"Acoustic Minor Chords" = "Acordes Menores de Guitarra";
+"Instruments" = "Instrumentos";
+//InstrumentSelect
+"Welcome Back..." = "Bem-vindo de volta...";
+"High Score" = "Pontuação Alta";
+"Locked" = "Bloqueado";
+//ProgressPage
+"Select Difficulty" = "Dificuldade";
+"Novice" = "Novato";
+"Regular" = "Regular";
+"Pianist" = "Pianista";
+"Virtuoso" = "Virtuoso";
+"3" = "3";
+"5" = "5";
+"7" = "7";
+"12" = "12";
+//FinishedGamePopUp
+"Exit" = "Sair";
+"Restart" = "Reiniciar";
+"Submit" = "Enviar";
+//achievementAlert
+"AchievementMessage1" = "Marque 100 pontos para desbloquear a conquista.";
+"AchievementMessage2" = "Marque 200 pontos para desbloquear a conquista.";
+"AchievementMessage3" = "Marque 300 pontos para desbloquear a conquista.";
+"AchievementMessageV" = "Marque 100 pontos com 5 instrumentos para desbloquear a conquista.";
+
+"OK" = "OK";
+//In App Purchases
+"Buy" = "Comprar";
+"Restore" = "Restaurar";
+//Hints
+"Hint1" = "Clique nos botões de notas para testar e se familiarizar com os sons.";
+"Hint2" = "Clique em 'Iniciar' quando estiver pronto para começar a jogar, combine o som reproduzido com o botão de nota correto para ganhar.";

@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  KnowNotesPianist
+
+  Created by Wylan L Neely on 4/23/24.
+  
+*/
+"AppLanguage" = "Italian";
+//InstrumentTypeName
+"Basic Piano" = "Pianoforte";
+"Grand Piano" = "Pianoforte a Coda";
+"Acoustic Guitar" = "Accordi Maggiori di Chitarra";
+"Keyboard" = "Tastiera";
+"Violin" = "Tastiera";
+"Acoustic Minor Chords" = "Accordi Minori per Chitarra";
+"Instruments" = "Strumenti";
+//InstrumentSelect
+"Welcome Back..." = "Bentornato...";
+"High Score" = "Record";
+"Locked" = "Bloccato";
+//ProgressPage
+"Select Difficulty" = "Seleziona Difficoltà";
+"Novice" = "Noob";
+"Regular" = "Medio";
+"Pianist" = "Pianista";
+"Virtuoso" = "Virtuoso";
+"3" = "3";
+"5" = "5";
+"7" = "7";
+"12" = "12";
+//FinishedGamePopUp
+"Exit" = "Uscita";
+"Restart" = "Riavvia";
+"Submit" = "Invia";
+//achievementAlert
+"AchievementMessage1" = "Segna 100 punti per sbloccare l'obiettivo.";
+"AchievementMessage2" = "Segna 200 punti per sbloccare l'obiettivo.";
+"AchievementMessage3" = "Segna 300 punti per sbloccare l'obiettivo.";
+"AchievementMessageV" = "Segna 100 punti con 5 strumenti per sbloccare l'obiettivo.";
+
+"OK" = "OK";
+//In App Purchases
+"Buy" = "Acquistare";
+"Restore" = "Ripristina";
+//Hints
+"Hint1" = "Fai clic sui pulsanti delle note per testare e familiarizzare con i suoni.";
+"Hint2" = "Fai clic su 'Inizia' quando sei pronto per iniziare a giocare, abbina il suono riprodotto al pulsante della nota corretta per vincere.";

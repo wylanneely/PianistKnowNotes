@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  KnowNotesPianist
+
+  Created by Wylan L Neely on 4/23/24.
+  
+*/
+"AppLanguage" = "Japanese";
+//InstrumentTypeName
+"Basic Piano" = "ピアノ";
+"Grand Piano" = "グランドピアノ";
+"Acoustic Guitar" = "ギターメジャーコード";
+"Keyboard" = "キーボード";
+"Violin" = "バイオリン";
+"Acoustic Minor Chords" = "ギターのマイナーコード";
+"Instruments" = "楽器";
+//InstrumentSelect
+"Welcome Back..." = "お帰りなさい...";
+"High Score" = "ハイスコア";
+"Locked" = "ロックされた";
+//ProgressPage
+"Select Difficulty" = "難易度を選択する";
+"Novice" = "初心者";
+"Regular" = "中間";
+"Pianist" = "ピアニスト";
+"Virtuoso" = "難しい";
+"3" = "3";
+"5" = "5";
+"7" = "7";
+"12" = "12";
+//FinishedGamePopUp
+"Exit" = "戻る";
+"Restart" = "やり直す";
+"Submit" = "送信";
+//achievementAlert
+"AchievementMessage1" = "実績を解除するには100ポイントを獲得してください。";
+"AchievementMessage2" = "実績を解除するには200ポイントを獲得してください。";
+"AchievementMessage3" = "実績を解除するには300ポイントを獲得してください。";
+"AchievementMessageV" = "成就を解除するには、5つの楽器で100ポイントを獲得してください。";
+
+"OK" = "わかりました";
+//In App Purchases
+"Buy" = "購入";
+"Restore" = "復元";
+//Hints
+"Hint1" = "音符ボタンをクリックして音をテストし、慣れましょう。";
+"Hint2" = "準備ができたら「スタート」をクリックしてプレイを開始し、再生された音と正しい音符ボタンを一致させて勝利しましょう。";

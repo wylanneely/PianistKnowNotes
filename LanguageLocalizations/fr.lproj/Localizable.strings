@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  KnowNotesPianist
+
+  Created by Wylan L Neely on 4/23/24.
+  
+*/
+"AppLanguage" = "French";
+//InstrumentTypeName
+"Basic Piano" = "Piano de Base";
+"Grand Piano" = "Piano à Queue";
+"Acoustic Guitar" = "Accords Majeurs de Guitare";
+"Keyboard" = "Clavier";
+"Violin" = "Violin";
+"Acoustic Minor Chords" = "Accords Mineurs de Guitare";
+"Instruments" = "Instruments";
+//InstrumentSelect
+"Welcome Back..." = "Bienvenue de retour...";
+"High Score" = "Score Élevé";
+"Locked" = "Verrouillé";
+//ProgressPage
+"Select Difficulty" = "Difficulté";
+"Novice" = "Novice";
+"Regular" = "Régulier";
+"Pianist" = "Pianiste";
+"Virtuoso" = "Virtuose";
+"3" = "3";
+"5" = "5";
+"7" = "7";
+"12" = "12";
+//FinishedGamePopUp
+"Exit" = "Sortie";
+"Restart" = "Réessayer";
+"Submit" = "Soumettre";
+//achievementAlert
+"AchievementMessage1" = "Marquez 100 points pour débloquer la réussite.";
+"AchievementMessage2" = "Marquez 200 points pour débloquer la réussite.";
+"AchievementMessage3" = "Marquez 300 points pour débloquer la réussite.";
+"AchievementMessageV" = "Marquez 100 points avec 5 instruments pour débloquer la réussite.";
+
+"OK" = "OK";
+//In App Purchases
+"Buy" = "Acheter";
+"Restore" = "Restaurer";
+//Hints
+"Hint1" = "Cliquez sur les boutons de notes pour tester et vous familiariser avec les sons.";
+"Hint2" = "Cliquez sur 'Démarrer' lorsque vous êtes prêt à commencer à jouer, associez le son joué au bouton de note correct pour gagner.";

@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  KnowNotesPianist
+
+  Created by Wylan L Neely on 4/23/24.
+  
+*/
+"AppLanguage" = "Korean";
+//InstrumentTypeName
+"Basic Piano" = "피아노";
+"Grand Piano" = "그랜드 피아노";
+"Acoustic Guitar" = "기타 메이저 코드";
+"Keyboard" = "키보드";
+"Violin" = "바이올린";
+"Acoustic Minor Chords" = "어쿠스틱 기타 마이너 코드";
+"Instruments" = "악기";
+//InstrumentSelect
+"Welcome Back..." = "다시 오신 것을 환영합니다...";
+"High Score" = "최고 점수";
+"Locked" = "잠긴 레벨";
+//ProgressPage
+"Select Difficulty" = "난이도 선택";
+"Novice" = "초보자";
+"Regular" = "중간";
+"Pianist" = "피아니스트";
+"Virtuoso" = "비르투오소";
+"3" = "3";
+"5" = "5";
+"7" = "7";
+"12" = "12";
+//FinishedGamePopUp
+"Exit" = "나가기";
+"Restart" = "재시작";
+"Submit" = "점수 제출";
+//achievementAlert
+"AchievementMessage1" = "성취를 잠금 해제하려면 100점을 획득하세요.";
+"AchievementMessage2" = "성취를 잠금 해제하려면 200점을 획득하세요.";
+"AchievementMessage3" = "성취를 잠금 해제하려면 300점을 획득하세요.";
+"AchievementMessageV" = "성취를 잠금 해제하려면 5개의 악기로 100점을 획득하세요.";
+
+"OK" = "오케이";
+//In App Purchases
+"Buy" = "구매";
+"Restore" = "복원";
+//Hints
+"Hint1" = "음표 버튼을 클릭하여 소리를 테스트하고 익숙해지세요.";
+"Hint2" = "준비가 되면 '시작'을 클릭하여 게임을 시작하고, 재생된 소리를 올바른 음표 버튼과 일치시켜 승리하세요.";

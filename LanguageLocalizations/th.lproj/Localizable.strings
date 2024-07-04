@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  KnowNotesPianist
+
+  Created by Wylan L Neely on 4/23/24.
+  
+*/
+"AppLanguage" = "Thai";
+//InstrumentTypeName
+"Basic Piano" = "เปียโน";
+"Grand Piano" = "เปียโนกรานด์";
+"Acoustic Guitar" = "คอร์ดเมเจอร์กีตาร์";
+"Keyboard" = "เปียโนไฟฟ้า";
+"Violin" = "ไวโอลิน";
+"Acoustic Minor Chords" = "คอร์ดไมเนอร์กีตาร์โปร่ง";
+"Instruments" = "เครื่องดนตรี";
+//InstrumentSelect
+"Welcome Back..." = "ยินดีต้อนรับกลับมา...";
+"High Score" = "คะแนนสูงสุด";
+"Locked" = "ล็อคอยู่";
+//ProgressPage
+"Select Difficulty" = "เลือกระดับความยาก";
+"Novice" = "มือใหม่";
+"Regular" = "ปกติ";
+"Pianist" = "แข็ง";
+"Virtuoso" = "ผู้เชี่ยวชาญ";
+"3" = "3";
+"5" = "5";
+"7" = "7";
+"12" = "12";
+//FinishedGamePopUp
+"Exit" = "ออก";
+"Restart" = "เริ่มใหม่";
+"Submit" = "ส่งคะแนน";
+//Achievement
+"AchievementMessage1" = "คะแนน 100 คะแนนเพื่อปลดล็อคความสำเร็จ";
+"AchievementMessage2" = "คะแนน 200 คะแนนเพื่อปลดล็อคความสำเร็จ";
+"AchievementMessage3" = "คะแนน 300 คะแนนเพื่อปลดล็อคความสำเร็จ";
+"AchievementMessageV" = "คะแนน 100 ด้วยเครื่องดนตรี 5 ชิ้นเพื่อบรรลุความสำเร็จ";
+
+"OK" = "ตกลง";
+//In App Purchases
+"Buy" = "ซื้อ";
+"Restore" = "กู้คืน";
+//Hints
+"Hint1" = "คลิกปุ่มโน้ตเพื่อทดสอบและทำความคุ้นเคยกับเสียง";
+"Hint2" = "เมื่อพร้อมเริ่มเล่น ให้คลิก 'เริ่ม' จับคู่เสียงที่เล่นกับปุ่มโน้ตที่ถูกต้องเพื่อชนะ";

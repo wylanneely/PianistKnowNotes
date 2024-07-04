@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  KnowNotesPianist
+
+  Created by Wylan L Neely on 4/23/24.
+  
+*/
+"AppLanguage" = "Spanish";
+//InstrumentTypeName
+"Basic Piano" = "Piano Básico";
+"Grand Piano" = "Piano de Cola";
+"Acoustic Guitar" = "Acordes Mayores de Guitarra";
+"Keyboard" = "Teclado Eléctrico";
+"Violin" = "Violín";
+"Acoustic Minor Chords" = "原声吉他小和弦";
+"Instruments" = "Instrumentos";
+//InstrumentSelect
+"Welcome Back..." = "Bienvenido...";
+"High Score" = "Puntuación";
+"Locked" = "Bloqueado";
+//ProgressPage
+"Select Difficulty" = "Dificultad";
+"Novice" = "Novato";
+"Regular" = "Regular";
+"Pianist" = "Pianista";
+"Virtuoso" = "Virtuoso";
+"3" = "3";
+"5" = "5";
+"7" = "7";
+"12" = "12";
+//FinishedGamePopUp
+"Exit" = "Salir";
+"Restart" = "Reintentar";
+"Submit" = "Enviar";
+//achievementAlert
+"AchievementMessage1" = "Consigue 100 puntos para obtener logro.";
+"AchievementMessage2" = "Consigue 200 puntos para obtener logro.";
+"AchievementMessage3" = "Consigue 300 puntos para obtener logro.";
+"AchievementMessageV" = "Marca 100 puntos con 5 instrumentos para obtener el logro.";
+
+"OK" = "OK";
+//In App Purchases
+"Buy" = "Comprar";
+"Restore" = "Restaurar";
+//Hints
+"Hint1" = "Haz clic en los botones de notas para probar y familiarizarte con los sonidos.";
+"Hint2" = "    Haz clic en 'Iniciar' cuando estés listo para comenzar a jugar, empareja el sonido reproducido con el botón de nota correcto para ganar.";

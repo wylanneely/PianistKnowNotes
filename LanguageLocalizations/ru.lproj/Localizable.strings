@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  KnowNotesPianist
+
+  Created by Wylan L Neely on 4/23/24.
+  
+*/
+"AppLanguage" = "Russian";
+//InstrumentTypeName
+"Basic Piano" = "Пианино";
+"Grand Piano" = "Рояль";
+"Acoustic Guitar" = "Мажорные аккорды на гитаре";
+"Keyboard" = "Электропианино";
+"Violin" = "Скрипка";
+"Acoustic Minor Chords" = "Минорные аккорды гитары";
+"Instruments" = "Инструменты";
+//InstrumentSelect
+"Welcome Back..." = "Добро пожаловать обратно...";
+"High Score" = "Pекорд";
+"Locked" = "Заблокировано";
+//ProgressPage
+"Select Difficulty" = "Сложность";
+"Novice" = "Новичок";
+"Regular" = "Обычный";
+"Pianist" = "Пианист";
+"Virtuoso" = "Виртуоз";
+"3" = "3";
+"5" = "5";
+"7" = "7";
+"12" = "12";
+//FinishedGamePopUp
+"Exit" = "Выход";
+"Restart" = "Pестарт";
+"Submit" = "Отправить";
+//achievementAlert
+"AchievementMessage1" = "Наберите 100 очков, чтобы разблокировать достижение.";
+"AchievementMessage2" = "Наберите 200 очков, чтобы разблокировать достижение.";
+"AchievementMessage3" = "Наберите 300 очков, чтобы разблокировать достижение.";
+"AchievementMessageV" = "Наберите 100 очков с помощью 5 музыкальных инструментов, чтобы разблокировать достижение.";
+
+"OK" = "Хорошо";
+//In App Purchases
+"Buy" = "Купить";
+"Restore" = "Восстановить";
+//Hints
+"Hint1" = "Нажмите на кнопки нот, чтобы протестировать и ознакомиться со звуками.";
+"Hint2" = "Нажмите 'Старт', когда будете готовы начать играть, сопоставьте воспроизведённый звук с правильной нотой, чтобы выиграть.";
