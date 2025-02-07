@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum InstrumentType {
+enum InstrumentType: String, Codable {
     case BasicPiano
     case GrandPiano
     case AcousticGuitar

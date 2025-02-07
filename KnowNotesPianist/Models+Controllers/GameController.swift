@@ -280,7 +280,7 @@ mutating func restartGame(){
     
 }
 
-enum GameType{
+enum GameType: String, Codable{
     case Novice
     case Regular
     case Pianist
